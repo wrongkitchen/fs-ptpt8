@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<data>
+  <message key="70001">
+    <lang value="cn">账号被锁定，请耐心等待审核通过!</lang>
+    <lang value="hk">賬號被鎖定，請耐心等待審核通過!</lang>
+    <lang value="en">Login account is locked, please wait for the approval</lang>
+  </message>
+  <message key="70002">
+    <lang value="cn">登陆成功</lang>
+    <lang value="hk">登陸成功</lang>
+    <lang value="en">Login Successfully</lang>
+  </message>
+  <message key="70003">
+    <lang value="cn">登陆失败,用户名不存在或者密码错误</lang>
+    <lang value="hk">登陸失敗,用戶名不存在或者密碼錯誤</lang>
+    <lang value="en">Incorrect Password</lang>
+  </message>
+  <message key="70004">
+    <lang value="cn">恭喜，注册成功，您的注册信息代理部审核后将为您开通，请您关注注册邮箱</lang>
+    <lang value="hk">恭喜，註冊成功，您的註冊信息代理部審核後將為您開通，請您關註註冊郵箱</lang>
+    <lang value="en">Congratulations.  Your registration is completed.  Please check your e-mail account for your verification certificate</lang>
+  </message>
+  <message key="70005">
+    <lang value="cn">注册失败,请与客服联系!</lang>
+    <lang value="hk">註冊失敗,請與客服聯系!</lang>
+    <lang value="en">Failure to Login, please contact our Customer Service Representative</lang>
+  </message>
+  <message key="70006">
+    <lang value="cn">用户名重复</lang>
+    <lang value="hk">用戶名重復</lang>
+    <lang value="en">User name had been used</lang>
+  </message>
+  <message key="70007">
+    <lang value="cn">密码修改成功</lang>
+    <lang value="hk">密碼修改成功</lang>
+    <lang value="en">Password Changed</lang>
+  </message>
+  <message key="70008">
+    <lang value="cn">原始密码错误</lang>
+    <lang value="hk">原始密碼錯誤</lang>
+    <lang value="en">Original password incorrect</lang>
+  </message>
+  <message key="70009">
+    <lang value="cn">个人资料修改成功</lang>
+    <lang value="hk">個人資料修改成功</lang>
+    <lang value="en">Personal information update is done</lang>
+  </message>
+  <message key="70010">
+    <lang value="cn">个人资料修改失败</lang>
+    <lang value="hk">個人資料修改失敗</lang>
+    <lang value="en">Personal information update is failed</lang>
+  </message>
+  <message key="70011">
+    <lang value="cn">用户名已被注册，请重新选择!</lang>
+    <lang value="hk">用戶名已被註冊，請重新選擇!</lang>
+    <lang value="en">User name already existed, please choose again</lang>
+  </message>
+  <message key="70012">
+    <lang value="cn">用户名可以注册!</lang>
+    <lang value="hk">用戶名可以註冊!</lang>
+    <lang value="en">User name available</lang>
+  </message>
+  <message key="70013">
+    <lang value="cn">修改资料</lang>
+    <lang value="hk">修改資料</lang>
+    <lang value="en">Amend information</lang>
+  </message>
+  <message key="70014">
+    <lang value="cn">验证失败</lang>
+    <lang value="hk">驗證失敗</lang>
+    <lang value="en">Verification code failed</lang>
+  </message>
+  <message key="70015">
+    <lang value="cn">验证码输入不正确!</lang>
+    <lang value="hk">驗證碼輸入不正確!</lang>
+    <lang value="en">Verification code incorrect</lang>
+  </message>
+  <message key="70016">
+    <lang value="cn">系统错误，请与客服联系!</lang>
+    <lang value="hk">系統錯誤，請與客服聯系!</lang>
+    <lang value="en">System Error, please contact our Customer Service Representative</lang>
+  </message>
+  <message key="70017">
+    <lang value="cn">验证码输入不正确!</lang>
+    <lang value="hk">驗證碼輸入不正確!</lang>
+    <lang value="en"></lang>
+  </message>
+  <message key="70018">
+    <lang value="cn">请输入正确内容!</lang>
+    <lang value="hk">請輸入正確內容!</lang>
+    <lang value="en">Please enter the information</lang>
+  </message>
+  <message key="70019">
+    <lang value="cn">白老虎亚洲-在线娱乐城</lang>
+    <lang value="hk">白老虎亞洲-在線娛樂城</lang>
+    <lang value="en">White Tiger Asia - Online Casino</lang>
+  </message>
+  <message key="70020">
+    <lang value="cn">点击刷新验证码</lang>
+    <lang value="hk">點擊刷新驗證碼</lang>
+    <lang value="en">Get another verification code</lang>
+  </message>
+  <message key="70021">
+    <lang value="cn">请求超时,请稍后再试!</lang>
+    <lang value="hk">請求超時,請稍後再試!</lang>
+    <lang value="en">Time expired, please try again later</lang>
+  </message>
+  <message key="70022">
+    <lang value="cn">您必须确认您有参与博彩的资格，并同意我们的协议!</lang>
+    <lang value="hk">您必須確認您有參與博彩的資格，並同意我們的協議!</lang>
+    <lang value="en">Please ensure you are qualified be our member, and accepted our agreement already</lang>
+  </message>
+  <message key="70023">
+    <lang value="cn">6-9个字母与数字组成，首位不能为数字</lang>
+    <lang value="hk">6-9个字母与数字组成，首位不能为数字</lang>
+    <lang value="en">The length of the user name should from 6 to 15 digits, including the alphabetic, number and underscored, no stroke is allowed at the beginning and at the end</lang>
+  </message>
+  <message key="70024">
+    <lang value="cn">密码必须大于6个字符</lang>
+    <lang value="hk">密碼必須大於6個字符</lang>
+    <lang value="en">Password must more than 6 digits</lang>
+  </message>
+  <message key="70025">
+    <lang value="cn">两次密码输入不一致</lang>
+    <lang value="hk">兩次密碼輸入不一致</lang>
+    <lang value="en">Password is not matched</lang>
+  </message>
+  <message key="70026">
+    <lang value="cn">真实姓名必须为汉字</lang>
+    <lang value="hk">真實姓名必須為漢字</lang>
+    <lang value="en">Real name must be in Chinese</lang>
+  </message>
+  <message key="70027">
+    <lang value="cn">电话或手机号码格式不正确</lang>
+    <lang value="hk">電話或手機號碼格式不正確</lang>
+    <lang value="en">Format of your telephone number or mobile number is incorrect</lang>
+  </message>
+  <message key="70028">
+    <lang value="cn">邮箱格式无效</lang>
+    <lang value="hk">郵箱格式無效</lang>
+    <lang value="en">Format of the e-mail account incorrect</lang>
+  </message>
+  <message key="70029">
+    <lang value="cn">QQ号码格式不正确</lang>
+    <lang value="hk">QQ號碼格式不正確</lang>
+    <lang value="en">QQ account incorrect</lang>
+  </message>
+  <message key="70030">
+    <lang value="cn">详细内容不能超过1000个字符</lang>
+    <lang value="hk">詳細內容不能超過1000個字符</lang>
+    <lang value="en">Maximum number of the details information is 1,000 words only</lang>
+  </message>
+  <message key="70031">
+    <lang value="cn">请输入左侧图中的内容</lang>
+    <lang value="hk">請輸入左側圖中的內容</lang>
+    <lang value="en">Please enter the content of the box in left hand side</lang>
+  </message>
+  <message key="70032">
+    <lang value="cn">正在加载…</lang>
+    <lang value="hk">正在加載…</lang>
+    <lang value="en">Loading….</lang>
+  </message>
+  <message key="70033">
+    <lang value="cn">加载失败</lang>
+    <lang value="hk">加載失敗</lang>
+    <lang value="en">Loading unsuccessful</lang>
+  </message>
+  <message key="70034">
+    <lang value="cn">请确认修改?</lang>
+    <lang value="hk">請確認修改?</lang>
+    <lang value="en">Confirm to the amendment</lang>
+  </message>
+  <message key="70035">
+    <lang value="cn">银行名称不能为空</lang>
+    <lang value="hk">銀行名稱不能為空</lang>
+    <lang value="en">Bank name cannot be blank</lang>
+  </message>
+  <message key="70036">
+    <lang value="cn">开户行地址不能为空</lang>
+    <lang value="hk">開戶行地址不能為空</lang>
+    <lang value="en">Branch name cannot be blank</lang>
+  </message>
+  <message key="70037">
+    <lang value="cn">请输入16-19位的银行卡号</lang>
+    <lang value="hk">請輸入16-19位的銀行卡號</lang>
+    <lang value="en">Please enter the 16 to 19digits’ account number</lang>
+  </message>
+  <message key="70038">
+    <lang value="cn">原始密码不能为空</lang>
+    <lang value="hk">原始密碼不能為空</lang>
+    <lang value="en">Old password cannot be blank</lang>
+  </message>
+  <message key="70039">
+    <lang value="cn">新密码不能为空</lang>
+    <lang value="hk">新密碼不能為空</lang>
+    <lang value="en">New password cannot be blank</lang>
+  </message>
+  <message key="70040">
+    <lang value="cn">两次输入的密码不一致</lang>
+    <lang value="hk">兩次輸入的密碼不一致</lang>
+    <lang value="en">Password you entered is not matched</lang>
+  </message>
+  <message key="70041">
+    <lang value="cn">目前已经是第一页</lang>
+    <lang value="hk">目前已經是第一頁</lang>
+    <lang value="en">You are at the front page</lang>
+  </message>
+  <message key="70042">
+    <lang value="cn">目前已经是最后一页</lang>
+    <lang value="hk">目前已經是最後一頁</lang>
+    <lang value="en">This is the last page</lang>
+  </message>
+  <message key="70043">
+    <lang value="cn">每页显示数目不能大于999条</lang>
+    <lang value="hk">每頁顯示數目不能大於999條</lang>
+    <lang value="en">Lines per page cannot more than 999</lang>
+  </message>
+  <message key="70045">
+    <lang value="cn">登陆失败,您的账号被冻结.</lang>
+    <lang value="hk">登陸失敗,您的帳號被凍結.</lang>
+    <lang value="en">Login failed, your account had been freeze already</lang>
+  </message>
+  <message key="70046">
+    <lang value="cn">系统维护当中，请稍后再试.</lang>
+    <lang value="hk">系统维护当中，请稍后再试.</lang>
+    <lang value="en">System Maintenance is processing, please try again later</lang>
+  </message>
+  <message key="70047">
+    <lang value="cn">系统维护当中，查询数据失败.</lang>
+    <lang value="hk">系统维护当中，查询数据失败.</lang>
+    <lang value="en">System Maintenance is processing, you cannot check your data now, please try again later</lang>
+  </message>
+  <message key="70048">
+    <lang value="cn">拒绝登录：24小时之内登录已经超过 [COUNT] 次.请再过24小时后登陆.</lang>
+    <lang value="hk">拒绝登录：24小时之内登录已经超过 [COUNT] 次.请再过24小时后登陆.</lang>
+    <lang value="en">You had been login more than [COUNT] times already, please try again after 24-hrs</lang>
+  </message>
+  <message key="70049">
+    <lang value="cn">参数错误，请勿非法提交.</lang>
+    <lang value="hk">参数错误，请勿非法提交.</lang>
+    <lang value="en">Reference Incorrect, please don’t submit invalid information</lang>
+  </message>
+  <message key="70050">
+    <lang value="cn">登录失败，可能的原因.</lang>
+    <lang value="hk">登录失败，可能的原因.</lang>
+    <lang value="en">Login Failure, it may because of </lang>
+  </message>
+  <message key="70051">
+    <lang value="cn">拒绝登录：24小时之内登录已经超过 [COUNT] 次.请再过24小时后注册.</lang>
+    <lang value="hk">拒绝登录：24小时之内登录已经超过 [COUNT] 次.请再过24小时后注册.</lang>
+    <lang value="en">Deny logon: .</lang>
+  </message>
+  <message key="70052">
+    <lang value="cn">请勿非法注册,闲着没事干</lang>
+    <lang value="hk">请勿非法注册,闲着没事干</lang>
+    <lang value="en">Invalid Registration, please don’t do it again</lang>
+  </message>
+  <message key="70053">
+    <lang value="cn">请勿非法注册</lang>
+    <lang value="hk">请勿非法注册</lang>
+    <lang value="en">Deny logon: .</lang>
+  </message>
+  <message key="70054">
+    <lang value="cn">参数错误,请输入用户名或邮件!</lang>
+    <lang value="hk">參數錯誤,請輸入用戶名或郵件!</lang>
+    <lang value="en">Parameter error, enter the user name or e-mail!</lang>
+  </message>
+  <message key="70055">
+    <lang value="cn">找不到该用户数据, 请联系在线客服！</lang>
+    <lang value="hk">無該條數據！</lang>
+    <lang value="en">No data!</lang>
+  </message>
+  <message key="70056">
+    <lang value="cn">请勿非法操作,闲着没事干</lang>
+    <lang value="hk">請勿非法操作,閑著沒事幹</lang>
+    <lang value="en">Do illegal operation, idling</lang>
+  </message>
+  <message key="70057">
+    <lang value="cn">请输入用户名或邮件!</lang>
+    <lang value="hk">請輸入用戶名或郵件!</lang>
+    <lang value="en">Please enter your user name or e-mail!</lang>
+  </message>
+  <message key="70058">
+    <lang value="cn">白老虎亚洲在线娱乐城 密码重置 请查收</lang>
+    <lang value="hk">白老虎亞洲在線娛樂城 密碼重置 請查收</lang>
+    <lang value="en">The white tiger Asia Online Casino password reset</lang>
+  </message>
+  <message key="70059">
+    <lang value="cn">
+      <div style="margin-top: 0cm; argin-right: 0cm; margin-left: 0cm; font-size: 10.5pt;
+        line-height: 170%; width: 600px;">
+        亲爱的用户您好：
+        <br />
+        <span style="padding-left: 24px;">
+          通过密码找回功能，已为您的账号重置为系统随机密码： <span style="color: red">[PASSWORD]
+          </span>
+        </span>
+        <br />
+        请您登录白老虎亚洲官网，进入个人中心内的会员信息，及时修改您的账号密码。
+        <br />
+        <span style="padding-left: 24px;">
+          如您有任何需要帮助，请登录白老虎亚洲 <a style="color: blue; text-decoration: underline;"
+            href="http://www.8lohu.com">www.8lohu.com</a> ，通过在线客服咨询，或通过以下方式与我们取得联系。
+        </span>
+        <br /><br />
+        <span style="padding-left: 24px;">
+          白老虎亚洲网址：<a href="http://www.8lohu.com">www.8lohu.com</a>
+        </span>
+        <br />
+        <span style="padding-left: 24px;">400热线客服热线： 400-672-1688</span>
+        <br />
+        <span style="padding-left: 150px;">400-679-668</span>
+        <br />
+        <span style="padding-left: 24px;">
+          客服邮箱： <a href="mailto:cs@8lohu.com">cs@8lohu.com</a>
+        </span>
+        <br />
+        <span style="padding-left: 380px;">感谢您对我们白老虎亚洲的支持！</span>
+      </div>
+    </lang>
+    <lang value="hk">您的密碼已經重置為:</lang>
+    <lang value="en">Your password has been reset to:</lang>
+  </message>
+  <message key="70060">
+    <lang value="cn">密码重置成功，<br />新密码已发送到您的邮箱[EMAIL]当中，<br />请注意查收!</lang>
+    <lang value="hk">密碼重置成功，<br />新密碼已發送到您的郵箱[EMAIL]當中，<br />請注意查收!</lang>
+    <lang value="en">Password reset and new password has been sent to your e-mail address [EMAIL], please note that check!</lang>
+  </message>
+  <message key="700581">
+    <lang value="cn">白老虎亚洲在线娱乐城代理密码重置请查收</lang>
+    <lang value="hk">白老虎亞洲在線娛樂城代理密碼重置請查收</lang>
+    <lang value="en">Happy Valley Casino proxy password reset please find</lang>
+  </message>
+  <message key="700591">
+    <lang value="cn">您的代理密码已经重置为:</lang>
+    <lang value="hk">您的代理密碼已經重置為:</lang>
+    <lang value="en">Your proxy password has been reset to:</lang>
+  </message>
+  <message key="700601">
+    <lang value="cn">代理密码重置成功，<br />新密码已发送到您的邮箱[EMAIL]当中，<br />请注意查收!</lang>
+    <lang value="hk">代理密码重置成功，<br />新密碼已發送到您的郵箱[EMAIL]當中，<br />請注意查收!</lang>
+    <lang value="en">The proxy password reset, the new password has been sent to your e-mail address [EMAIL] which, please note that check!</lang>
+  </message>
+  <message key="700602">
+    <lang value="cn">您的代理功能正在审核中，或被冻结！请耐心等待</lang>
+    <lang value="hk">您的代理功能正在審核中，或被凍結！請耐心等待</lang>
+    <lang value="en">Your proxy function being audited, or freeze! Please be patient</lang>
+  </message>
+  <message key="700603">
+    <lang value="cn">错误次数太多，不能再次尝试!</lang>
+    <lang value="hk">錯誤次數太多，不能再次嘗試!</lang>
+    <lang value="en">Error too many times, you can not try again!</lang>
+  </message>
+  <message key="70061">
+    <lang value="cn">未知错误，请联系在线客服!</lang>
+    <lang value="hk">未知錯誤，請聯繫線上客服!</lang>
+    <lang value="en">Unknown error, please contact customer service online!</lang>
+  </message>
+  <message key="70062">
+    <lang value="cn">发送邮件失败，请联系在线客服!</lang>
+    <lang value="hk">發送郵件失敗，請聯繫線上客服!</lang>
+    <lang value="en">Failed to send mail, please contact online customer service!</lang>
+  </message>
+  <message key="70063">
+    <lang value="cn">找不到该数据，请联系在线客服!</lang>
+    <lang value="hk">找不到該資料，請聯繫線上客服!</lang>
+    <lang value="en">Can not find the data, please contact online customer service!</lang>
+  </message>
+  <message key="70064">
+    <lang value="cn">请选择问题或输入答案!</lang>
+    <lang value="hk">請選擇問題或輸入答案!</lang>
+    <lang value="en">Please select or enter the answer!</lang>
+  </message>
+  <message key="70065">
+    <lang value="cn">恭喜，您的密码已经重置为: NEWPWD</lang>
+    <lang value="hk">恭喜，您的密碼已經重置為: NEWPWD</lang>
+    <lang value="en">Congratulations, your password has been reset to: NEWPWD</lang>
+  </message>
+  <message key="70066">
+    <lang value="cn">网络连接错误，请联系在线客服!</lang>
+    <lang value="hk">網路連接錯誤，請聯繫線上客服!</lang>
+    <lang value="en">The network connection error, please contact the online customer service!</lang>
+  </message>
+    <message key="70067">
+    <lang value="cn">原有问题或答案错误。请重新输入!</lang>
+    <lang value="hk">原有問題或答案錯誤。請重新輸入!</lang>
+    <lang value="en">The original problem or wrong answers. Please re-enter!</lang>
+  </message>
+  <message key="70068">
+    <lang value="cn">找不到该数据，您还没有设置过 "找回密码"，请用邮箱找回密码!</lang>
+    <lang value="hk">找不到該資料，您還沒有設置過 "找回密碼"，請用郵箱找回密碼!</lang>
+    <lang value="en">Can not find the data, you do not set the "retrieve password", please use the mailbox to retrieve the password!</lang>
+  </message>
+  <message key="70069">
+    <lang value="cn">找不到该数据，请联系在线客服!</lang>
+    <lang value="hk">找不到該資料，請聯繫線上客服!</lang>
+    <lang value="en">Can not find the data, please contact online customer service!</lang>
+  </message>
+  <message key="70070">
+    <lang value="cn">请选择找回方式!</lang>
+    <lang value="hk">請選擇找回方式!</lang>
+    <lang value="en">Select Retrieve the way!</lang>
+  </message>
+  <message key="70071">
+    <lang value="cn">用户名须以字母开头</lang>
+    <lang value="hk">用戶名必須以字母開頭</lang>
+    <lang value="en"></lang>
+  </message>
+  <message key="70072">
+    <lang value="cn">分行名称必须为汉字</lang>
+    <lang value="hk">分行名称必須為漢字</lang>
+    <lang value="en">Real name must be in Chinese</lang>
+  </message>
+  <message key="70073">
+    <lang value="cn">银行卡号不能为空</lang>
+    <lang value="hk">銀行卡号不能為空</lang>
+    <lang value="en">Bank name cannot be blank</lang>
+  </message>
+</data>

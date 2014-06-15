@@ -1,0 +1,179 @@
+﻿@using Heji.Library.Models.TO
+@using Heji.Web.Helpers
+@model Heji.Web.Models.MemberBetRecordsViewModel
+@{
+    ViewBag.Title = "投注派彩记录 - 会员中心 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/member.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/member.js"></script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <ul id="memberNav" class="sectionNav transparent black">
+                    <li class="first button"><a href="@Url.Action("Finance", "Member")" target="_self">出纳柜台</a></li>
+                    <li class="separate">|</li>
+                    @if (Model.CurrentUser.TransferType < 2)
+                    {
+                    <li class="button" style="display:none"><a href="@Url.Action("Transfer", "Member")" target="_self">额度转移方式</a></li>
+                    <li class="separate" style="display:none">|</li>
+                    }
+                    <li class="button active"><a href="@Url.Action("Transactions", "Member")" target="_self">历史记录</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Info", "Member")" target="_self">修改资料</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Notices", "Member")" target="_self">最新公告</a></li>
+                </ul>
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/member/member-banner-05.jpg" alt="">
+                </div>
+                <div class="article history">
+                    <div class="tabBlock">
+                        <div>
+                            <a href="@Url.Action("Transactions", "Member")" target="_self"><div class="tab">存取款记录</div></a>
+                            <a href="@Url.Action("BetRecords", "Member")" target="_self"><div class="tab active">投注派彩记录</div></a>
+                            <a href="@Url.Action("Bonuses", "Member")" target="_self"><div class="tab">红利记录</div></a>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="tabContent active">
+                                <p>为了用户的信息与资金的安全，会员中心仅保留最近7天的历史记录，如需查询更多记录，请联系客服。</p>
+                       @* <!-- <div class="searchFilter">
+                                <div class="searchTitle pullLeft"><img src="@ImageServer/Content/Images/member/member-history-search.jpg" /></div>
+                                <div class="searchForm pullRight">
+                                    <table>
+                                        <tr>
+                                            <td>日期：<input type="text" class="datepicker" />到 <input type="text" class="datepicker" /></td>
+                                            <td>
+                                                <label for="searchCheckbox_1"><input id="searchCheckbox_1" name="searchCheckbox[]" type="checkbox" value="1" />处理中</label>
+                                                <label for="searchCheckbox_2"><input id="searchCheckbox_2" name="searchCheckbox[]" type="checkbox" value="2" />拒绝</label>
+                                                <label for="searchCheckbox_3"><input id="searchCheckbox_3" name="searchCheckbox[]" type="checkbox" value="3" />审核</label>
+                                                <label for="searchCheckbox_4"><input id="searchCheckbox_4" name="searchCheckbox[]" type="checkbox" value="4" />完成</label>
+                                            </td>
+                                            <td><button class="redButton">查询</button></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>-->   *@
+                            <div class="lineBlock"></div>
+                            <h1 class="articleHeader">投注派彩</h1>
+                            <div class="data-display">
+                                <table>
+                                    <tr  >
+                                    <td style="background-color: #000000" rowspan="2">时间</td>
+                                    <td style="background-color: #000000" colspan="6">投注记录</td>
+                                    <td style="background-color: #000000" colspan="6">派彩记录</td>
+                                    </tr>
+                                    <tr class="header">
+                                        <td>台湾厅</td>
+                                        <td>广东厅</td>
+                                        <td>澳门厅</td>
+                                        <td>国际厅</td>
+                                        <td>伦敦厅</td>
+                                        <td>MG电子游艺</td>
+                                        <td>台湾厅</td>
+                                        <td>广东厅</td>
+                                        <td>澳门厅</td>
+                                        <td>国际厅</td>
+                                        <td>伦敦厅</td>
+                                        <td>MG电子游艺</td>
+                                    </tr>
+                                    @if (Model.Betting != null && Model.Betting.Count() > 0)
+                                    {
+                                        decimal pt = 0;
+                                        decimal bbin = 0;
+                                        decimal DYJuser = 0;
+                                        decimal ptPayout = 0;
+                                        decimal bbinPayout = 0;
+                                        decimal DYJpc = 0;
+                                        decimal Mguser=0;
+                                        decimal MgPc=0;
+                                        decimal MgFlash=0;
+                                        decimal MgFlashpc=0;
+                                        decimal AgNet = 0;
+                                        decimal AgNetpc = 0;
+                                        foreach (BettingTO bet in Model.Betting)
+                                        {
+                                            pt += bet.PT;
+                                            ptPayout += bet.PTPayout;
+                                            bbin += bet.BBin;
+                                            bbinPayout += bet.BBinPayout;
+                                            DYJuser += bet.DYJuser;
+                                            DYJpc += bet.DYJpc;
+                                            Mguser += bet.MGuser;
+                                            MgPc += bet.MGpc;
+                                            MgFlash += bet.MGFlash;
+                                            MgFlashpc += bet.MGFlashpc;
+                                            AgNet += bet.AgNetUser;
+                                            AgNetpc += bet.AgNetUserpc;
+                                                <tr>
+                                                    <td>@bet.tdate.ToString("yyyy-MM-dd")</td>
+                                                    <td>@bet.BBin</td>
+                                                    <td>@bet.PT</td>
+                                                    <td>@bet.DYJuser</td>
+                                                     <td>@bet.AgNetUser</td>
+                                                    <td>@bet.MGuser</td>
+                                                    <td>@bet.MGFlash</td>
+                                                    <td>@bet.BBinPayout</td>
+                                                    <td>@bet.PTPayout</td>              
+                                                    <td>@bet.DYJpc</td>
+                                                     <td>@bet.AgNetUserpc</td>
+                                                    <td>@bet.MGpc</td>
+                                                    <td>@bet.MGFlashpc</td>
+                                                </tr>
+                                        }
+                                                <tr>
+                                                    <td>小计：</td>
+                                                    <td>@bbin</td>
+                                                    <td>@pt</td>
+                                                    <td>@DYJuser</td>
+                                                      <td>@AgNet</td>
+                                                    <td>@Mguser</td>
+                                                    <td>@MgFlash</td>
+                                                    <td>@bbinPayout</td>
+                                                    <td>@ptPayout</td>
+                                                    <td>@DYJpc</td>
+                                                      <td>@AgNetpc</td>
+                                                    <td>@MgPc</td>
+                                                    <td>@MgFlashpc</td>
+                                                </tr>
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                    	    <td colspan="13">暂无记录</td>
+                                        </tr>
+                                    }
+                                </table>
+                            </div>
+                            @if (Model.Betting != null && Model.Betting.Count > 0)
+                            {
+                                <div>@Html.Pager("", Model.PageNum, Model.PageSize, Model.totalCount)</div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false" })
+                <div class="block discount"><a href="/CN/Promotions" target="_self"><img src="@ImageServer/Content/Images/member/01_12.jpg" alt=""></a></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

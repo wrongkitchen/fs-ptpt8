@@ -1,0 +1,128 @@
+﻿@using Heji.Web.Helpers
+
+@{
+    ViewBag.Title = "【21点】游戏说明";
+     Layout = "~/Views/Shared/_GameIntroLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+}
+
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/Introduction.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Content/Styles/iepngfix_tilebg.js"></script>
+}
+
+
+<a name="top" id="top"></a>
+<table width="1000" align="center" border="0" cellpadding="0" cellspacing="0" height="120">
+	<tbody>
+		<tr>
+			<td  height="80" width="385"></td>
+			<td height="80" width="469"></td>
+			<td width="146"><div class="ribbon_bolder ">
+					
+				</div></td>
+		</tr>
+	</tbody>
+</table>
+<table width="1000" align="center" border="0" cellpadding="0" cellspacing="0"  style="padding: 60px 0 0 0;">
+<tbody>
+	<tr>
+		<td colspan="3" scope="col"><table width="890" align="center" border="0" cellpadding="0" cellspacing="0">
+				<tbody>
+					<tr>
+						<td scope="col"><div class="title_new"> 1. 21点简介 </div></td>
+					</tr>
+					<tr>
+						<td><div class="box_inner">
+								<p>21点起源于法国，已流传到世界各地。现在在世界各地的赌场中都可以看到二十一点，随着互联网的发展，二十一点开始走向网络时代。该游戏由2到8个人玩，使用除大小王之外的52 张牌，游戏者的目标是使手中的牌的点数之和不超过 21 点且尽量大。 </p>
+							</div></td>
+					</tr>
+					<tr> </tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td scope="col"><div class="title_new"> 2. 大小 </div></td>
+					</tr>
+					<tr>
+						<td><div class="box_inner">
+								<p>所有人头牌的点数均为 10，A 的点数可以为 1 或 11。不比花色, 只比点数, 点数相同为和。</p>
+							</div></td>
+					</tr>
+					<tr> </tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td scope="col"><div class="title_new"> 3. 游戏玩法 </div></td>
+					</tr>
+					<tr>
+						<td><div class="box_inner">
+								<p>1. 庄家在所有 17 点时停牌。<br />
+									2. 如果您一手牌的点数没有超过 21 点，则您至多可以再取 7 张牌，形成一手包含 9 张牌的牌。如果收到 9 张牌后，您手中的牌的点数没有超过 21，您手中的牌将自动停牌。<br />
+									3. 如果庄家发到的手牌点数超过21 点，您发到的手牌为21点或更低，庄家将爆牌。您的一手牌自动赢。<br />
+									4. 如果发给您的前两张牌为一张A和一张点数为 10 的牌，则您拥有二十一点。您的手牌自动停牌。<br />
+									5. 二十一点按您的常规赌注以3:2 的赔率赔付奖金。<br />
+									6. 如果庄家的手牌和您的手牌都为二十一点，则为平局。您的常规赌注金额会归还给您。<br />
+									7. 如果庄家的手牌和您的手牌点数相同，则为平局。您的常规赌注金额会归还给您。<br /> 
+									</p>
+							</div></td>
+					</tr>
+					<tr> </tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td scope="col"><div class="title_new"> 拆牌规则 </div></td>
+					</tr>
+					<tr>
+						<td><div class="box_inner">
+								<p>	1. 您可以对拥有相同面值的牌进行拆牌。<br />
+									2. 在您的第二手牌上投下的拆牌赌注等于您的常规赌注金额。<br />
+									3. 如果您拆一对 A 并取到一张点数为 10 的牌，这不是二十一点，虽然它的点数为21。 此规则同样适用于拆一对点数为 10 的牌并取到 A 的情况。<br />
+									4. 每局游戏仅能拆一次牌，等于两手牌。
+								</p>
+							</div></td>
+					</tr>
+					<tr> </tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td scope="col"><div class="title_new"> 加倍下注规则 </div></td>
+					</tr>
+					<tr>
+						<td><div class="box_inner">
+								<p>	1. 加倍下注赌注等于您的常规赌注金额。<br />
+									2. 如果您的前两张牌是点数只为 9、10 或 11 的硬牌，则可以对其进行加倍下注。<br />
+									3. 您不能在拆牌后加倍下注。<br />
+									4. 加倍下注时，您将发到一张牌，您的手牌将自动停牌。
+								</p>
+							</div></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td scope="col"><div class="title_new"> 保险规则 </div></td>
+					</tr>
+					<tr>
+						<td><div class="box_inner">
+								<p>	1. 您可以使用保险。<br />
+									2. 保险赌注等于您的常规赌注金额的一半。<br />
+									3. 保险赌注的输赢与常规赌注无关。<br />
+									4. 保险仅涉及原始牌。它不涉及任何拆牌后或加倍下注后的任何第二手牌。<br />
+									5. 如果庄家没有二十一点，则将保险赌注从赌桌上移除。将从您的点数余额中扣除保险赌注花费，游戏继续。<br />
+									6. 如果庄家拥有二十一点，则保险赌注的支付赔率为 2:1。
+								</p>
+							</div></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					
+				</tbody>
+			</table>
+

@@ -1,0 +1,87 @@
+﻿@using Heji.Web.Helpers
+@using Heji.Library.Models.TO
+@model Heji.Web.Models.AgentFinancialStatementViewModel
+           
+@{
+    ViewBag.Title = "代理中心 - 和记娱乐官方网站";
+    Layout = "~/Views/Shared/_AgentLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/agent.js"></script>
+}
+
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/center/banner_finance.jpg" alt="" />
+                </div>
+                <div class="article finance">
+                    <div class="lineBlock"></div>
+                    <p class="articleHeader">现金记录</p>
+                    <table>
+                        <tr class="header">
+                            <td>会员</td>
+                            <td>时间</td>
+                            <td>BBIN投注</td>
+                            <td>BBIN派彩</td>
+                            <td>DSP投注</td>
+                            <td>DSP派彩</td>
+                            <td>AG投注</td>
+                            <td>AG派彩</td>
+                            <td>MG投注</td>
+                            <td>MG派彩</td>
+                            <td>AGNet投注</td>
+                            <td>AGNet派彩</td>
+                            <td>投注小计</td>
+                            <td>派彩小计</td>
+                        </tr>
+                        @if (Model.Bettings != null && Model.BettingsCount > 0)
+                        {
+                            foreach (BettingTO tnx in Model.Bettings)
+                            {
+                                <tr>
+                                    <td>@tnx.Username</td>
+                                    <td>@tnx.tdate.ToString("yyyy-MM-dd")</td>
+                                    <td>@tnx.BBin</td>
+                                    <td>@tnx.BBinPayout</td>
+                                    <td>@tnx.PT</td>
+                                    <td>@tnx.PTPayout</td>
+                                    <td>@tnx.DYJuser</td>
+                                    <td>@tnx.DYJpc</td>
+                                    <td>@tnx.MGuser</td>
+                                    <td>@tnx.MGpc</td>
+                                    <td>@tnx.AgNetUser</td>
+                                    <td>@tnx.AgNetUserpc</td>
+                                    <td>@(tnx.BBin + tnx.DYJuser + tnx.PT + tnx.Ipmuser + tnx.MGuser + tnx.AgNetUser)</td>
+                                    <td>@(tnx.BBinPayout + tnx.PTPayout + tnx.DYJpc + tnx.Ipmpc + tnx.MGpc + tnx.AgNetUserpc)</td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <td colspan="16">暂无数据！</td> 
+                        }
+                    </table>
+                    @if (Model.Bettings != null && Model.BettingsCount > 0)
+                    {
+                        <div>@Html.Pager("", Model.PageNum, Model.PageSize, Model.BettingsCount)</div>
+                    }
+                </div>
+            </div>
+            @Html.Action("SharedAgentInformation", "Agent")
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>
+

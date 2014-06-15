@@ -1,0 +1,720 @@
+.tableDefaultLayout table {
+  width: 100%;
+  color: #ffffff;
+}
+.tableDefaultLayout table tr.header td {
+  background-color: #000000;
+}
+.tableDefaultLayout table tr td {
+  background-color: #554f4b;
+}
+.tableDefaultLayout table td {
+  min-width: 32px;
+  height: 36px;
+  border: #453f3a 1px solid;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 12px;
+  font-weight: normal;
+}
+.articleDefaultHeader .articleHeader {
+  color: #f84139;
+  font-size: 15px;
+  line-height: 15px;
+  margin: 10px 0 14px;
+}
+.articleDefaultPageList .articlePageList {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.articleDefaultPageList .articlePageList li {
+  display: inline;
+}
+.articleDefaultPageList .articlePageList li a {
+  color: #000000;
+  display: inline-block;
+  margin: 0 4px;
+}
+.leftRightContent .rightContent .userDetail {
+  cursor: default;
+  font-size: 12px;
+  color: #ffffff;
+  border-bottom: #423f3c 1px solid;
+  background-color: #201e1c;
+  padding: 14px 25px 35px 35px;
+}
+.leftRightContent .rightContent .userDetail .grey {
+  color: #959595;
+}
+.leftRightContent .rightContent .userDetail .lineBlock {
+  margin: 10px 0;
+}
+.leftRightContent .rightContent .userDetail p {
+  margin: 6px 0;
+}
+.leftRightContent .rightContent .userDetail a {
+  margin-top: 16px;
+  display: block;
+}
+.leftRightContent .leftContent .article {
+  position: relative;
+  z-index: 1;
+  color: #000000;
+}
+.leftRightContent .leftContent .article a.normal {
+  font-size: 12px;
+  font-weight: normal;
+}
+.leftRightContent .leftContent .article a {
+  color: #000000;
+}
+.leftRightContent .leftContent .article a.blueHref {
+  color: blue; text-decoration: underline;
+}
+.leftRightContent .leftContent .article table {
+  width: 100%;
+}
+.leftRightContent .leftContent .article table.user {
+  font-size: 15px;
+  margin-top: 5px;
+}
+.leftRightContent .leftContent .article table.gameMessage {
+  margin-top: 12px;
+  margin-bottom: 23px;
+}
+.leftRightContent .leftContent .article table.gameMessage .title {
+  width: 100%;
+}
+.leftRightContent .leftContent .article table.gameMessage .title .heading {
+  padding-top: 4px;
+  padding-left: 14px;
+  font-size: 15px;
+  padding-bottom: 1px;
+}
+.leftRightContent .leftContent .article table.gameMessage .title .detail {
+  font-size: 12px;
+  padding-right: 11px;
+  padding-top: 3px;
+}
+.leftRightContent .leftContent .article table.gameMessage td {
+  border: 1px solid #595959;
+  text-align: center;
+  padding: 0;
+}
+.leftRightContent .leftContent .article table.gameMessage tr.columnTitle td {
+  font-size: 12px;
+}
+.leftRightContent .leftContent .article table.gameMessage tr.columnData td {
+  font-size: 12px;
+  font-weight: normal;
+  padding: 3px 0 4px;
+}
+.leftRightContent .leftContent .article table.gameMessage tr.columnData .highlight,
+.leftRightContent .leftContent .article table.gameMessage tr.columnData a {
+  color: #f84139;
+  text-decoration: underline;
+}
+.leftRightContent .leftContent .article table.gameMessage tr.columnData .highlight:hover,
+.leftRightContent .leftContent .article table.gameMessage tr.columnData a:hover {
+  text-decoration: none;
+}
+.leftRightContent .leftContent .article.center {
+  padding: 36px 40px 36px 40px;
+}
+.leftRightContent .leftContent .article.center .articlePageList {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.leftRightContent .leftContent .article.center .articlePageList li {
+  display: inline;
+}
+.leftRightContent .leftContent .article.center .articlePageList li a {
+  color: #000000;
+  display: inline-block;
+  margin: 0 4px;
+}
+.leftRightContent .leftContent .article.center p.title {
+  color: #f84139;
+  font-size: 15px;
+  font-weight: bold;
+}
+.leftRightContent .leftContent .article.center p {
+  font-size: 12px;
+}
+.leftRightContent .leftContent .article.center p.black {
+  background-color: #383431;
+  color: #ffffff;
+  padding: 5px 15px;
+}
+.leftRightContent .leftContent .article.center table {
+  margin-bottom: 15px;
+  font-size: 12px;
+  line-height: 12px;
+}
+.leftRightContent .leftContent .article.center table.center td {
+  text-align: center;
+}
+.leftRightContent .leftContent .article.center table td {
+  border: #000000 1px solid;
+  padding: 8px 5px;
+}
+.leftRightContent .leftContent .article.center table ul li {
+  float: left;
+  margin: 0 10px;
+  vertical-align: middle;
+  list-style: none;
+  display: inline-block;
+}
+.leftRightContent .leftContent .article.center table ul .floatRight {
+  float: right;
+}
+.leftRightContent .leftContent .article.center table ul input {
+  margin: 0;
+  height: 12px;
+  font-size: 12px;
+  margin-left: 5px;
+}
+.leftRightContent .leftContent .article.center table ul button {
+  background-color: #383431;
+  color: #f84139;
+  border-width: 0;
+  font-size: 12px;
+}
+.leftRightContent .leftContent .article.center table td.image {
+  padding: 20px 0;
+  text-align: center;
+  vertical-align: middle;
+  min-height: 128px;
+}
+.leftRightContent .leftContent .article.modify {
+  padding: 36px 40px;
+  font-size: 12px;
+}
+.leftRightContent .leftContent .article.modify .articleHeader {
+  color: #f84139;
+  font-size: 15px;
+  line-height: 15px;
+  margin: 10px 0 14px;
+}
+.leftRightContent .leftContent .article.modify table td {
+  vertical-align: middle;
+  text-align: left;
+  padding: 3px 0;
+}
+.leftRightContent .leftContent .article.modify td.title {
+  width: 140px;
+}
+.leftRightContent .leftContent .article.modify td.content {
+  width: 175px;
+}
+.leftRightContent .leftContent .article.modify input {
+  width: 150px;
+  height: 12px;
+  font-size: 12px;
+  margin: 0;
+}
+.leftRightContent .leftContent .article.plan .articlePageList {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.leftRightContent .leftContent .article.plan .articlePageList li {
+  display: inline;
+}
+.leftRightContent .leftContent .article.plan .articlePageList li a {
+  color: #000000;
+  display: inline-block;
+  margin: 0 4px;
+}
+.leftRightContent .leftContent .article.plan .tab {
+  color: #f84139;
+}
+.leftRightContent .leftContent .article.plan table {
+  margin-bottom: 15px;
+  font-size: 12px;
+  line-height: 12px;
+}
+.leftRightContent .leftContent .article.plan table td {
+  border: #000000 1px solid;
+  padding: 8px 5px;
+}
+.leftRightContent .leftContent .article.plan table ul li {
+  float: left;
+  margin: 0 10px;
+  vertical-align: middle;
+  list-style: none;
+  display: inline-block;
+}
+.leftRightContent .leftContent .article.plan table ul .floatRight {
+  float: right;
+}
+.leftRightContent .leftContent .article.plan table ul input {
+  margin: 0;
+  height: 12px;
+  font-size: 12px;
+  margin-left: 5px;
+}
+.leftRightContent .leftContent .article.plan table ul button {
+  background-color: #383431;
+  color: #f84139;
+  border-width: 0;
+  font-size: 12px;
+}
+.leftRightContent .leftContent .article.plan table td.image {
+  padding: 20px;
+  text-align: center;
+  vertical-align: middle;
+  min-height: 128px;
+}
+.leftRightContent .leftContent .article.plan .tabContent {
+  padding: 40px 20px;
+}
+.leftRightContent .leftContent .article.agent {
+  padding: 36px 40px 36px 40px;
+}
+.leftRightContent .leftContent .article.agent p.title {
+  color: #f84139;
+  font-size: 15px;
+  font-weight: bold;
+}
+.leftRightContent .leftContent .article.agent p {
+  font-size: 12px;
+}
+.leftRightContent .leftContent .article.agent table td {
+  font-weight: normal;
+  font-size: 12px;
+}
+.leftRightContent .leftContent .article.agent table.basic td {
+  width: 50%;
+  padding: 3px 15px;
+  border: #000000 1px solid;
+  font-size: 13px;
+}
+.leftRightContent .leftContent .article.agent p.black {
+  background-color: #383431;
+  color: #ffffff;
+  padding: 5px 15px;
+}
+.leftRightContent .leftContent .article.finance {
+  padding: 40px 41px 40px 41px;
+}
+.leftRightContent .leftContent .article.finance .articleHeader {
+  color: #f84139;
+  font-size: 15px;
+  line-height: 15px;
+  margin: 10px 0 14px;
+}
+.leftRightContent .leftContent .article.finance table {
+  width: 100%;
+  color: #ffffff;
+}
+.leftRightContent .leftContent .article.finance table tr.header td {
+  background-color: #000000;
+}
+.leftRightContent .leftContent .article.finance table tr td {
+  background-color: #554f4b;
+}
+.leftRightContent .leftContent .article.finance table td {
+  min-width: 32px;
+  height: 36px;
+  border: #453f3a 1px solid;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 12px;
+  font-weight: normal;
+}
+.leftRightContent .leftContent .article.finance .articlePageList {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.leftRightContent .leftContent .article.finance .articlePageList li {
+  display: inline;
+}
+.leftRightContent .leftContent .article.finance .articlePageList li a {
+  color: #000000;
+  display: inline-block;
+  margin: 0 4px;
+}
+.leftRightContent .leftContent .article.finance .articleHeader {
+  color: #000000;
+}
+.leftRightContent .leftContent .article.finance .articleHeader {
+  color: #000000;
+  margin-top: 20px;
+}
+.leftRightContent .leftContent .article.finance .searchTable {
+  margin-bottom: 8px;
+}
+.leftRightContent .leftContent .article.finance .searchTable td {
+  background-color: #ffffff;
+  color: #000000;
+  vertical-align: middle;
+  border-width: 0;
+  text-align: left;
+}
+.leftRightContent .leftContent .article.finance .searchTable .searchTitle {
+  border-right: #d0d0d0 1px solid;
+  width: 96px;
+}
+.leftRightContent .leftContent .article.finance .searchTable .searchContent {
+  padding-left: 20px;
+}
+.leftRightContent .leftContent .article.finance .searchTable input {
+  width: 120px;
+  height: 12px;
+  margin: 0;
+}
+.leftRightContent .leftContent .article.finance .searchTable button {
+  color: #ffffff;
+  background-color: #f84139;
+  padding: 3px 12px;
+  border-width: 0;
+  font-size: 12px;
+}
+.leftRightContent .leftContent .article.announcement .articleHeader {
+  color: #f84139;
+  font-size: 15px;
+  line-height: 15px;
+  margin: 10px 0 14px;
+}
+.leftRightContent .leftContent .article.announcement table {
+  width: 100%;
+  color: #ffffff;
+}
+.leftRightContent .leftContent .article.announcement table tr.header td {
+  background-color: #000000;
+}
+.leftRightContent .leftContent .article.announcement table tr td {
+  background-color: #554f4b;
+}
+.leftRightContent .leftContent .article.announcement table td {
+  min-width: 32px;
+  height: 36px;
+  border: #453f3a 1px solid;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 12px;
+  font-weight: normal;
+}
+.leftRightContent .leftContent .article.announcement .articlePageList {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.leftRightContent .leftContent .article.announcement .articlePageList li {
+  display: inline;
+}
+.leftRightContent .leftContent .article.announcement .articlePageList li a {
+  color: #000000;
+  display: inline-block;
+  margin: 0 4px;
+}
+.leftRightContent .leftContent .article.announcement .articleHeader {
+  color: #000000;
+}
+.leftRightContent .leftContent .article.operation {
+  padding: 36px 36px;
+  font-size: 12px;
+}
+.leftRightContent .leftContent .article.operation .numListPoint li {
+  margin-bottom: 0;
+  padding-bottom: 30px;
+}
+.leftRightContent .leftContent .article.management {
+  padding: 40px 41px 40px 41px;
+}
+.leftRightContent .leftContent .article.management .tab {
+  color: #f84139;
+}
+.leftRightContent .leftContent .article.management .articleHeader {
+  color: #f84139;
+  font-size: 15px;
+  line-height: 15px;
+  margin: 10px 0 14px;
+}
+.leftRightContent .leftContent .article.management table {
+  width: 100%;
+  color: #ffffff;
+}
+.leftRightContent .leftContent .article.management table tr.header td {
+  background-color: #000000;
+}
+.leftRightContent .leftContent .article.management table tr td {
+  background-color: #554f4b;
+}
+.leftRightContent .leftContent .article.management table td {
+  min-width: 32px;
+  height: 36px;
+  border: #453f3a 1px solid;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 12px;
+  font-weight: normal;
+}
+.leftRightContent .leftContent .article.management .articlePageList {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.leftRightContent .leftContent .article.management .articlePageList li {
+  display: inline;
+}
+.leftRightContent .leftContent .article.management .articlePageList li a {
+  color: #000000;
+  display: inline-block;
+  margin: 0 4px;
+}
+.leftRightContent .leftContent .article.management .searchTable {
+  margin-bottom: 8px;
+}
+.leftRightContent .leftContent .article.management .searchTable td {
+  background-color: #ffffff;
+  color: #000000;
+  vertical-align: middle;
+  border-width: 0;
+  text-align: left;
+}
+.leftRightContent .leftContent .article.management .searchTable .searchTitle {
+  border-right: #d0d0d0 1px solid;
+  width: 96px;
+}
+.leftRightContent .leftContent .article.management .searchTable input {
+  width: 120px;
+  height: 12px;
+  margin: 0;
+}
+.leftRightContent .leftContent .article.management .searchTable button {
+  color: #ffffff;
+  background-color: #f84139;
+  padding: 3px 12px;
+  border-width: 0;
+  font-size: 12px;
+}
+.leftRightContent .leftContent .article.management .articleHeader {
+  color: #000000;
+  margin-top: 20px;
+}
+.leftRightContent .leftContent .article.management .footer td {
+  background-color: #000000;
+}
+.leftRightContent .leftContent .article.management .form td {
+  background-color: #ffffff;
+  border-width: 0;
+  color: #000000;
+  text-align: left;
+}
+.leftRightContent .leftContent .article.management .searchTable button {
+  width: auto;
+  height: auto;
+}
+.leftRightContent .leftContent .article.management button {
+  width: 141px;
+  height: 50px;
+}
+.leftRightContent .leftContent .article.management .div-container {
+  border: #a6a6a6 3px solid;
+  padding: 28px 38px;
+  height: 147px;
+  overflow-y: scroll;
+  overflow-x: none;
+  background-color: #eaeaea;
+}
+.leftRightContent #centerNav {
+  top: 131px;
+}
+#subNav-center {
+  text-align: center;
+  height: 75px;
+}
+#subNav-center .container {
+  background-color: #bda54a;
+}
+#subNav-center .navigation {
+  margin: 0;
+  text-align: center;
+  list-style: none;
+  position: relative;
+}
+#subNav-center .navigation .overlay {
+  position: absolute;
+  top: 75px;
+  left: 0px;
+  width: 100%;
+  height: 421px;
+  z-index: 3;
+  display: none;
+}
+#subNav-center .navigation .button.end{ height:0; width:0; }
+#subNav-center .navigation .button {
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 75px;
+  float: left;
+}
+#subNav-center .navigation .button a.buttonLink {
+  display: block;
+  width: 100%;
+  height: 75px;
+}
+#subNav-center .navigation .button .subNavHover.center {
+  background-image: url(../Images/center/nav/center_snb_01_on.jpg);
+  width: 134px;
+}
+#subNav-center .navigation .button .subNavHover.management {
+  background-image: url(../Images/center/nav/center_snb_02_on.jpg);
+  width: 139px;
+}
+#subNav-center .navigation .button .subNavHover.financial_statement {
+  background-image: url(../Images/center/nav/center_snb_03_on.jpg);
+  width: 160px;
+}
+#subNav-center .navigation .button .subNavHover.operation {
+  background-image: url(../Images/center/nav/center_snb_04_on.jpg);
+  width: 148px;
+}
+#subNav-center .navigation .button .subNavHover.announcement {
+  background-image: url(../Images/center/nav/center_snb_05_on.jpg);
+  width: 165px;
+}
+#subNav-center .navigation .button .subNavHover.modify {
+  background-image: url(../Images/center/nav/center_snb_06_on.jpg);
+  width: 114px;
+}
+#subNav-center .navigation .button .subNavHover.plan {
+  background-image: url(../Images/center/nav/center_snb_07_on.jpg);
+  width: 140px;
+}
+#subNav-center .navigation .button:hover.center {
+  background-image: url(../Images/center/nav/center_snb_01_on.jpg);
+  width: 134px;
+}
+#subNav-center .navigation .button:hover.management {
+  background-image: url(../Images/center/nav/center_snb_02_on.jpg);
+  width: 139px;
+}
+#subNav-center .navigation .button:hover.financial_statement {
+  background-image: url(../Images/center/nav/center_snb_03_on.jpg);
+  width: 160px;
+}
+#subNav-center .navigation .button:hover.operation {
+  background-image: url(../Images/center/nav/center_snb_04_on.jpg);
+  width: 148px;
+}
+#subNav-center .navigation .button:hover.announcement {
+  background-image: url(../Images/center/nav/center_snb_05_on.jpg);
+  width: 165px;
+}
+#subNav-center .navigation .button:hover.modify {
+  background-image: url(../Images/center/nav/center_snb_06_on.jpg);
+  width: 114px;
+}
+#subNav-center .navigation .button:hover.plan {
+  background-image: url(../Images/center/nav/center_snb_07_on.jpg);
+  width: 140px;
+}
+#subNav-center .navigation .button.active.center {
+  background-image: url(../Images/center/nav/center_snb_01_on.jpg);
+  width: 134px;
+}
+#subNav-center .navigation .button.active.management {
+  background-image: url(../Images/center/nav/center_snb_02_on.jpg);
+  width: 134px;
+}
+#subNav-center .navigation .button.active.financial_statement {
+  background-image: url(../Images/center/nav/center_snb_03_on.jpg);
+  width: 160px;
+}
+#subNav-center .navigation .button.active.operation {
+  background-image: url(../Images/center/nav/center_snb_04_on.jpg);
+  width: 148px;
+}
+#subNav-center .navigation .button.active.announcement {
+  background-image: url(../Images/center/nav/center_snb_05_on.jpg);
+  width: 165px;
+}
+#subNav-center .navigation .button.active.modify {
+  background-image: url(../Images/center/nav/center_snb_06_on.jpg);
+  width: 114px;
+}
+#subNav-center .navigation .button.active.plan {
+  background-image: url(../Images/center/nav/center_snb_07_on.jpg);
+  width: 140px;
+}
+#subNav-center .navigation .button .listContainer {
+  display: none;
+  min-width: 190px;
+  min-height: 138px;
+  background: #f84139;
+  padding: 45px 32px;
+  position: absolute;
+  top: 75px;
+  left: -40px;
+  z-index: 4;
+}
+#subNav-center .navigation .button .listContainer.end {
+  left: -100px;
+}
+#subNav-center .navigation .button .listContainer .list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#subNav-center .navigation .button .listContainer .list .listItem {
+  text-align: left;
+  margin-bottom: 4px;
+}
+#subNav-center .navigation .button .listContainer .list .listItem a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 13px;
+}
+#subNav-center .navigation .button .listContainer .list .listItem a:hover {
+  text-decoration: underline;
+}
+#subNav-center .navigation .center {
+  background-image: url(../Images/center/nav/center_snb_01.jpg);
+  width: 134px; margin-left:80px;
+}
+#subNav-center .navigation .management {
+  background-image: url(../Images/center/nav/center_snb_02.jpg);
+  width: 139px;
+}
+#subNav-center .navigation .financial_statement {
+  background-image: url(../Images/center/nav/center_snb_03.jpg);
+  width: 160px;
+}
+#subNav-center .navigation .operation {
+  background-image: url(../Images/center/nav/center_snb_04.jpg);
+  width: 148px;
+}
+#subNav-center .navigation .announcement {
+  background-image: url(../Images/center/nav/center_snb_05.jpg);
+  width: 165px;
+}
+#subNav-center .navigation .modify {
+  background-image: url(../Images/center/nav/center_snb_06.jpg);
+  width: 114px;
+}
+#subNav-center .navigation .plan {
+  background-image: url(../Images/center/nav/center_snb_07.jpg);
+  width: 140px;
+}
+#subNav-center .navigation:hover .button {
+  position: relative;
+}
+#subNav-center .navigation:hover .button.home > a.buttonLink {
+  background: none !important;
+}
+#subNav-center .navigation:hover .button:hover.no-sublist a.buttonLink {
+  background-image: none;
+}
+#subNav-center .navigation:hover .button:hover a.buttonLink {
+  /*position: absolute;background: url(../Images/subNav-btn/sub_hover_bg.jpg) center bottom no-repeat;*/
+
+}
+#subNav-center .navigation:hover .button:hover .listContainer {
+  display: block;
+}

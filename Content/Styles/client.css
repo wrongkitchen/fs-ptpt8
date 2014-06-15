@@ -1,0 +1,62 @@
+html {
+  overflow: hidden;
+}
+#wrapper {
+  width: 824px;
+  height: 614px;
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#header {
+  position: relative;
+  height: 92px;
+  width: 100%;
+  background-color: #383431;
+}
+#header #logo {
+  position: absolute;
+  display: inline-block;
+  left: 41px;
+  top: 0;
+}
+#header #news {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  color: #ffffff;
+  font-size: 11px;
+  float: right;
+}
+#content {
+  position: relative;
+}
+#content #enquiry {
+  position: absolute;
+  bottom: 92px;
+  left: 151px;
+}
+#footer {
+  position: relative;
+  height: 32px;
+  width: 100%;
+  padding: 18px 0;
+  background-color: #383431;
+  color: #ffffff;
+}
+#footer .container {
+  width: 723px;
+  margin: 0 auto;
+  position: relative;
+}
+#footer #contact {
+  float: left;
+  border-left: #f84139 5px solid;
+  padding-left: 7px;
+}
+#footer #copyright {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #666666;
+}

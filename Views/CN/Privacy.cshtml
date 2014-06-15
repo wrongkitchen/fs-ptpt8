@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "隐私安全 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/quicklink.css" />
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/member.css" />
+}
+@section AdditionalScripts {
+    @*<script type="text/javascript" src="@ImageServer/Scripts/Custom/about.js"></script>*@
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/quicklink/banner/privacy.jpg" alt="">
+                </div>
+                <div class="article privacy">
+                	<p>和记娱乐为客户能安心游戏，建立了针对游戏玩家信息保密的多重安全机制，尽全力保护客户资料的信息安全，确保客户资料不被黑客或者其他机构盗取。</p>
+                    <p>同时，和记娱乐严格执行客户隐私制度，倾全力提供最好的保密措施。和记娱乐所独具的安全操作设定，确保您的个人数据不被泄露，同时使您在本公司的权益不会受到任何侵犯。</p>
+                    <br/>
+                    <p>客户注册并开户后，意味着将接受我们如下服务：</p>
+                    <br/>
+                    <h3 class="title">&gt; 传送优惠资讯</h3>
+                    <p>在开户后，客户将会不定期收到由和记娱乐发出之优惠资讯。</p>
+                    <br/>
+                    <h3 class="title">&gt; 更改您的个人资料</h3>
+                    <p>客户可随时更改个人资料。如有需要，可向我们的客户服务员联络。</p>
+                    <br/> 
+                    <h3 class="title">&gt; 个人资料的安全与准确性</h3>
+                    <p>1. 我们承诺妥善保存客户所有资料，并维护相关资料的准确性。客户有权保留个人资料及要求更改任何错误；</p>
+                    <p>2. 同时，我们更会采取所有步骤以确保客户资料在处理过程中，能达至最严格的安全标准；</p>
+                    <p>3. 我们承诺不会将客户的资料泄露给任何第三方。</p>
+                    <br/>
+                    <h3 class="title">&gt; 安全防护</h3>
+                    <p>和记娱乐为确保客户的个人资讯及资料安全保密，所提交给我们的相关內容，都必定经过高科技的保密设施储存进我们的服务器內。这项保密设施，使用的是目前最先进的防火墙技术，和记娱乐网站和软件更会采用最佳的保密程序来保证玩家的个人资料不会被第三方盗取。</p>
+                    <br/><br/>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false" })
+                <div class="block discount"><a href="/CN/Promotions" target="_self"><img src="@ImageServer/Content/Images/member/01_12.jpg" alt=""></a></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

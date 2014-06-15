@@ -1,0 +1,16 @@
+﻿@model Exception
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>500 错误</title>
+</head>
+<body>
+    <div>
+        @Html.Raw(Model.ToString().Replace(" ", "&nbsp").Replace(Environment.NewLine, "<br />"))
+    </div>
+</body>
+</html>

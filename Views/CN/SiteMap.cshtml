@@ -1,0 +1,138 @@
+﻿@{
+    ViewBag.Title = "网站地图 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/quicklink.css" />
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/member.css" />
+}
+@section AdditionalScripts {
+    @*<script type="text/javascript" src="@ImageServer/Scripts/Custom/about.js"></script>*@
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/quicklink/banner/sitemap.jpg" alt="">
+                </div>
+                <div class="article sitemap">
+                	<table>
+                    	<tr>
+                        	<td class="title"><div><a href="@Url.Action("Index", "CN")" target="_self">首頁</a></div></td>
+                            <td class="title"><div><a href="@Url.Action("AboutUs", "CN")" target="_self">关于我们</a></div></td>
+                            <td class="title"><div><a href="@Url.Action("BBINIntro", "CN")" target="_self">真人娱乐</a></div></td>
+                        </tr>
+                    	<tr>
+                        	<td class="details">
+                            	<a href="@Url.Action("Register", "CN")" target="_self">&gt; 免费开户</a><br/>
+                                <a href="@Url.Action("BBINIntro", "CN")" target="_self">&gt; 免费试玩</a><br/>
+                                <a href="@Url.Action("Index", "CN")" target="_self">&gt; 用户登录</a><br/>
+                                <a href="#" target="_self">&gt; 在线服务</a>
+                            </td>
+                        	<td class="details">
+                            	<a href="@Url.Action("AboutUs", "CN")" target="_self">&gt; 公司简介</a><br/>
+                                <a href="@Url.Action("License", "CN")" target="_self">&gt; 博彩牌照</a><br/>
+                                <a href="@Url.Action("Safe", "CN")" target="_self">&gt; 资金安全</a><br/>
+                                <a href="@Url.Action("Advantages", "CN")" target="_self">&gt; 网博优势</a><br/>
+                                <a href="@Url.Action("FAQ", "CN")" target="_self">&gt; 常见问题</a><br/>
+                                <a href="@Url.Action("Contact", "CN")" target="_self">&gt; 联系我们</a>
+                            </td>
+                        	<td class="details">
+                            	<a href="@Url.Action("BBINIntro", "CN")" target="_self">&gt; 台湾厅 - BBIN平台</a><br/>
+                                <a href="@Url.Action("AGIntro", "CN")" target="_self">&gt; 澳门厅 - AG旗舰厅</a><br/>
+                                <a href="@Url.Action("MGIntro", "CN")" target="_self">&gt; 伦敦厅 - MG平台</a>
+                            </td>
+                        </tr>
+                    	<tr>
+                        	<td class="title"><div><a href="@Url.Action("EGames", "CN")" target="_self">MG电子游艺</a></div></td>
+                            <td class="title"><div><a href="@Url.Action("Sports", "CN")" target="_self">体育投注</a></div></td>
+                            <td class="title"><div><a href="@Url.Action("VIPClub", "CN")" target="_self">星级俱乐部</a></div></td>
+                        </tr>
+                    	<tr>
+                        	<td class="details">
+                            	<a href="@Url.Action("EGames", "CN")" target="_self">&gt; 老虎机</a><br/>
+                                <a href="@Url.Action("EGames", "CN")" target="_self">&gt; 大型电玩</a><br/>
+                                <a href="@Url.Action("EGames", "CN")" target="_self">&gt; 桌上游戏</a><br/>
+                                <a href="@Url.Action("EGames", "CN")" target="_self">&gt; 经典老虎机</a>
+                            </td>
+                        	<td class="details">
+	                            <a href="@Url.Action("Sports", "CN")" target="_self">&gt; 冠军赛</a><br/>
+                                <a href="@Url.Action("Sports", "CN")" target="_self">&gt; 足球</a><br/>
+                                <a href="@Url.Action("Sports", "CN")" target="_self">&gt; 篮球</a><br/>
+                                <a href="@Url.Action("Sports", "CN")" target="_self">&gt; 网球</a><br/>
+                                <a href="@Url.Action("Sports", "CN")" target="_self">&gt; 棒球</a>
+                            </td>
+                        	<td class="details">
+	                            <a href="@Url.Action("VIPClub", "CN")" target="_self">&gt; 星级首页</a><br/>
+                                <a href="@Url.Action("VIPPrivilege", "CN")" target="_self">&gt; VIP特权</a><br/>
+                                <a href="@Url.Action("VIPFAQ", "CN")" target="_self">&gt; 常见问题</a><br/>
+                                <a href="@Url.Action("VIPTerms", "CN")" target="_self">&gt; 规则条款</a>
+                            </td>
+                        </tr>
+                    	<tr>
+                        	<td class="title"><div><a href="@Url.Action("Promotions", "CN")" target="_self">最新优惠</a></div></td>
+                            <td class="title"><div><a href="@Url.Action("Affiliate", "CN")" target="_self">加盟合作</a></div></td>
+                            @*<td class="title"><div><a href="#" target="_self">星级俱乐部</a></div></td>*@
+                        </tr>
+                    	<tr>
+                        	<td class="details"></td>
+                        	<td class="details">
+	                            <a href="@Url.Action("Affiliate", "CN")" target="_self">&gt; 优势概览</a><br/>
+                                <a href="@Url.Action("AffiliateCommission", "CN")" target="_self">&gt; 佣金方案</a><br/>
+                                <a href="@Url.Action("AffiliateGift", "CN")" target="_self">&gt; 回馈礼金</a><br/>
+                                <a href="@Url.Action("AffiliateAgreement", "CN")" target="_self">&gt; 合作协议</a><br/>
+                                <a href="@Url.Action("AffiliateFAQ", "CN")" target="_self">&gt; 常见问题</a>
+                            </td>
+                        	@*<td class="details">
+	                            <a href="#" target="_self">&gt; 星级首页</a><br/>
+                                <a href="#" target="_self">&gt; VIP特权</a><br/>
+                                <a href="#" target="_self">&gt; 常见问题</a><br/>
+                                <a href="#" target="_self">&gt; 规则条款</a>
+                            </td>*@
+                        </tr>
+                    	<tr>
+                        	<td class="title"><div><a href="@Url.Action("Index", "Member")" target="_self">会员中心</a></div></td>
+                            <td class="title"><div><a href="#" target="_self">其他</a></div></td>
+                            <td class=""></td>
+                        </tr>
+                    	<tr>
+                        	<td class="details">
+                            	<a href="@Url.Action("Finance", "Member")" target="_self">&gt; 财务中心</a><br/>
+                                <a href="@Url.Action("Transfer", "Member")" target="_self">&gt; 额度转移方式</a><br/>
+                                <a href="@Url.Action("Friends", "Member")" target="_self">&gt; 好友推荐</a><br/>
+                                <a href="@Url.Action("Info", "Member")" target="_self">&gt; 修改资料</a><br/>
+                                <a href="@Url.Action("Transactions", "Member")" target="_self">&gt; 历史记录</a><br/>
+                                <a href="@Url.Action("Notices", "Member")" target="_self">&gt; 最新公告</a>
+                            </td>
+                        	<td class="details">
+                            	<a href="@Url.Action("HowToDeposit", "CN")" target="_self">&gt; 如何存取款</a><br/>
+                                <a href="#" target="_self">&gt; 如何投注</a><br/>
+                                <a href="@Url.Action("Affiliate", "CN")" target="_self">&gt; 加盟合作</a><br/>
+                                <a href="@Url.Action("SiteMap", "CN")" target="_self">&gt; 网站地图</a><br/>
+                                <a href="@Url.Action("Duty", "CN")" target="_self">&gt; 博彩责任</a><br/>
+                                <a href="@Url.Action("Contact", "CN")" target="_self">&gt; 联系我们</a><br/>
+                                <a href="@Url.Action("AboutUs", "CN")" target="_self">&gt; 集团优势</a>
+                            </td>
+                        	<td class="details"></td>
+                        </tr>
+                    </table>
+                    <br/><br/>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN")
+                <div class="block discount"><a href="/CN/Promotions" target="_self"><img src="@ImageServer/Content/Images/member/01_12.jpg" alt=""></a></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

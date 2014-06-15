@@ -1,0 +1,105 @@
+﻿@using Heji.Library.Models.TO
+@using Heji.Web.Helpers
+@model Heji.Web.Models.MemberInfoViewModel
+@{
+    ViewBag.Title = "修改资料 - 会员中心 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/member.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/member.js"></script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <ul id="memberNav" class="sectionNav transparent black">
+                    <li class="first button"><a href="@Url.Action("Finance", "Member")" target="_self">出纳柜台</a></li>
+                    <li class="separate">|</li>
+                    @if (Model.CurrentUser.TransferType < 2)
+                    {
+                    <li class="button" style="display:none"><a href="@Url.Action("Transfer", "Member")" target="_self">额度转移方式</a></li>
+                    <li class="separate" style="display:none">|</li>
+                    }
+                    <li class="button"><a href="@Url.Action("Transactions", "Member")" target="_self">历史记录</a></li>
+                    <li class="separate">|</li>
+                    <li class="button active"><a href="@Url.Action("Info", "Member")" target="_self">修改资料</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Notices", "Member")" target="_self">最新公告</a></li>
+                </ul>
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/member/member-banner-05.jpg" alt="">
+                </div>
+                <div class="article info">
+                    <p class="title">修改资料须知：</p>
+                    <p>1、设置个人安全资料（用于绑定银行卡和申请提款）<br/>
+2、温情提醒：为了避免非法人士通过绑定银行卡窃取您的账户资金，设置的取款人姓名必须与绑定的银行卡开户人姓名一致，并且只设置一次，如需修改，必须联系客服。</p>
+                    <br/>
+                    <div class="tabBlock">
+                        <div class="tabButton">
+                            <a href="@Url.Action("Info", "Member")" target="_self"><div class="tab">修改资料</div></a>
+                            <a href="@Url.Action("Infopassword", "Member")" target="_self"><div class="tab">修改密码</div></a>
+                            <a href="@Url.Action("Infosecurity", "Member")" target="_self"><div class="tab active">密保问题</div></a>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="tabContent active modifyQuestion">
+                            <p>@(Model.Questions != null ? "修改密保":"设置密保") 问题（任何时候我们都不会显示您的设置）</p>
+                            <table>
+                                <tr><td>用户名：</td><td>@Model.CurrentUser.UserName</td></tr>
+                                @if (Model.Questions != null)
+                                { 
+                                <tr><td>原有问题：</td><td>
+                                    <select id="sq_old" name="sq_old">
+                                        <option value="">---请选择密保问题---</option>
+                                    @if (Model.DefaultQuestion != null)
+                                    {
+                                        foreach (UserSecurityDefaultQuestionTO usdq in Model.DefaultQuestion)
+                                        {
+                                            <option value="@usdq.question">@usdq.question</option>
+                                        }
+                                    }
+                                    </select>
+                                </td></tr>
+                                <tr><td>原有回答：</td><td><input type="text" name="uan_old" id="uan_old" /></td></tr>
+                                }
+
+                                <tr><td>问题：</td><td>
+                                    <select id="sq_new" name="sq_new">
+                                        <option value="">---请选择密保问题---</option>
+                                    @if (Model.DefaultQuestion != null)
+                                    {
+                                        foreach (UserSecurityDefaultQuestionTO usdq in Model.DefaultQuestion)
+                                        {
+                                            <option value="@usdq.question">@usdq.question</option>
+                                        }
+                                    }
+                                    </select>
+                                </td></tr>
+                                <tr><td>回答：</td><td><input type="text" name="uan_new" id="uan_new" /></td></tr>
+                            </table>
+                            <p>注意：请一定牢记您设置的问题和答案！在您找回密码时，将不会显示您设置过的问题！</p>
+                            <button class="redButton" id="Infosecurity">提交 &gt;</button>
+                            <button class="greyButton">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false" })
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

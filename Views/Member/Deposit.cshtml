@@ -1,0 +1,273 @@
+﻿@using Heji.Web.Helpers
+@model Heji.Web.Models.MemberDepositViewModel
+@{
+    ViewBag.Title = "存款 - 会员中心 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/member.css" />
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/uploadify/uploadify.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery.uploadify.min.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/member.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/deposit.js"></script>
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        scroll(0, 300)
+    });
+
+    function click_banktype() {
+        var aa = $('input[name=bank_account_type]:checked').val();
+        if (aa != "onlinebanking") {
+            $("#cardno").val("1234");
+        } else {
+            $("#cardno").val("请准确填写银行卡号后四位");
+        }
+}
+var test = 'test';
+</script>
+
+
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <ul id="memberNav" class="sectionNav transparent black">
+                    <li class="first button active"><a href="@Url.Action("Finance", "Member")" target="_self">出纳柜台</a></li>
+                    <li class="separate">|</li>
+                    @if (Model.CurrentUser.TransferType < 2)
+                    {
+                    <li class="button" style="display:none"><a href="@Url.Action("Transfer", "Member")" target="_self">额度转移方式</a></li>
+                    <li class="separate" style="display:none">|</li>
+                    }
+                    <li class="button"><a href="@Url.Action("Transactions", "Member")" target="_self">历史记录</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Info", "Member")" target="_self">修改资料</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Notices", "Member")" target="_self">最新公告</a></li>
+                </ul>
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/member/01_03.jpg" alt="">
+                </div>
+                <div class="article finance">
+                    <table class="user">
+                        <tr>
+                            <td>账户: @Model.CurrentUser.UserName</td>
+                            <td class="padLeft">
+                                账户余额： <span class="member_balance">@Heji.Web.Helpers.WebFunctions.GetFormattedCurrency(Model.CurrentUser.Balance)</span> 元
+                            </td>
+                        </tr>
+                    </table>
+                 @Html.Action("gameMessage", "Member")
+                 
+                    <div class="tabBlock">
+                        <div>
+                            <a href="@Url.Action("DepositSwitch", "Member")"><div class="tab active"style=" background-color: red; color: white; ">存款</div></a>
+                            <a href="@Url.Action("Withdraw", "Member")"><div class="tab">取款</div></a>
+                            <a href="@Url.Action("BankAccounts", "Member")"><div class="tab">绑定银行卡</div></a>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="tabContent deposit active">
+                        	<div class="method">   
+                                @Html.Action("SharedDepositMenu", "CN")                                
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="subTab manualTab active">
+                                <div class="form">
+                                    <ul class="numListPoint">
+                                       <li>
+                                       @if (Model.SetBanks != null && Model.SetBanks.Count > 0)
+                                       {
+                                           <p>选择银行卡：</p>
+                                           foreach (Heji.Library.Models.TO.BankTO b in Model.SetBanks)
+                                           {
+                                               <div class=""><input type="radio" name="_radio" onclick="$('#receiver').val('@b.name');$('#shortName').val('@b.shortName');$('#cardmemo').val('@(b.shortName + "," + Heji.Common.Function.RightString(b.cardNo, 4))')" />@(b.bankID + ", " + b.name + ", " + b.cardNo + ", " + b.subbank)</div>
+                                           }
+                                       }
+                                       else
+                                       {
+                                           <div style="margin-right:10px; margin-top:4px;" class="pull-left">*收款银行:</div>
+                                           <div class="bank bank2"><input id="GS" name="bank_list" type="radio" value="bank2" @(Model.BankCode == "GS" ? "checked='checked'" : "") onclick="window.location.href = '?bankCode=GS'" /></div>
+                                           <div class="bank bank3"><input id="JS" name="bank_list" type="radio" value="bank3" @(Model.BankCode == "JS" ? "checked='checked'" : "") onclick="window.location.href = '?bankCode=JS'" /></div>
+                                           <div class="bank bank5"><input id="NY" name="bank_list" type="radio" value="bank5" @(Model.BankCode == "NY" ? "checked='checked'" : "") onclick="window.location.href = '?bankCode=NY'" /></div>
+                                           <div class="bank bank1"><input id="ZS" name="bank_list" type="radio" value="bank1" @(Model.BankCode == "ZS" ? "checked='checked'" : "") onclick="window.location.href = '?bankCode=ZS'" /></div>
+                                           
+                                            <!--<div class="bank bank4"><input id="JT" name="bank_list" type="radio" value="bank4" @(Model.BankCode == "JT" ? "checked='checked'" : "") onclick="window.location.href = '?bankCode=JT'" /></div>-->
+                                           <div class="clearfix"></div>
+                                           <div class="lineBlock"></div>
+                                       }
+                                       </li> 
+                                       <li>
+                                       @if (string.IsNullOrEmpty(Model.BankCode))
+                                       {
+                                          <table width="100%">
+                                            <tr>
+                                              <td width="50%">
+                                                <table width="100%">
+                                                  <tr>
+                                                    <td>*收款人姓名: </td>
+                                                    <td><button class="copyButton darkGreyButton">复制</button></td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>*银行卡号: </td>
+                                                    <td><button class="copyButton darkGreyButton">复制</button></td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>*开户网点:</td>
+                                                    <td><button class="copyButton darkGreyButton">复制</button></td>
+                                                  </tr>
+                                                </table>
+                                              </td>
+                                              <td width="50%">
+                                                <div>登录网银:</div>
+                                                <div class="bank bank2"></div>
+                                              </td>
+                                            </tr>
+                                          </table>
+                                          <br />
+                                          <div class="lineBlock"></div>
+
+                                            <!-- <p>* 收款银行信息：</p> -->
+                                            <!-- <span>请选择收款银行</span> -->
+                                       }
+                                       else
+                                       {
+                                           if (Model.GeneralBanks != null && Model.GeneralBanks.Count > 0)
+                                           {
+                                                
+                                               <p>* 收款银行信息：</p>
+                                               <table>
+                                                  <tr><td class="key middle">收款人姓名：</td><td>@Model.GeneralBanks.First().name</td>
+                                                  </tr>
+                                                  <tr><td class="key middle">银行卡号：</td><td>@Model.GeneralBanks.First().cardNo</td></tr>
+                                                  <tr><td class="key middle">开户网点：</td><td>@Model.GeneralBanks.First().subbank</td></tr>
+                                               </table>
+                                               <div class="hint">温馨提示： 以上界面功能可用于客户索要汇款帐户，只要本界面显示的汇款卡号，皆为平台的官方收款帐号。汇款成功后，请填写如下信息，进行存款信息提交。
+                                               </div>
+                                               <div class="clearfix"></div>
+                                           }
+                                           else
+                                           {
+                                               <p>* 收款银行信息：</p>
+                                               <table style="margin-top:10px">
+                                                    <tr>
+                                                        <td class="key middle">收款人姓名：</td>
+                                                        <td><input type="text" id="receiver"  onkeyup="value=value.replace(/[\d]/g,'')" /></td>
+                                                    </tr>
+                                                </table>
+                                                <div class="hint" style="color:Red">温馨提示：请您联系@*<a href="http://67.198.160.58/chat/chatClient/chatbox.jsp?companyID=306&configID=9&enterurl=@Request.Url.Host">*@在线客服@*</a>*@索取收款银行卡，并在提交存款单时填写收款人姓名。</div>
+                                               
+                                           }
+
+                                       }
+                                       </li>
+                                      <!-- <li class="num3">-->
+                                       <li>
+                                            <p> * 汇款人信息：</p>
+                                            <input type="hidden" id="shortName" value="@(Model.GeneralBanks != null && Model.GeneralBanks.Count > 0 ? Model.GeneralBanks.First().shortName : Model.BankCode)" />
+                                            <input type="hidden" id="cardmemo" value="@(Model.GeneralBanks != null && Model.GeneralBanks.Count > 0 ? Model.GeneralBanks.First().shortName + "，" + Heji.Common.Function.RightString(Model.GeneralBanks.First().cardNo, 4) : "")" />
+                                            <input type="hidden" id="receiver" value="@( Model.GeneralBanks != null && Model.GeneralBanks.Count > 0 ? Model.GeneralBanks.First().name : "")" />
+                                            <table>
+                                                <tr>
+                                                    <td class="key middle">*存款金额:</td>
+                                                    <td><input type="text" id="amount" value="金额不少于100元" onfocus="if(value =='金额不少于100元'){value =''}" onblur="if (value ==''){value='金额不少于100元'}" onkeyup="value=value.replace(/[^\d\.]/g,'')"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="key middle">*存款姓名:</td>
+                                                    <td><input type="text" id="sender" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="key middle">*卡号最後四位:</td>
+                                                    <td><input type="text" id="cardno"  value="请准确填写银行卡号后四位" onfocus="if(value =='请准确填写银行卡号后四位'){value =''}" onblur="if (value ==''){value='请准确填写银行卡号后四位'}" onkeyup="value=value.replace(/[^\d]/g,'')"  maxlength=4 /></td>
+                                                </tr>
+
+                                                <tr>
+                                                  <td></td>
+                                                  <td>
+                                                    <span style="color:red">*     &nbsp;</span>
+                                                    *如果使用ATM机或者柜台现金存款,请填8888
+                                                  </td>
+                                                  <br/> 
+                                                </tr>
+                                                 <tr> <td></td><td><span style="color:red">&nbsp;</span> </tr>
+                                            
+                                                <tr>
+                                                    <td class="key middle">存款类型：</td>
+                                                    <td>
+                                                        <label class="pull-left"><input name="bank_account_type"  type="radio" value="onlinebanking" /><span>网银转账</span></label>
+                                                        <label class="pull-left"><input name="bank_account_type"  type="radio" value="atm" /><span>ATM转账</span></label>
+                                                        <label class="pull-left"><input name="bank_account_type"  type="radio" value="counter" /><span>手机转款</span></label>
+                                                        <div class="clearfix"></div>
+                                                        <!-- 跨行存款： -->
+                                                        <label><input type="checkbox" id="interbank" value="" /><span>如果是跨行转账请点击选中。</span></label>
+                                                    </td>
+                                                </tr>
+                                                <tr><td colspan="3" height='10'></td></tr>
+                                                <tr>
+                                                    <td class="key middle">上传存款凭证<br/>（可选）：</td>
+                                                    <td>
+                                                      <table width="100%">
+                                                        <tr>
+                                                          <td align="left" valign="top" width="50%">
+                                                            <input id="uploadify" name="uploadify" type="file" />
+                                                            <div id="preview"></div>
+                                                          </td>
+                                                          <td align="left" valign="top" width="50%">
+                                                            <input id="snapshot" name="snapshot" type="hidden" value="" />
+                                                            上传存款证，可帮助工作人员更快给您上款<br />
+                                                            支持文件格式: JPG, GIF, BMP, PNG, 文件最大不超过2MB<br />
+                                                            <a href="/download/jietu.zip" style="color:Red">没有载图工具</a>？
+                                                          </td>
+                                                        </tr>
+                                                      </table>
+                                                        
+                                                    </td>
+                                                </tr>
+                                                @*<tr>
+                                                    <td class="key middle">验证码：</td>
+                                                    <td><input type="text" /></td>
+                                                </tr>*@
+                                            </table>
+                                            <br/>
+
+                                            <div class="lineBlock"></div>
+                                            <br />
+                                            <p>
+                                              <div class="red">温馨提示：</div>
+                                              完成存款后，您可到“历史纪录>存取款纪录”页面中申请 <br />
+                                              最高100％的首存红利和30％的再存红利！
+                                            </p>
+                                            <br />
+
+                                            <button class="redButton" id="manualDeposit">提交 &gt;</button>
+                                            <button class="greyButton" id="manualReset">重置</button>
+                                            <div class="clearfix"></div>
+                                       </li>
+                                    </ul>
+                                </diV>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN")
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

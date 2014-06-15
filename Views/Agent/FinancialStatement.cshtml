@@ -1,0 +1,80 @@
+﻿@using Heji.Web.Helpers
+@using Heji.Library.Models.TO
+@model Heji.Web.Models.AgentFinancialStatementViewModel
+           
+@{
+    ViewBag.Title = "代理中心 - 和记娱乐官方网站";
+    Layout = "~/Views/Shared/_AgentLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/agent.js"></script>
+}
+
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/center/banner_finance.jpg" alt="" />
+                </div>
+                <div class="article finance">
+                    <table class="center">
+                        <tr>
+                            <td>报表月份</td>
+                            <td>活跃人数</td>
+                            <td>有效投注额</td>
+                            <td>派彩</td>
+                            <td>红利</td>
+                            <td>佣金比例</td>
+                            <td>佣金</td>
+                            <td style="width:20%">备注</td>
+                        </tr>
+                    @if (Model.Agreport != null && Model.AgreportCount > 0)
+                    {
+                        foreach (AgreportTO tnx in Model.Agreport)
+                        {
+
+                            <tr>
+                                <td><a href="@Url.Action("FinancialStatementM", "Agent", new { Date = tnx.Agmonth })" style="color:Red">@tnx.Agmonth</a></td>
+                                <td>@tnx.HyNum</td>
+                                <td>@tnx.Betting</td>
+                                <td>@tnx.PcCash</td>
+                                <td>@tnx.Bonus</td>
+                                <td>@Math.Ceiling(tnx.Ratio * 100) %</td>
+                                <td>@tnx.Brokerage</td>
+                                <td>@tnx.BakNote</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                            <tr>
+                                <td colspan="9">暂无数据！</td>
+                            </tr>
+                    }
+                    </table>
+                    @if (Model.Agreport != null && Model.AgreportCount > 0)
+                    {
+                        <div>@Html.Pager("", Model.PageNum, Model.PageSize, Model.AgreportCount)</div>
+                    }
+                    <br /><br />
+                    <div style="text-align:center;">
+                        共条 每页30条 第1/1页  <a href="#" class="white">[ 首页 ]</a> <a href="#" class="white">[ 上一页 ]</a> <a href="#" class="white">[ 下一页 ]</a> <a href="#" class="white">[ 尾页 ]</a>
+                    </div>
+                </div>
+            </div>
+            @Html.Action("SharedAgentInformation", "Agent")
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>
+

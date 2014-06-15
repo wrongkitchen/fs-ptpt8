@@ -1,0 +1,62 @@
+﻿@model Heji.Web.Models.MemberTransferViewModel
+@{
+    ViewBag.Title = "额度转移 - 会员中心 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+        string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/member.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/member.js"></script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <ul id="memberNav" class="sectionNav transparent black">
+                    <li class="first button"><a href="@Url.Action("Finance", "Member")" target="_self">出纳柜台</a></li>
+                    <li class="separate">|</li>
+                    @if (Model.CurrentUser.TransferType < 2)
+                    {
+                    <li class="button active" style="display:none"><a href="@Url.Action("Transfer", "Member")" target="_self">额度转移方式</a></li>
+                    <li class="separate" style="display:none">|</li>
+                    }
+                    <li class="button"><a href="@Url.Action("Transactions", "Member")" target="_self">历史记录</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Info", "Member")" target="_self">修改资料</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Notices", "Member")" target="_self">最新公告</a></li>
+                </ul>
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/member/member-banner-02.jpg" alt="">
+                </div>
+                <div class="article transfer">
+                    <table>
+                        <tr>
+                            <td class="cellLeft"><a href="javascript: void(0);" id="auto_transfer"><img src="@(Model.CurrentUser.CreditTransferType == 1 ? Url.Content("~/Content/Images/member/member_transfer_auto_selected.jpg") : Url.Content("~/Content/Images/member/member_transfer_auto.jpg"))" /></a></td>
+                            <td class="cellRight"><a href="javascript: void(0);" id="manual_transfer"><img src="@(Model.CurrentUser.CreditTransferType == 0 ? @ImageServer/Content/Images/member/member_transfer_manual_selected.jpg") : @ImageServer/Content/Images/member/member_transfer_manual.jpg"))" /></a></td>
+                        </tr>
+                    </table>
+                    <div class="lineBlock"></div>
+                    <p class="title">说明：</p>
+                    <div class="desc"><span>全自动额度转移：</span>最新开发的额度转移功能，用户选择大厅后，额度自动带到该大厅。如用户切换到其他大厅，所有额度则会跟随用户到达该大厅。更智能、快捷、稳定。<span>（推荐使用）</span>。</div>
+                    <div class="desc"><span>手动额度转移：</span>用户游戏前，必须手动把额度转移到该大厅才能游戏。如用户切换到其他厅，则需要再次手动把额度转移到该大厅。<spa>（方便一些不习惯的老用户）</span></div>
+
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN")
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

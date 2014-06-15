@@ -1,0 +1,463 @@
+/* hover setting */
+.zoneBtn {
+  position: relative;
+  clear: both;
+}
+.zoneBtn .overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0px;
+  width: 100%;
+  height: 380px;
+  z-index: 3;
+  display: none;
+}
+.zoneBtn:hover .overlay {
+  display: block;
+}
+.zoneBtn li {
+  position: relative;
+  background-repeat: no-repeat;
+  height: 60px;
+  background-position: 0 0;
+  cursor: pointer;
+  border-top: 2px solid #6f0606;
+  border-left: 1px solid #6f0606;
+  border-right: 1px solid #6f0606;
+  z-index:5;
+}
+.zoneBtn li.borderLeft {
+  border-right: none;
+}
+.zoneBtn li.borderRight {
+  border-left: none;
+}
+.zoneBtn li .hoverContent {
+  display: none;
+  position: relative;
+  height: 121px;
+  overflow: hidden;
+  top: -180px;
+  left: 0;
+  z-index: 5;
+  text-align: center;
+}
+.zoneBtn li .hoverContent .btnGroup {
+  position: absolute;
+  height: 30px;
+  bottom: 0;
+  width: 100%; left:0;
+  z-index: 5;
+  line-height: 30px;
+  text-align: left;
+  color: #e4272a;
+}
+.zoneBtn li .hoverContent .btnGroup .redArrow.pull-left {
+  margin-left: 10px;
+}
+.zoneBtn li .hoverContent .btnGroup .redArrow.pull-right {
+  margin-right: 10px;
+}
+.zoneBtn li .hoverContent .btnGroup .redArrow {
+  font-size: 13px;
+}
+.zoneBtn li:hover {
+  background-position: -248px 0;
+}
+.zoneBtn li a{ display: block; width:100%; height:100%; }
+.zoneBtn li:hover .hoverContent {
+  display: block;
+}
+.zoneBtn .tw_bbin {
+  background-image: url(../Images/home/zone/zone_01.jpg);
+  width: 248px;
+}
+.zoneBtn .macau_ag {
+  background-image: url(../Images/home/zone/zone_04.jpg);
+  width: 248px;
+}
+.zoneBtn .china_ag {
+  background-image: url(../Images/home/zone/zone_03.jpg);
+  width: 248px;
+}
+.zoneBtn .china_gd {
+  background-image: url(../Images/home/zone/zone_02.jpg);
+  width: 248px;
+}
+.leftRightContent{ overflow: hidden; }
+.leftRightContent .leftContent {
+  width: 686px;
+}
+.leftRightContent .leftContent .slideshowWrap {
+  position: relative;
+  width: 686px;
+  height: 380px;
+  overflow: hidden;
+}
+.leftRightContent .leftContent .slideshowWrap #sliderLeftArrow {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  top: 39%;
+  left: 0;
+  display: none;
+  background-image: url(../Images/arrow/_0005_Default---left.png);
+  z-index: 10;
+  cursor: pointer;
+}
+.leftRightContent .leftContent .slideshowWrap #sliderLeftArrow:hover {
+  background-image: url(../Images/arrow/_0006_Hover---left.png);
+}
+.leftRightContent .leftContent .slideshowWrap #sliderRightArrow {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  top: 39%;
+  right: 0;
+  display: none;
+  background-image: url(../Images/arrow/_0001_Default---right.png);
+  z-index: 10;
+  cursor: pointer;
+}
+.leftRightContent .leftContent .slideshowWrap #sliderRightArrow:hover {
+  background-image: url(../Images/arrow/_0002_Hover---right.png);
+}
+.leftRightContent .leftContent .slideshowWrap:hover #sliderLeftArrow,
+.leftRightContent .leftContent .slideshowWrap:hover #sliderRightArrow {
+  display: block;
+}
+.leftRightContent .leftContent .slideshowWrap .slideDesc {
+  position: absolute;
+  height: 103px;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  color: #FFF;
+}
+.leftRightContent .leftContent .slideshowWrap .slideDescList {
+  padding-left: 20px;
+  margin-top: 26px;
+  margin-left: 28px;
+  font-size: 13px;
+}
+.leftRightContent .leftContent .slideshowWrap .slideDescList li {
+  float: left; width:50%;
+  margin-bottom: 8px;
+}
+.leftRightContent .leftContent .slideshowWrap .slideDescList li.clearfix{
+  list-style: none;
+}
+.leftRightContent .leftContent .slideshowWrap .slideDescLeft {
+  width: 400px;
+}
+.leftRightContent .leftContent .slideshowWrap .slideDescRight {
+  width: 266px;
+  padding-right: 20px;
+}
+.leftRightContent .leftContent .slideshowWrap .slideDescRight .dots {
+  margin-bottom: 20px;
+}
+.leftRightContent .leftContent .slideshowWrap .slideDescRight .dots a {
+  display: block;
+  width: 11px;
+  height: 11px;
+  background-position: 0 0;
+  float: left;
+  background-image: url(../Images/dot.gif);
+  background-repeat: no-repeat;
+  margin-left: 13px;
+}
+.leftRightContent .leftContent .slideshowWrap .slideDescRight .dots a.active {
+  background-position: -11px 0;
+}
+.leftRightContent .leftContent .slideshowWrap .slideDescRight #slideshowNav {
+  position: absolute;
+  top: 29px;
+  right: 37px;
+}
+.leftRightContent .leftContent .slideshowWrap .slideDescRight .redArrow {
+  position: absolute;
+  top: 57px;
+  right: 35px;
+}
+.leftRightContent .leftContent #slideshow {
+  position: relative;
+  height: 421px;
+  top: 0;
+  left: 0;
+}
+.leftRightContent .leftContent #slideshow .slides {
+  width: 10000px;
+  position: absolute;
+}
+.leftRightContent .leftContent #slideshow .slides .slide {
+  float: left;
+  width: 686px;
+  height: 421px;
+}
+.leftRightContent .leftContent #slideshow .slides .slide img{
+  width:100%;
+  height:100%;
+}
+.leftRightContent .rightContent {
+  width: 314px;
+  height: 380px;
+  overflow: hidden;
+}
+.leftRightContent .rightContent .block.noBorder {
+  border-width: 0;
+}
+.flashgame {
+  margin: 20px 0;
+}
+.entertainment {
+  position: relative;
+  margin: 20px 0;
+}
+.entertainment .title {
+  height: 60px;
+  background-image: url(../Images/home/entertainment-title.jpg);
+}
+.entertainment .title a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.entertainment .leftBtn {
+  position: absolute;
+  width: 35px;
+  height: 45px;
+  z-index: 5;
+  cursor: pointer;
+  top: 50%;
+  left: -16px;
+  background-image: url(../Images/arrow/grey-left-box.gif);
+}
+.entertainment .rightBtn {
+  position: absolute;
+  width: 35px;
+  height: 45px;
+  z-index: 5;
+  cursor: pointer;
+  top: 50%;
+  right: -16px;
+  background-image: url(../Images/arrow/grey-right-box.gif);
+}
+.entertainment .content {
+  position: relative;
+  overflow: hidden;
+  height: 438px;
+}
+.entertainment .content .contentContain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10000px;
+  height: 438px;
+}
+.entertainment .content .col {
+  position: relative;
+  height: 100%;
+  width: 204px;
+  color: #050d2e;
+  float: left;
+  background-color: #bda54b;
+  border-top: 2px solid #6f0606;
+  border-right: 2px solid #6f0606;
+}
+.entertainment .content .col.highlight {
+  width: 400px;
+}
+.entertainment .content .col.end {
+  border-right: 2px solid #383431;
+}
+.entertainment .content .col .desc {
+  padding: 20px 25px 15px 25px;
+}
+.entertainment .content .col .main {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.entertainment .content .col .sub {
+  margin-bottom: 10px;
+}
+.entertainment .content .col .img .downloadClientButton{
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  z-index: 10;
+  right: 0;
+  top: 200px;
+}
+.entertainment .content .col .img {
+  overflow: hidden;
+  width: 100%;
+  height: 263px;
+  position:relative;
+}
+.entertainment .content .col .img img {
+  width:100%; height:100%;
+}
+.entertainment .content .col .details {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+}
+.entertainment .content .col .details span {
+  margin-right: 16px;
+}
+.entertainment .content .col .details span a {
+  color: #FFF;
+}
+.entertainment .content .col.col-186 {
+  width: 186px;
+}
+.entertainment .content .col.col-187 {
+  width: 187px;
+}
+.downloadClient {
+  height: 73px;
+  background-image: url(../Images/home/home-client-btn.jpg);
+  background-repeat: repeat;
+  background-position: center -2px;
+  background-color: #383431;
+  position:relative;
+}
+.downloadClient span{
+  position: absolute;
+  right: 65px;
+  top: 16px;
+  font-size: 23px;
+  color: #1e1e1e;
+  font-weight: bold;
+}
+.downloadClient:hover {
+  background-image: url(../Images/home/home-client-btn-hover.jpg);
+}
+.homeFourButton {
+  margin-top: 20px;
+}
+.homeFourButton a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.homeFourButton .saveMoney {
+  background-image: url(../Images/home/homeFourButton-1.jpg);
+  width: 250px;
+  height: 104px;
+}
+.homeFourButton .saveMoney:hover {
+  background-image: url(../Images/home/homeFourButton-1-hover.jpg);
+}
+.homeFourButton .getMoney {
+  background-image: url(../Images/home/homeFourButton-2.jpg);
+  width: 250px;
+  height: 104px;
+}
+.homeFourButton .getMoney:hover {
+  background-image: url(../Images/home/homeFourButton-2-hover.jpg);
+}
+.homeFourButton .faq {
+  background-image: url(../Images/home/homeFourButton-3.jpg);
+  width: 250px;
+  height: 104px;
+}
+.homeFourButton .faq:hover {
+  background-image: url(../Images/home/homeFourButton-3-hover.jpg);
+}
+.homeFourButton .gameIntro {
+  background-image: url(../Images/home/homeFourButton-4.jpg);
+  width: 250px;
+  height: 104px;
+}
+.homeFourButton .gameIntro:hover {
+  background-image: url(../Images/home/homeFourButton-4-hover.jpg);
+}
+.loginWrap {
+  background-image: url(../Images/home/login-bg.jpg);
+  background-color: #383431;
+  background-position: center center;
+  height: 139px;
+  position: relative;
+}
+.loginWrap .loginPanel {
+  width: 140px;
+  margin-left: 140px;
+  padding-top: 32px;
+  list-style: none;
+}
+.loginWrap .loginPanel input {
+  width: 130px;
+  height: 20px;
+  background-color: #000;
+  color: #666;
+  border: none;
+  font-size: 14px;
+}
+.loginWrap .loginPanel .forgot {
+  font-size: 14px;
+}
+.loginWrap .loginPanel .forgot a {
+  color: #999999;
+}
+.loginWrap .loginPanel a {
+  color: #B6A256;
+}
+.loginWrap .loginPanel a:hover {
+  text-decoration: none;
+}
+/* hover setting */
+#registrationButton {
+  display: block;
+  width: 314px;
+  height: 84px;
+  background: url(../Images/home/right-01.jpg) left center no-repeat;
+}
+#registrationButton:hover {
+  background: url(../Images/home/right-01_on.jpg) left center no-repeat;
+}
+#freeTrialButton {
+  display: block;
+  width: 314px;
+  height: 85px;
+  background: url(../Images/home/right-02.jpg) left center no-repeat;
+}
+#freeTrialButton:hover {
+  background: url(../Images/home/right-02_on.jpg) left center no-repeat;
+}
+#onlineServiceButton {
+  display: block;
+  width: 314px;
+  height: 105px;
+  background: url(../Images/home/right-03.jpg) left top no-repeat;
+}
+#onlineServiceButton:hover {
+  background: url(../Images/home/right-03.jpg_on.jpg) left top no-repeat;
+}
+/* end of hover setting */
+#enlargeBanner .closeBtn {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 42px;
+  right: 42px;
+  background-image: url(../Images/enlarge-banner/close.gif);
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: top right;
+  padding-left: 5px;
+  padding-bottom: 5px;
+}
+#enlargeBanner #enlargeBannerLink {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  padding-right: 900px;
+  padding-bottom: 395px;
+  bottom: 0;
+  left: 0;
+  background-image: url(.../img/spacer.gif);
+}
+.footerLogo a{ cursor:default; }
+.userDetail{ padding:21px 20px; }

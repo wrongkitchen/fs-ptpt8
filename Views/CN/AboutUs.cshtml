@@ -1,0 +1,115 @@
+﻿@using Heji.Web.Helpers
+@{
+    ViewBag.Title = "关于我们 - 和记娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/aboutus.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/about.js"></script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <div class="banner"><img src="@ImageServer/Content/Images/company/banner-aboutus.jpg" alt=""></div>
+                <ul id="aboutNav" class="sectionNav transparent black">
+                    <li class="first button active"><a href="@Url.Action("AboutUs", "CN")" target="_self">专业资质</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Safe", "CN")" target="_self">资金安全</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("FAQ", "CN")" target="_self">客户帮助</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Contact", "CN")" target="_self">联系我们</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Notice", "CN")" target="_self">最新公告</a></li>
+                    <!-- <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("License", "CN")" target="_self">博彩牌照</a></li> -->
+                    <!-- <li class="button"><a href="@Url.Action("Advantages", "CN")" target="_self">网博优势</a></li> -->
+                    <!-- <li class="separate">|</li> -->
+                    <!-- <li class="button"><a href="@Url.Action("FAQ", "CN")" target="_self">常见问题</a></li> -->
+                </ul>
+                <div class="article">
+                    <p class="subTitle"><span class="red">专业资质</span></p>
+                    <p>大奖娱乐隶属汇彩博彩集团, 汇彩博彩集团是世界上最大的游戏机设备供货商之一，在拉斯维加斯、澳门、蒙特卡洛、新加坡等地拥有10000多台游戏机进驻各大娱乐场，客户包括威尼斯人、金沙集团、永利、美高梅、银河、新濠天地、葡京娱乐场、Bellagio、Monte Carlo等娱乐场。凭借超过10年的博彩市场运营经验，如今已发展成为集大型游戏设备、赌场管理系统、在线游戏为一体的国际性娱乐公司，集团总部设在香港，在澳门、加拿大、菲律宾、越南及新加坡均设有分部，是全世界最大的博彩公司之一。
+                    <br /><br />
+                    大奖娱乐主营线上游戏业务,2008年10月正式上线, 其营业执照由FCLRC (First Cagayan Leisure and Resort Corporation)颁发。FCLRC是菲律宾唯一一个被当地政府认可并批准的国际性互动游戏经济区。为确保游戏操作平台的公平公正及安全，在FCLRC的严格监管下, 所有的游戏平台均需要使用经过批准的供应商软件才能运营。目前大奖娱乐与Playtech（简称PT）, Microgaming（简称MG）, BBIN宝盈等最具品牌知名度的国际在线游戏平台合作, 为客户打造 “诚信, 安全, 快乐”的游戏体验。大奖娱乐的24小时客服中心设在菲律宾首都马尼拉。</p>
+                    <table class="imgBlock">
+                        <tr>
+                            <td>
+                                <img src="@ImageServer/Content/Images/company/2_21.jpg" alt="">
+                                <div class="imgDesc">客服中心位于马尼拉甲级写字楼RCBC Plaza</div>
+                            </td>
+                            <td class="padLeft">
+                                <img src="@ImageServer/Content/Images/company/2_23.jpg" alt="">
+                                <div class="imgDesc">大奖娱乐客服中心现场</div>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <table width="250">
+                        <tr>
+                            <td width="200">
+                                <img src="@ImageServer/Content/Images/company/2_43.jpg" alt="">
+                            </td>
+                            <td valign='bottom'>
+                                <img src="@ImageServer/Content/Images/company/enlarge_btn.jpg" alt="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">大奖娱乐持有政府颁发牌照, 受法律监管。任何法务咨询, 请联系大奖娱乐合规部门compliance@ptpt8.com。</td>
+                        </tr>
+                    </table>
+                    
+                    <br /><br />
+
+                    <p class="subTitle"><span class="red">公平认证</span></p>
+                    <p>大奖娱乐所选平台均获得美国博彩权威机构GLI (Gaming Lab International) TST赔率认证 , 由国际著名的会计公司BDO每月万次检测, 符合政府牌照要求, 确保游戏结果100%随机、公平、安全并符合监管法规。</p>
+                    
+                    <table width="250">
+                        <tr>
+                            <td>
+                                <img src="@ImageServer/Content/Images/company/2_44.jpg" alt="">
+                            </td>
+                            <td valign='bottom'>
+                                <img src="@ImageServer/Content/Images/company/enlarge_btn.jpg" alt="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">大奖娱乐游戏获美国权威认证机构GLI (Gaming Lab International) TST公平赔率认证</td>
+                        </tr>
+                    </table>
+
+                   <br/>
+                   
+                    <table class="more_actions">
+                    	@if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                        {
+                            <tr>
+                                <td>
+                                    <a class="greyButton" href="@Url.Action("Register", "Member")">免费开户 &gt;</a>
+                                </td>
+                                <td>
+                                    <a target="_blank" class="greyButton" href="@Url.Action("TrialEnter", "Game", new { platform = "2" })">免费试玩 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN")
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

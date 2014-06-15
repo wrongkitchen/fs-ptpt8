@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "常见问题 - VIP俱乐部 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/vip.css" />
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <ul id="vipNav" class="sectionNav transparent black">
+                    <li class="first button"><a href="@Url.Action("VIPClub", "CN")" target="_self">星级首页</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("VIPPrivilege", "CN")" target="_self">VIP特权</a></li>
+                    <li class="separate">|</li>
+                    <li class="button active"><a href="@Url.Action("VIPFAQ", "CN")" target="_self">常见问题</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("VIPTerms", "CN")" target="_self">规则条款</a></li>
+                </ul>
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/vip/faq_03.jpg" alt="" />
+                </div>
+                <div class="article vip-faq">
+                    <h4 class="red">星级俱乐部常见问题</h4><br />
+                    <ul class="numListPoint">
+                        <li class="num1">
+                            <div class="red">如何加入和记娱乐星级俱乐部？</div>
+                            成为和记娱乐星级会员非常之简单，只要在和记娱乐的遊戏中进行过投注即可。
+                        </li>
+                        <li class="num2">
+                            <div class="red">星级会员是否需要收取费用？</div>
+                            和记娱乐星级会员不收取任何费用。
+                        </li>
+                        <li class="num3">
+                            <div class="red">加入和记娱乐星级俱乐部可以享受什麽样的待遇？</div>
+                            (1)遊戏上：享受相应星级的保底洗码比例，更可获得星级升级礼金，最高可达6,000元。<br />
+                            (2)服务上：绿色存取款高速通道、一对一专属客服服务，7x24小时无间歇、预约专人客户经理回访等。<br />
+                            (3)生活上：达到相应条件后可申请澳门/菲律宾豪华游，让您实地感受澳门、菲律宾的实体贵宾厅娱乐。
+                        </li>
+                        <li class="num4">
+                            <div class="red">如何提高星级级别？</div>
+                            一周内（北京时间每周一中午12:00至下週一中午12:00）有效投注额达到晋升级别，即可晋升更高的星级，享受更多专属优惠和奖励。
+                        </li>
+                        <li class="num5">
+                            <div class="red">如何查询星级级别？</div>
+                            您只需要登录和记娱乐“会员中心”即可查看到您的星级级别。
+                        </li>
+                        <li class="num6">
+                            <div class="red">星级身份是否终身享受？</div>
+                            和记娱乐星级会员身份是永久性的。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN", new { displayCS = "false", displayPlatforms = "false" })
+                 <div class="block"><img src="/Content/Images/member/01_06.jpg" alt=""></a></div>
+                 <div class="block"><a href="/CN/Promotions#p2"><img src="/Content/Images/home/huodong02.jpg" alt=""></a></div>
+                 <div class="block"><a href="/CN/Promotions#p3"><img src="/Content/Images/home/huodong03.jpg" alt=""></a></div>
+                 <div class="block"><a href="/CN/Promotions#p4"><img src="/Content/Images/home/huodong04.jpg" alt=""></a></div>
+                 <div class="block"><a href="/CN/Promotions#p5"><img src="/Content/Images/home/huodong05.jpg" alt=""></a></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

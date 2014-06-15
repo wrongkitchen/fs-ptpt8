@@ -1,0 +1,12 @@
+$(document).ready(function(){
+	$(".videoList>.thumbnailList>li").each(function(index,element){
+		$(element).click(function(){
+			if(!$(this).is(".current")){
+				$(".videoList>.thumbnailList>li").removeClass("current");
+				$(this).addClass("current");
+				$(".video-container").removeClass("current");
+				$(".video-container:eq("+index+")").addClass("current");
+			}
+		});
+	});
+});

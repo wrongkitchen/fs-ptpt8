@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "照片媒体库 - 明星代言 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/endorsement.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/main.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/div-slider-1.0.3.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/endorsement-gallery.js"></script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div  class="leftRightContent galleryLRContent">
+            <div class="topContent">
+                <div class="floatLeft galleryHead">
+                    <img src="@ImageServer/Content/Images/endorsement/gallery_title.jpg" /><a href="@Url.Action("Endorsement", "CN")" target="_self"><img src="@ImageServer/Content/Images/endorsement/gallery_back.jpg" /></a>
+                </div>
+                <div class="floatLeft galleryList">
+                    <div class="thumbnailStat">1/10</div>
+                    <ul class="thumbnailList">
+                        <li class="current"><img src="@ImageServer/Content/Images/endorsement/gallery_thumbnail_1.jpg" /></li>
+                        <li><img src="@ImageServer/Content/Images/endorsement/gallery_thumbnail_2.jpg" /></li>
+                        <li><img src="@ImageServer/Content/Images/endorsement/gallery_thumbnail_3.jpg" /></li>
+                        <li><img src="@ImageServer/Content/Images/endorsement/gallery_thumbnail_4.jpg" /></li>
+                        <li><img src="@ImageServer/Content/Images/endorsement/gallery_thumbnail_5.jpg" /></li>
+                        <li><img src="@ImageServer/Content/Images/endorsement/gallery_thumbnail_6.jpg" /></li>
+                        <li><img src="@ImageServer/Content/Images/endorsement/gallery_thumbnail_7.jpg" /></li>
+                        <li><img src="@ImageServer/Content/Images/endorsement/gallery_thumbnail_8.jpg" /></li>
+                        <li><img src="@ImageServer/Content/Images/endorsement/gallery_thumbnail_9.jpg" /></li>
+                        <li><img src="@ImageServer/Content/Images/endorsement/gallery_thumbnail_10.jpg" /></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="mainContent">
+                <div class="leftBtn"></div>
+                <div class="rightBtn"></div>
+                <div id="2" class="sliderGallery">
+                    <div><img src="@ImageServer/Content/Images/endorsement/gallery_1.jpg" width="998" /></div>
+                    <div><img src="@ImageServer/Content/Images/endorsement/gallery_2.jpg" width="415" /></div>
+                    <div><img src="@ImageServer/Content/Images/endorsement/gallery_3.jpg" width="998" /></div>
+                    <div><img src="@ImageServer/Content/Images/endorsement/gallery_4.jpg" width="415" /></div>
+                    <div><img src="@ImageServer/Content/Images/endorsement/gallery_5.jpg" width="998" /></div>
+                    <div><img src="@ImageServer/Content/Images/endorsement/gallery_6.jpg" width="415" /></div>
+                    <div><img src="@ImageServer/Content/Images/endorsement/gallery_7.jpg" width="998" /></div>
+                    <div><img src="@ImageServer/Content/Images/endorsement/gallery_8.jpg" width="415" /></div>
+                    <div><img src="@ImageServer/Content/Images/endorsement/gallery_9.jpg" width="998" /></div>
+                    <div><img src="@ImageServer/Content/Images/endorsement/gallery_10.jpg" width="415" /></div>
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </div>
+</div>

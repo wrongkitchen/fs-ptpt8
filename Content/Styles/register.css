@@ -1,0 +1,92 @@
+.registerForm td {
+  vertical-align: middle;
+}
+.registerForm .titleText {
+  padding: 0 12px 0 0;
+  width:70px;
+}
+.registerForm .message {
+  padding: 0 0 0 12px; text-align: left; width:238px;
+}
+.registerForm input[type=text], .registerForm input[type=password] {
+  width: 140px;
+  height: 15px;
+  border: 1px solid #747474;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.registerForm input[type="radio"],
+.registerForm input[type="checkbox"] {
+  margin: 0;
+}
+.registerForm label {
+  margin: 0;
+  padding: 0;
+}
+.registerForm .tncCheck {
+  margin-top: 20px;
+}
+.tncBox {
+  width: 650px;
+  height: 180px;
+  overflow-x: scroll;
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #eaeaea;
+  border: 2px solid #a6a6a6;
+}
+.rightContent .borderRight {
+  border-right: 2px solid #636363;
+}
+.rightContent .rightThreeBtn {
+  background-color: #201e1c;
+}
+.rightContent .rightThreeBtn a {
+  display: inline-block;
+}
+.leftRightContent .rightContent .btnReg {
+  width: 252px;
+  height: 104px;
+  background: url(../Images/company/brn-regist.png) left top no-repeat;
+}
+.leftRightContent .rightContent .btnReg:hover {
+  background: url(../Images/company/brn-regist-on.png) left top no-repeat;
+}
+.rightContent .onlineService {
+  width: 82px;
+  height: 84px;
+  background: url(../Images/btn-online_service.jpg) left top no-repeat;
+}
+.rightContent .onlineService:hover {
+  background: url(../Images/btn-online_service_on.jpg) left top no-repeat;
+}
+.leftRightContent .rightContent .freeTrial {
+  width: 252px;
+  height: 104px;
+  background: url(../Images/company/downloadclient.png) left top repeat;
+}
+/*.rightContent .freeTrial:hover {
+  background: url(../Images/btn-free_trial_on.jpg) left top no-repeat;
+}*/
+.h p{
+	float:left;
+	width:33px;
+	height:15px;
+	border-right: 1px solid #ffffff;
+	text-align:center;
+	padding-top:4px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	line-height: 10px;
+}
+
+/* 邮箱自动补全样式 */
+.mailListBox{border: 1px solid #e0e0e0;background-color: #fff;position: absolute;z-index: 9999;display: none;}
+.mailListBox ul{padding: 0;margin: 0;}
+.mailListBox li {zoom: 1;overflow: hidden;padding: 0 3px;margin: 0;border-top: 1px solid #e0e0e0;list-style: none;font-size: 12px;line-height: 24px;cursor:pointer;color:#999999;}
+.mailListBox li.hover {background-color: #e0e0e0;color: #035cc1;}
+.mailListBox li.current {background-color: #C1D5EB;color: #035cc1;}
+
+
+#userpwd_strength{ padding-left:13px; }

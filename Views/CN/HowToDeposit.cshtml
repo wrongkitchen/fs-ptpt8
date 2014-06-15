@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "如何存取款 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/quicklink.css" />
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/member.css" />
+}
+@section AdditionalScripts {
+    @*<script type="text/javascript" src="@ImageServer/Scripts/Custom/about.js"></script>*@
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/quicklink/banner/deposit.jpg" alt="">
+                </div>
+                <div class="article deposit">
+                	<ul class="numListPoint">
+	                	<li class="num1">
+                        	<p>如何存款</p>
+		                    <p>进入您的会员账号点击“存款”，和记娱乐存款方式有三种，第一种是“和记秒充”，第二种是“手工存款”, 第三种是“在线支付”您可以按照您所需要的存款方式进行存款。</p>
+                        </li>
+                    	<li class="num2">
+		                    <p>最低存款金额</p>
+		                    <p>和记娱乐最低存款金额为人民币100元整。</p>
+                    	</li>
+                        <li class="num3">
+	                        <p>有哪些存款方式？</p>
+    	                    <p>和记娱乐的存款方式有：和记秒充，手工存款，在线支付，ATM/柜台转账，供广大会员存款进行选择。</p>
+                     	</li>
+                        <li class="num4">   
+	                        <p>存款手续费怎么计算？</p>
+    	                    <p>银行所收取的手续费是由本人承担，和记娱乐不收取任何手续费。同时我们还为您提供1%的存款手续费红利，只要您通过和记秒充或手工存款的方式，成功汇款到我们的指定的账号，我们将即时回赠给您汇款金额1%的手续费，每天封顶500元。相当于存款的手续费我们为您报销。</p>
+        				</li>
+                        <li class="num5">                
+	                        <p>如何取款？</p>
+	                        <p>您是首次提款，请您登陆您的个人账户后，点击网页上方的“绑定银行”完善您的银行信息。请务必完成“绑定银行”中的内容，按照网页提示填写您的真实账户信息并点击“提交”，完成绑定银行账户。然后请您点击“取款”，输入您想取款的金额完成提款单，点击确定。财务部门审核通过后会在第一时间内将您所提交的取款金额打到您的绑定账户中。</p>
+    					</li>
+                        <li class="num6">                    
+	                        <p>取款时是否收取手续费？</p>
+	                        <p>您在和记娱乐取款时我们是不会收取任何手续费。</p>
+                        </li>
+                        <li class="num7">
+	                        <p>如何绑定银行卡账号？</p>
+    	                    <p>请您登入您的个人账号后，点击网页上方的绑定银行按照要求填写进行增加绑定银行，如果您想修改绑定银请您直接添加其他绑定银行即可，系统会默认您最近绑定的银行信息为您出款。</p>
+        				</li>
+                        <li class="num8">                
+	                        <p>取款有限制吗？</p>
+    	                    <p>您在和记娱乐每天取款次数不限，每次取款金额不封顶，单笔最低取款100元。</p>
+                        </li>
+                    </ul>
+                    <p class="title">存/取款注意事项：</p>
+                     
+					<li><p>1、填写存款单时，请您填写正确的存款金额，不含转账时的交易费用。</li>
+					<li><p>2、申请取款之前，您的有效投注需要达到您存款金额的一倍流水或以上（特殊优惠除外），即可进行取款。</p>
+                    </li>
+                    
+					<li>                
+	                       <p>3、首次提款前，请先绑定您的银行卡以便财务部第一时间将您的取款金额转至您的指定银行账号内。</p>
+                           <p>
+                     </li>
+					<li><p>4、和记娱乐声明：我们会第一时间处理客户的取款提单，但是由于银行假期而导致的延误，请您谅解。</p></li>
+                    <br/><br/>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN")
+                <div class="block discount"><a href="/CN/Promotions" target="_self"><img src="@ImageServer/Content/Images/member/01_12.jpg" alt=""></a></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

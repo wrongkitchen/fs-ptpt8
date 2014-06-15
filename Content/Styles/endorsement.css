@@ -1,0 +1,354 @@
+.leftRightContent {
+  width: 1000px;
+  height: 720px;
+  margin-bottom: 10px;
+}
+.leftRightContent.endorsementLRContent {
+  background: url(../Images/endorsement/endorsement_bg.jpg) no-repeat top left;
+}
+.leftRightContent .leftContent {
+  background: url(../Images/endorsement/endorsement_left_bg.png) repeat top left;
+  height: 100%;
+  min-width: 389px;
+  max-width: 389px;
+}
+.leftRightContent .leftContent .endorsement {
+  font-size: 12px;
+  color: #ffffff;
+  padding: 25px 50px 0 52px;
+}
+.leftRightContent .leftContent .endorsement .lineBlock {
+  border-color: #8b8782;
+  margin-top: 7px;
+  margin-bottom: 5px;
+}
+.leftRightContent .leftContent .endorsement .desc {
+  margin-top: 21px;
+}
+.leftRightContent .leftContent .endorsement .download {
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 2px;
+}
+.leftRightContent .leftContent .endorsement button {
+  background-color: #272421;
+  font-size: 12px;
+  width: 112px;
+}
+.leftRightContent .leftContent .endorsement .floatLeft {
+  float: left;
+  margin-left: 1px;
+  margin-top: 1px;
+}
+.leftRightContent .leftContent .endorsement .floatRight {
+  float: right;
+  margin-right: 7px;
+  margin-top: 1px;
+}
+.leftRightContent .leftContent .endorsement p {
+  margin-top: 7px;
+}
+.leftRightContent .leftContent .endorsement .month {
+  display: block;
+  width: 288px;
+  height: 149px;
+  margin-top: 20px;
+  background: url(../Images/endorsement/month.jpg) left top no-repeat;
+}
+.leftRightContent .leftContent .endorsement .month:hover {
+  background: url(../Images/endorsement/month_hover.jpg) left top no-repeat;
+}
+.leftRightContent .leftContent .endorsement .gallery {
+  display: block;
+  width: 288px;
+  height: 80px;
+  margin-top: 2px;
+  background: url(../Images/endorsement/gallery.jpg) left top no-repeat;
+}
+.leftRightContent .leftContent .endorsement .gallery:hover {
+  background: url(../Images/endorsement/gallery_hover.jpg) left top no-repeat;
+}
+.leftRightContent .leftContent .endorsement .video {
+  display: block;
+  width: 288px;
+  height: 80px;
+  margin-top: 1px;
+  background: url(../Images/endorsement/video.jpg) left top no-repeat;
+}
+.leftRightContent .leftContent .endorsement .video:hover {
+  background: url(../Images/endorsement/video_hover.jpg) left top no-repeat;
+}
+.leftRightContent.calendarLRContent {
+  height: auto;
+  background-color: #151515;
+}
+.leftRightContent.calendarLRContent .topContent {
+  padding-left: 50px;
+  padding-top: 21px;
+  height: 81px;
+}
+.leftRightContent.calendarLRContent .topContent .calendarHead {
+  width: 158px;
+  border-right: #5c5c5c 1px solid;
+}
+.leftRightContent.calendarLRContent .topContent .calendarYear {
+  padding-left: 15px;
+  padding-right: 15px;
+  border-right: #5c5c5c 1px solid;
+}
+.leftRightContent.calendarLRContent .topContent .calendarYear .title {
+  color: #ffffff;
+  font-size: 16px;
+}
+.leftRightContent.calendarLRContent .topContent .calendarYear table {
+  margin-top: 12px;
+}
+.leftRightContent.calendarLRContent .topContent .calendarYear table td {
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 12px;
+  border-right: #151515 1px solid;
+  width: 28px;
+  height: 43px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #272421;
+}
+.leftRightContent.calendarLRContent .topContent .calendarYear table td:hover,
+.leftRightContent.calendarLRContent .topContent .calendarYear table .current {
+  background-color: #f84139;
+}
+.leftRightContent.calendarLRContent .topContent .calendarSize table {
+  margin-left: 36px;
+}
+.leftRightContent.calendarLRContent .topContent .calendarSize table td {
+  width: 86px;
+  padding-bottom: 4px;
+}
+.leftRightContent.calendarLRContent .topContent .calendarSize table a {
+  height: 16px;
+  overflow: hidden;
+  color: #ffffff;
+  padding: 4px 5px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #272421;
+  position: relative;
+}
+.leftRightContent.calendarLRContent .topContent .calendarSize table a span {
+  position: relative;
+}
+.leftRightContent.calendarLRContent .topContent .calendarSize table a:hover {
+  background-color: #f84139;
+  text-decoration: none;
+}
+.leftRightContent.calendarLRContent .topContent .calendarSize table a:hover span {
+  top: -18px;
+}
+.leftRightContent.calendarLRContent .topContent .floatLeft {
+  float: left;
+}
+.leftRightContent.calendarLRContent .mainContent {
+  position: relative;
+  padding-top: 23px;
+  padding-bottom: 26px;
+  text-align: center;
+}
+.leftRightContent.calendarLRContent .mainContent .download {
+  position: absolute;
+  bottom: 58px;
+  width: 100%;
+  text-align: center;
+}
+.leftRightContent.calendarLRContent .mainContent .download a {
+  display: inline-block;
+  width: 98px;
+  height: 35px;
+  background-color: #f84139;
+  color: #ffffff;
+  line-height: 35px;
+}
+.leftRightContent.calendarLRContent .mainContent img.month_calendar {
+  display: none;
+}
+.leftRightContent.calendarLRContent .mainContent img.month_calendar.display {
+  display: inline;
+}
+.leftRightContent.galleryLRContent {
+  height: auto;
+  background-color: #000000;
+}
+.leftRightContent.galleryLRContent .topContent {
+  padding-left: 50px;
+  padding-top: 21px;
+  height: 81px;
+}
+.leftRightContent.galleryLRContent .topContent .galleryHead {
+  width: 158px;
+  border-right: #5c5c5c 1px solid;
+}
+.leftRightContent.galleryLRContent .topContent .galleryList {
+  padding-left: 42px;
+  padding-right: 39px;
+}
+.leftRightContent.galleryLRContent .topContent .galleryList .thumbnailStat {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+.leftRightContent.galleryLRContent .topContent .galleryList .thumbnailList {
+  margin: 0;
+  padding: 0;
+}
+.leftRightContent.galleryLRContent .topContent .galleryList .thumbnailList li {
+  float: left;
+  margin-right: 10px;
+  position: relative;
+  cursor: pointer;
+  list-style: none;
+  overflow: hidden;
+  width: 45px;
+  height: 45px;
+}
+.leftRightContent.galleryLRContent .topContent .galleryList .thumbnailList li img {
+  width: 45px;
+  height: 45px;
+}
+.leftRightContent.galleryLRContent .topContent .galleryList .thumbnailList li:hover,
+.leftRightContent.galleryLRContent .topContent .galleryList .thumbnailList li.current {
+  width: 37px;
+  height: 37px;
+  border: #f84139 4px solid;
+}
+.leftRightContent.galleryLRContent .topContent .galleryList .thumbnailList li:hover img,
+.leftRightContent.galleryLRContent .topContent .galleryList .thumbnailList li.current img {
+  position: relative;
+  top: -4px;
+  left: -4px;
+  min-width: 45px;
+  min-height: 45px;
+}
+.leftRightContent.galleryLRContent .topContent .floatLeft {
+  float: left;
+}
+.leftRightContent.galleryLRContent .mainContent {
+  position: relative;
+  padding-top: 23px;
+  text-align: center;
+}
+.leftRightContent.galleryLRContent .mainContent .leftBtn {
+  position: absolute;
+  width: 35px;
+  height: 45px;
+  z-index: 5;
+  cursor: pointer;
+  top: 50%;
+  left: -16px;
+  background-image: url(../Images/arrow/grey-left-box.gif);
+}
+.leftRightContent.galleryLRContent .mainContent .leftBtn.disabled {
+  background-image: url(../Images/arrow/grey-left-box-dim.gif);
+}
+.leftRightContent.galleryLRContent .mainContent .rightBtn {
+  position: absolute;
+  width: 35px;
+  height: 45px;
+  z-index: 5;
+  cursor: pointer;
+  top: 50%;
+  right: -16px;
+  background-image: url(../Images/arrow/grey-right-box.gif);
+}
+.leftRightContent.galleryLRContent .mainContent .rightBtn.disabled {
+  background-image: url(../Images/arrow/grey-right-box-dim.gif);
+}
+.leftRightContent.galleryLRContent .mainContent .gallery-display {
+  display: block;
+  width: 1000px;
+  height: 592px;
+  overflow: hidden;
+  position: relative;
+}
+.leftRightContent.galleryLRContent .mainContent .gallery-display .gallery-container {
+  position: absolute;
+  height: 592px;
+  left: 0;
+  top: 0;
+}
+.leftRightContent.galleryLRContent .mainContent .gallery-display .gallery-container .gallery-item {
+  display: inline-block;
+  text-align: center;
+  float: left;
+  text-align: center;
+  width: 1000px;
+  height: 592px;
+}
+.leftRightContent.videoLRContent {
+  height: auto;
+  background-color: #000000;
+}
+.leftRightContent.videoLRContent .topContent {
+  padding-left: 50px;
+  padding-top: 21px;
+  height: 81px;
+}
+.leftRightContent.videoLRContent .topContent .videoHead {
+  width: 158px;
+  border-right: #5c5c5c 1px solid;
+}
+.leftRightContent.videoLRContent .topContent .videoList {
+  padding-left: 42px;
+  padding-right: 39px;
+}
+.leftRightContent.videoLRContent .topContent .videoList .thumbnailStat {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+.leftRightContent.videoLRContent .topContent .videoList .thumbnailList {
+  margin: 0;
+  padding: 0;
+}
+.leftRightContent.videoLRContent .topContent .videoList .thumbnailList li {
+  float: left;
+  margin-right: 10px;
+  position: relative;
+  cursor: pointer;
+  list-style: none;
+  overflow: hidden;
+  width: 128px;
+  height: 76px;
+}
+.leftRightContent.videoLRContent .topContent .videoList .thumbnailList li .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 128px;
+  height: 76px;
+  display: none;
+}
+.leftRightContent.videoLRContent .topContent .videoList .thumbnailList li img {
+  width: 128px;
+  height: 76px;
+}
+.leftRightContent.videoLRContent .topContent .videoList .thumbnailList li.current .overlay {
+  display: inline;
+}
+.leftRightContent.videoLRContent .topContent .floatLeft {
+  float: left;
+}
+.leftRightContent.videoLRContent .mainContent {
+  position: relative;
+  padding-top: 23px;
+  text-align: center;
+}
+.leftRightContent.videoLRContent .mainContent .video-container {
+  display: none;
+}
+.leftRightContent.videoLRContent .mainContent .video-container.current {
+  display: block;
+}

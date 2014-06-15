@@ -1,0 +1,79 @@
+﻿@model Heji.Web.Models.SharedLoginViewModel
+@{
+    Layout = null;
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+
+@if (Model.CurrentUser != null)
+{
+    @* Xmas Event : 判斷寬度。北京时间2013年12月23日12:00 - 2013年12月30日12:00。時間過了可移除 *@
+    int twidth = 65;
+    ////if ( Request.Url.AbsoluteUri.ToLower().Contains("/events/xmas"))
+    ////{
+    ////    twidth = 8;
+    ////}
+    <div class="block userDetail" style="z-index: 8090; padding: 8px  @(twidth)px;">
+
+        <div class="userContainer" style="z-index: 8080;">
+		    <div style="z-index: 8070;">
+			    尊敬的
+			    <span class="bold" style="z-index: 8060;">@Model.CurrentUser.UserName</span>
+			    下午好！
+		    </div>
+		    <div style="z-index: 8050;">上次登录：
+			    <span id="date" style="z-index: 8040;">@Model.CurrentUser.LastLoginDate.ToString("yyyy-MM-dd")</span>
+	            <span id="time" style="z-index: 8030;">@Model.CurrentUser.LastLoginDate.ToString("HH:mm:ss")</span>
+		    </div>
+		    <div class="grading grade@(Model.CurrentUser.Level)" style="z-index: 8020;"></div>
+		    <div class="money">
+            <a href="javascript: void(0);" id="refresh_balance" class="refresh">
+                <img src="@ImageServer/Content/Images/member/refresh.jpg" alt="" /></a>
+			    <div class="moneyTitle" style="z-index: 7980;">账户余额 ：</div>
+			    <div class="amount" style="z-index: 7970;">
+                <span class="bold member_balance">@Heji.Web.Helpers.WebFunctions.GetFormattedCurrency(Model.CurrentUser.Balance)</span> 元
+                </div>
+			    <button id="@(Model.CurrentUser.Level == 0 || Model.CurrentUser.Level == 1 ? "shared_deposit" : "shared_logout_deposit")" class="redButton" style="z-index: 9950;height: 40px;padding-top: 7px;"><img src="@ImageServer/Content/Images/member/member_center_deposit.jpg" /></button>
+			    <button id="shared_logout_withdraw" class="redButton" style="z-index: 7940;height: 40px;padding-top: 7px;"><img src="@ImageServer/Content/Images/member/member_center_withdrawing.jpg" /></button>
+                <a class="member-center" href="@Url.Action("Index", "Member")" target="_self"><img src="@ImageServer/Content/Images/member/member_center.jpg" /></a>
+			    <button id="shared_logout" class="darkGreyButton" style="z-index: 7930;">安全退出</button>
+		    </div>
+	    </div>
+    </div>
+    @* Xmas Event : 判斷客服圖檔顯示。北京时间2013年12月23日12:00 - 2013年12月30日12:00。時間過了可移除 *@
+    //if (!Request.Url.AbsoluteUri.ToLower().Contains("/events/xmas"))
+    //{  
+        <div class="block service"><a><img src="@ImageServer/Content/Images/home/home_online_services_btn_2.jpg" alt=""></a></div>                                                                                                   
+    //}
+}
+else
+{
+    <div class="block noBorder">
+        <a id="registrationButton" href="@Url.Action("Register", "Member")" target="_self"></a>
+    </div>
+    <div class="block">
+        <a id="freeTrialButton" href="@Url.Action("free", "CN")" target="_self"></a>
+    </div>
+    <div class="block loginWrap">
+        <ul class="loginPanel">
+            <li>
+                <input type="text" placeholder="账户" name="username" id="username" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" autocomplete="off" value="888" /></li>
+            <li>
+                <input type="password" placeholder="密码" name="password" id="password" autocomplete="off" /></li>
+            <li>
+                <div id="index_login" class="redArrow pull-left">
+                    <a href="javascript: void(0);" id="index_login_link">登录</a>
+                </div>
+                <div id="index_login_loader" class="pull-left" style="color: Red; display: none;">
+                    <img src="@ImageServer/Content/Images/ajax-loader.gif" style="vertical-align: baseline;" alt="" />
+                    @*<span>正在登录...</span>*@
+                </div>
+                <div class="forgot pull-right">
+                    <a href="@Url.Action("ForgetPassword", "Member")" target="_self">忘记密码</a></div>
+                <div class="clearfix">
+                </div>
+            </li>
+        </ul>
+    </div>
+}
+

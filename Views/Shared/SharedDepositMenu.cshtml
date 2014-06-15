@@ -1,0 +1,17 @@
+﻿@model Heji.Web.Models.SharedDepositMenuViewModel
+@{
+    Layout = null;
+      
+}
+<span class="subTabButton chargeTabButton  @ViewBag.active_RapidDeposit" ><a href="@Url.Action("RapidDeposit", "Member")" target="_self"></a>网银充值</span>
+
+ @if (Model.CurrentUser.Level == 0 )
+ {
+    <span class="subTabButton manualTabButton  @ViewBag.active_YBpay"  ><a href="@Url.Action("YBpay", "Member")" target="_self"></a>在线支付</span>
+ }
+ @if (Model.CurrentUser.Level >= 1 & Model.CurrentUser.Level <= 4)
+ {
+    <span class="subTabButton manualTabButton  @ViewBag.active_HXpay" ><a href="@Url.Action("HXpay", "Member")" target="_self"></a>在线支付</span>
+ }
+ 
+<span class="subTabButton manualTabButton  @ViewBag.active_Deposit" ><a href="@Url.Action("Deposit", "Member")" target="_self"></a>极速秒冲</span>

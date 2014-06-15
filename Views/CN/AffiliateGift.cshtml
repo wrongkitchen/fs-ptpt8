@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "回馈礼金 - 加盟合作 - 和记娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/agent.css" />
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <ul id="agentNav" class="sectionNav transparent black">
+                    <li class="first button"><a href="@Url.Action("Affiliate", "CN")" target="_self">加盟优势</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("AffiliateCommission", "CN")" target="_self">佣金方案</a></li>
+                    <!-- <li class="separate">|</li>
+                    <li class="button active"><a href="@Url.Action("AffiliateGift", "CN")" target="_self">回馈礼金</a></li> -->
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("AffiliateAgreement", "CN")" target="_self">合作协议</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("AffiliateFAQ", "CN")" target="_self">常见问题</a></li>
+                </ul>
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/agent/gift_03.jpg" alt="" />
+                </div>
+                <div class="article">
+					<p><br/></p>
+                    <div class="red title">代理感谢金</div>
+					<div>和记娱乐为感谢各位代理长期以来的大力支持，特此推出4重代理感谢奖金，最高可达30,000元。</div>
+
+                    <table class="blackGreyTable">
+                        <tr>
+                            <td class="title">礼金等级</td>
+                            <td class="title">当月总有效投注额</td>
+                            <td class="title">礼金金额</td>
+                        </tr>
+                        <tr>
+                            <td>第一重礼金</td>
+                            <td>≥20,000,000</td>
+                            <td>1,000元</td>
+                        </tr>
+                        <tr>
+                            <td>第二重礼金</td>
+                            <td>≥50,000,000</td>
+                            <td>5,000元</td>
+                        </tr>
+                        <tr>
+                            <td>第三重礼金</td>
+                            <td>≥100,000,000</td>
+                            <td>10,000元</td>
+                        </tr>
+                        <tr>
+                            <td>第四重礼金</td>
+                            <td>≥200,000,000</td>
+                            <td>30,000元</td>
+                        </tr>
+                    </table>
+                    
+                    <p>
+                        优惠条款：
+                        <ol>
+                            <li>此活动只适合“和记娱乐”有效代理。（此礼金属于代理佣金以外的额外奖金）。</li>
+                            <li>该有效代理当月必须达到最低有效活跃下线10人，且总有效投注额满足代理感谢金指标条件。<br />例：代理商A 有效活跃玩家10人，当月总有效投注额大于等于5,000万，即可获得5,000元感谢礼金。</li>
+                            <li>代理商感谢礼金发放需由代理部门审查，查核无误后该礼金与代理佣金一同发放。</li>
+                            <li>加盟代理的姓名必须与收款人的银行账号姓名一致，否则无法支付佣金。</li>
+                            <li>代理商的每位下线玩家必须具备独立的真实姓名、用户名、银行卡、IP，并且在月结期间内每位玩家至少有一次有效存款和取款。</li>
+                            <li>为有效防止非诚信合作商滥用“和记娱乐”所提供的代理优惠制度，公司审查部门将严格审核每位代理商注册时提供的个人资料（包括姓名，邮件及电话等）若经审核发现代理商有任何不良营利企图，或与其他代理商、会员进行合谋套利等不诚信行为，“和记娱乐”将关闭该合作代理商之账户、扣除账户中的本金，并收回该代理商的所有佣金与优惠。</li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedAgentLogin", "CN")
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,147 @@
+﻿@{
+    ViewBag.Title = "免费开户 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/register.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/register.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery.emailmatch.js"></script>
+    <script type="text/javascript">
+         $(document).ready(function () {
+             $("#regemail").emailMatch();
+         });
+      </script>
+}
+
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/register/register_03.jpg" alt="">
+                </div>
+                <div class="article">
+
+                    <table width="100%">
+                        <tr>
+                            <td width="50%">
+                                <h3 class="red">*20秒注冊*</h3>
+                                <table class="registerForm">
+                                    <tr>
+                                        <td class="titleText" width="65px">* 用户名</td>
+                                        <td>888 <input type="text" name="regusername" id="regusername"  onkeyup="value=value.replace(/[^a-zA-Z0-9]/g,'')" style="width:180px"/></td><!--value=value.replace(/[^\w\/]/ig,'')-->
+                                        <td class="message" id="regusername_msg">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="titleText">* 登录密码</td>
+                                        <td><input type="password" id="regpassword" name="regpassword" />
+                                        </td>
+                                        <td id="userpwd_strength" style="display: none; bgcolor: #999999;" class="h" style="padding-bottom: 10px;">
+                                            <p id="strength_L">低</p>
+                                            <p id="strength_M">中</p>
+                                            <p id="strength_H">高</p>
+                                        </td>
+
+                                        <td class="message" id="regpassword_msg">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="titleText">* 重复密码</td>
+                                        <td><input type="password" id="regpassword_confirm" name="regpassword_confirm" /></td>
+                                        <td class="message" id="regpassword_confirm_msg">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="titleText">* 真实姓名</td>
+                                        <td><input type="text" id="regtruename" name="regtruename" /></td>
+                                        <td class="message" id="regtruename_msg">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="titleText">* 手机号码</td>
+                                        <td><input type="text" id="regcellphone" name="regcellphone" />   </td>
+                                        <td class="regred message" id="regcellphone_msg">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="titleText">* 邮箱地址</td>
+                                        <td><input type="text" id="regemail" name="regemail" />   </td>
+                                        <td class="message" id="regemail_msg">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" height="10">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <button class="redButton" id="regsubmit">提交</button>
+                                            <button class="redButton" id="regreset">重置</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" align="left">
+                                            <table align="left" class="tncCheck">
+                                                <tr>
+                                                    <td><input type="checkbox" name="tnc" id="regterms" checked="checked" /></td>
+                                                    <td><label for="tnc">本人已满18周岁, 并同意大奖娱乐之服务条款。</label> </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td width="50%" align='right' valign="top">
+                                <img src="@ImageServer/Content/Images/member/register-info.jpg" alt="">
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <div class="tncBox">
+                        注册前请阅读条款及细则：<br />
+                        和记娱乐（以下简称本公司）是菲律宾合法的互联网交易机构，现提醒有意参与本公司所有游戏之客户，应注意其国家或居住地区的相关法律规定，如有疑问，应就相关问题寻求当地法律意见。 <br />
+                        一、交易声明<br />
+                        <ol>
+                            <li>如客户对本游戏有任何问题或疑问时，请立即停止游戏，并即时与你的上线代理联络跟进事件．如客户仍继续参与游戏，即表示客户了解及接受所发生的问题，本公司有权在这问题上不作出任何解释或跟进，敬请客户留意！</li>  
+                            <li>请用户确保处於稳定网络环境下进行本游戏，因网络速度问题而出现不稳定情况，客户必须理解及接受 。</li>  
+                            <li>所有因网络因素引起的“投注是否成功”问题，最终结果会以本公司的资料库数据，相等于客户投注前台右下方的“记录”功能内，所显示的投注记录为准，用户不得异议。</li>  
+                            <li>倘若发生不可抗拒的灾害或人为的入侵破坏行为，而导致网站故障，资料损坏，数据丢失等情况，会以本网站的最终数据为最后处理数据．为确保各方的真实利益，请各会员保留或打印投注资料，本网站才接受投诉及处理。</li> 
+                            <li>本公司保留判定任何涉嫌以非正常方式进行投注的客户投注无效之权利 。</li>  
+                            <li>因人为而导致的发牌错误，如： 1) 发牌方向或次序错误。 2) 不正确之显示或结果 (此情况会发生於发牌时连发两张或以上的牌 )。本公司会按照正常的「牌理」和次序还原至正确的结果，最终结果将按还原至正确的结果计算。 </li> 
+                        </ol>
+　 
+                        二、责任声明<br />
+                        <ol>
+                            <li>用户在进行游戏前应核实其所在地区进行线上游戏是否符合当地法律。</li>  
+                            <li>为避免任何争议，各用户在参与本网站所有游戏过程中，或在结束参与本网站所提供的游戏前，必须检查会员帐户内的资料是否正确。 若发现有错误，请即时与我们联系。客户若不能提供充分的数据，其帐户内之一切数据或历史数据，以本公司资料库中的资料为准，用户不得异议。</li> 
+                            <li>本网站只向符合法定年龄的用户提供服务，用户须注意其居住地区的法律年龄限制，在不违反年龄限制之下才可使用本网站服务。</li>  
+                            <li>本公司将不承担任何用户因违反当地相关法律而引起之任何责任。</li>  
+                            <li>任何用户在参与本公司所有游戏而引起导致违反当地法律之任何责任，本公司概不负责。</li>  
+                            <li>用户有义务保障本身的用户名称和密码的隐私安全，并且不应允许任何第三方以任何形式，通过该用户名称和密码使用本网站之所有游戏，否则，一切责任需由该用户全部承担。</li>  
+                            <li>安装、使用或参与本软件所有游戏之用户，均被视为符合该用户当地之法定年龄，以及该用户完全明白并且同意本协议之内容。</li>  
+                            <li>本公司有权拒绝或不接受任何用户以任何不正当方式登入或参与本公司所有游戏之权利。 各玩家请注意, 敬请各玩家以每局的真实影像的牌局结果作准, 路纸结果有时候会因为网路接收信号或各公司的数据库和伺服器维护而出现差异, 所以只供参考, 不能作准, 如有问题,欢迎申请该局的重播，以示公正。</li> 
+                            <li>因人为或系统发生不能预测因素所导致的失误，本公司管理层保留最终之决定权。</li>  
+                            <li>不论在任何情况下，本公司之决定权乃最终之决定权。</li>  
+                            <li>本公司不承担所有任何明确说明或者暗示的有关於该网站或者该网站上游戏的责任，所有一切都按照现在的规范提供。此外，本公司就任何有关质量，适用性，完整性或准确性的情况不向您提供任何担保或表达任何意见。本公司会尽最大能力去提供最好的服务，但是不保证游戏偶尔出现中断，发生不可预料的错误，失误及时被纠正或者系统不受病毒和蠕虫的侵袭。</li> 
+                            <li>无论任何情况下，本公司不赔偿任何由於使用该网站或者该网站上游戏所造成的损失。不管该损失是特殊原因做成的，直接的，间接的（包括但不仅限於，商业利润损失，意外中断损失，丢失商业信息，或者任何其他金钱上的损失），即使本公司事先知道可能会造成这些损失。</li> 
+                            <li>本公司有权在任何时间随时更改本协议，而无须另行通知，并且您的任何行为或操作都将受到修正后的张贴在该网站上的协定的约束。因此，我们建议您访问该网站时，定期检查协定条款及条件。如果您继续使用本网站会被视为您同意接受协定中的任何修正。</li>
+                        </ol>
+                        <br /><br />
+                        本人清楚及同意以上所有之使用条文及细则。
+                    </div>
+                    
+                    <p>合作银行:</p>
+                    <img src="@ImageServer/Content/Images/register/register_07.jpg" alt="">
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN")
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

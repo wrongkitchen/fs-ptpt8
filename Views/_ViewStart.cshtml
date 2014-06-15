@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    
+    Heji.Library.Models.TO.ConfigTO config = null;
+    bool bConn = true;
+    try
+    {
+        config = new Heji.Library.Models.BO.ConfigBO().GetConfig();
+    }
+    catch
+    {
+        bConn = false;
+    }
+    string imageUrl = string.Empty;
+    //-------------------------------------
+    //sean@2013-11-28:測試暫時關閉
+    if (config != null)
+    {
+        if (!string.IsNullOrEmpty(config.imgsever))
+        {
+            imageUrl = config.imgsever;
+        }
+    }
+    else
+    {
+        imageUrl = "http://199.119.139.137";
+    }
+    //----------------------------------------
+    ViewContext.Controller.ViewBag.ImageServer = imageUrl;
+    
+
+}

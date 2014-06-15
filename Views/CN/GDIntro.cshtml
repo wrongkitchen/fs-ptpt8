@@ -1,0 +1,85 @@
+﻿@using Heji.Web.Helpers
+@{
+    ViewBag.Title = "广东厅 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/dealer.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery.zaccordion.min.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/dealer.js"></script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent dealer-leftRightContent">
+            <div class="leftContent dealer-leftContent">
+                <div class="banner">
+                    <div id="dealer-banner">
+                        <table width="100%">
+                            <tr>
+                                <td width="100"><a class="banner-bbin small" href="@Url.Action("AGNetIntro", "CN")" target="_self"><img src="@ImageServer/Content/Images/dealer/dealer-agnet-small.jpg"  height="346" /></a></td>
+                                <td width="100"><a class="banner-bbin small" href="@Url.Action("BBINIntro", "CN")" target="_self"><img src="@ImageServer/Content/Images/dealer/dealer-bbin-small.jpg"  height="346" /></a></td>
+                                <td width="452"><a class="banner-gd" href="@Url.Action("GDIntro", "CN")" target="_self"><img src="@ImageServer/Content/Images/dealer/dealer-gd-big.jpg" height="500" /></a></td>
+                                <td width="100"><a class="banner-ag small" href="@Url.Action("AGIntro", "CN")" target="_self"><img src="@ImageServer/Content/Images/dealer/dealer-ag-small.jpg"  height="346" /></a></td>
+                                <td width="100"><a class="banner-mg small" href="@Url.Action("MGIntro", "CN")" target="_self"><img src="@ImageServer/Content/Images/dealer/dealer-mg-small.jpg"  height="346" /></a></td>
+                                
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="article ag">
+                    <table class="more_actions">
+                    	@if (!string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()) && WebFunctions.GetCurrentUserId() > 0)
+                        {
+                            <tr>
+                                <td>
+                                    <a href="@Url.Action("Enter", "Game", new { platform = "1" })" target="_blank" class="greyButton">进入游戏 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>
+                                    <a class="greyButton" href="@Url.Action("Register", "Member")">免费开户 &gt;</a>
+                                </td>
+                                <td>
+                                    <a target="_blank" class="greyButton" href="@Url.Action("TrialEnter", "Game", new { platform = "1" })">免费试玩 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                    <br>
+                    <p><img src="@ImageServer/Content/Images/dealer/dealer_gd.jpg" alt=""></p>
+                    <h4 class="red">AG实地厅简介</h4>
+                    <p>广东厅使用AG实地厅平台，通过高清大视频完美再现真实赌场。AG实地平台投注页面操作简单，路纸清晰，投注项丰富，视频流畅，让你仿佛身临其境般与真实赌场内的现场玩家一起跟红顶绿，赢尽天下。</p><br />
+                    <h4 class="red">游戏种类</h4>
+                    <table>
+                        <tr>
+                            <td><a href="@(string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()) ? Url.Action("TrialEnter", "Game", new { platform = "1" }) : Url.Action("Enter", "Game", new { platform = "1" }))" target="_blank"><img src="@ImageServer/Content/Images/dealer/dealer_hundred.jpg" alt=""></a></td>
+                            <td><a href="@(string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()) ? Url.Action("TrialEnter", "Game", new { platform = "1" }) : Url.Action("Enter", "Game", new { platform = "1" }))" target="_blank"><img src="@ImageServer/Content/Images/dealer/dealer_dnt.jpg" alt=""></a></td>
+                            <td><a href="@(string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()) ? Url.Action("TrialEnter", "Game", new { platform = "1" }) : Url.Action("Enter", "Game", new { platform = "1" }))" target="_blank"><img src="@ImageServer/Content/Images/dealer/dealer_dice.jpg" alt=""></a></td>
+                        </tr>
+                        <tr><td colspan="4" height="20"></td></tr>
+                       
+                    </table>
+                    <div class="lineBlock"></div>
+                    <br/>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN")
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

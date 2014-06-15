@@ -1,0 +1,132 @@
+﻿@{
+    ViewBag.Title = "常见问题 - 加盟合作 - 和记娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/agent.css" />
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <ul id="agentNav" class="sectionNav transparent black">
+                    <li class="first button"><a href="@Url.Action("Affiliate", "CN")" target="_self">加盟优势</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("AffiliateCommission", "CN")" target="_self">佣金方案</a></li>
+                    <!-- <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("AffiliateGift", "CN")" target="_self">回馈礼金</a></li> -->
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("AffiliateAgreement", "CN")" target="_self">合作协议</a></li>
+                    <li class="separate">|</li>
+                    <li class="button active"><a href="@Url.Action("AffiliateFAQ", "CN")" target="_self">常见问题</a></li>
+                </ul>
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/agent/faq_03.jpg" alt="" />
+                </div>
+                <div class="article">
+                	<p><br/></p>
+                    <h4 class="red">加盟合作 常见问题</h4><br />
+                    <ul class="numListPoint">
+                        <li class="num1">
+                            <div class="red">和记娱乐的合作伙伴计划是什么？</div>
+                            和记娱乐合作伙伴计划是为个人和企业（最好拥有自己的网站）提供的专用市场销售系统，“合作伙伴”为和记娱乐提供客户，净利润的35% - 55%即为您的佣金。我们的活动完全免费，也无须承担任何风险. 作为一名和记娱乐的联盟合营伙伴，您轻松实现成功与财富的梦想！
+                        </li>
+                        <li class="num2">
+                            <div class="red">为什么我要成为和​​记娱乐的合作伙伴？</div>
+                            网络遊戏业是当今发展迅速的一大产业，市场发展前景无量，和记娱乐绝对是一个极具开发潜力的新兴市场，根据了市场需求，发挥技术优势，已成功地搭建了一个专业化的大型综合性互动遊戏平台。您所推荐的每一个客户每进行一次投注都会计算在您的佣金内；我们能为您提供更详尽的的投注数据和报告。
+                        </li>
+                        <li class="num3">
+                            <div class="red">怎么样才能有资格加入和记娱乐合作伙伴计划？</div>
+                            <div>1. 具有便利的电脑上网设备。</div>
+                            <div>2. 有一定的人际网络或客户群网络。</div>
+                            <div>3. 有自己的推广模式。</div>
+                            <div>4. 不能有损坏和记娱乐声誉的行为。</div>
+                            如果您没有自己的网站，我们仍然欢迎您加入，只要您能把我们的产品推出市场介绍给其它客户。
+                        </li>
+                        <li class="num4">
+                            <div class="red">我如何成为和记娱乐的合作伙伴？</div>
+                            点击“申请加入”并填写完整的申请资料，认真阅读我们的相关规则条款，并同意确认和记娱乐的合作协议，然后提交“申请表格”，填写您的相关资料，申请和记娱乐的联盟代理，提交申请，等候审核。<br />经核准后，您可以获得一个免费的联盟合作账户，您可在此登录我们的代理合作界面，您推荐的会员可通过您的专属代理域名进行连结，您在此能随时观察您的会员的动态，检测您推荐的会员数目，注册，存款，亦可检测您的赢利状况等全部信息，我们根据会员产生的收益支付您的佣金。
+                        </li>
+                        <li class="num5">
+                            <div class="red">加入和记娱乐的合作伙伴计划是免费的吗？</div>
+                            是的，加入和记娱乐合作伙伴计划是完全免费的，条件是您至少要推荐5个正式客户加入和记娱乐，才可以激活您的“合作伙伴”账户，收取佣金。
+                        </li>
+                        <li class="num6">
+                            <div class="red">个人合作伙伴，如何操作？</div>
+                            点击“申请加入”并填写完整的申请资料，认真阅读我们的相关规则条款，并同意确认和记娱乐的合作协议，然后提交“申请表格”，就正式成为和记娱乐的合作伙伴，可以开始推荐客户。<br />然后登入到合作伙伴管理后台，可以开出“真钱遊戏账号”，给到被推荐的客户，他们将永远是您的客户；或者您可以在其它网站发贴并带上管理页面内的链接，则通过此链接进入并成功注册的客户，也将永远是您的客户。您可通过合作伙伴页面，查看被推荐客户的存取款记录及赢利情况。
+                        </li>
+                        <li class="num7">
+                            <div class="red">我如何在其他网站发帖，并加上链接？</div>
+                            和记娱乐已经为您准备好了标准的发贴文章，您可以询问网站上的代理部门QQ索取发帖文章，发表在其它的论坛，但别忘记加上管理页面中的链接。因为只有通过此链接进入和记娱乐并成功注册的客户，才是您的客户。可通过合作伙伴管理后台，查看每天通过链接注册的客户的赢利情况。
+                        </li>
+                        <li class="num8">
+                            <div class="red">和记娱乐是如何记录从我网站进入的访客？</div>
+                            当访客从您的网站或者发贴文章，点击链接进入和记娱乐，我们将会通过固定的识别码进行识别，当用户注册成功，他们将永远是您的客户。您可通过登入到合作伙伴页面，查看具体的情况。
+                        </li>
+                        <li class="num9">
+                            <div class="red">如何查看我的会员投註记录及盈利状况？</div>
+                            如果您需要查看您介绍的客户赢利情况，需要登入到合作伙伴管理后台，选择您所需要的数据及时间範围，便可查询详细的被介绍客户的存取款记录和输赢情况及您个人的赢得状况。
+                        </li>
+                        <li class="num10">
+                            <div class="red">合作伙伴利润是如何计算？</div>
+                            <table class="blackGreyTable">
+                                <tr>
+                                    <td class="title">级别</td>
+                                    <td class="title">当月总纯利收入（人民币）</td>
+                                    <td class="title">每月最低活跃会员</td>
+                                    <td class="title">当月佣金百分比</td>
+                                </tr>
+                                <tr>
+                                    <td>第一级</td>
+                                    <td>1 - 100,000</td>
+                                    <td>5 或以上</td>
+                                    <td>35%</td>
+                                </tr>
+                                <tr>
+                                    <td>第二级</td>
+                                    <td>100,001 - 300,000</td>
+                                    <td>10 或以上</td>
+                                    <td>40%</td>
+                                </tr>
+                                <tr>
+                                    <td>第三级</td>
+                                    <td>300,001 - 500,000</td>
+                                    <td>30 或以上</td>
+                                    <td>45%</td>
+                                </tr>
+                                <tr>
+                                    <td>第四级</td>
+                                    <td>500,001 - 1,000,000</td>
+                                    <td>40 或以上</td>
+                                    <td>50%</td>
+                                </tr>
+                                <tr>
+                                    <td>第五级</td>
+                                    <td>1,000,001+</td>
+                                    <td>50 或以上</td>
+                                    <td>55%</td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li class="num11">
+                            <div class="red">我将如何收到佣金？</div>
+                            只要每月达到最少5 个活跃会员(该月内最少拥有一次投注纪录)，和记娱乐代理部门，每月月初的第一个星期一为您结算，您可以通过登录您的代理后台的查询您的佣金情况，假如您的佣金达到我们的最低的标准，我们会在7个工作日内自动存在您的账户里，无需申请，登录您的账户随时查看过去的支付历史记录。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedAgentLogin", "CN")
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

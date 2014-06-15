@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "代理中心 - 和记娱乐";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+}
+@{
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+    }
+
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/addagent.js"></script>
+}
+
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <ul id="agentNav" class="sectionNav transparent black">
+                    <li class="first button"><a href="@Url.Action("Affiliate", "CN")" target="_self">优势概览</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("AffiliateCommission", "CN")" target="_self">佣金方案</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("AffiliateGift", "CN")" target="_self">回馈礼金</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("AffiliateAgreement", "CN")" target="_self">合作协议</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("AffiliateFAQ", "CN")" target="_self">常见问题</a></li>
+                </ul>
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/agent/registration_03.jpg" alt="" />
+                </div>
+                <div class="article register">
+                    <h4 class="red">注册代理账号</h4><br />
+                    <table class="registerForm">
+                        <tr>
+                            <td class="titleText">账号：</td>
+                            <td>d<input type="text" name="regusername" id="regusername" /></td>
+                            <td class="message" id="regusername_msg"></td>
+                        </tr>
+                        <tr>
+                            <td class="titleText">密码：</td>
+                            <td><input type="password" id="regpassword" name="regpassword" /></td>
+                            <td class="message" id="regpassword_msg"></td>
+                        </tr>
+                        <tr>
+                            <td class="titleText">确认密码：</td>
+                            <td><input type="password" id="regpassword_confirm" name="regpassword_confirm" /></td>
+                            <td class="message" id="regpassword_confirm_msg"></td>
+                        </tr>
+                        <tr>
+                            <td class="titleText">联系人：</td>
+                            <td><input type="text" id="regtruename" name="regtruename" /></td>
+                            <td class="message" id="regtruename_msg"></td>
+                        </tr>
+                        <tr>
+                            <td class="titleText">联系电话：</td>
+                            <td><input type="text" id="regcellphone" name="regcellphone" /></td>
+                            <td class="message" id="regcellphone_msg"></td>
+                        </tr>
+                        <tr>
+                            <td class="titleText">E-mail：</td>
+                            <td><input type="text" id="regemail" name="regemail" /></td>
+                            <td class="message" id="regemail_msg"></td>
+                        </tr>
+                        <tr>
+                            <td class="titleText">QQ：</td>
+                            <td><input type="text" id="regqq" name="regqq" /></td>
+                            <td class="message"></td>
+                        </tr>
+                        <tr>
+                            <td class="titleText">详细说明：</td>
+                            <td><textarea name="content" id="content" cols="30" rows="10"></textarea></td>
+                            <td class="message"></td>
+                        </tr>
+                        <tr><td colspan="3">&nbsp;</td></tr>
+                        <tr>
+                            <td colspan="3">
+                                <button class="redButton" id="regsubmit">提交</button>
+                                <button class="greyButton" id="regreset">重置</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedAgentLogin", "CN")
+                <div class=""><img src="@ImageServer/Content/Images/agent/rightButton_08.jpg" alt=""></div>
+                <div class=""><img src="@ImageServer/Content/Images/agent/rightButton_09.jpg" alt=""></div>
+                <div class=""><img src="@ImageServer/Content/Images/agent/rightButton_10.jpg" alt=""></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+.leftRightContent .leftContent {
+  width: 747px;
+}
+.leftRightContent .rightContent .borderTop {
+  border-top: #646361 1px solid;
+}
+.leftRightContent .rightContent .rightThreeBtn {
+  height: 84px;
+}
+.leftRightContent .rightContent .rightThreeBtn a {
+  display: inline-block;
+}
+.leftRightContent .rightContent .btnReg {
+  width: 124px;
+  height: 84px;
+  background: url(../img/btn-reg.gif) left top no-repeat;
+}
+.leftRightContent .rightContent .btnReg:hover {
+  background: url(../img/btn-reg_on.jpg) left top no-repeat;
+}
+.leftRightContent .rightContent .onlineService {
+  width: 82px;
+  height: 84px;
+  background: url(../img/btn-online_service.jpg) left top no-repeat;
+}
+.leftRightContent .rightContent .onlineService:hover {
+  background: url(../img/btn-online_service_on.jpg) left top no-repeat;
+}
+.leftRightContent .rightContent .freeTrial {
+  width: 124px;
+  height: 84px;
+  background: url(../img/btn-free_trial.jpg) left top no-repeat;
+}
+.leftRightContent .rightContent .freeTrial:hover {
+  background: url(../img/btn-free_trial_on.jpg) left top no-repeat;
+}
+.leftRightContent .rightContent .downloadClient {
+  border-top: #646361 1px solid;
+  border-bottom: #646361 1px solid;
+  display: block;
+  width: 251px;
+  height: 68px;
+  background: url(../img/company/btn-contact_client.gif) left top no-repeat;
+}
+.leftRightContent .rightContent .downloadClient:hover {
+  background: url(../img/company/btn-contact_client_hover.jpg) left top no-repeat;
+}

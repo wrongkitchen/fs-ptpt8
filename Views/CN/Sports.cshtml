@@ -1,0 +1,134 @@
+﻿@using Heji.Web.Helpers
+@model Heji.Web.Models.HomeIndexViewModel
+
+@{
+    ViewBag.Title = "体育投注 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/sports.css" />
+}
+@{
+    String bbinegamelink = String.Empty;
+    MvcHtmlString bbinegamelink2 = MvcHtmlString.Empty;
+    if (Model.CurrentUser != null)
+    {
+        bbinegamelink = Url.Action("Enter", "Game", new { platform = "0", g = "3" });
+        bbinegamelink2 = MvcHtmlString.Create("进入游戏大厅");
+    }
+    else
+    {
+        bbinegamelink = Url.Action("TrialEnter", "Game", new { platform = "0", g = "3" });
+        bbinegamelink2 = MvcHtmlString.Create("免费试玩");
+    }
+}
+
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+            <ul id="sportsNav" class="transparent black">
+                    <li class="first button active"><a href="@bbinegamelink" target="_blank">@bbinegamelink2 》</a></li>
+                </ul>
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/sports/sports_03.jpg" alt="" />
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false", displayCS = "false" })
+            </div>
+            <div class="clearfix"></div>
+            <p>
+                <table>
+                    <tr>
+                        <td><a href="@Url.Action("Deposit", "Member")"><img src="@ImageServer/Content/Images/sports/sports_06.jpg" width="596" height="111" alt=""></a></td>
+                        <td width="5"></td>
+                        <td>
+                        <img src="@ImageServer/Content/Images/sports/sports_08.jpg" width="396" height="111" alt=""></a>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+            @if (Model.CurrentUser != null)
+                {
+                    bbinegamelink2 = MvcHtmlString.Create("进入大厅");
+                }
+               
+            <div class="sportsList">
+                <div class="content">
+                    <div class="contentContain">
+                        <div class="col">
+                            <div class="img"><img src="@ImageServer/Content/Images/sports/sports_12.jpg" alt=""></div>
+                            <div class="desc">
+                                <div class="main">冠军赛</div>
+                                <div class="sub">选择队伍或选手来获取胜利</div>
+                                <div class="details">
+                                    <span class="redArrow"><a href="@bbinegamelink" target="_blank">@bbinegamelink2</a></span>
+                                    <span class="redArrow"><a href="http://777.casino6888.com/app/member/index_data/rule.php" target="_blank">游戏规则</a></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="img"><img src="@ImageServer/Content/Images/sports/sports_14.jpg" alt=""></div>
+                            <div class="desc">
+                                <div class="main">足球</div>
+                                <div class="sub">国际足球赛事尽在其中</div>
+                                <div class="details">
+                                    <span class="redArrow"><a href="@bbinegamelink" target="_blank">@bbinegamelink2</a></span>
+                                    <span class="redArrow"><a href="http://777.casino6888.com/app/member/index_data/rule.php" target="_blank">游戏规则</a></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="img"><img src="@ImageServer/Content/Images/sports/sports_16.jpg" alt=""></div>
+                            <div class="desc">
+                                <div class="main">篮球</div>
+                                <div class="sub">NBA, CBA , SBL一球当先</div>
+                                <div class="details">
+                                    <span class="redArrow"><a href="@bbinegamelink" target="_blank">@bbinegamelink2</a></span>
+                                    <span class="redArrow"><a href="http://777.casino6888.com/app/member/index_data/rule.php" target="_blank">游戏规则</a></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="img"><img src="@ImageServer/Content/Images/sports/sports_18.jpg" alt=""></div>
+                            <div class="desc">
+                                <div class="main">网球</div>
+                                <div class="sub">温布尔顿草坪球场虎对战联场</div>
+                                <div class="details">
+                                    <span class="redArrow"><a href="@bbinegamelink" target="_blank">@bbinegamelink2</a></span>
+                                    <span class="redArrow"><a href="http://777.casino6888.com/app/member/index_data/rule.php" target="_blank">游戏规则</a></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col end">
+                            <div class="img"><img src="@ImageServer/Content/Images/sports/sports_20.jpg" alt=""></div>
+                            <div class="desc">
+                                <div class="main">棒球</div>
+                                <div class="sub">挑战美国球场上专业赛事</div>
+                                <div class="details">
+                                    <span class="redArrow"><a href="@bbinegamelink" target="_blank">@bbinegamelink2</a></span>
+                                    <span class="redArrow"><a href="http://777.casino6888.com/app/member/index_data/rule.php" target="_blank">游戏规则</a></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

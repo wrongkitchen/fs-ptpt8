@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "优势概览 - 加盟合作 - 和记娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/agent.css" />
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <ul id="agentNav" class="sectionNav transparent black">
+                    <li class="first button active"><a href="@Url.Action("Affiliate", "CN")" target="_self">加盟优势</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("AffiliateCommission", "CN")" target="_self">佣金方案</a></li>
+                    <!-- <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("AffiliateGift", "CN")" target="_self">回馈礼金</a></li> -->
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("AffiliateAgreement", "CN")" target="_self">合作协议</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("AffiliateFAQ", "CN")" target="_self">常见问题</a></li>
+                </ul>
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/agent/overview_03.jpg" alt="">
+                </div>
+                <div class="article">
+　                   <!-- <p>如果时光倒流，你是一个亿万富翁！但时光无法倒流！<br />同样如果你能够跨越时空，去若干年以后的互联网看看，你也会很清楚，做什么能使你发财！<br />但谁也没有这样的特异功能！<br /><br />我们虽无法做到以上两点，但是我们可以加盟——和记娱乐<br /><br />无论您是否有相关的合营经验、无论您是行业内的新手还是资历丰富的合营专家，只要您专注和记娱乐合营计划的事业，和记娱乐将会一视同仁、毫无保留地全面协助您，帮您发展您的合营事业，并最终帮您实现财富的终极梦想!</p><br />
+                    <p class="lineBlock"></p><br />
+                    <p class="red title">为什么 2,000 多个代理商都选择和记娱乐？</p> -->
+                    <p><img src="@ImageServer/Content/Images/agent/overview_07.jpg" alt=""></p>
+                    <p>
+                        <br />
+                        大奖娱乐在财务, 客服, 推广, 安全各方面把代理的利益放在首位, 适合以下人群:
+                        <ul>
+                            <li>拥有现成的游戏玩家资源, 并能带动玩家在大奖娱乐存款游戏;</li>
+                            <li>具有网络和线下推广能力, 能通过推广带来新的玩家;</li>
+                            <li>已经与游戏公司合作, 但希望找到更具有实力和让利力度更大的合作伙伴。</li>
+                        </ul>
+                        我们7天24小时在线，欢迎您随时和大奖“伙伴经理”联系，尽早踏上令人羡慕的成功豪富之路。
+                    </p>
+                    <!-- <p>
+                        相信比怀疑多一次机会--您相信吗？<br />
+                        机会不是经常能遇到的--您说对吗？<br />
+                        遇到了没立刻抓住就只能永远观望！--您说是吗？<br />
+                        当别人不明白时你明白了，当别人明白时你行动了，当别人行动时你成功了！--您行动了没？<br />
+                        人生三大憾事：遇良师不学;遇良友不交;遇良机不握<br />
+                    </p>
+                    <br/>
+					<p class="red title">加盟和记娱乐 百万富翁不在是梦！</p> -->
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedAgentLogin", "CN")
+                <div class="lineBlock"></div>
+                <img src="@ImageServer/Content/Images/quicklink/agent-hotline.jpg" alt="">
+                <div class="lineBlock"></div>
+                <img src="@ImageServer/Content/Images/quicklink/client-hotliine.jpg" alt="">
+                <div class="lineBlock"></div>
+                <img src="@ImageServer/Content/Images/quicklink/manager-interview.jpg" alt="">
+                <div class="lineBlock"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

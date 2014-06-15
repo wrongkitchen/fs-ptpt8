@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "明星代言 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/endorsement.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/main.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/div-slider-1.0.3.js"></script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div  class="leftRightContent endorsementLRContent">
+            <div class="leftContent">
+                <div class="endorsement">
+                	<img src="@ImageServer/Content/Images/endorsement/endorsement_title.png" alt="" />
+                    <div class="lineBlock"></div>
+                    <img src="@ImageServer/Content/Images/endorsement/endorsement_name.png" alt="" />
+                    <p>我选择澳门和记娱乐, 因为他们服务专业,有信誉,符合我复出的理念 --- 相信未来, 博出精彩人生!</p>
+                    <a href="@Url.Action("EndorsementCalendar", "CN")" target="_self" class="month"></a>
+                    <a href="@Url.Action("EndorsementGallery", "CN")" target="_self" class="gallery"></a>
+                    <a href="@Url.Action("EndorsementVideo", "CN")" target="_self" class="video"></a>
+                </div>
+            </div>
+            <div class="rightContent">
+                
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,96 @@
+﻿@using Heji.Web.Helpers
+
+@{
+    ViewBag.Title = "优惠活动 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/vip.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/promotion.js"></script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/promotion/promotion_03.jpg" alt="" />
+                </div>
+                <div class="article promotion">
+                     <p class="promotion-ads" id="p7">
+                        <a href="@Url.Action("PomotionMG", "CN")"><img src="@ImageServer/Content/Images/promotion/new/promo_1.jpg" alt="" class="normal"/></a>
+                        <a href="@Url.Action("PomotionMG", "CN")"><img src="@ImageServer/Content/Images/promotion/new/promo_1.jpg" alt="" class="hover"/></a>
+                        <a href="@Url.Action("PomotionMG", "CN")"><img src="@ImageServer/Content/Images/promotion/new/promo_1.jpg" alt="" class="click"/></a>
+                    </p> 
+                    <p class="promotion-ads" id="p2">
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_2.jpg" alt="" class="normal"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_2.jpg" alt="" class="hover"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_2.jpg" alt="" class="click"/>
+                    </p>
+                    <p class="promotion-ads" id="p3">
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_3.jpg" alt="" class="normal"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_3.jpg" alt="" class="hover"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_3.jpg" alt="" class="click"/>
+                    </p>
+                    <p class="promotion-ads" id="p4">
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_4.jpg" alt="" class="normal"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_4.jpg" alt="" class="hover"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_4.jpg" alt="" class="click"/>
+                    </p>
+                    <p class="promotion-ads" id="p5">
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_5.jpg" alt="" class="normal"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_5.jpg" alt="" class="hover"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_5.jpg" alt="" class="click"/>
+                    </p>
+                    <p class="promotion-ads" id="p6">
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_6.jpg" alt="" class="normal"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_6.jpg" alt="" class="hover"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_6.jpg" alt="" class="click"/>
+                    </p>                    
+
+                    <p class="promotion-ads" id="p7">
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_7.jpg" alt="" class="normal"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_7.jpg" alt="" class="hover"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_7.jpg" alt="" class="click"/>
+                    </p>          
+
+                    <p class="promotion-ads" id="p8">
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_8.jpg" alt="" class="normal"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_8.jpg" alt="" class="hover"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_8.jpg" alt="" class="click"/>
+                    </p>                    
+					<br/><br/>
+                    <!-- <div class="lineBlock"></div>
+                       <p style="margin-top:10px"> <img src="@ImageServer/Content/Images/promotion/7_Promotion_R7_batn.jpg" alt="" class="click"></p>
+                    <br/>
+                    <table class="more_actions">
+                    	@if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                        {
+                            <tr>
+                                <td>
+                                    <a class="greyButton" href="@Url.Action("Register", "Member")">免费开户 &gt;</a>
+                                </td>
+                                <td>
+                                    <a target="_blank" class="greyButton" href="@Url.Action("TrialEnter", "Game", new { platform = "2" })">免费试玩 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                    </table><br/> -->
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN")
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

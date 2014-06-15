@@ -1,0 +1,95 @@
+﻿@using Heji.Web.Helpers
+@model Heji.Web.Models.MemberRapidDepositViewModel
+@{
+    ViewBag.Title = "秒充 - 会员中心 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/member.css" />
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/uploadify/uploadify.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery.uploadify.min.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/member.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/deposit.js"></script>
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        scroll(0, 300) 
+    });
+</script>
+
+
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <ul id="memberNav" class="sectionNav transparent black">
+                    <li class="first button active"><a href="@Url.Action("Finance", "Member")" target="_self">出纳柜台</a></li>
+                    <li class="separate">|</li>
+                    @if (Model.CurrentUser.TransferType < 2)
+                    {
+                    <li class="button" style="display:none"><a href="@Url.Action("Transfer", "Member")" target="_self">额度转移方式</a></li>
+                    <li class="separate" style="display:none">|</li>
+                    }
+                    <li class="button"><a href="@Url.Action("Transactions", "Member")" target="_self">历史记录</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Info", "Member")" target="_self">修改资料</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Notices", "Member")" target="_self">最新公告</a></li>
+                </ul>
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/member/01_03.jpg" alt="">
+                </div>
+                <div class="article finance">
+                    <table class="user">
+                        <tr>
+                            <td>账户: @Model.CurrentUser.UserName</td>
+                            <td class="padLeft">
+                                账户余额： <span class="member_balance">@Heji.Web.Helpers.WebFunctions.GetFormattedCurrency(Model.CurrentUser.Balance)</span> 元
+                            </td>
+                        </tr>
+                    </table>
+                 @Html.Action("gameMessage", "Member")
+                    <div class="tabBlock">
+                        <div>
+                            <a href="@Url.Action("DepositSwitch", "Member")"><div class="tab active"style=" background-color: red; color: white; ">存款</div></a>
+                            <a href="@Url.Action("Withdraw", "Member")"><div class="tab">取款</div></a>
+                            <a href="@Url.Action("BankAccounts", "Member")"><div class="tab">绑定银行卡</div></a>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="tabContent deposit active">
+                        	<div class="method">                             
+                                @Html.Action("SharedDepositMenu", "CN")                             
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="subTab chargeTab active">
+                                <IFRAME marginWidth="0" marginHeight="0" src="http://174.139.117.66/OnlinePayInput.aspx?username=@Model.CurrentUser.UserName&key=@Model.RapidDepositKey" frameBorder="0" width="689" scrolling="no" height="703" allowtransparency="true"></IFRAME>
+                                @* //42測試用 //<IFRAME marginWidth="0" marginHeight="0" src="http://119.42.147.42:8089/OnlinePayInput.aspx?username=@Model.CurrentUser.UserName&key=@Model.RapidDepositKey" frameBorder="0" width="689" scrolling="no" height="703" allowtransparency="true"></IFRAME>*@
+                                @* //205 測試用 //<IFRAME marginWidth="0" marginHeight="0" src="http://192.168.10.205:10012/OnlinePayInput.aspx?username=@Model.CurrentUser.UserName&key=@Model.RapidDepositKey" frameBorder="0" width="689" scrolling="no" height="703" allowtransparency="true"></IFRAME> *@
+                                @*<IFRAME marginWidth="0" marginHeight="0" src="http://test-onlinepayment.com/OnlinePayInput.aspx?username=@Model.CurrentUser.UserName&key=@Model.RapidDepositKey" frameBorder="0" width="689" scrolling="no" height="703" allowtransparency="true"></IFRAME>*@
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN")
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

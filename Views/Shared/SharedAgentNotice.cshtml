@@ -1,0 +1,11 @@
+﻿@using Heji.Library.Models.TO
+@model Heji.Web.Models.SharedNoticeViewModel
+@{
+    Layout = null;
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+            @foreach (NoticeTO notice in Model.Notices)
+            {
+                <a href="@Url.Action("Notice", "CN")" target="_self">@Html.Raw(notice.Content)</a>
+            }

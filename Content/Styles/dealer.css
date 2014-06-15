@@ -1,0 +1,88 @@
+.leftRightContent {
+  background: transparent;
+}
+.leftRightContent.dealer-leftRightContent {
+  background-color: #530704;
+}
+.leftRightContent h4 {
+  font-weight: normal;
+}
+.leftRightContent .leftContent .article {
+  padding-bottom: 90px;
+}
+.leftRightContent .leftContent.dealer-leftContent {
+  width: 748px;
+}
+.leftRightContent .leftContent.dealer-leftContent .article.dealer button {
+  padding: 12px 35px;
+}
+.leftRightContent .rightContent .borderTop {
+  /*border-top:#646361 1px solid;*/
+
+}
+.leftRightContent .rightContent .block {
+  /*border-bottom:#646361 1px solid;*/
+
+}
+.leftRightContent .rightContent .rightThreeBtn {
+  height: 208px;
+}
+.leftRightContent .rightContent .rightThreeBtn a {
+  display: block;
+}
+.leftRightContent .rightContent .btnReg {
+  width: 252px;
+  height: 104px;
+  background: url(../Images/company/brn-regist.png) left top no-repeat;
+}
+.leftRightContent .rightContent .btnReg:hover {
+  background: url(../Images/company/brn-regist-on.png) left top no-repeat;
+}
+.leftRightContent .rightContent .onlineService {
+  width: 82px;
+  height: 84px;
+  background: url(../Images/btn-online_service.jpg) left top no-repeat;
+}
+.leftRightContent .rightContent .onlineService:hover {
+  background: url(../Images/btn-online_service_on.jpg) left top no-repeat;
+}
+.leftRightContent .rightContent .freeTrial {
+  width: 252px;
+  height: 104px;
+  background: url(../Images/company/downloadclient.png) left top repeat;
+}
+/*.leftRightContent .rightContent .freeTrial:hover {
+  background: url(../Images/btn-free_trial_on.jpg) left top no-repeat;
+}*/
+.leftRightContent .rightContent .downloadClient {
+  border-top: #646361 1px solid;
+  border-bottom: #646361 1px solid;
+  display: block;
+  width: 252px;
+  height: 68px;
+  background: url(../Images/company/btn-contact_client.gif) left top repeat;
+}
+.leftRightContent .rightContent .downloadClient:hover {
+  background: url(../Images/company/btn-contact_client_hover.jpg) left top no-repeat;
+}
+.banner {
+  background-color: #ffffff;
+}
+.banner table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  vertical-align: top;
+}
+.banner table td {
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  height: 354px;
+  padding-right: 1px;
+}
+.banner table a.small img {
+  height: 346px;
+}
+#subNav .button {
+  z-index: 99999;
+}

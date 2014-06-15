@@ -1,0 +1,137 @@
+#aboutNav {
+  top: 278px;
+}
+.banner{ width:748px; height:346px; }
+.banner img {
+  width:100%; height:100%;
+}
+.leftRightContent .leftContent .article {
+  padding: 40px 29px 90px 40px;
+  font-size: 14px;
+}
+.leftRightContent .leftContent .article .contactInfo td {
+  vertical-align: top;
+}
+.leftRightContent .leftContent .article.about-license {
+  min-height: 500px;
+  padding: 50px 50px 90px 50px;
+}
+.leftRightContent .leftContent .article.about-license .title {
+  font-size: 18px;
+}
+.leftRightContent .leftContent .article.about-license .special-font-size {
+  font-size: 11px;
+}
+.leftRightContent .leftContent .article.about-safe {
+  padding: 50px 50px 90px 50px;
+}
+.leftRightContent .leftContent .article.about-advantage {
+  padding: 50px 50px 90px 50px;
+}
+.leftRightContent .leftContent .article.about-faq .title {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.leftRightContent .leftContent .article.about-faq .numListPoint li {
+  padding-bottom: 30px;
+  margin-bottom: 0;
+}
+.leftRightContent .leftContent .article.about-faq .tabContent {
+  padding-right: 30px;
+}
+.leftRightContent .leftContent .article.about-faq .tabContent.depositProcess,
+.leftRightContent .leftContent .article.about-faq .tabContent.withdrawProcess {
+  padding-right: 30px;
+}
+.leftRightContent .leftContent .article.about-faq .tabContent.depositProcess li,
+.leftRightContent .leftContent .article.about-faq .tabContent.withdrawProcess li {
+  border-bottom: #959595 1px solid;
+  padding-top: 30px;
+  background-position: 0 30px;
+}
+.leftRightContent .leftContent .article.about-faq .tabContent.depositProcess li.last,
+.leftRightContent .leftContent .article.about-faq .tabContent.withdrawProcess li.last {
+  border-bottom-width: 0;
+}
+.leftRightContent .leftContent .article.about-faq table td {
+  vertical-align: middle;
+}
+.leftRightContent .leftContent .article.about-faq table td.gameImg {
+  padding: 20px 0;
+}
+.leftRightContent .leftContent .article.about-faq table td.gameInfo {
+  padding: 0 10px;
+  color: #383431;
+}
+.leftRightContent .leftContent .article.about-faq table td.gameInfo div {
+  margin-bottom: 6px;
+}
+.leftRightContent .leftContent .article.about-faq table td.gameInfo div.gameTitle {
+  font-size: 14px;
+}
+.leftRightContent .leftContent .article.about-faq table td.gameInfo div.gameDesc {
+  font-size: 12px;
+  line-height: 14px;
+}
+.leftRightContent .leftContent .article.about-faq table td.gameInfo a {
+  color: #383431;
+}
+.leftRightContent .leftContent .article.about-contact {
+  padding: 45px 50px 90px 40px;
+}
+.leftRightContent .rightContent .borderTop {
+  border-top: #646361 1px solid;
+}
+.leftRightContent .rightContent .rightThreeBtn {
+  height: 208px;
+}
+.leftRightContent .rightContent .rightThreeBtn a {
+  display: block;
+}
+.leftRightContent .rightContent .btnReg {
+  width: 252px;
+  height: 104px;
+  background: url(../Images/company/brn-regist.png) left top no-repeat;
+}
+.leftRightContent .rightContent .btnReg:hover {
+  background: url(../Images/company/brn-regist-on.png) left top no-repeat;
+}
+.leftRightContent .rightContent .onlineService {
+  width: 82px;
+  height: 84px;
+  background: url(../Images/btn-online_service.jpg) left top no-repeat;
+}
+.leftRightContent .rightContent .onlineService:hover {
+  background: url(../Images/btn-online_service_on.jpg) left top no-repeat;
+}
+.leftRightContent .rightContent .freeTrial {
+  width: 252px;
+  height: 104px;
+  background: url(../Images/company/downloadclient.png) left top repeat;
+}
+/*.leftRightContent .rightContent .freeTrial:hover {
+  background: url(../Images/btn-free_trial_on.jpg) left top no-repeat;
+}*/
+.leftRightContent .rightContent .downloadClient {
+  border-top: #646361 1px solid;
+  border-bottom: #646361 1px solid;
+  display: block;
+  width: 251px;
+  height: 68px;
+  background: url(../Images/company/btn-contact_client.gif) left top repeat;
+}
+.leftRightContent .rightContent .downloadClient:hover {
+  background: url(../Images/company/btn-contact_client_hover.jpg) left top no-repeat;
+}
+.tabButton .tab {
+  color: #f84139;
+}
+#tabContent-intro a{ color:blue; text-decoration: underline; }
+#tabContent-intro a.greyButton{ color:white; text-decoration: none; }
+.step{ background-position: top left; background-repeat: no-repeat; padding-left:60px; margin-top:20px; min-height:50px; font-size:14px; }
+.step .stepTitle{ color:#000; padding-top:15px; }
+.step1{ background-image: url(../Images/company/numlist-01.jpg); }
+.step2{ background-image: url(../Images/company/numlist-02.jpg); }
+.step3{ background-image: url(../Images/company/numlist-03.jpg); }
+.step4{ background-image: url(../Images/company/numlist-04.jpg); }
+

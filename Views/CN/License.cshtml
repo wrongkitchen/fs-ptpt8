@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "博彩牌照 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/aboutus.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/about.js"></script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <div class="banner"><img src="@ImageServer/Content/Images/company/banner-aboutus_02.jpg" alt=""></div>
+                <ul id="aboutNav" class="sectionNav transparent black">
+                    <li class="first button"><a href="@Url.Action("AboutUs", "CN")" target="_self">专业资质</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Safe", "CN")" target="_self">资金安全</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("FAQ", "CN")" target="_self">客户帮助</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Contact", "CN")" target="_self">联系我们</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Notice", "CN")" target="_self">最新公告</a></li>
+                    <!-- <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("License", "CN")" target="_self">博彩牌照</a></li> -->
+                    <!-- <li class="button"><a href="@Url.Action("Advantages", "CN")" target="_self">网博优势</a></li> -->
+                    <!-- <li class="separate">|</li> -->
+                    <!-- <li class="button"><a href="@Url.Action("FAQ", "CN")" target="_self">常见问题</a></li> -->
+                </ul>
+                <div class="article about-license">
+                    <h4 class="red">博彩牌照</h4><br />
+                    <table>
+                        <tr>
+                            <td valign="top">
+                                <p>
+                                    和记娱乐在菲律宾的执照是由FCLRC ('First Cagayan Leisure and Resort Corporation')颁发的。这是一家位於Cagayan特别经济区和自由口岸(CSEZFP) 的机构，是互动遊戏的授权者及管理者。 CSEZFP通常也简称为CEZA, 是菲律宾唯一一个被菲律宾政府承认并批准的国际性互动遊戏经济区。 CEZA 和FCLRC要求他们执照的拥有者使用经过批准的供应商的软件，以确保遊戏操作平台对客户是公正及安全的。
+                                </p>
+                                <p class="special-font-size">
+                                    <span class="red">注</span>：博彩委员会和安全机构只会将执照颁发给具有一定规模和实力的博彩公司。如果有一家博彩公司的某一项条件达不到博彩委员会的要求，他们就会被其开除并失去监管权。而被开除後的博彩公司所进行的一切博彩行为将不具法律效应，相当於人们口中常说的违法经营。此外所有在博彩委员会监管下的博彩公司如果出现任何信誉或者安全性问题都会被寄予除名的惩罚。
+                                </p>
+                            </td>
+                            <td width="20">&nbsp;</td>
+                            <td valign="top" width="115">
+                                <a class="fancybox" href="@ImageServer/Content/Images/company/bczzimage.jpg"><img src="@ImageServer/Content/Images/company/about-license.jpg" width="115" height="196" alt=""></a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN")
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

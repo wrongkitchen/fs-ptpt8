@@ -1,0 +1,88 @@
+﻿@using Heji.Web.Helpers
+@{
+    ViewBag.Title = "网博优势 - 和记娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/aboutus.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/about.js"></script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <div class="banner"><img src="@ImageServer/Content/Images/company/about-advantage_03.jpg" alt=""></div>
+                <ul id="aboutNav" class="sectionNav transparent black">
+                    <li class="first button"><a href="@Url.Action("AboutUs", "CN")" target="_self">公司简介</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("License", "CN")" target="_self">博彩牌照</a></li>
+                    <li class="separate">|</li>
+                    <!-- <li class="button"><a href="@Url.Action("Safe", "CN")" target="_self">资金安全</a></li> -->
+                    <!-- <li class="separate">|</li> -->
+                    <!-- <li class="button active"><a href="@Url.Action("Advantages", "CN")" target="_self">网博优势</a></li> -->
+                    <!-- <li class="separate">|</li> -->
+                    <li class="button"><a href="@Url.Action("FAQ", "CN")" target="_self">常见问题</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Contact", "CN")" target="_self">联系我们</a></li>
+                </ul>
+                <div class="article about-advantage">
+                    <p class="subTitle red">网博优势</p>
+                    <p class="bold">网络博彩的五大优势</p>
+					<br/>
+                    <ul class="numListPoint">
+                        <li class="num1">
+                            <div class="red">网络博彩省时省力</div>
+                            不管是中国大陆还是香港、台湾，一般都是没有合法公开的赌场或者是没有真正够档次完善的赌场，那么去到亚洲最知名的赌场澳门至少需要半天时间，这就让真正的游戏时间少了半天。另外因为各种人为原因，现场博彩比网络博彩要花更多的时间。<br />
+                            网络博彩只要有网络就可以随时下注，每小时您可以玩到三十至五十手牌之间，而澳门赌场在最佳条件下(玩家动作快，庄家熟练），一个小时内您也许只能玩二十手牌。
+                        </li>
+                        <li class="num2">
+                            <div class="red">网络博彩盈利更多</div>
+                            澳门赌场的泥码，亦称为特码或推广码，是一种只能用来下注，而不能用来兑换现金的赌桌筹码。赢了才能兑换现金码，举个例子：100万元一般在澳门只能洗出大概5倍左右，大约500万的码量，按照1.2%的返还比例，能够得到6万元的现金返还。但网络博彩无论输赢都算洗码，可以洗出大概12倍左右1200万的码量，按照1%的返还比例，大概可以拿到12万的现金返还。同时网络博彩还有各种VIP活动和现金返还。实际上网络博彩比澳门赌场要多出2-3倍的现金返还。
+                        </li>
+
+                        <li class="num3"><div class="red">资金转入转出方便快捷</div>
+                            网络博彩足不出户即可通过网银打款提款，您可以随时追加资金或者随时收手取款，不受他人干扰，想下注随时可以下注，提款只要满足要求，随时可以申请。
+                        </li>
+                         
+                        <li class="num4"><div class="red">多台下注，随时换桌</div>
+                            和记娱乐的大视频、旗舰厅都可以多台下注，您可以选择喜欢的牌路随时下注，如果您某桌的手气不好，也可以快速换桌转运。通过电脑屏幕就可以玩转赌场，在和记娱乐的台湾厅设有接入电话，您可以随时拨打电话，验证视频的同步和真实性。
+                        </li>
+
+                        <li class="num5"><div class="red">免费试玩</div>
+                            和记娱乐提供一定金额的筹码给您试玩，您可以总结技巧，熟悉游戏，不花一分钱就可以体验到与网络真钱游戏一样的感受。而且可以反复申请，而现场博彩这种机会很少，也很难找到。<br /><br/>总之，网络博彩还有很多其他方面的优势，这里不一一列出，希望您亲自体验，感受网络博彩的优势所在。
+                        </li>
+                    </ul>
+                    <div class="lineBlock"></div>
+                    <br/>
+                    <table class="more_actions">
+                    	@if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                        {
+                            <tr>
+                                <td>
+                                    <a class="greyButton" href="@Url.Action("Register", "Member")">免费开户 &gt;</a>
+                                </td>
+                                <td>
+                                    <a target="_blank" class="greyButton" href="@Url.Action("TrialEnter", "Game", new { platform = "2" })">免费试玩 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN")
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

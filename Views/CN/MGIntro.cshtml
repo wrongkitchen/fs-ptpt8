@@ -1,0 +1,93 @@
+﻿@using Heji.Web.Helpers
+@{
+    ViewBag.Title = "伦敦厅 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/dealer.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery.zaccordion.min.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/dealer.js"></script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent dealer-leftRightContent">
+            <div class="leftContent dealer-leftContent">
+                <div class="banner">
+                    <div id="dealer-banner">
+                        <table width="100%">
+                            <tr>
+                                <td width="134"><a href="@Url.Action("BBINIntro", "CN")"><img src="@ImageServer/Content/Images/dealer/banner1_small.jpg" alt=""></a></td>
+                                <td width="478"><a href="@Url.Action("MGIntro", "CN")"><img src="@ImageServer/Content/Images/dealer/banner2_hover.jpg" alt=""></a></td>
+                                <td width="134"><a href="@Url.Action("AGIntro", "CN")"><img src="@ImageServer/Content/Images/dealer/banner3.jpg" alt=""></a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="article mg">
+                    <table class="more_actions">
+                    	@if (!string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()) && WebFunctions.GetCurrentUserId() > 0)
+                     {
+                            <tr>
+                                <td>
+                                     <a href="@Url.Action("EnterMG", "Game", new { platform = "4", gameId = "",gameType="2" })" target="_blank" class="greyButton">进入游戏 &gt;</a>
+
+                                     @if (!string.IsNullOrEmpty(ViewBag.PlayCheckUrl))
+                                     {
+                                        <a href="@ViewBag.PlayCheckUrl" title="历史记录中的时间为MG平台所在地伦敦时间，比北京时间早8小时" target="_blank" class="greyButton">历史记录 &gt;</a>
+                                     }
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>
+                                    <a class="greyButton" href="@Url.Action("Register", "Member")">免费开户 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                    <br>
+                    <p><img src="@ImageServer/Content/Images/dealer/dealer_mg.jpg" alt=""></p>
+                    <h4 class="red">MG真人现场介绍</h4>
+                    <p>MicroGaming（简称MG）是北美最具人气和领导力的综合游戏开发商, 早在1994年已经领先开发出世界上第一个网络游戏平台。MG的真人现场设在加拿大和菲律宾, 融合东西方管理理念和操作界面风格, 支持多国语言, 适合任何文化背景的玩家。
+<br/>
+MG真人现场的最大特色是与美国 “花花公子杂志”合作, 推出史上第一个主题真人现场, 荷官来自世界各地, 游戏解说生动活泼, 限红20元起, 将博彩与娱乐完美结合。</p><br />
+                    <h4 class="red">游戏种类</h4>
+                    <table>
+                        <tr>
+                            <td><a href="@Url.Action("Register", "Member")" target="_blank"><img src="@ImageServer/Content/Images/dealer/dealer_hundred.jpg" alt=""></td>
+                            <td><a href="@Url.Action("Register", "Member")" target="_blank"><img src="@ImageServer/Content/Images/dealer/dealer_21.jpg" alt=""></td>
+                            <td><a href="@Url.Action("Register", "Member")" target="_blank"><img src="@ImageServer/Content/Images/dealer/dealer_circle.jpg" alt=""></td>
+                            <td><a href="@Url.Action("Register", "Member")" target="_blank"><img src="@ImageServer/Content/Images/dealer/dealer_playboy.jpg" alt=""></td>
+                            <td><a href="@Url.Action("Register", "Member")" target="_blank"><img src="@ImageServer/Content/Images/dealer/dealer_ele.jpg" alt=""></td>
+                        </tr>
+                        <tr>
+                            <td><a href="@Url.Action("Register", "Member")" target="_blank"><img src="@ImageServer/Content/Images/dealer/dealer_mobile.jpg" alt=""></td>
+                            <td colspan="4"><a href="@Url.Action("Register", "Member")" target="_blank"><img src="@ImageServer/Content/Images/dealer/dealer_poker.jpg" alt=""></td>
+                        </tr>
+                        <tr><td colspan="4" height="20"></td></tr>
+                        
+                    </table>
+                    
+                    <div class="lineBlock"></div>
+                    <br/>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN")
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

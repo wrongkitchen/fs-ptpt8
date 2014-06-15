@@ -1,0 +1,822 @@
+#wrapper {
+  margin-bottom: 30px;
+}
+.banner {
+  position: relative;
+  z-index: 1;
+}
+.bold {
+  font-weight: bold;
+}
+.cellLeft {
+  text-align: left;
+}
+.cellRight {
+  text-align: right;
+}
+.tableDefaultLayout table {
+  width: 100%;
+  color: #ffffff;
+}
+.tableDefaultLayout table tr.header td {
+  background-color: #000000;
+}
+.tableDefaultLayout table tr td {
+  background-color: #554f4b;
+}
+.tableDefaultLayout table td {
+  min-width: 32px;
+  height: 36px;
+  border: #453f3a 1px solid;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 12px;
+  font-weight: normal;
+}
+.articleDefaultHeader .articleHeader {
+  color: #f84139;
+  font-size: 15px;
+  line-height: 15px;
+  margin: 10px 0 14px;
+}
+.articleDefaultPageList .articlePageList {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.articleDefaultPageList .articlePageList li {
+  display: inline;
+}
+.articleDefaultPageList .articlePageList li a {
+  color: #000000;
+  display: inline-block;
+  margin: 0 4px;
+}
+.welcome-leftRightContent .welcome-button, .shared-op-button {
+  font-size: 20px;
+  padding-top: 0;
+  width: 89px;
+  height: 40px;
+  color: #ffffff;
+  background-color: #e4272b;
+  border-width: 0;
+  padding: 0;
+  margin: 0;
+}
+.welcome-leftRightContent .member-center, .member-center {
+  display: block;
+  margin-top: 3px;
+}
+.leftRightContent .leftContent.welcome-leftContent {
+  width: 747px;
+}
+.leftRightContent .leftContent .article {
+  position: relative;
+  z-index: 1;
+  color: #000000;
+}
+.leftRightContent .leftContent .article a {
+  color: #000000;
+}
+.leftRightContent .leftContent .article a.blueHref {
+  color:blue; text-decoration: underline;
+}
+.leftRightContent .leftContent .article table {
+  font-weight: bold;
+  width: 100%;
+}
+.leftRightContent .leftContent .article table.user {
+  font-size: 15px;
+  margin-top: 5px;
+}
+.leftRightContent .leftContent .article table.gameMessage {
+  margin-top: 12px;
+  margin-bottom: 23px;
+}
+.leftRightContent .leftContent .article table.gameMessage .title {
+  width: 100%;
+}
+.leftRightContent .leftContent .article table.gameMessage .title .heading {
+  padding-top: 4px;
+  padding-left: 14px;
+  font-size: 15px;
+  padding-bottom: 1px;
+}
+.leftRightContent .leftContent .article table.gameMessage .title .detail {
+  font-size: 12px;
+  padding-right: 11px;
+  padding-top: 3px;
+}
+.leftRightContent .leftContent .article table.gameMessage .title .detail a {
+  color: #f84139;
+}
+.leftRightContent .leftContent .article table.gameMessage td {
+  border: 1px solid #595959;
+  text-align: center;
+  padding: 0;
+}
+.leftRightContent .leftContent .article table.gameMessage td button {
+  font-size: 12px;
+  width: 70px;
+  height: 25px;
+  margin: 5px;
+  line-height: 25px;
+  padding: 0;
+}
+.leftRightContent .leftContent .article table.gameMessage tr.columnTitle td {
+  font-size: 12px;
+}
+.leftRightContent .leftContent .article table.gameMessage tr.columnData td {
+  font-size: 12px;
+  font-weight: normal;
+  padding: 3px 0 4px;
+}
+.leftRightContent .leftContent .article table.gameMessage tr.columnData .highlight,
+.leftRightContent .leftContent .article table.gameMessage tr.columnData a {
+  color: #f84139;
+  text-decoration: underline;
+}
+.leftRightContent .leftContent .article table.gameMessage tr.columnData .highlight:hover,
+.leftRightContent .leftContent .article table.gameMessage tr.columnData a:hover {
+  text-decoration: none;
+}
+.leftRightContent .leftContent .article.agent {
+  padding: 36px 40px 36px 40px;
+}
+.leftRightContent .leftContent .article.agent p.title {
+  color: #f84139;
+  font-size: 15px;
+  font-weight: bold;
+}
+.leftRightContent .leftContent .article.agent p {
+  font-size: 12px;
+}
+.leftRightContent .leftContent .article.agent table td {
+  font-weight: normal;
+  font-size: 12px;
+}
+.leftRightContent .leftContent .article.agent table.basic td {
+  width: 50%;
+  padding: 3px 15px;
+  border: #000000 1px solid;
+  font-size: 13px;
+}
+.leftRightContent .leftContent .article.welcome {
+  padding: 32px 42px 40px 43px;
+  height: 736px;
+}
+.leftRightContent .leftContent .article.welcome .title {
+  font-size: 17px;
+  margin: 0;
+  line-height: 17px;
+}
+.leftRightContent .leftContent .article.welcome p.red {
+  margin-bottom: 15px;
+}
+.leftRightContent .leftContent .article.welcome p.desc {
+  font-size: 12px;
+  line-height: 14px;
+}
+.leftRightContent .leftContent .article.welcome .floatLeft {
+  float: left;
+}
+.leftRightContent .leftContent .article.welcome .floatRight {
+  float: right;
+}
+.leftRightContent .leftContent .article.transfer {
+  min-height: 477px;
+  padding: 62px 45px 20px 43px;
+  font-size: 12px;
+}
+.leftRightContent .leftContent .article.transfer table {
+  margin-bottom: 60px;
+}
+.leftRightContent .leftContent .article.transfer .title {
+  margin-top: 50px;
+  margin-bottom: 5px;
+}
+.leftRightContent .leftContent .article.transfer .desc {
+  margin-bottom: 30px;
+}
+.leftRightContent .leftContent .article.transfer .desc span {
+  color: #f84139;
+}
+.leftRightContent .leftContent .article.transfer .lineBlock {
+  border-bottom: 1px solid #898989;
+}
+.leftRightContent .leftContent .article.friends {
+  padding: 30px 43px 20px 44px;
+  min-height: 398px;
+}
+.leftRightContent .leftContent .article.friends .articleHeader {
+  color: #f84139;
+  font-size: 15px;
+  line-height: 15px;
+  margin: 10px 0 14px;
+}
+.leftRightContent .leftContent .article.friends table {
+  width: 100%;
+  color: #ffffff;
+}
+.leftRightContent .leftContent .article.friends table tr.header td {
+  background-color: #000000;
+}
+.leftRightContent .leftContent .article.friends table tr td {
+  background-color: #554f4b;
+}
+.leftRightContent .leftContent .article.friends table td {
+  min-width: 32px;
+  height: 36px;
+  border: #453f3a 1px solid;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 12px;
+  font-weight: normal;
+}
+.leftRightContent .leftContent .article.friends .articlePageList {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.leftRightContent .leftContent .article.friends .articlePageList li {
+  display: inline;
+}
+.leftRightContent .leftContent .article.friends .articlePageList li a {
+  color: #000000;
+  display: inline-block;
+  margin: 0 4px;
+}
+.leftRightContent .leftContent .article.news {
+  padding: 30px 43px 20px 44px;
+  min-height: 398px;
+}
+.leftRightContent .leftContent .article.news .articleHeader {
+  color: #f84139;
+  font-size: 15px;
+  line-height: 15px;
+  margin: 10px 0 14px;
+}
+.leftRightContent .leftContent .article.news table {
+  width: 100%;
+  color: #ffffff;
+}
+.leftRightContent .leftContent .article.news table tr.header td {
+  background-color: #000000;
+}
+.leftRightContent .leftContent .article.news table tr td {
+  background-color: #554f4b;
+}
+.leftRightContent .leftContent .article.news table td {
+  min-width: 32px;
+  height: 36px;
+  border: #453f3a 1px solid;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 12px;
+  font-weight: normal;
+}
+.leftRightContent .leftContent .article.news .articlePageList {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.leftRightContent .leftContent .article.news .articlePageList li {
+  display: inline;
+}
+.leftRightContent .leftContent .article.news .articlePageList li a {
+  color: #000000;
+  display: inline-block;
+  margin: 0 4px;
+}
+.leftRightContent .leftContent .article.news table .title {
+  text-align: center;
+  width: 130px;
+}
+.leftRightContent .leftContent .article.news table .date {
+  text-align: center;
+  width: 99px;
+}
+.leftRightContent .leftContent .article.news table .content {
+  text-align: left;
+  padding: 5px 10px;
+}
+.leftRightContent .leftContent .article.news table td {
+  font-weight: normal;
+}
+.leftRightContent .leftContent .article.news table .header .content {
+  text-align: center;
+  padding: 0px;
+}
+.leftRightContent .leftContent .article.history {
+  padding: 40px 44px 20px 41px;
+}
+.leftRightContent .leftContent .article.history .tabBlock .tab {
+  border-color: #a7a7a7;
+  color: #f84139;
+  font-size: 14px;
+  width: 136px;
+  /*height: 36px;*/
+  line-height: 36px;
+}
+.leftRightContent .leftContent .article.history .tabBlock .tab a {
+  color: #f84139;
+}
+.leftRightContent .leftContent .article.history .tabBlock .tab.active {
+  border-bottom-color: #ffffff;
+}
+.leftRightContent .leftContent .article.history .tabContent {
+  border-color: #a7a7a7;
+  padding: 31px 12px 20px 12px;
+}
+.leftRightContent .leftContent .article.history .searchFilter {
+  margin-bottom: 15px;
+}
+.leftRightContent .leftContent .article.history .searchFilter .searchTitle {
+  display: inline-block;
+  width: 98px;
+  vertical-align: top ;
+  border-right: #d0d0d0 1px solid;
+}
+.leftRightContent .leftContent .article.history .searchFilter .searchForm {
+  display: inline-block;
+  width: 522px;
+  line-height: 31px;
+  vertical-align: top ;
+  font-weight: normal;
+}
+.leftRightContent .leftContent .article.history .searchFilter .searchForm .datepicker {
+  width: 70px;
+  height: 18px;
+  border: #898989 1px solid;
+  min-height: 18px;
+  padding: 0 2px;
+  margin: 0;
+  font-size: 12px;
+}
+.leftRightContent .leftContent .article.history .searchFilter .searchForm td {
+  vertical-align: middle;
+}
+.leftRightContent .leftContent .article.history .searchFilter .searchForm table td {
+  font-weight: normal;
+}
+.leftRightContent .leftContent .article.history .searchFilter .searchForm label {
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 5px;
+}
+.leftRightContent .leftContent .article.history .searchFilter .searchForm label input {
+  vertical-align: -2px;
+  margin-right: 3px;
+}
+.leftRightContent .leftContent .article.history .searchFilter .searchForm input {
+  margin-right: 9px;
+}
+.leftRightContent .leftContent .article.history .searchFilter .searchForm .redButton {
+  background-color: #f84139;
+  padding: 0;
+  font-size: 12px;
+  width: 51px;
+  height: 23px;
+}
+.leftRightContent .leftContent .article.history .lineBlock {
+  border-color: #acacac;
+}
+.leftRightContent .leftContent .article.history .articleHeader {
+  color: #f84139;
+  font-size: 15px;
+  line-height: 15px;
+  margin: 10px 0 14px;
+}
+.leftRightContent .leftContent .article.history .articleHeader {
+  color: #000000;
+  margin-top: 25px;
+  margin-bottom: 7px;
+}
+.leftRightContent .leftContent .article.history .data-display table {
+  width: 100%;
+  color: #ffffff;
+}
+.leftRightContent .leftContent .article.history .data-display table tr.header td {
+  background-color: #000000;
+}
+.leftRightContent .leftContent .article.history .data-display table tr td {
+  background-color: #554f4b;
+}
+.leftRightContent .leftContent .article.history .data-display table td {
+  min-width: 32px;
+  height: 36px;
+  border: #453f3a 1px solid;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 12px;
+  font-weight: normal;
+}
+.leftRightContent .leftContent .article.history .data-display table tr td {
+  background-color: #383431;
+}
+.leftRightContent .leftContent .article.history .data-display .denied {
+  color: #e30613;
+}
+.leftRightContent .leftContent .article.history .data-display .success {
+  color: #39b54a;
+}
+.leftRightContent .leftContent .article.history .data-display .type {
+  width: 95px;
+}
+.leftRightContent .leftContent .article.history .data-display .amount {
+  width: 94px;
+}
+.leftRightContent .leftContent .article.history .data-display .platform {
+  width: 125px;
+}
+.leftRightContent .leftContent .article.history .data-display .status {
+  width: 121px;
+}
+.leftRightContent .leftContent .article.history .data-display .other {
+  width: 98px;
+}
+.leftRightContent .leftContent .article.history .articlePageList {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.leftRightContent .leftContent .article.history .articlePageList li {
+  display: inline;
+}
+.leftRightContent .leftContent .article.history .articlePageList li a {
+  color: #000000;
+  display: inline-block;
+  margin: 0 4px;
+}
+.leftRightContent .leftContent .article.info {
+  padding: 40px 40px 40px 40px;
+}
+.leftRightContent .leftContent .article.info p.title {
+  color: #f84139;
+  font-size: 15px;
+}
+.leftRightContent .leftContent .article.info p {
+  font-size: 14px;
+}
+.leftRightContent .leftContent .article.info .tabButton .tab {
+  color: #f84139;
+  font-size: 14px;
+}
+.leftRightContent .leftContent .article.info .tabButton .tab a {
+  color: #f84139;
+}
+.leftRightContent .leftContent .article.info table {
+  font-weight: normal;
+}
+.leftRightContent .leftContent .article.info table td {
+  vertical-align: middle;
+}
+.leftRightContent .leftContent .article.info button {
+  width: 140px;
+  height: 50px;
+  margin-right: 10px;
+}
+.leftRightContent .leftContent .article.info .tabContent.modifyData {
+  padding: 25px 25px 25px 25px;
+}
+.leftRightContent .leftContent .article.info .tabContent.modifyPassword {
+  padding: 25px 25px 25px 25px;
+}
+.leftRightContent .leftContent .article.info .tabContent.modifyQuestion {
+  padding: 25px 25px 25px 25px;
+}
+.leftRightContent .leftContent .article.finance .tabBlock .tabContent.withoutFlow {
+  padding-right: 25px;
+}
+.leftRightContent .leftContent .article.finance .tabBlock .tabContent.withdraw {
+  padding-left: 15px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-right: 15px;
+  font-size: 12px;
+}
+.leftRightContent .leftContent .article.finance .tabBlock .tabContent.withdraw button {
+  margin-right: 10px;
+}
+.leftRightContent .leftContent .article.finance .tabBlock .tabContent.withdraw div.account {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.leftRightContent .leftContent .article.finance .tabBlock .tabContent.withdraw div.account span {
+  margin-right: 15px;
+}
+.leftRightContent .leftContent .article.finance .tabBlock .tabContent.cardBinding {
+  padding-left: 15px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-right: 15px;
+}
+.leftRightContent .leftContent .article.finance .tabBlock .tabContent.cardBinding p.title {
+  font-size: 14px;
+  color: #f84139;
+}
+.leftRightContent .leftContent .article.finance .tabBlock .tabContent.cardBinding table.cardAddTable td.title {
+  width: 130px;
+}
+.leftRightContent .leftContent .article.finance .tabBlock .tabContent.cardBinding table.cardBindingTable {
+  color: #ffffff;
+  width: 100%;
+}
+.leftRightContent .leftContent .article.finance .tabBlock .tabContent.cardBinding table.cardBindingTable tr.header td {
+  background-color: #000000;
+  border-top-width: 0;
+  text-align: center;
+}
+.leftRightContent .leftContent .article.finance .tabBlock .tabContent.cardBinding table.cardBindingTable tr.data td {
+  background-color: #554f4b;
+  text-align: center;
+}
+.leftRightContent .leftContent .article.finance .tabBlock .tabContent.cardBinding table.cardBindingTable td {
+  border: #453f3a 1px solid;
+  height: 37px;
+}
+.leftRightContent .leftContent .article.finance .tabBlock .tabContent.cardBinding ul {
+  list-style: none;
+  margin: 0;
+}
+.leftRightContent .leftContent .article.finance .tabBlock .tabContent.cardBinding ul.pageList {
+  text-align: center;
+}
+.leftRightContent .leftContent .article.finance .tabBlock .tabContent.cardBinding ul.pageList li {
+  display: inline;
+}
+.leftRightContent .leftContent .article.finance .tabBlock .tabContent.cardBinding .center {
+  text-align: center;
+}
+.leftRightContent .leftContent .article.finance .tabContent {
+  padding: 0;
+}
+.leftRightContent .leftContent .article.finance .tabLeft {
+  margin-top: 25px;
+  margin-left: 25px;
+}
+.leftRightContent .leftContent .article.finance .redButton.enquiry {
+  font-size: 12px;
+  width: 293px;
+  height: 37px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.leftRightContent .leftContent .article.finance button {
+  width: 141px;
+  height: 50px;
+}
+.leftRightContent .leftContent .article.finance .subTab {
+  display: none;
+}
+.leftRightContent .leftContent .article.finance .subTab.active {
+  display: block;
+}
+.leftRightContent .leftContent .article.finance .copyButton {
+  color: #ffffff;
+  padding: 2px 8px;
+  width: auto; height:auto;
+}
+.leftRightContent .leftContent .article.finance table {
+  font-weight: normal;
+}
+.leftRightContent .leftContent .article.finance table td.cellLeft {
+  text-align: left;
+}
+.leftRightContent .leftContent .article.finance .chargeTab_step2a button {
+  font-size: 12px;
+  height: 50px;
+}
+.leftRightContent .leftContent .article.finance .chargeTab_step2a .redButton {
+  width: 184px;
+}
+.leftRightContent .leftContent .article.finance .chargeTab_step2a .greyButton {
+  width: 141px;
+}
+.leftRightContent .leftContent .article.finance .chargeTab_step2b .contactLink {
+  text-decoration: underline;
+  color: #ff0011;
+}
+.leftRightContent .leftContent .article.finance .chargeTab_step2b button {
+  font-size: 12px;
+  height: 50px;
+}
+.leftRightContent .leftContent .article.finance .chargeTab_step2b .redButton {
+  width: 184px;
+}
+.leftRightContent .leftContent .article.finance .chargeTab_step2b .greyButton {
+  width: 141px;
+}
+.leftRightContent .leftContent .article.finance .chargeTab_step3 table td {
+  border: #000 1px solid;
+  text-align: center;
+  vertical-align: middle;
+  padding: 15px 25px;
+}
+.leftRightContent .leftContent .article.finance .chargeTab_step3 table a {
+  color: #ff0011;
+  text-decoration: underline;
+}
+.leftRightContent .leftContent .article.finance .chargeTab_step3 h3 {
+  color: #ff0011;
+  font-size: 18px;
+}
+.leftRightContent .leftContent .article.finance .chargeTab_step3 .bank-payment {
+  margin-left: 16px;
+  margin-right: 8px;
+}
+.leftRightContent .leftContent .article.finance .manualTab .form {
+  padding: 30px;
+}
+.leftRightContent .leftContent .article.finance .manualTab .form .numListPoint li {
+  padding-left: 0px;
+  margin-bottom: 19px;
+}
+.leftRightContent .leftContent .article.finance .manualTab .form .numListPoint li p {
+  margin-bottom: 8px;
+}
+.leftRightContent .leftContent .article.finance .manualTab .form .numListPoint li.num1 .lineBlock {
+  margin-left: 5px;
+  margin-top: 7px;
+  width: 570px;
+}
+.leftRightContent .leftContent .article.finance .manualTab .form .numListPoint li.num2 {
+  padding-left: 71px;
+  margin-bottom: 26px;
+}
+.leftRightContent .leftContent .article.finance .manualTab .form .numListPoint li.num2 p {
+  margin-bottom: 6px;
+}
+.leftRightContent .leftContent .article.finance .manualTab .form .numListPoint li.num2 table {
+  font-weight: normal;
+  line-height: 25px;
+  margin-bottom: 8px;
+}
+.leftRightContent .leftContent .article.finance .manualTab .form .numListPoint li.num2 .hint {
+  width: 445px;
+}
+.leftRightContent .leftContent .article.finance .manualTab .form .numListPoint li.num2 .lineBlock {
+  margin-left: 0;
+  margin-top: 16px;
+  width: 570px;
+}
+.leftRightContent .leftContent .article.finance .manualTab .form .numListPoint li.num3 table {
+  font-weight: normal;
+  background: url(../Images/member/manualtab_background.jpg) right top no-repeat;
+}
+.leftRightContent .leftContent .article.finance .manualTab .form .numListPoint li.num3 label {
+  font-size: 13px;
+}
+.leftRightContent .leftContent .article.finance .manualTab .form .numListPoint li td.key {
+  width: 105px;
+  vertical-align: top;
+}
+.leftRightContent .leftContent .article.finance .onlineTab ul {
+  font-size: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.leftRightContent .leftContent .article.finance .onlineTab ul li {
+  float: left;
+  margin-right: 10px;
+}
+.leftRightContent .leftContent .article.finance .onlineTab .subTitle {
+  font-size: 18px;
+}
+.leftRightContent .leftContent .article.finance .onlineTab p {
+  margin-bottom: 5px;
+}
+.leftRightContent .leftContent .article.finance .onlineTab .form {
+  padding: 29px 33px 29px 33px;
+}
+.bank {
+  height: 30px;
+  padding-right: 102px;
+  margin-right: 20px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center right;
+  float: left;
+  margin-bottom: 20px;
+}
+.bank.bank1 {
+  background-image: url(../Images/member/bank_1.jpg);
+}
+.bank.bank2 {
+  background-image: url(../Images/member/bank_2.jpg);
+}
+.bank.bank3 {
+  background-image: url(../Images/member/bank_3.jpg);
+}
+.bank.bank4 {
+  background-image: url(../Images/member/bank_4.jpg);
+}
+.bank.bank5 {
+  background-image: url(../Images/member/bank_5.jpg);
+}
+.rightContent .block {
+  border-bottom: #636260 1px solid;
+}
+.rightContent .service {
+  border-bottom-width: 2px;
+}
+.rightContent .discount {
+  border-bottom-width: 0px;
+}
+.rightContent .downloadClient {
+  display: block;
+  width: 252px;
+  height: 68px;
+  background: url(../Images/company/btn-contact_client.gif) left top repeat;
+}
+.rightContent .downloadClient:hover {
+  background: url(../Images/company/btn-contact_client_hover.jpg) left top no-repeat;
+}
+.userDetail {
+  background-color: #201e1c;
+  color: #FFF;
+  padding: 30px 20px;
+  font-size: 14px;
+  line-height: 17px;
+}
+.userDetail .grading {
+  width: 182px;
+  height: 30px;
+  margin:15px auto;
+}
+.userDetail .grading.grade0 {
+  background-image: url(../Images/member/grade-0.png);
+}
+.userDetail .grading.grade1 {
+  background-image: url(../Images/member/grade-1.gif);
+}
+.userDetail .grading.grade2 {
+  background-image: url(../Images/member/grade-2.gif);
+}
+.userDetail .grading.grade3 {
+  background-image: url(../Images/member/grade-3.gif);
+}
+.userDetail .grading.grade4 {
+  background-image: url(../Images/member/grade-4.gif);
+}
+.userDetail .grading.grade5 {
+  background-image: url(../Images/member/grade-5.gif);
+}
+.userDetail .grading.grade6 {
+  background-image: url(../Images/member/grade-6.gif);
+}
+.userDetail .grading.grade7 {
+  background-image: url(../Images/member/grade-7.gif);
+}
+.userDetail .money {
+  position: relative;
+  font-size: 13px;
+  background-repeat: no-repeat;
+  background-position: right 2px;
+}
+.userDetail .money .refresh {
+  position: absolute;
+  top: 2px;
+  right: 0px;
+}
+.userDetail .money .amount {
+  font-size: 18px;
+  margin-bottom: 9px;
+}
+.userDetail .money .redButton {
+  width: 89px;
+  background: #e4272b url(../Images/member/userdetail-red.gif) right center no-repeat;
+  padding-left: 0px;
+  padding-top: 13px;
+  padding-bottom: 16px;
+}
+.userDetail .money .darkGreyButton {
+  margin-top: 8px;
+  background: #3d3d3d url(../Images/member/userdetail-black.gif) right center no-repeat;
+  font-size: 12px;
+}
+#memberNav {
+  top: 131px;
+}
+#wrapper {
+  margin-top: -2px;
+}
+.container .leftRightContent {
+  background-color: #FFF;
+}
+#subNav .navigation .overlay {
+  top: 48px;
+}
+#subNav .navigation .button .listContainer {
+  top: 48px;
+}
+.welcomeImageWrap{ position:relative; }
+.welcomeImageWrap .ybpayCaller{ 
+  position: absolute;
+  width: 100px;
+  height: 38px;
+  right: 40px;
+  top: 100px;
+}

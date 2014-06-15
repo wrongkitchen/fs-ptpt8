@@ -1,0 +1,2488 @@
+﻿@using Heji.Web.Helpers
+@model Heji.Web.Models.HomeIndexViewModel
+@{
+    ViewBag.Title = "电子游艺 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    //string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+    //string ImageServer = "";//felix ,上线删除
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/egames.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/hash.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/egames.js"></script>
+    <script type="text/javascript">
+        function getUrl(alink) {
+            var content = $(alink).closest("div").find("input[type=hidden]").val();
+            content = $.trim(content);
+            var gameurl = "/Game/EnterMG?platform=4&gameId=" + content + "&gameType=1"
+            $(alink).attr('href', gameurl);
+        }
+    
+    </script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <ul id="egamesNav" class="sectionNav transparent black">
+                    <li class="first button active"><a href="@Url.Action("EGames", "CN")" target="_self">
+                        游戏大厅</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("EGamesIntro", "CN")" target="_self">电子游艺介紹</a></li>
+                </ul>
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/egames/egames_03.jpg" alt="" />
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false", displayCS = "false" })
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
+        <div class="leftRightContent gamesList">
+            <div class="leftContent">
+                <ul id="gameCategoryList">
+                    <li><a href="javascript: void(0);" class="gamesSelection slogGames current" target="_self">
+                    </a></li>
+                    <li><a href="javascript: void(0);" class="gamesSelection games" target="_self"></a>
+                    </li>
+                    <li><a href="javascript: void(0);" class="gamesSelection tableGames" target="_self">
+                    </a></li>
+                    <li class="last"><a href="javascript: void(0);" class="gamesSelection classicSlot"
+                        target="_self"></a></li>
+                </ul>
+                <div class="clearfix">
+                </div>
+                @{
+                    String bbinegamelink = String.Empty;
+                    MvcHtmlString onclick = MvcHtmlString.Empty;
+                    MvcHtmlString bbinegamelink2 = MvcHtmlString.Empty;
+
+                    if (Model.CurrentUser != null)
+                    {
+                        bbinegamelink = "#";
+                        onclick = MvcHtmlString.Create(" onclick=\"getUrl(this)\"");
+                        bbinegamelink2 = MvcHtmlString.Create("进入游戏");
+                    }
+                    else
+                    {
+                        bbinegamelink = Url.Action("Enter", "Game", new { platform = "0", g = "3" });
+                        onclick = MvcHtmlString.Create(" onclick=\"javascript:alert('请先登录！') \"");
+                        bbinegamelink2 = MvcHtmlString.Create("进入游戏");
+                    }
+                }
+                <table class="gameList">
+                    <tr>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="5ReelDrive" />
+                                        <p class="gameTitle">
+                                            5 Reel Drive</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/5ReelDrive.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="BigKahuna" />
+                                        <p class="gameTitle">
+                                            Big Kahuna</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank"  class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/BigKahuna.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="BigTop" />
+                                        <p class="gameTitle">
+                                            Big Top</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/BigTop.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                        <div class="cell-container">
+                            <div class="overlay">
+                                <div class="transparent">
+                                </div>
+                                <div class="contentContainer">
+                                    <input type="hidden" value="Carnaval" />
+                                    <p class="gameTitle">
+                                        Carnaval</p>
+                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        &gt;</a>
+                                </div>
+                            </div>
+                            <img src="@ImageServer/Content/Images/egames/slot/Carnaval.jpg" alt="" />
+                        </div>
+                        </td>
+                        <td class="last">
+                        <div class="cell-container">
+                            <div class="overlay">
+                                <div class="transparent">
+                                </div>
+                                <div class="contentContainer">
+                                    <input type="hidden" value="CrazyChameleons" />
+                                    <p class="gameTitle">
+                                        Crazy Chameleons</p>
+                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        &gt;</a>
+                                </div>
+                            </div>
+                            <img src="@ImageServer/Content/Images/egames/slot/CrazyChameleons.jpg" alt="" />
+                        </div>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="GopherGold" />
+                                        <p class="gameTitle">
+                                            Gopher Gold</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/GopherGold.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="MagicCharms" />
+                                        <p class="gameTitle">
+                                            Magic Charms</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/MagicCharms.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="MermaidsMillions" />
+                                        <p class="gameTitle">
+                                            Mermaids Millions</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/MermaidsMillions.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="Moonshine" />
+                                        <p class="gameTitle">
+                                            Moonshine</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/Moonshine.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="ReelThunder" />
+                                        <p class="gameTitle">
+                                            Reel Thunder</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/ReelThunder.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="SkullDuggery" />
+                                        <p class="gameTitle">
+                                            Skull Duggery</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/SkullDuggery.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="SunQuest" />
+                                        <p class="gameTitle">
+                                            Sun Quest</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/SunQuest.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyTombRaiderII" />
+                                        <p class="gameTitle">
+                                            Tomb Raider II</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/TombRaider2.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="TheFinerReelsOfLife" />
+                                        <p class="gameTitle">
+                                            The Finer Reels Of Life</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank"  class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/FinerReelsofLife.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyBreakDaBankAgain" />
+                                        <p class="gameTitle">
+                                            Ruby Break DaBankAgain</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/BreakDaBankAgain.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="BushTelegraph" />
+                                        <p class="gameTitle">
+                                            Bush Telegraph</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/BushTelegraph.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="Cashanova" />
+                                        <p class="gameTitle">
+                                            Cashanova</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/Cashanova.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="Cashville" />
+                                        <p class="gameTitle">
+                                            Cashville</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/Cashville.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="DinoMight" />
+                                        <p class="gameTitle">
+                                            Dino Might</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/DinoMight.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyHalloweenies" />
+                                        <p class="gameTitle">
+                                            Halloweenies</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/Halloweenies.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyHitman" />
+                                        <p class="gameTitle">
+                                            Hitman</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/Hitman.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="Loaded" />
+                                        <p class="gameTitle">
+                                            Loaded</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/Loaded.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="MadHatters" />
+                                        <p class="gameTitle">
+                                            Mad Hatters</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/MadHatters.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="PollenNation" />
+                                        <p class="gameTitle">
+                                            Pollen Nation</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/PollenNation.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="SantasWildRide" />
+                                        <p class="gameTitle">
+                                            Santas Wild Ride</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/SantasWildRide.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="TheTwistedCircus" />
+                                        <p class="gameTitle">
+                                            The Twisted Circus</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/TwistedCircus.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="Thunderstruck2" />
+                                        <p class="gameTitle">
+                                            Thunderstruck2</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/ThunderstruckTwo.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="TombRaider" />
+                                        <p class="gameTitle">
+                                            Tomb Raider</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/TombRaiderSotS.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="UntamedBengalTiger" />
+                                        <p class="gameTitle">
+                                            Untamed Bengal Tiger</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/UntamedBengalTiger.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="UntamedWolfPack" />
+                                        <p class="gameTitle">
+                                            Untamed Wolf Pack</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/UntamedWolfPack.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyWasabiSan" />
+                                        <p class="gameTitle">
+                                            Wasabi San</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/WasabiSan.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="WhatonEarth" />
+                                        <p class="gameTitle">
+                                            What on Earth</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/WhatonEarth.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyWheelofWealth" />
+                                        <p class="gameTitle">
+                                            Wheel of Wealth</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/WheelOfWealth.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="WheelofWealthSE" />
+                                        <p class="gameTitle">
+                                            Wheel Of Wealth Special Edition</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/WheelofWealthSE.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyWitchesWealth" />
+                                        <p class="gameTitle">
+                                            Witches Wealth</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/WitchesWealth.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <div class="cell-container">
+                            <div class="overlay">
+                                <div class="transparent">
+                                </div>
+                                <div class="contentContainer">
+                                    <input type="hidden" value="RubyBurningDesire" />
+                                    <p class="gameTitle">
+                                        Burning Desire</p>
+                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        &gt;</a>
+                                </div>
+                            </div>
+                            <img src="@ImageServer/Content/Images/egames/slot/BurningDesire.jpg" alt="" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="cell-container">
+                            <div class="overlay">
+                                <div class="transparent">
+                                </div>
+                                <div class="contentContainer">
+                                    <input type="hidden" value="RubyCashapillar" />
+                                    <p class="gameTitle">
+                                        Cashapillar</p>
+                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        &gt;</a>
+                                </div>
+                            </div>
+                            <img src="@ImageServer/Content/Images/egames/slot/Cashapillar.jpg" alt="" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="cell-container">
+                            <div class="overlay">
+                                <div class="transparent">
+                                </div>
+                                <div class="contentContainer">
+                                    <input type="hidden" value="RubyDeckTheHalls" />
+                                    <p class="gameTitle">
+                                        Deck The Halls</p>
+                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        &gt;</a>
+                                </div>
+                            </div>
+                            <img src="@ImageServer/Content/Images/egames/slot/DeckTheHalls.jpg" alt="" />
+                        </div>
+                    </td>
+                    <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="GeniesGems" />
+                                        <p class="gameTitle">
+                                            Genies Gems</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/GeniesGems.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="GreatGriffin" />
+                                        <p class="gameTitle">
+                                            Great Griffin</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/GreatGriffin.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyHotShot" />
+                                        <p class="gameTitle">
+                                            Hot Shot</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/HotShot.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="ImmortalRomance" />
+                                        <p class="gameTitle">
+                                            Immortal Romance</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/ImmortalRomance.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                        <div class="cell-container">
+                            <div class="overlay">
+                                <div class="transparent">
+                                </div>
+                                <div class="contentContainer">
+                                    <input type="hidden" value="KaratePig" />
+                                    <p class="gameTitle">
+                                        Karate Pig</p>
+                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        &gt;</a>
+                                </div>
+                            </div>
+                            <img src="@ImageServer/Content/Images/egames/slot/KaratePig.jpg" alt="" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="cell-container">
+                            <div class="overlay">
+                                <div class="transparent">
+                                </div>
+                                <div class="contentContainer">
+                                    <input type="hidden" value="LadyInRed" />
+                                    <p class="gameTitle">
+                                        Lady In Red</p>
+                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        &gt;</a>
+                                </div>
+                            </div>
+                            <img src="@ImageServer/Content/Images/egames/slot/LadyInRed.jpg" alt="" />
+                        </div>
+                    </td>
+                    <td class="last">
+                        <div class="cell-container">
+                            <div class="overlay">
+                                <div class="transparent">
+                                </div>
+                                <div class="contentContainer">
+                                    <input type="hidden" value="MSBreakDaBankAgain" />
+                                    <p class="gameTitle">
+                                        Mega Spins Break Da Bank</p>
+                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        &gt;</a>
+                                </div>
+                            </div>
+                            <img src="@ImageServer/Content/Images/egames/slot/MegaSpinsBreakDaBank.jpg" alt="" />
+                        </div>
+                    </td>
+                    </tr>
+                    
+                    <tr>
+                    
+                    <td>
+                        <div class="cell-container">
+                            <div class="overlay">
+                                <div class="transparent">
+                                </div>
+                                <div class="contentContainer">
+                                    <input type="hidden" value="MonsterMania" />
+                                    <p class="gameTitle">
+                                        MonsterMania</p>
+                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        &gt;</a>
+                                </div>
+                            </div>
+                            <img src="@ImageServer/Content/Images/egames/slot/MonsterMania.jpg" alt="" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="cell-container">
+                            <div class="overlay">
+                                <div class="transparent">
+                                </div>
+                                <div class="contentContainer">
+                                    <input type="hidden" value="OrientalFortune" />
+                                    <p class="gameTitle">
+                                        Oriental Fortune</p>
+                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        &gt;</a>
+                                </div>
+                            </div>
+                            <img src="@ImageServer/Content/Images/egames/slot/OrientalFortune.jpg" alt="" />
+                        </div>
+                    </td>
+                    <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RROldKingCole" />
+                                        <p class="gameTitle">
+                                            Rhyming Reels Old King Cole</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/RhymingReelsOldKingCole.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyScrooge" />
+                                        <p class="gameTitle">
+                                            Scrooge</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/Scrooge.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyTheOsbournes" />
+                                        <p class="gameTitle">
+                                            The Osbournes</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/TheOsbournes.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyTotemTreasure" />
+                                        <p class="gameTitle">
+                                            Totem Treasure</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/slot/TotemTreasure.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td class="last">
+                        </td>
+                    </tr>
+                </table>
+                <table class="gameList" style="display: none;">
+                    <tr>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyAvalon" />
+                                        <p class="gameTitle">
+                                            Avalon</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/Avalon.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="JoyOfSix" />
+                                        <p class="gameTitle">
+                                            Joy Of Six</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/JoyOfSix.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="LadiesNite" />
+                                        <p class="gameTitle">
+                                            Ladies Nite</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/LadiesNite.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="MagicBoxes" />
+                                        <p class="gameTitle">
+                                            Magic Boxes</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/MagicBoxes.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="ReelStrike" />
+                                        <p class="gameTitle">
+                                            Reel Strike</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/ReelStrike.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="SecretAdmirer" />
+                                        <p class="gameTitle">
+                                            Secret Admirer</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/SecretAdmirer.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="SovereignoftheSevenSeas" />
+                                        <p class="gameTitle">
+                                            Sovereign of the Seven Seas</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/SovereignoftheSevenSeas.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="SpringBreak" />
+                                        <p class="gameTitle">
+                                            Spring Break</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/SpringBreak.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="TallyHo" />
+                                        <p class="gameTitle">
+                                            Tally Ho</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/TallyHo.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="Thunderstruck" />
+                                        <p class="gameTitle">
+                                            Thunder struck</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/Thunderstruck.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="WesternFrontier" />
+                                        <p class="gameTitle">
+                                            Western Frontier</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/WesternFrontier.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="Hohoho" />
+                                        <p class="gameTitle">
+                                            Ho Ho Ho</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/Hohoho.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyAgentJaneBlonde" />
+                                        <p class="gameTitle">
+                                            Agent Jane Blonde</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/AgentJaneBlonde.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="BattlestarGalactica" />
+                                        <p class="gameTitle">
+                                            Battlestar Galactica</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/BattlestarGalactica.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="rubyelementals" />
+                                        <p class="gameTitle">
+                                            Elementals</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/Elementals.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyGoodToGo" />
+                                        <p class="gameTitle">
+                                            Good To Go</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/GoodToGo.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyHarveys" />
+                                        <p class="gameTitle">
+                                            Harveys</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/Harveys.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="HotInk" />
+                                        <p class="gameTitle">
+                                            Hot Ink</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/HotInk.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyKathmandu" />
+                                        <p class="gameTitle">
+                                            Ruby Kathmandu</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/Kathmandu.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="LuckyWitch" />
+                                        <p class="gameTitle">
+                                            Lucky Witch</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/LuckyWitch.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="GoldFactory" />
+                                        <p class="gameTitle">
+                                            Gold Factory</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/GoldFactory.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyAdventurePalace" />
+                                        <p class="gameTitle">
+                                            Ruby Adventure Palace</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/AdventurePalace.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyMunchkins" />
+                                        <p class="gameTitle">
+                                            Ruby Munchkins</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/Munchkins.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="ReelGems" />
+                                        <p class="gameTitle">
+                                            Reel Gems</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/ReelGems.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RetroReels" />
+                                        <p class="gameTitle">
+                                            Retro Reels</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/RetroReels.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RetroReelsDiamondGlitz" />
+                                        <p class="gameTitle">
+                                            Retro Reels Diamond Glitz</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/RetroReelsDiamondGlitz.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="MonteCarloRiches" />
+                                        <p class="gameTitle">
+                                            Monte Carlo Riches</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/RivieraRiches.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="SilverFang" />
+                                        <p class="gameTitle">
+                                            Silver Fang</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/SilverFang.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RRQueenOfHearts" />
+                                        <p class="gameTitle">
+                                            RR Queen Of Hearts</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/feaslot/RRHeartsTarts.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                        </td>
+                    </tr>
+                </table>
+                <table class="gameList" style="display: none;">
+                    <tr>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RomanRiches" />
+                                        <p class="gameTitle">
+                                            Roman Riches</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/RomanRiches.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="Belissimo" />
+                                        <p class="gameTitle">
+                                            Belissimo</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/Belissimo.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="BreakDaBank" />
+                                        <p class="gameTitle">
+                                            Break Da Bank</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/BreakDaBank.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="CashClams" />
+                                        <p class="gameTitle">
+                                            Cash Clams</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/CashClams.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="CashCrazy" />
+                                        <p class="gameTitle">
+                                            Cash Crazy</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/CashCrazy.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="CoolBuck" />
+                                        <p class="gameTitle">
+                                            Cool Buck</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/CoolBuck.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="cosmicc" />
+                                        <p class="gameTitle">
+                                            cosmicc</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/CosmicCat.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="CouchPotato" />
+                                        <p class="gameTitle">
+                                            Couch Potato</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/CouchPotato.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="dm" />
+                                        <p class="gameTitle">
+                                            dm</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/DoubleMagic.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="DoubleWammy" />
+                                        <p class="gameTitle">
+                                            Double Wammy</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/DoubleWammy.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="fan7" />
+                                        <p class="gameTitle">
+                                            fan7</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/Fantastic7.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyFlyingAce" />
+                                        <p class="gameTitle">
+                                            Ruby Flying Ace</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/FlyingAce.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="FortuneCookie" />
+                                        <p class="gameTitle">
+                                            Fortune Cookie</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/FortuneCookie.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="fruits" />
+                                        <p class="gameTitle">
+                                            fruits</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/FruitSlots.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyGoldCoast" />
+                                        <p class="gameTitle">
+                                            Ruby Gold Coast</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/GoldCoast.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="gdragon" />
+                                        <p class="gameTitle">
+                                            gdragon</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/GoldenDragon.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="jexpress" />
+                                        <p class="gameTitle">
+                                            jexpress</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/JackpotExpress.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyJingleBells" />
+                                        <p class="gameTitle">
+                                            Ruby Jingle Bells</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/JingleBells.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="JurassicJackpot" />
+                                        <p class="gameTitle">
+                                            Jurassic Jackpot</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/JurassicJackpot.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyLegacy" />
+                                        <p class="gameTitle">
+                                            Ruby Legacy</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/Legacy.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RubyRapidReels" />
+                                        <p class="gameTitle">
+                                            Ruby Rapid Reels</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/RapidReels.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="RocktheBoat" />
+                                        <p class="gameTitle">
+                                            Rock the Boat</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/RocktheBoat.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="Spectacular" />
+                                        <p class="gameTitle">
+                                            Spectacular</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/SpectacularWheelOfWealth.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="TripleMagic" />
+                                        <p class="gameTitle">
+                                            Triple Magic</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/TripleMagic.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="zebra" />
+                                        <p class="gameTitle">
+                                            zebra</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/claslot/ZanyZebra.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                        </td>
+                    </tr>
+                </table>
+                <table class="gameList" style="display: none;">
+                    <tr>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="AmericanRoulette" />
+                                        <p class="gameTitle">
+                                            American Roulette</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/AmericanRoulette.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="Baccarat" />
+                                        <p class="gameTitle">
+                                            Baccarat</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/Baccarat.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="BaccaratGold" />
+                                        <p class="gameTitle">
+                                            Baccarat Gold</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/BaccaratGold.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="Craps" />
+                                        <p class="gameTitle">
+                                            Craps</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/Craps.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="Cyberstud" />
+                                        <p class="gameTitle">
+                                            Cyberstud</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/CyberstudPoker.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="EuroRouletteGold" />
+                                        <p class="gameTitle">
+                                            Euro Roulette Gold</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/EuropeanRouletteGold.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="FrenchRoulette" />
+                                        <p class="gameTitle">
+                                            French Roulette</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/FrenchRoulette.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="HighLimitBaccarat" />
+                                        <p class="gameTitle">
+                                            High Limit Baccarat</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/HighLimitBaccarat.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="HLEuropeanAdvBJ" />
+                                        <p class="gameTitle">
+                                            HL European Adv BJ</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/HighLimitEuropeanBlackjack.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="MultiWheelRouletteGold" />
+                                        <p class="gameTitle">
+                                            Multi Wheel Roulette Gold</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/MultiWheelRouletteGold.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="PokerPursuit" />
+                                        <p class="gameTitle">
+                                            Poker Pursuit</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/PokerPursuit.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="Spanish" />
+                                        <p class="gameTitle">
+                                            Spanish</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/Spanish21Blackjack.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="SuperFun21" />
+                                        <p class="gameTitle">
+                                            Super Fun 21</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/SuperFun21.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="AcesfacesPwrPoker" />
+                                        <p class="gameTitle">
+                                            Aces and Faces 1</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/AcesandFaces.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="DoubleJoker" />
+                                        <p class="gameTitle">
+                                            Double Joker</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/DoubleJoker.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="DeucesandJoker" />
+                                        <p class="gameTitle">
+                                            Deucesand Joker</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/DeucesandJoker.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="Jackspwrpoker" />
+                                        <p class="gameTitle">
+                                            Jacks or Better</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/JacksorBetter.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="JokerPwrPoker" />
+                                        <p class="gameTitle">
+                                            Joker Poker</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/JokerPoker.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="DeucesWildPwrPoker" />
+                                        <p class="gameTitle">
+                                            Deuces Wild</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/DeucesWild.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="CrownAndAnchor" />
+                                        <p class="gameTitle">
+                                            Crown And Anchor</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/CrownAndAnchor.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="ElectroBingo" />
+                                        <p class="gameTitle">
+                                            Electro Bingo</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/ElectroBingo.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="EnchantedWoods" />
+                                        <p class="gameTitle">
+                                            Enchanted Woods</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/EnchantedWoods.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="FourByFour" />
+                                        <p class="gameTitle">
+                                            Four By Four</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/FourByFour.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="Germinator" />
+                                        <p class="gameTitle">
+                                            Germinator</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/Germinator.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="MaxDamage" />
+                                        <p class="gameTitle">
+                                            MaxDamage And The Alien Attack</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/MaxDamageAndTheAlienAttack.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="MayanBingo" />
+                                        <p class="gameTitle">
+                                            Mayan Bingo</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/MayanBingo.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="PharaohBingo" />
+                                        <p class="gameTitle">
+                                            Phara Oh Bingo</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/PharaOhBingo.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="PickNSwitch" />
+                                        <p class="gameTitle">
+                                            Pick And Switch</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/PickAndSwitch.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="PremierRacing" />
+                                        <p class="gameTitle">
+                                            Premier Racing</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/PremierRacing.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="PremierTrotting" />
+                                        <p class="gameTitle">
+                                            Premier Trotting</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/PremierTrotting.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="SambaBingo" />
+                                        <p class="gameTitle">
+                                            Samba Bingo</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/SambaBingo.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="DeucesandJoker" />
+                                        <p class="gameTitle">
+                                            Deuces Joker</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/DeucesJoker.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="deuceswi" />
+                                        <p class="gameTitle">
+                                            Deuces Wild 2</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/DeucesWild2.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="DoubleDoubleBonus" />
+                                        <p class="gameTitle">
+                                            Double Double Bonus</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/DoubleDoubleBonus.jpg" alt="" />
+                            </div>
+                        </td>
+                        <td class="last">
+                            <div class="cell-container">
+                                <div class="overlay">
+                                    <div class="transparent">
+                                    </div>
+                                    <div class="contentContainer">
+                                        <input type="hidden" value="jacks" />
+                                        <p class="gameTitle">
+                                            Jacks Or Better 2</p>
+                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                            &gt;</a>
+                                    </div>
+                                </div>
+                                <img src="@ImageServer/Content/Images/egames/tablegame/JacksOrBetter2.jpg" alt="" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <div class="cell-container">
+                            <div class="overlay">
+                                <div class="transparent">
+                                </div>
+                                <div class="contentContainer">
+                                    <input type="hidden" value="LouisianaDouble" />
+                                    <p class="gameTitle">
+                                        Louisiana Double</p>
+                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        &gt;</a>
+                                </div>
+                            </div>
+                            <img src="@ImageServer/Content/Images/egames/tablegame/LouisianaDouble.jpg" alt="" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="cell-container">
+                            <div class="overlay">
+                                <div class="transparent">
+                                </div>
+                                <div class="contentContainer">
+                                    <input type="hidden" value="TensorBetter" />
+                                    <p class="gameTitle">
+                                        Tens Or Better</p>
+                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        &gt;</a>
+                                </div>
+                            </div>
+                            <img src="@ImageServer/Content/Images/egames/tablegame/TensOrBetter.jpg" alt="" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="cell-container">
+                            <div class="overlay">
+                                <div class="transparent">
+                                </div>
+                                <div class="contentContainer">
+                                    <input type="hidden" value="acesfaces" />
+                                    <p class="gameTitle">
+                                        Aces And Faces 2</p>
+                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        &gt;</a>
+                                </div>
+                            </div>
+                            <img src="@ImageServer/Content/Images/egames/tablegame/AcesAndFaces1.jpg" alt="" />
+                        </div>
+                    </td>
+                    <td>
+                    </td>
+                    <td class="last">
+                    </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="rightContent">
+                <div class="block">
+                    <img src="/Content/Images/member/01_06.jpg" alt="" /></a></div>
+                <div class="block">
+                    <a href="/CN/Promotions#p2">
+                        <img src="/Content/Images/home/huodong02.jpg" alt="" /></a></div>
+                <div class="block">
+                    <a href="/CN/Promotions#p3">
+                        <img src="/Content/Images/home/huodong03.jpg" alt="" /></a></div>
+                <div class="block">
+                    <a href="/CN/Promotions#p4">
+                        <img src="/Content/Images/home/huodong04.jpg" alt="" /></a></div>
+                <div class="block">
+                    <a href="/CN/Promotions#p5">
+                        <img src="/Content/Images/home/huodong05.jpg" alt="" /></a></div>
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
+    </div>
+    <ul class="zoneBtn horizontalList clearfix">
+        <li class="tw_bbin borderRight"></li>
+        <li class="macau_ag "></li>
+        <li class="china_ag "></li>
+        <li class="electronic borderLeft"></li>
+    </ul>
+</div>

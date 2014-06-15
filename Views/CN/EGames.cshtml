@@ -1,0 +1,539 @@
+﻿@using Heji.Web.Helpers
+@model Heji.Web.Models.HomeIndexViewModel
+@{
+    ViewBag.Title = "电子游艺 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    //string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+    //string ImageServer = "";//felix ,上线删除
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/egames.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/hash.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/egames.js"></script>
+    <script type="text/javascript">
+        function getUrl(alink) {
+            var content = $(alink).closest("div").find("input[type=hidden]").val();
+            content = $.trim(content);
+            var gameurl = "/Game/EnterMG?platform=4&gameId=" + content + "&gameType=1"
+            $(alink).attr('href', gameurl);
+        }
+    
+    </script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <div class="gamePanel">
+                    <ul>
+                        <li>
+                            经典老虎机
+                            <ul class="subList">
+                                <li><a href="#">古怪猴子</a></li>
+                                <li><a href="#">疯狂之七</a></li>
+                                <li><a href="#">百慕大三角</a></li>
+                                <li><a href="#">舞线</a></li>
+                                <li><a href="#">苏丹的财富</a></li>
+                                <li><a href="#">海王星王国</a></li>
+                                <li><a href="#">青春之泉</a></li>
+                                <li><a href="#">8球吃角老虎机</a></li>
+                                <li><a href="#">鬼屋</a></li>
+                                <li><a href="#">摇摆舞</a></li>
+                                <li><a href="#">三个朋友</a></li>
+                                <li><a href="#">丛林摇摆</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            电动角子老虎机
+                            <ul class="subList">
+                                <li>
+                                    奇迹大奖
+                                    <ul class="thirdList">
+                                        <li><a href="#">钢铁侠3</a></li>
+                                        <li><a href="#">钢铁侠2-50线</a></li>
+                                        <li><a href="#">雷神</a></li>
+                                        <li><a href="#">绿巨人50线</a></li>
+                                        <li><a href="#">X战警</a></li>
+                                        <li><a href="#">复仇者联盟</a></li>
+                                        <li><a href="#">幻影杀手</a></li>
+                                        <li><a href="#">超胆侠</a></li>
+                                        <li><a href="#">刀锋战士</a></li>
+                                        <li><a href="#">神奇四侠</a></li>
+                                        <li><a href="#">幽灵骑士</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    5-10条线
+                                    <ul class="thirdList">
+                                        <li><a href="#">高速公路之王</a></li>
+                                        <li><a href="#">黄金之旅</a></li>
+                                        <li><a href="#">船长的宝藏</a></li>
+                                        <li><a href="#">开心假期</a></li>
+                                        <li><a href="#">银弹</a></li>
+                                        <li><a href="#">钻石谷</a></li>
+                                        <li><a href="#">金字塔女王</a></li>
+                                        <li><a href="#">水果狂</a></li>
+                                        <li><a href="#">中国厨房</a></li>
+                                        <li><a href="#">全景电影</a></li>
+                                        <li><a href="#">玩转华尔街</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    15-20条线
+                                    <ul class="thirdList">
+                                        <li><a href="#">圣诞惊喜</a></li>
+                                        <li><a href="#">返利先生</a></li>
+                                        <li><a href="#">超级巨星刮刮乐</a></li>
+                                        <li><a href="#">幽灵骑士</a></li>
+                                        <li><a href="#">复活节惊喜</a></li>
+                                        <li><a href="#">万圣节财富</a></li>
+                                        <li><a href="#">狂欢夜</a></li>
+                                        <li><a href="#">超胆侠</a></li>
+                                        <li><a href="#">复仇者联盟</a></li>
+                                        <li><a href="#">香港世界第八大奇迹</a></li>
+                                        <li><a href="#">疯狂乐透</a></li>
+                                        <li><a href="#">狂野精灵</a></li>
+                                        <li><a href="#">宝贝甜心</a></li>
+                                        <li><a href="#">沙漠宝藏</a></li>
+                                        <li><a href="#">神奇四侠</a></li>
+                                        <li><a href="#">幻影杀手</a></li>
+                                        <li><a href="#">足球传奇</a></li>
+                                        <li><a href="#">冰上对决</a></li>
+                                        <li><a href="#">刀锋战士</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    25+线
+                                    <ul class="thirdList">
+                                        <li><a href="#">深海之蓝</a></li>
+                                        <li><a href="#">钢铁侠3</a></li>
+                                        <li><a href="#">罗马角斗士</a></li>
+                                        <li><a href="#">黄金财富</a></li>
+                                        <li><a href="#">X战警</a></li>
+                                        <li><a href="#">惊异之林</a></li>
+                                        <li><a href="#">钢铁侠2-50线</a></li>
+                                        <li><a href="#">海豚</a></li>
+                                        <li><a href="#">热门宝石</a></li>
+                                        <li><a href="#">魔幻7</a></li>
+                                        <li><a href="#">时空过客</a></li>
+                                        <li><a href="#">木乃伊</a></li>
+                                        <li><a href="#">网球明星</a></li>
+                                        <li><a href="#">终极足球</a></li>
+                                        <li><a href="#">粉红豹</a></li>
+                                        <li><a href="#">绿巨人50线</a></li>
+                                        <li><a href="#">雷神</a></li>
+                                        <li><a href="#">罗马角斗士</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    多旋转
+                                    <ul class="thirdList">
+                                        <li><a href="#">海洋公主</a></li>
+                                        <li><a href="#">三倍利润</a></li>
+                                        <li><a href="#">UGGA GUGGA</a></li>
+                                        <li><a href="#">热带滚筒</a></li>
+                                        <li><a href="#">地妖之穴</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    累积
+                                    <ul class="thirdList">
+                                        <li><a href="#">高速公路之王</a></li>
+                                        <li><a href="#">钢铁侠3</a></li>
+                                        <li><a href="#">银弹</a></li>
+                                        <li><a href="#">狂欢夜</a></li>
+                                        <li><a href="#">船长的宝藏</a></li>
+                                        <li><a href="#">绿巨人50线</a></li>
+                                        <li><a href="#">雷神</a></li>
+                                        <li><a href="#">沙漠宝藏</a></li>
+                                        <li><a href="#">宝贝甜心</a></li>
+                                        <li><a href="#">罗马角斗士</a></li>
+                                        <li><a href="#">时空过客</a></li>
+                                        <li><a href="#">复仇者联盟</a></li>
+                                        <li><a href="#">全景电影</a></li>
+                                        <li><a href="#">钻石谷</a></li>
+                                        <li><a href="#">金字塔女王</a></li>
+                                        <li><a href="#">疯狂乐透</a></li>
+                                        <li><a href="#">幽灵骑士</a></li>
+                                        <li><a href="#">水果狂</a></li>
+                                        <li><a href="#">终极足球</a></li>
+                                        <li><a href="#">钢铁侠2-50线</a></li>
+                                        <li><a href="#">惊异之林</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            牌桌和牌游戏
+                            <ul class="subList">
+                                <li>
+                                    21点
+                                    <ul class="thirdList">
+                                        <li><a href="#">决斗21点</a></li>
+                                        <li><a href="#">累积21点</a></li>
+                                        <li><a href="#">完美21点</a></li>
+                                        <li><a href="#">21点</a></li>
+                                        <li><a href="#">21点PEEK</a></li>
+                                        <li><a href="#">换牌21点</a></li>
+                                        <li><a href="#">英式21点</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    其他
+                                    <ul class="thirdList">
+                                        <li><a href="#">加勒比海扑克</a></li>
+                                        <li><a href="#">现场扑克</a></li>
+                                        <li><a href="#">旋转骰子</a></li>
+                                        <li><a href="#">牌九扑克</a></li>
+                                        <li><a href="#">红狗扑克</a></li>
+                                        <li><a href="#">百家乐</a></li>
+                                        <li><a href="#">骰宝</a></li>
+                                        <li><a href="#">STRAVAGANZA</a></li>
+                                        <li><a href="#">龙舌兰扑克</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    轮盘赌
+                                    <ul class="thirdList">
+                                        <li><a href="#">3D轮盘</a></li>
+                                        <li><a href="#">美式轮盘</a></li>
+                                        <li><a href="#">超级轮盘</a></li>
+                                        <li><a href="#">法式轮盘</a></li>
+                                        <li><a href="#">欧式轮盘</a></li>
+                                        <li><a href="#">MULTI WHEEL ROULETTE</a></li>
+                                        <li><a href="#">美式奖金轮盘</a></li>
+                                        <li><a href="#">欧洲奖金轮盘</a></li>
+                                        <li><a href="#">法国奖金轮盘</a></li>
+                                        <li><a href="#">奖金轮盘赌</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            现场真人
+                            <ul class="subList">
+                                <li>
+                                    真人百家乐
+                                    <ul class="thirdList">
+                                        <li><a href="#">7 SEAT BACCARAT LIVE</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    真人21点
+                                    <ul class="thirdList">
+                                        <li><a href="#">现场21点</a></li>
+                                        <li><a href="#">多人21点</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    实况法式轮盘赌
+                                    <ul class="thirdList">
+                                        <li><a href="#">多手法式轮盘</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    迷你百家乐
+                                    <ul class="thirdList">
+                                        <li><a href="#">迷你百家乐</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    真人轮盘
+                                    <ul class="thirdList">
+                                        <li><a href="#">现场法式轮盘</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    真人骰子
+                                    <ul class="thirdList">
+                                        <li><a href="#">现场骰宝</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    VIP百家乐
+                                    <ul class="thirdList">
+                                        <li><a href="#">VIP百家乐</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            视频扑克
+                            <ul class="subList">
+                                <li><a href="#">4线百搭2</a></li>
+                                <li><a href="#">4线对J高手</a></li>
+                                <li><a href="#">50线对J高手</a></li>
+                                <li><a href="#">A面视频扑克</a></li>
+                                <li><a href="#">ALL AMERICAN</a></li>
+                                <li><a href="#">2点百搭牌</a></li>
+                                <li><a href="#">对J高手</a></li>
+                                <li><a href="#">王牌扑克</a></li>
+                                <li><a href="#">对十高手</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            街机游戏
+                            <ul class="subList">
+                                <li>
+                                    基诺&数字
+                                    <ul class="thirdList">
+                                        <li><a href="#">环游世界</a></li>
+                                        <li><a href="#">基诺</a></li>
+                                        <li><a href="#">百万幸运球</a></li>
+                                        <li><a href="#">宾果</a></li>
+                                        <li><a href="#">旋转骰子</a></li>
+                                        <li><a href="#">掷骰子赌博游戏</a></li>
+                                        <li><a href="#">猜扑克牌游戏</a></li>
+                                        <li><a href="#">猜扑克牌游戏奖池</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    老虎机&牌
+                                    <ul class="thirdList">
+                                        <li><a href="#">硬币投掷游戏</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    牌桌&牌
+                                    <ul class="thirdList">
+                                        <li><a href="#">迷你轮盘</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    运动&虚拟
+                                    <ul class="thirdList">
+                                        <li><a href="#">点球大战</a></li>
+                                        <li><a href="#">决赛比分</a></li>
+                                        <li><a href="#">飞镖</a></li>
+                                        <li><a href="#">保龄球大战</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            刮刮奖
+                            <ul class="subList">
+                                <li><a href="#">3个小丑</a></li>
+                                <li><a href="#">甲壳虫宾果</a></li>
+                                <li><a href="#">21点刮刮卡</a></li>
+                                <li><a href="#">EASTER SURPRISE</a></li>
+                                <li><a href="#">足球狂热</a></li>
+                                <li><a href="#">钢铁侠3</a></li>
+                                <li><a href="#">金刚</a></li>
+                                <li><a href="#">爱情配对</a></li>
+                                <li><a href="#">法老王国</a></li>
+                                <li><a href="#">轮盘赌</a></li>
+                                <li><a href="#">圣诞刮刮卡</a></li>
+                                <li><a href="#">顶级王牌</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            累计游戏
+                            <ul class="subList">
+                                <li>
+                                    吃角子老虎机游戏
+                                    <ul class="thirdList">
+                                        <li><a href="#">狂欢夜</a></li>
+                                        <li><a href="#">粉红豹</a></li>
+                                        <li><a href="#">疯狂乐透</a></li>
+                                        <li><a href="#">沙漠宝藏</a></li>
+                                        <li><a href="#">宝贝甜心</a></li>
+                                        <li><a href="#">银弹</a></li>
+                                        <li><a href="#">船长的宝藏</a></li>
+                                        <li><a href="#">时空过客</a></li>
+                                        <li><a href="#">金字塔女王</a></li>
+                                        <li><a href="#">终极足球</a></li>
+                                        <li><a href="#">惊异之林</a></li>
+                                        <li><a href="#">水果狂</a></li>
+                                        <li><a href="#">钻石谷</a></li>
+                                        <li><a href="#">高速公路之王</a></li>
+                                        <li><a href="#">全景电影</a></li>
+                                        <li><a href="#">罗马角斗士</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    奇迹大奖
+                                    <ul class="thirdList">
+                                        <li><a href="#">刀锋战士</a></li>
+                                        <li><a href="#">X战警</a></li>
+                                        <li><a href="#">复仇者联盟</a></li>
+                                        <li><a href="#">绿巨人50线</a></li>
+                                        <li><a href="#">雷神之战</a></li>
+                                        <li><a href="#">钢铁侠3</a></li>
+                                        <li><a href="#">钢铁侠2-50线</a></li>
+                                        <li><a href="#">神奇四侠</a></li>
+                                        <li><a href="#">幽灵骑士</a></li>
+                                        <li><a href="#">幻影杀手</a></li>
+                                        <li><a href="#">超胆侠</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    其他
+                                    <ul class="thirdList">
+                                        <li><a href="#">百万幸运球</a></li>
+                                        <li><a href="#">STRAVAGANZA</a></li>
+                                        <li><a href="#">现场百家乐</a></li>
+                                        <li><a href="#">累积21点</a></li>
+                                        <li><a href="#">加勒比扑克</a></li>
+                                        <li><a href="#">Genie's Hi-Lo Jackpot</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/egames/egames_03.jpg" alt="" />
+                    <ul id="egamesNav" class="sectionNav transparent black">
+                        <li class="first button active"><a href="@Url.Action("EGames", "CN")" target="_self">
+                            游戏大厅</a></li>
+                        <li class="separate">|</li>
+                        <li class="button"><a href="@Url.Action("EGamesIntro", "CN")" target="_self">电子游艺介紹</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false", displayCS = "false" })
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
+        <div class="leftRightContent gamesList">
+            <div class="leftContent">
+                
+                <div class="gameListMainTitle">热门游戏 － 下方列出最多5个热门游戏</div>
+
+                <table width="100%" valign='top'>
+                    <tr>
+                        <td class="gameListObj" width="341" valign='top'>
+                            <div class="gameListTitle">美国队长</div>
+                            <img src="@ImageServer/Content/Images/egames/game1.jpg" alt="" />
+                            <table class="more_actions">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a class="greyButton" href="#">马上开始 ></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="clearfix"></div>
+                        </td>
+                        <td width="50%" valign='top'>
+                            <table width="100%">
+                                <tr>
+                                    <td class="gameListObj" width="165" valign='top'>
+                                        <div class="gameListTitle">钢铁侠</div>
+                                        <img src="@ImageServer/Content/Images/egames/game2.jpg" alt="" />
+                                        <table class="more_actions">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <a class="greyButton" href="#">马上开始 ></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="clearfix"></div>
+                                    </td>
+                                    <td class="gameListObj" width="165" valign='top'>
+                                        <div class="gameListTitle">绿巨人</div>
+                                        <img src="@ImageServer/Content/Images/egames/game3.jpg" alt="" />
+                                        <table class="more_actions">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <a class="greyButton" href="#">马上开始 ></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="clearfix"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="gameListObj" width="165" valign='top'>
+                                        <div class="gameListTitle">神奇四侠</div>
+                                        <img src="@ImageServer/Content/Images/egames/game4.jpg" alt="" />
+                                        <table class="more_actions">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <a class="greyButton" href="#">马上开始 ></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="clearfix"></div>
+                                    </td>
+                                    <td class="gameListObj" width="165" valign='top'>
+                                        <div class="gameListTitle">木乃伊迷城</div>
+                                        <img src="@ImageServer/Content/Images/egames/game5.jpg" alt="" />
+                                        <table class="more_actions">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <a class="greyButton" href="#">马上开始 ></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="clearfix"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="clearfix"></div>
+                
+                @{
+                    String bbinegamelink = String.Empty;
+                    MvcHtmlString onclick = MvcHtmlString.Empty;
+                    MvcHtmlString bbinegamelink2 = MvcHtmlString.Empty;
+
+                    if (Model.CurrentUser != null)
+                    {
+                        bbinegamelink = "#";
+                        onclick = MvcHtmlString.Create(" onclick=\"getUrl(this)\"");
+                        bbinegamelink2 = MvcHtmlString.Create("进入游戏");
+                    }
+                    else
+                    {
+                        bbinegamelink = Url.Action("Enter", "Game", new { platform = "0", g = "3" });
+                        onclick = MvcHtmlString.Create(" onclick=\"javascript:alert('请先登录！') \"");
+                        bbinegamelink2 = MvcHtmlString.Create("进入游戏");
+                    }
+                }
+            </div>
+            <div class="rightContent">
+                <div class="block">
+                    <a href="/CN/Promotions#p2">
+                        <img src="/Content/Images/home/huodong02.jpg" alt="" /></a></div>
+                <div class="block">
+                    <a href="/CN/Promotions#p3">
+                        <img src="/Content/Images/home/huodong03.jpg" alt="" /></a></div>
+                <div class="block">
+                    <a href="/CN/Promotions#p4">
+                        <img src="/Content/Images/home/huodong04.jpg" alt="" /></a></div>
+                <div class="block">
+                    <a href="/CN/Promotions#p5">
+                        <img src="/Content/Images/home/huodong05.jpg" alt="" /></a></div>
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
+    </div>
+    <ul class="zoneBtn horizontalList clearfix">
+        <li class="tw_bbin borderRight"></li>
+        <li class="macau_ag "></li>
+        <li class="china_ag "></li>
+        <li class="electronic borderLeft"></li>
+    </ul>
+</div>

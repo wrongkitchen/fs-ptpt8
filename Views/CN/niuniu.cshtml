@@ -1,0 +1,143 @@
+﻿
+@using Heji.Web.Helpers
+
+@{
+    ViewBag.Title = "【牛牛】游戏说明";
+     Layout = "~/Views/Shared/_GameIntroLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+}
+
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/Introduction.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Content/Styles/iepngfix_tilebg.js"></script>
+}
+
+
+<a name="top" id="top"></a>
+<table width="1000" align="center" border="0" cellpadding="0" cellspacing="0" height="120">
+	<tbody>
+		<tr>
+			<td  height="80" width="385"></td>
+			<td height="80" width="469"></td>
+			<td width="146"><div class="ribbon_bolder ">
+					
+				</div></td>
+		</tr>
+	</tbody>
+</table>
+<table width="1000" align="center" border="0" cellpadding="0" cellspacing="0"  style="padding: 60px 0 0 0;">
+<tbody>
+	<tr>
+		<td colspan="3" scope="col"><table width="890" align="center" border="0" cellpadding="0" cellspacing="0">
+				<tbody>
+					<tr>
+						<td scope="col"><div class="title_new"> 1. 牛牛简介 </div></td>
+					</tr>
+					<tr>
+						<td><div class="box_inner">
+								<p>牛牛游戏是流行于广东、广西、湖南以及江浙一带的传统牌类游戏。节奏紧凑且刺激，「牌型规则」简单易懂为牛牛最大的特点。</p>
+							</div></td>
+					</tr>
+					<tr> </tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td scope="col"><div class="title_new"> 2. 游戏玩法 </div></td>
+					</tr>
+					<tr>
+						<td><div class="box_inner">
+								<p>游戏使用扑克牌中52张牌（不含鬼牌），每局每家派发5张牌，先从5张牌中找出3张可成10或10的倍数组合，剩余2张牌相加，如遇点数相加超过10点则减去10点，为该局之点数，与庄家比点数大小决定胜负。<br /><br />
+									你有以下几种下注选择：<br />
+									『闲一』：平倍、翻倍。<br />
+									『闲二』：平倍、翻倍。<br />
+									『闲三』：平倍、翻倍。<br /><br />
+									<span style="color:red">注意：于翻倍中下注时，『可用余额』必须高于下注额度的5倍（下注分数 X 5公赔率）</span><br /> 
+								</p>
+							</div></td>
+					</tr>
+					<tr> </tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td scope="col"><div class="title_new"> 3. 大小 </div></td>
+					</tr>
+					<tr>
+						<td><div class="box_inner">
+								<p> 在游戏中，如遇点数相同时，将从5张牌中挑选牌值最大的比牌，牌值大的一方获胜。如点数与牌值都相同时，最后再比花色大小。详细大小比较请看下表说明。<br />
+								&nbsp;&nbsp;牌型：<br />
+									<table class="tableClass" width="800" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="125" align="center" bgcolor="#333;"><p style="color:#FFF;">牌型</p></td>
+										<td width="391" align="center" bgcolor="#333;"><p style="color:#FFF;">图解</p></td>
+										<td width="282" align="center" bgcolor="#333;"><p style="color:#FFF;">说明</p></td>
+									</tr>
+									<tr>
+										<td align="center"><p >5公<br />(5張J、Q、K)</p></td>
+										<td align="center"><p ><img src="@ImageServer/Content/Images/Introduction/pai-k1.png" width="61" height="85"  alt=""/><img src="@ImageServer/Content/Images/Introduction/pai-q2.png" width="61" height="85"  alt=""/><img src="@ImageServer/Content/Images/Introduction/pai-k3.png" width="61" height="85"  alt=""/><img src="@ImageServer/Content/Images/Introduction/pai-j4.png" width="61" height="85"  alt=""/><img src="@ImageServer/Content/Images/Introduction/pai-j1.png" width="61" height="85"  alt=""/></p></td>
+										<td align="center"><p >由5张JQK组成</p></td>
+									</tr>
+									<tr>
+										<td align="center"><p >牛牛</p></td>
+										<td align="center"><p ><img src="@ImageServer/Content/Images/Introduction/pai-93.png" width="61" height="85"  alt=""/><img src="@ImageServer/Content/Images/Introduction/pai-14.png" width="61" height="85"  alt=""/><img src="@ImageServer/Content/Images/Introduction/pai-k1.png" width="61" height="85"  alt=""/><img src="@ImageServer/Content/Images/Introduction/pai-103.png" width="61" height="85"  alt=""/><img src="@ImageServer/Content/Images/Introduction/pai-q2.png" width="61" height="85"  alt=""/></p></td>
+										<td align="center"><p >3张10的倍数组合，剩余2张相加为10或20</p></td>
+									</tr>
+									<tr>
+										<td align="center"><p >牛9</p></td>
+										<td align="center"><p ><img src="@ImageServer/Content/Images/Introduction/pai-74.png" width="61" height="85"  alt=""/><img src="@ImageServer/Content/Images/Introduction/pai-23.png" width="61" height="85"  alt=""/><img src="@ImageServer/Content/Images/Introduction/pai-12.png" width="60" height="84"  alt=""/><img src="@ImageServer/Content/Images/Introduction/pai-62.png" width="61" height="85"  alt=""/><img src="@ImageServer/Content/Images/Introduction/pai-33.png" width="61" height="85"  alt=""/></p></td>
+										<td align="center"><p >3张10的倍数组合，剩余2张相加为9或19</p></td>
+									</tr>
+									<tr>
+										<td align="center"><p >牛8</p></td>
+										<td align="center"><p ><img src="@ImageServer/Content/Images/Introduction/pai-k3.png" width="61" height="85"  alt=""/><img src="@ImageServer/Content/Images/Introduction/pai-q2.png" width="61" height="85"  alt=""/><img src="@ImageServer/Content/Images/Introduction/pai-j3.png" width="61" height="85"  alt=""/><img src="@ImageServer/Content/Images/Introduction/pai-11.png" width="60" height="84"  alt=""/><img src="@ImageServer/Content/Images/Introduction/pai-74.png" width="61" height="85"  alt=""/></p></td>
+										<td align="center"><p >3张10的倍数组合，剩余2张相加为8或18</p></td>
+									</tr>
+									<tr>
+										<td align="center"><p >牛7</p></td>
+										<td align="center"><p ><img src="@ImageServer/Content/Images/Introduction/pai-k3.png" width="61" height="85"  alt=""/><img src="@ImageServer/Content/Images/Introduction/pai-71.png" width="61" height="85"  alt=""/><img src="@ImageServer/Content/Images/Introduction/pai-32.png" width="61" height="85"  alt=""/><img src="@ImageServer/Content/Images/Introduction/pai-92.png" width="61" height="85"  alt=""/><img src="@ImageServer/Content/Images/Introduction/pai-83.png" width="61" height="85"  alt=""/></p></td>
+										<td align="center"><p >3张10的倍数组合，剩余2张相加为7或17</p></td>
+									</tr>
+									<tr>
+										<td colspan="3" align="center">牛6（含牛6）以下为一般牌型</td>
+										</tr>
+								</table>
+								<br />
+								大小：<br />
+								<table class="tableClass" width="800" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="87" align="center" bgcolor="#333;"><p style="color:#FFF;">牌型</p></td>
+										<td width="311" align="center" bgcolor="#333;"><p style="color:#FFF;">说明</p></td>
+									</tr>
+									<tr>
+										<td align="center"><p >牌型</p></td>
+										<td align="center"><p >52张，不含鬼牌</p></td>
+									</tr>
+									<tr>
+										<td rowspan="2" align="center"><p >点数大小</p></td>
+										<td align="center"><p >J、Q、K等于10点，其余依据牌面显示点数；A等于1点</p></td>
+									</tr>
+									<tr>
+										<td align="center"><p >5公(5张J、Q、K) > 牛牛 > 牛9 > 牛8 > 牛7 > 牛6 > 牛5 > 牛4 > 牛3 > 牛2 > 牛1 > 无牛</p></td>
+									</tr>
+									<tr>
+										<td align="center"><p >牌值大小</p></td>
+										<td align="center"><p >K > Q > J > 10 > 9 > 8 > 7 > 6 > 5 > 4 > 3 > 2 > A</p></td>
+									</tr>
+									<tr>
+										<td align="center"><p >花色大小</p></td>
+										<td align="center"><p >黑桃(♠) > 紅桃(♥) > 梅花(♣) > 方片(♦)</p></td>
+									</tr>
+								</table>
+								</p>
+							</div></td>
+					</tr>
+					<tr> </tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					
+				</tbody>
+			</table>

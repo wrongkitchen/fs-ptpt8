@@ -1,0 +1,127 @@
+﻿@{
+    ViewBag.Title = "佣金方案 - 加盟合作 - 和记娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/agent.css" />
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <ul id="agentNav" class="sectionNav transparent black">
+                    <li class="first button"><a href="@Url.Action("Affiliate", "CN")" target="_self">加盟优势</a></li>
+                    <li class="separate">|</li>
+                    <li class="button active"><a href="@Url.Action("AffiliateCommission", "CN")" target="_self">佣金方案</a></li>
+                    <!-- <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("AffiliateGift", "CN")" target="_self">回馈礼金</a></li> -->
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("AffiliateAgreement", "CN")" target="_self">合作协议</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("AffiliateFAQ", "CN")" target="_self">常见问题</a></li>
+                </ul>
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/agent/commission_03.jpg" alt="" />
+                </div>
+                <div class="article">
+                	<p><br/></p>
+                    <div class="red title">合作酬金</div>
+                    <div>我们为您提供市场上最优厚的佣金提成方案。佣金提成级别是按每个月为和记娱乐城带来的总纯利收入而定。</div>
+
+
+                    <table class="blackGreyTable">
+                        <tr>
+                            <td class="title">级别</td>
+                            <td class="title">当月总纯利收入（人民币）</td>
+                            <td class="title">每月最低活跃会员</td>
+                            <td class="title">当月佣金百分比</td>
+                        </tr>
+                        <tr>
+                            <td>第一级</td>
+                            <td>1 - 100,000</td>
+                            <td>5或以上</td>
+                            <td>35%</td>
+                        </tr>
+                        <tr>
+                            <td>第二级</td>
+                            <td>100,001 - 300,000</td>
+                            <td>10 或以上</td>
+                            <td>40%</td>
+                        </tr>
+                        <tr>
+                            <td>第三级</td>
+                            <td>300,001 - 500,000</td>
+                            <td>30 或以上</td>
+                            <td>45%</td>
+                        </tr>
+                        <tr>
+                            <td>第四级</td>
+                            <td>500,001 - 1,000,000</td>
+                            <td>40 或以上</td>
+                            <td>50%</td>
+                        </tr>
+                        <tr>
+                            <td>第五级</td>
+                            <td>1,000,001+</td>
+                            <td>50 或以上</td>
+                            <td>55%</td>
+                        </tr>
+                    </table>
+                    
+                    <p>1、代理商必须拥有有效推广平台用作宣传和记娱乐城，合营部有权延迟批核直到代理商能够提供相关资料。任何被证实不诚实利用代理计划获取利润的代理商，将会被永久取消其和记娱乐城代理商身份及利润。</p>
+                    
+                    <p>2、只要同时符合支付佣金达到人民币100元和每月达到最少5个活跃会员（一个月内拥有多次存取款和有效投注纪录）的条件，和记娱乐将支付佣金。如果当月有佣金，但是下线有效活跃玩家未达到最低标准，佣金将累计，当佣金和有效活跃玩家都达到要求，将按照相应的佣金比例发放佣金(之前未达到最低提佣标准的提成将按最低提佣比例计算)。</p>
+                    
+                    <br /><p class="lineBlock"></p>
+
+                    <table class="formula">
+                        <tr>
+                            <td class="red">佣金提成计算:</td>
+                            <td class="desc">代理佣金 = 纯利润 × 当月佣金比例</td>
+                        </tr>
+                    </table>
+
+                    <table class="exampleList">
+                        <tr>
+                            <td class="title">举例 <span class="number">1</span></td>
+                            <td class="desc">假若您介绍的客户在该月为和记娱乐城带来 90,000元人民币的纯利，同时您的活跃会员人数也多于5位，即符合了第一级的两个条件, 那么该月的结算则会按照第一级的35%提成去计算。</td>
+                        </tr>
+                        <tr>
+                            <td class="title">举例 <span class="number">2</span></td>
+                            <td class="desc">假若您介绍的客户在该月为和记娱乐城带来 90,000元人民币的纯利，同时您的活跃会员人数少于5位，即符合了第一级的当月总纯利收入，但不符合第一级每月最低活跃会员，您的该笔佣金提成将累计，当您以后达到提佣要求时，我们在当月会将您之前的佣金累计并按达到的佣金百分比计算佣金提成(之前未达到最低提佣标准的提成将按最低提佣比例计算)。</td>
+                        </tr>
+                        <tr>
+                            <td class="title">举例 <span class="number">3</span></td>
+                            <td class="desc">假若您介绍的客户在该月为和记娱乐城带来 900,000元人民币的纯利，同时您的活跃会员人数是5至9位之间，即符合了第四级的当月总纯利收入和第一级的每月最低活跃会员，那么该月的结算则会按照第一级的35% 提成去计算。</td>
+                        </tr>
+                        <tr>
+                            <td class="title">举例 <span class="number">4</span></td>
+                            <td class="desc">假若您介绍的客户在该月为和记娱乐城带来 9,000元人民币的纯利, 同时您的活跃会员人数是50位或以上，即符合了第一级的当月总纯利收入和第五级的每月最低活跃会员，那么该月的结算则会按照第一级的35% 提成计算。</td>
+                        </tr>
+                        <tr>
+                            <td class="title">举例 <span class="number">5</span></td>
+                            <td class="desc">假若您介绍的客户在该月赢得 90,000元人民币，您的佣金会变成负数，该笔负数佣金将会累计，负值佣金会于次月佣金中扣除，如果您下个月佣金为正数并高于人民币100元才发放。</td>
+                        </tr>
+                    </table>
+                    
+                    <br /><br /><p class="lineBlock"></p><br />
+
+                    <p>注意 : 我们会根据联盟协议在每月依照佣金比例支付佣金给代理商<br />如果正式成为和记娱乐城的代理合作伙伴后，连续三个月都未能达到我们的第一级代理要求，<br />您的佣金将归零，如果连续六个月都未能达到我们的第一级代理要求，我们将取消您的代理资格。</p>
+
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedAgentLogin", "CN")
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

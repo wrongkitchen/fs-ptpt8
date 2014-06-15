@@ -1,0 +1,124 @@
+﻿
+@using Heji.Web.Helpers
+
+@{
+    ViewBag.Title = "【色碟】游戏说明";
+     Layout = "~/Views/Shared/_GameIntroLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+}
+
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/Introduction.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Content/Styles/iepngfix_tilebg.js"></script>
+}
+
+<a name="top" id="top"></a>
+<table width="1000" align="center" border="0" cellpadding="0" cellspacing="0" height="120">
+	<tbody>
+		<tr>
+			<td  height="80" width="385"></td>
+			<td height="80" width="469"></td>
+			<td width="146"><div class="ribbon_bolder ">
+					
+				</div></td>
+		</tr>
+	</tbody>
+</table>
+<table width="1000" align="center" border="0" cellpadding="0" cellspacing="0"  style="padding: 60px 0 0 0;">
+<tbody>
+	<tr>
+		<td colspan="3" scope="col"><table width="890" align="center" border="0" cellpadding="0" cellspacing="0">
+				<tbody>
+					<tr>
+						<td scope="col"><div class="title_new"> 1. 色碟简介 </div></td>
+					</tr>
+					<tr>
+						<td><div class="box_inner">
+								<p>色碟始于1909，用家里随处可得的器具即可进行这项游戏，用碗盖住碟上的双色钮扣4颗，快速摇动后出现的结果做为下注组合，简单有趣，因此很快便流行起来。</p>
+							</div></td>
+					</tr>
+					<tr> </tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td scope="col"><div class="title_new"> 2. 游戏玩法 </div></td>
+					</tr>
+					<tr>
+						<td><div class="box_inner">
+								<p>荷官将4颗红白双色的钮扣放入碟中，盖上碗后上下摇碟；完成摇碟动作后静置于画面中供会员下注。下注时间结束将碗打开，依开出结果派彩。<br />
+								</p>
+							</div></td>
+					</tr>
+					<tr> </tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td scope="col"><div class="title_new"> 3. 投注赔率 </div></td>
+					</tr>    
+					<tr>
+						<td><div class="box_inner">
+									<table class="tableClass" width="800" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="167" align="center" bgcolor="#333;"><p style="color:#FFF;">下注组合</p></td>
+										<td width="130" align="center" bgcolor="#333;"><p style="color:#FFF;">赔率</p></td>
+										<td width="501" align="center" bgcolor="#333;"><p style="color:#FFF;">说明</p></td>
+									</tr>
+									<tr>
+										<td align="center"><p ><img src="@ImageServer/Content/Images/Introduction/redImg.png" width="30" height="28"  alt=""/><img src="@ImageServer/Content/Images/Introduction/redImg.png" width="30" height="28"  alt=""/><img src="@ImageServer/Content/Images/Introduction/redImg.png" width="30" height="28"  alt=""/><img src="@ImageServer/Content/Images/Introduction/redImg.png" width="30" height="28"  alt=""/></p></td>
+										<td align="center"><p >1:12</p></td>
+										<td align="left"><p >开出4个红色钮扣。</p></td>
+									</tr>
+									<tr>
+										<td align="center"><p ><img src="@ImageServer/Content/Images/Introduction/whiteImg.png" width="30" height="28"  alt=""/><img src="@ImageServer/Content/Images/Introduction/whiteImg.png" width="30" height="28"  alt=""/><img src="@ImageServer/Content/Images/Introduction/whiteImg.png" width="30" height="28"  alt=""/><img src="@ImageServer/Content/Images/Introduction/whiteImg.png" width="30" height="28"  alt=""/></p></td>
+										<td align="center"><p >1:12</p></td>
+										<td align="left"><p >开出4个白色钮扣。</p></td>
+									</tr>
+									<tr>
+										<td align="center"><p ><img src="@ImageServer/Content/Images/Introduction/redImg.png" width="30" height="28"  alt=""/><img src="@ImageServer/Content/Images/Introduction/redImg.png" width="30" height="28"  alt=""/><img src="@ImageServer/Content/Images/Introduction/redImg.png" width="30" height="28"  alt=""/><img src="@ImageServer/Content/Images/Introduction/whiteImg.png" width="30" height="28"  alt=""/></p></td>
+										<td align="center"><p >1:2.6</p></td>
+										<td align="left"><p >开出3个红色，1个白色钮扣。</p></td>
+									</tr>
+									<tr>
+										<td align="center"><p ><img src="@ImageServer/Content/Images/Introduction/whiteImg.png" width="30" height="28"  alt=""/><img src="@ImageServer/Content/Images/Introduction/whiteImg.png" width="30" height="28"  alt=""/><img src="@ImageServer/Content/Images/Introduction/whiteImg.png" width="30" height="28"  alt=""/><img src="@ImageServer/Content/Images/Introduction/redImg.png" width="30" height="28"  alt=""/></p></td>
+										<td align="center"><p >1:2.6</p></td>
+										<td align="left"><p >开出3个白色，1个红色钮扣。</p></td>
+									</tr>
+									<tr>
+										<td rowspan="2" align="center"><p >单</p></td>
+										<td rowspan="2" align="center"><p >1:0.96</p></td>
+										<td align="left"><p ><img width="30" height="28" src="@ImageServer/Content/Images/Introduction/redImg.png" /><img width="30" height="28" src="@ImageServer/Content/Images/Introduction/redImg.png" /><img width="30" height="28" src="@ImageServer/Content/Images/Introduction/redImg.png" /><img width="30" height="28" src="@ImageServer/Content/Images/Introduction/whiteImg.png" />开出(3个红色，1个白色钮扣)</p></td>
+									</tr>
+									<tr>
+										<td align="left"><img width="30" height="28" src="@ImageServer/Content/Images/Introduction/whiteImg.png" /><img width="30" height="28" src="@ImageServer/Content/Images/Introduction/whiteImg.png" /><img width="30" height="28" src="@ImageServer/Content/Images/Introduction/whiteImg.png" /><img width="30" height="28" src="@ImageServer/Content/Images/Introduction/redImg.png" />(3个白色，1个红色钮扣)属「单」。</td>
+									</tr>
+									<tr>
+										<td rowspan="3" align="center"><p >双</p></td>
+										<td rowspan="3" align="center"><p >1:0.96</p></td>
+										<td align="left"><p ><img width="30" height="28" src="@ImageServer/Content/Images/Introduction/redImg.png" /><img width="30" height="28" src="@ImageServer/Content/Images/Introduction/redImg.png" /><img width="30" height="28" src="@ImageServer/Content/Images/Introduction/redImg.png" /><img width="30" height="28" src="@ImageServer/Content/Images/Introduction/redImg.png" />开出(4个红色钮扣)、</p></td>
+									</tr>
+									<tr>
+										<td align="left"><img width="30" height="28" src="@ImageServer/Content/Images/Introduction/whiteImg.png" /><img width="30" height="28" src="@ImageServer/Content/Images/Introduction/whiteImg.png" /><img width="30" height="28" src="@ImageServer/Content/Images/Introduction/whiteImg.png" /><img width="30" height="28" src="@ImageServer/Content/Images/Introduction/whiteImg.png" />(4个白色钮扣)、</td>
+									</tr>
+									<tr>
+										<td align="left"><img width="30" height="28" src="@ImageServer/Content/Images/Introduction/whiteImg.png" /><img width="30" height="28" src="@ImageServer/Content/Images/Introduction/whiteImg.png" /><img width="30" height="28" src="@ImageServer/Content/Images/Introduction/redImg.png" /><img width="30" height="28" src="@ImageServer/Content/Images/Introduction/redImg.png" />(2个白色、2个红色钮扣)属「双」。</td>
+									</tr>
+								</table>
+								<br />
+								本游戏进行方式为最接近实境赌场之设置，若有发生特殊情形将依本公司公告之办法处理。<br />
+								荷官在游戏进行中若不慎让碗、碟或钮扣掉落，将对象放回定位后，重新进行摇碟。<br />
+								若开出结果时有钮扣重迭无法判定结果时，荷官将用玻璃棒分开重迭的钮扣。<br />
+								荷官若没有摇碟就开碟，或在下注时间尚未结束前即开碟，该局将判定为无效，并退还所有下注本金。<br />
+								</p>
+						</div></td>
+					</tr>
+					<tr> </tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					
+				</tbody>
+			</table>

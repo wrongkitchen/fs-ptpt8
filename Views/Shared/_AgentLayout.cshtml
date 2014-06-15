@@ -1,0 +1,208 @@
+﻿@{
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+    
+    }
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="@ImageServer/Content/Images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" href="@ImageServer/Content/Images/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="@ImageServer/Content/Images/favicon/apple-touch-icon-57x57-precomposed.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="@ImageServer/Content/Images/favicon/apple-touch-icon-72x72-precomposed.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="@ImageServer/Content/Images/favicon/apple-touch-icon-114x114-precomposed.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="@ImageServer/Content/Images/favicon/apple-touch-icon-144x144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="@ImageServer/Content/Images/favicon/apple-touch-icon-precomposed.png" />
+    <link rel="stylesheet" href="@ImageServer/Content/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/main.css" />
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/colorbox.css" />
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/jquery.alerts.css" />
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/tipTip.css" />
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/agent_center.css" />
+    @RenderSection("AdditionalStyles", false)
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/div-slider-1.0.3.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery.colorbox-min.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery.alerts.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery.tipTip.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/common.js"></script>
+    @RenderSection("AdditionalScripts", false)
+</head>
+<body>
+    <div class="container">
+        <a href="#">
+            <img id="topButton" src="@ImageServer/Content/Images/arrow/BackToTopArrow.png" /></a></div>
+    <div id="newsButton">
+        <img src="@ImageServer/Content/Images/news.jpg" /><div>
+            <a href="#">
+                <img src="@ImageServer/Content/Images/ads.jpg" /></a></div>
+    </div>
+
+    <!-- Header Start -->
+    @Html.Action("SharedNotice", "CN")
+    <div id="mainNav">
+        <div class="container">
+            <div class="leftNav pull-left">
+                <ul class="quickLink">
+                    <li><a href="@Url.Action("AboutUs", "CN")" target="_self">集团优势</a></li>
+                    <li class="separate">&nbsp;</li>
+                    <li><a href="@Url.Action("FAQ", "CN")" target="_self">如何开始游戏</a></li>
+                    <li class="separate">&nbsp;</li>
+                    <li><a href="@Url.Action("HowToDeposit", "CN")" target="_self">如何存取款</a></li>
+                </ul>
+                <div class="clearfix">
+                </div>
+            </div>
+            <a href="@Url.Action("Index", "CN")">
+                <div class="logo pull-left"></div>
+            </a>
+            <div class="rightNav pull-right">
+                <ul class="quickLink pull-right">
+                    <li><a href="javascript:addtoFavor()" target="_self">免费电话： 400 666 8521</a></li>
+                    <li class="separate">&nbsp;</li>
+                    <li><a href="javascript:setHome()" target="_self">QQ:1345678</a></li>
+                </ul>
+                <div class="clearfix"></div>
+  
+                <div id="btn_top_download">
+                <table>
+                    <tr>
+                        <td > </a></Td><Td id="download"> <a href="http://heji18.cc/和记娱乐客户端.zip" target="_blank"></a></td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div id="subNav-center">
+        <div class="container">
+            <ul class="navigation">
+                <li class="button center @(ViewBag.ActiveMenu == "Center" ? " active" : "")">
+                    <a href="@Url.Action("Center", "Agent")" target="_self" class="buttonLink"></a>
+                </li>
+                <li class="button management @(ViewBag.ActiveMenu == "Management" ? " active" : "")">
+                    <a href="@Url.Action("Management", "Agent")" target="_self" class="buttonLink"></a>
+                </li>
+                <li class="button financial_statement @(ViewBag.ActiveMenu == "FinancialStatement" ? " active" : "")">
+                    <a href="@Url.Action("FinancialStatement", "Agent")" target="_self" class="buttonLink"></a>
+                </li>
+                <li class="button operation @(ViewBag.ActiveMenu == "Operation" ? " active" : "")">
+                    <a href="@Url.Action("Operation", "Agent")" target="_self" class="buttonLink"></a>
+                </li>
+                <li class="button announcement">
+                    <a href="announcement.html" target="_self" class="buttonLink"></a>
+                </li>
+                <li class="button modify @(ViewBag.ActiveMenu == "Modify" ? " active" : "")">
+                    <a href="@Url.Action("Modify", "Agent")" target="_self" class="buttonLink"></a>
+                </li>
+                <li class="button plan @(ViewBag.ActiveMenu == "Plan" ? " active" : "")">
+                    <a href="@Url.Action("Plan", "Agent")" target="_self" class="buttonLink"></a>
+                </li>
+                <li class="button end"></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Header End -->
+    @RenderBody()
+    <!-- Footer Start -->
+    <div id="footer">
+        <div class="container">
+            <ul class="browser quickLink clearfix">
+                <li>官方推荐浏览器</li>
+                <li><a href="http://windows.microsoft.com/zh-HK/internet-explorer/download-ie" target="_blank"><img src="@ImageServer/Content/Images/footer/browser_social/bs_10.png" alt=""><span class="desc">V.9</span></a></li>
+                <li><a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank"><img src="@ImageServer/Content/Images/footer/browser_social/bs_01.png" alt=""><span class="desc">V.15</span></a></li>
+                <li class="separate"><a href="https://www.google.com/intl/zh-TW/chrome/browser/" target="_blank"><img src="@ImageServer/Content/Images/footer/browser_social/bs_02.png" alt=""><span class="desc">V.12</span></a></li>
+                <li class="separate"><a href="http://get2.adobe.com/flashplayer/" target="_self"><img src="@ImageServer/Content/Images/footer/browser_social/bs_03.png" alt=""><span class="desc">V.10</span></a></li>
+                <li class="separate"><img src="@ImageServer/Content/Images/footer/browser_social/bs_04.png" alt=""><span class="desc">1024x768</span></li>
+                <li class="lessMargin"><a href="#" target="_self"><img src="@ImageServer/Content/Images/footer/browser_social/bs_05.png" alt=""></a></li>
+                <li class="lessMargin"><a href="#" target="_self"><img src="@ImageServer/Content/Images/footer/browser_social/bs_11.png" alt=""></a></li>
+            </ul>
+           <ul class="footerLogoWrap horizontalList clearfix">
+                <li>
+                    <div class="logoTitle">政府牌照</div>
+                    <!-- <div class="lineBlock"></div> -->
+                    <ul class="footerLogo horizontalList">
+                        <li>
+                            <a href="http://www.firstcagayan.com/html/home.php" target="_blank">
+                                <img class="normal" src="@ImageServer/Content/Images/footer/logo/logo_1.png"  alt="" />
+                                <img class="hover" src="@ImageServer/Content/Images/footer/logo/logo_1_hover.png" alt="" />
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="split">&nbsp;</li>
+                <li>
+                    <div class="logoTitle">合作伙伴</div>
+                    <!-- <div class="lineBlock"></div> -->
+                    <ul class="footerLogo horizontalList">
+                        <li>
+                            <img class="normal" src="@ImageServer/Content/Images/footer/logo/logo_2.png" alt="" />
+                            <img class="hover" src="@ImageServer/Content/Images/footer/logo/logo_2_hover.png" alt="" />
+                        </li>
+                        <li>
+                            <img class="normal" src="@ImageServer/Content/Images/footer/logo/logo_3.png" alt="" />
+                            <img class="hover" src="@ImageServer/Content/Images/footer/logo/logo_3_hover.png" alt="" />
+                        </li>
+                        <li>
+                            <img class="normal" src="@ImageServer/Content/Images/footer/logo/logo_4.png" alt="" />
+                            <img class="hover" src="@ImageServer/Content/Images/footer/logo/logo_4_hover.png" alt="" />
+                        </li>
+                    </ul>
+                </li>
+                <li class="split">&nbsp;</li>
+                <li>
+                    <div class="logoTitle">认证</div>
+                    <!-- <div class="lineBlock"></div> -->
+                    <ul class="footerLogo horizontalList">
+                        <li>
+                            <img class="normal" src="@ImageServer/Content/Images/footer/logo/logo_5.png" alt="" />
+                            <img class="hover" src="@ImageServer/Content/Images/footer/logo/logo_5_hover.png" alt="" />
+                        </li>
+                        <li>
+                            <img class="normal" src="@ImageServer/Content/Images/footer/logo/logo_6.png" alt="" />
+                            <img class="hover" src="@ImageServer/Content/Images/footer/logo/logo_6_hover.png" alt="" />
+                        </li>
+                        <li>
+                            <img class="normal" src="@ImageServer/Content/Images/footer/logo/logo_7.png" alt="" />
+                            <img class="hover" src="@ImageServer/Content/Images/footer/logo/logo_7_hover.png" alt="" />
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="footerMenu quickLink clearfix">
+                <li><a href="quicklink/deposit.html" target="_self">关于我们</a></li>
+                <li class="separate">|</li>
+                <li><a href="aboutus/faq.html" target="_self">常见问题</a></li>
+                <li class="separate">|</li>
+                <li><a href="#" target="_self">加盟合作</a></li>
+                <li class="separate">|</li>
+                <li><a href="#" target="_self">服务条款</a></li>
+                <li class="separate">|</li>
+                <li><a href="quicklink/duty.html" target="_self">隱私保护</a></li>
+                <li class="separate">|</li>
+                <li><a href="quicklink/sitemap.html" target="_self">网站地图</a></li>
+            </ul>
+            <div class="allRightReserved">
+                大奖娱乐官方网站 Copyright © 2010-2015 ptpt8 Online Game. All rights reserved.
+            </div>
+            <div class="blank" style="padding-bottom: 2px;">        
+                <!-- GoStats Simple HTML Based Code -->
+                <a target="_blank" title="网站流量统计器" href="http://gostats.cn"><img id="gsimg" alt="网站流量统计器" src="http://c4.gostats.cn/bin/count/a_385038/t_1/i_65/counter.png" style="border-width:0" /></a>
+                <!-- End GoStats Simple HTML Based Code -->
+           </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+</body>
+</html>

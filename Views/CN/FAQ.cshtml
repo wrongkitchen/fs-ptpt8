@@ -1,0 +1,286 @@
+﻿@using Heji.Web.Helpers
+@{
+    ViewBag.Title = "常见问题 - 关于我们 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/aboutus.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/hash.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/about.js"></script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <div class="banner"><img src="@ImageServer/Content/Images/company/banner-aboutus_02.jpg" alt=""></div>
+                <ul id="aboutNav" class="sectionNav transparent black">
+                    <li class="first button"><a href="@Url.Action("AboutUs", "CN")" target="_self">专业资质</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Safe", "CN")" target="_self">资金安全</a></li>
+                    <li class="separate">|</li>
+                    <li class="button active"><a href="@Url.Action("FAQ", "CN")" target="_self">客户帮助</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Contact", "CN")" target="_self">联系我们</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Notice", "CN")" target="_self">最新公告</a></li>
+                    <!-- <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("License", "CN")" target="_self">博彩牌照</a></li> -->
+                    <!-- <li class="button"><a href="@Url.Action("Advantages", "CN")" target="_self">网博优势</a></li> -->
+                    <!-- <li class="separate">|</li> -->
+                    <!-- <li class="button"><a href="@Url.Action("FAQ", "CN")" target="_self">常见问题</a></li> -->
+                </ul>
+                <div class="article about-faq">
+                    <div class="tabBlock">
+                        <div class="tabButton">
+                            <div id="tab-intro" class="tab active">开始游戏</div>
+                            <div id="tab-deposit" class="tab">如何存款</div>
+                            <div id="tab-withdraw" class="tab">如何取款</div>
+                            <div id="tab-faq" class="tab">常见问题</div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div id="tabContent-intro" class="tabContent active">
+                            <br/>
+
+                            <div class="step red">
+                                <p>开始游戏三部曲</p>
+                                
+                                <ol>
+                                    <li>20秒免费注册大奖娱乐账户</li>
+                                    <li>30秒下载游戏客户端 （无插件绿色版, PT老虎机玩家首选）</li>
+                                    <li>1分钟存款</li>
+                                </ol>
+                                
+                                <p>完成! 开始享受刺激游戏, 赢取大奖!</p>
+                                <br /><br />
+                            </div>
+
+                            <div class="lineBlock"></div>
+
+                            <div class="step step1">
+                                <p class="stepTitle">20秒免费注册大奖网账户</p>
+                                <br />
+                                <li>打开大奖网首页, 点击 ”免费开户”；</li><br />
+                                <img src="@ImageServer/Content/Images/company/faq1.jpg" />
+                                <br />
+                                
+                                <br />
+                                <li>在大奖网“免费注册” 页面输入真实资料；</li><br />
+                                <img src="@ImageServer/Content/Images/company/faq2.jpg" />
+                                <br />
+                                
+                                <br />
+                                <li>点击提交, 显示”注册成功”, 您就拥有了大奖网的会员资格, 随时可以存款并享受刺激的游戏和大奖。</li><br />
+                                <img src="@ImageServer/Content/Images/company/faq3.jpg" />
+                                <br />
+                                <br />
+                                <br />
+                            </div>
+
+                            <div class="lineBlock"></div>
+
+                            <div class="step step2">
+                                
+                                <p class="stepTitle">30秒下载安装大奖网客户端</p>
+                                
+                                <li>在大奖网首页点击 “下载客户端”；</li><br />
+                                <img src="@ImageServer/Content/Images/company/faq4.jpg" />
+                                <br /><br />
+                                <ul>
+                                    <li>下载完毕后, 双击下载的文件, 开始安装大奖网PT老虎机游戏客户端;</li>
+                                    <li>安装成功后, 双击大奖网图标, 进入游戏, 享受比网页版更稳定安全的游戏环境；</li>
+                                    <li>如果您有任何问题, 请您随时与我们的24小时在线客服联系</li>
+                                </ul>
+
+                            </div>
+
+                            <div class="lineBlock"></div>
+
+                            <div class="step step3">
+                                <p class="stepTitle">1分钟存款</p>
+                            </div>
+
+                            <div class="lineBlock"></div>
+
+                            <div class="step step4">
+                                <p class="stepTitle">完成，开始游戏，赢取大奖！</p>
+                            </div>
+
+                            <br/>
+                            <table class="more_actions">
+                                @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                                {
+                                    <tr>
+                                        <td>
+                                            <a class="greyButton" href="@Url.Action("Register", "Member")">免费开户 &gt;</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+
+                        </div>
+                        <div id="tabContent-deposit" class="tabContent depositProcess">
+                            <ul class="numListPoint">
+                                <li class="num1">
+                                    <p class="subTitle">登录账号</p>
+                                    <p>进入官网,在页面右上角输入你已注册的账号和密码，并点击“登录”按钮。还没有账号？<a href="@Url.Action("Register", "Member")" class="btnReg"><span class="red">点击注册</span></a></p>
+                                    <img src="@ImageServer/Content/Images/aboutus/deposition_instruction_01.jpg" />
+                                </li>
+                                <li class="num2">
+                                    <p class="subTitle">快速存款</p>
+                                    <p>点击页面顶部中间的“快速存款”按钮。或者在会员中心点击页面顶部中间或左侧导航的存款按钮。</p>
+                                    <img src="@ImageServer/Content/Images/aboutus/deposition_instruction_02.jpg" />
+                                </li>
+                                <li class="num3">
+                                    <p class="subTitle">选择存款方式</p>
+                                    <p>目前我们支持两种存款方式：手工存款和在线支付。</p>
+                                    <p>手工存款：包括网银转账（强烈推荐）、ATM转账、银行柜台转账三种存款方式。15分钟内上分。安全性强，且返还1%手续费。</p>
+                                    <p>在线支付：把款项通过第三方平台进行的存款方式，简单快捷，实时到账。</p>
+                                    <img src="@ImageServer/Content/Images/aboutus/deposition_instruction_03.jpg" />
+                                </li>
+                                <li class="num4 last">
+                                    <p class="subTitle">存款流程--在线支付</p>
+                                    <p>输入你要存款的金额，点击“提交”进入下一步</p>
+                                    <img src="@ImageServer/Content/Images/aboutus/deposition_instruction_04.jpg" />
+                                    <br/><br/>
+                                    <p>进入第三方平台，完成支付流程</p>
+                                    <br/><br/>
+                                    <p class="subTitle">完成</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="tabContent-withdraw" class="tabContent withdrawProcess">
+                            <ul class="numListPoint">
+                                <li class="num1">
+                                    <p class="subTitle">登录账号</p>
+                                    <p>进入官网,在页面右上角输入你已注册的账号和密码，并点击“登录”按钮。还没有账号？<a href="@Url.Action("Register", "Member")" class="btnReg"><span class="red">点击注册</span></a></p>
+                                    <img src="@ImageServer/Content/Images/aboutus/withdraw_instruction_01.jpg" />
+                                </li>
+                                <li class="num2">
+                                    <p class="subTitle">进入会员中心</p>
+                                    <p>在会员中心里，点击”我要取款“按钮，进入取款页面。</p>
+                                    <img src="@ImageServer/Content/Images/aboutus/withdraw_instruction_02.jpg" />
+                                </li>
+                                <li class="num3">
+                                    <p class="subTitle">填写取款信息</p>
+                                    <p>1、选择你的提款银行卡</p>
+                                    <p>2、填写提款金额</p>
+                                    <p>3、点击”提交“按钮</p>
+                                    <img src="@ImageServer/Content/Images/aboutus/withdraw_instruction_03.jpg" />
+                                </li>
+                                <li class="num4 last">
+                                    <p class="subTitle">审核和发放</p>
+                                    <p>财务部门审核通过后， 您的提款申请单变成”完成“状态。即完成您的提款流程。</p>
+                                    <img src="@ImageServer/Content/Images/aboutus/withdraw_instruction_04.jpg" />
+                                    <br/><br/>
+                                    <p class="subTitle">完成</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="tabContent-faq" class="tabContent">
+                            <br/>
+                            <h4 class="red">常见问题</h4><br />
+
+                            <ul class="numListPoint">
+                                <li class="num1">
+								
+							    <h3>安全性问题</h3>
+								
+                                    <div class="red">大奖娱乐合法吗？</div>
+                                    大奖娱乐隶属澳门汇彩博彩集团, 澳门汇彩博彩集团是世界上最大的游戏机设备供货商之一，在拉斯维加斯、澳门、蒙特卡洛、新加坡等地拥有10000多台游戏机进驻各大娱乐场，客户包括威尼斯人、金沙集团、永利、美高梅、银河、新濠天地、葡京娱乐场、Bellagio、Monte Carlo等娱乐场。凭借超越10年的博彩市场运营经验，如今已发展成为集游戏设备、赌场管理系统、在线游戏为一体的大型娱乐公司，集团总部设在菲律宾，在香港、澳门、加拿大、越南及新加坡均设有分部，是全世界最大的博彩公司之一。我们的营业执照是由FCLRC (First Cagayan Leisure and Resort Corporation)颁发的。FCLRC是菲律宾唯一一个被当地政府认可并批准的国际性互动游戏经济区。为确保游戏操作平台的公平公正及安全，在FCLRC的严格监管下所有的游戏平台均需要使用经过批准的供应商软件才能进行运营。目前大奖娱乐与Playtech（简称PT）, Microgaming（简称MG）, BBIN宝盈等最具品牌知名度的在线游戏平台合作, 为客户打造 “诚信, 安全, 快乐”的游戏体验。
+                                </li>
+                                <li class="num2">
+                                    <div class="red">投注安全吗？</div>
+                              我们采用了大型投资银行级别的加密科技（1024位RSA密钥交换和 448位blowfish），提供比一般商业级别SSL加密更高的保护。与最先进的防火墙系统配合, 有效防御外部攻击和堵塞传统数据管理漏洞。客户在本平台的所有操作均严格保密，我们不会向任何第三方透露客户资料。所有银行交易由国际金融机构在高标准的安全和机密的网络中进行。进入客户会员中心必须使用玩家唯一的登录
+和密码，确保会员账户安全。
+<br/>
+为保护客户资金安全, 我们实行大客户专卡专用, 离岸与在岸金融混配, 支付信息多重加密, 现金流专业管理, 并通过自动系统技术把手工操作可能产生的错误降到最低。保证客户资金5分钟内安全到账, 客户收付信息无迹可寻。
+                                </li>
+								
+								<h3>账户类问题</h3>
+								
+                                <li class="num3">
+                                    <div class="red">如何开户？</div>
+                                    开户方式有两种：
+<p>1.请点击网站首页“免费开户”按钮，按照界面所规定的填写内容进行自助开户。
+2.联系在线客服提供您的联系电话和取款银行卡姓名即可开户。</p>
+                                </li>
+								
+					
+								
+                                <li class="num4">
+                                    <div class="red">忘记密码怎么办？</div>
+                                   点击登录框下方的“忘记密码”，填写密保问题，重新获得密码，或者联系大奖娱乐在线客服，核对信息后重设密码。
+                                </li>
+                                <li class="num5">
+                                    <div class="red">怎么存款？</div>
+                                    我们支持中国所有银行的存款, 提供的多种便捷和安全的存款方式，任您选择。
+<p>1.在线支付:首先您需要开通网上银行，在"会员中心"处选择"在线支付"选项。选择在线支付,填写您所需入款的金额，点击提交后，即可连线到银行端进行存款操作,按照银行支付流程,进行在线充值,充值成功后,游戏帐户中即可显示准确的充值金额。</p>
+<p>2.网银充值:您可通过提款机/柜台/网银/电话转帐等多种充值方式,汇款到本公司指定的收款帐户内.汇款成功后,您可以点击“网银充值”自行提交汇款信息或者联系在线客服为您处理此笔充值业务.</p>
+<p>3.极速秒冲：在"会员中心"处选择"极速秒冲"选项，填写您的“汇款银行”、“汇款金额’与 “汇款人姓名”, 提交订单后登录 “个人网银”转账到系统提供的银行卡，转账成功后游戏帐户中即可显示准确的充值金额。</p>
+                                </li>
+                                <li class="num6">
+                                    <div class="red">存款后金额未加入会员账号？</div>
+                                    一般存款会在提交订单后5分钟内进入会员账号(在线支付实时到帐/转款到指定收款帐户需要5分钟)，如因网路问题或是其他状况而延误，您可随时咨询24小时在线客服。
+                                </li>
+                                <li class="num7">
+                                    <div class="red">我怎么取款？</div>
+                                    先登录会员账号，点击“会员中心”中的“取款”按钮，填写取款金额，点击提交即可，系统会提示：提交成功。工作人员会在10分钟内为您进行审核出款。
+                                </li>
+                                <li class="num8">
+                                    <div class="red">单日最高提款限额和到账时间？</div>
+                                    单日最高提款限额为600。<br /><br />
+RMB或其他等值货币.每个帐户每日提款次数不受限制。
+单日提款限额内的提款申请:银行柜台工作时间内(周一至周五9:00-5:00）半小时到帐;非银行柜台工作时间,300万以内的提款2小时到账，如高于300万的部分,最晚于次日11点前到账。<br /><br />
+温馨提示: 如果会员愿意在澳门合作赌厅提现，此玩家单日的提款上限可升至2000
+RMB或其他等值货币。
+                                </li>
+                                <li class="num9">
+                                    <div class="red">存取款时是否收取手续费？</div>
+                       大奖娱乐在您存取款时不但不收取任何手续费, 更每天赠送您520元存款礼金。
+                                </li>
+                                <li class="num10">
+                                    <div class="red">如何保证游戏是公正的？</div>
+                                    大奖娱乐受政府赌牌发放机构监管, 所选游戏获美国博彩权威机构GLI (Gaming Lab International) TST赔率认证, 由国际著名的会计公司BDO每月万次检测,确保游戏结果100%随机、公平、安全并符合监管法规。<br /><br />
+大奖娱乐的公司年度审计由国际知名的普华永道会计事务所(PricewaterhouseCoopers)负责。
+                          
+								 </li>
+								 
+								 	<h3>游戏类问题</h3>
+                                <li class="num7">
+                                    <div class="red">如何登录？</div>
+                                   在网站首页右上方会员登录框中,输入您的游戏帐户和密码后,点击登录,进入到游戏大厅,在游戏大厅处选择您喜欢的游戏博取大奖。
+                                </li>
+                            </ul>
+                            <!--
+                            <div class="lineBlock"></div>
+                            <table class="more_actions">
+                            	<tr>
+                                    <td>
+                                        <button class="greyButton" id="btn_footer_reg">免费开户 &gt;</button>
+                                    </td>
+                                </tr>
+                            </table>
+                            -->
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN")
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>
+

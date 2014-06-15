@@ -1,0 +1,25 @@
+﻿@{
+    Layout = null;
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+<div class="block">
+    <a href="@Url.Action("Register", "Agent")" target="_blank"  class="accountRegister"></a>
+</div>
+<div class="block loginWrap loginWrapAgent">
+    <ul class="loginPanel">
+        <li><input type="text" placeholder="代理账户" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" name="username" id="username" autocomplete="off" value="d" /></li>
+        <li><input type="password" placeholder="密码"  name="password" id="password" autocomplete="off" /></li>
+        <li>
+        <a id="agent_login_links"  ><div class="redArrow pull-left" id="agent_login_link">登录</div></a>
+
+            <div id="Agent_login_loader" class="pull-left" style="color: Red; display: none;">
+                <img src="@ImageServer/Content/Images/ajax-loader.gif")" style="vertical-align: baseline;" alt="" />
+                @*<span>正在登录...</span>*@
+            </div>
+            <div class="forgot pull-right">
+                <a href="@Url.Action("ForgotPassword", "Agent")" target="_self">忘记密码</a></div>
+            <div class="clearfix"></div>
+        </li>
+    </ul>
+</div>

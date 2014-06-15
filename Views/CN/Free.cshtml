@@ -1,0 +1,320 @@
+﻿@using Heji.Web.Helpers
+
+@{
+    ViewBag.Title = "VIP俱乐部 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/vip.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery.zaccordion.min.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/vip-club.js"></script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <ul id="vipNav" class="sectionNav transparent black">
+                    <li class="first button active"><a>免费试玩</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("BBINIntro", "CN")" target="_self">真人娱乐</a></li>
+                </ul>
+                  @* --replace*@
+                    <div class="banner">
+                    <div id="dealer-banner">
+                        <table width="100%">
+                            <tr>
+                                
+                                
+                                <td><img src="/content/Images/dealer/live_D.jpg" width="749" height="346"></td>
+                          </tr>
+                         </table>
+                  </div>
+                </div>
+                <div class="article ag">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF">
+                      <tr>
+                        <td><div align="center" class="STYLE3">
+                            <div align="left"><img src="/content/Images/dealer/dealer-bbin-s.jpg" width="333" height="303"></div>
+                        </div></td>
+                        <td><div align="right"><img src="/content/Images/dealer/dealer-agnet-s.jpg" width="333" height="303"></div></td>
+                      </tr>
+                      <tr>
+                        <td valign="top"><table width="333" height="200" border="1" cellpadding="0" cellspacing="0" bordercolor="#666666">
+                            <tr>
+                              <td><span class="STYLE8"> </span>
+                                  <table width="100%" height="200" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                      <td valign="top"><table width="96%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                          <tr>
+                                            <td><p><span class="STYLE8"><span class="STYLE9"></span></span>台湾厅使用BBIN平台，简称波音/宝盈，是业界最早最著名的真人平台之一。拥有亚洲最大最先进的摄影棚, 平台稳定细致, 现场管理严格科学,   界面符合亚洲人使用习惯。多年来深受玩家欢迎！在各大平台不断发展的同时波音开创出属于自己独特玩法，如多台下注、金臂下注等等。</p>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td><strong>游戏种类：</strong>百家乐，牌九，轮盘，骰宝，龙虎，电子游艺，三公，牛牛，色碟。</td>
+                                          </tr>
+                                      </table></td>
+                                    </tr>
+                                    <tr>
+                                      <td valign="top"><table align="right" class="more_actions">
+                    	@if (!string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()) && WebFunctions.GetCurrentUserId() > 0)
+                        {
+                            <tr>
+                                <td>
+                                    <a href="@Url.Action("Enter", "Game", new { platform = "0" })" target="_blank" class="greyButton">进入游戏 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>
+                                    <a class="greyButton" href="@Url.Action("Register", "Member")">免费开户 &gt;</a>
+                                </td>
+                                <td>
+                                    <a target="_blank" class="greyButton" href="@Url.Action("TrialEnter", "Game", new { platform = "0" })">免费试玩 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                                      </table></td>
+                                    </tr>
+                                </table></td>
+                            </tr>
+                        </table></td>
+                        <td valign="top"><table width="333" height="200" border="1" align="right" cellpadding="0" cellspacing="0" bordercolor="#666666">
+                            <tr>
+                              <td><span class="STYLE8"> </span>
+                                  <table width="100%" height="200" border="0" align="right" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                      <td height="160" valign="top"><table width="96%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                      <tr>
+                                            <td><p><span class="STYLE8"><span class="STYLE9"></span></span>AG国际厅融合AG旗舰厅及实地厅 ，可同时自选两个平台内多台游戏同时下注，行业内首创6张牌先发与咪牌百家乐包桌服务，真实赌场通过高清大视频再现。<BR>
+                                              </p>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>游戏种类：百家乐，龙虎，骰宝。</td>
+                                        </tr>
+                                      </table>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td valign="middle"><table align="right" class="more_actions">
+                    	@if (!string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()) && WebFunctions.GetCurrentUserId() > 0)
+                        {
+                            <tr>
+                                <td>
+                                    <a href="@Url.Action("Enter", "Game", new { platform = "3" })" target="_blank" class="greyButton">进入游戏 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>
+                                    <a class="greyButton" href="@Url.Action("Register", "Member")">免费开户 &gt;</a>
+                                </td>
+                                <td>
+                                    <a target="_blank" class="greyButton" href="@Url.Action("TrialEnter", "Game", new { platform = "3" })">免费试玩 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                                      </table></td>
+                                    </tr>
+                                </table></td>
+                            </tr>
+                        </table></td>
+                      </tr>
+                      <tr>
+                        <td><div align="left"></div></td>
+                        <td><div align="center"></div></td>
+                      </tr>
+                    </table>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td><p>&nbsp;</p>
+                        <p>&nbsp;</p></td>
+                      </tr>
+                    </table>
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF">
+                      <tr>
+                        <td><div align="center" class="STYLE3">
+                            <div align="left"><img src="/content/Images/dealer/dealer-mg-s.jpg" width="333" height="303"></div>
+                        </div></td>
+                        <td><div align="right"><img src="/content/Images/dealer/dealer-gd-s.jpg" width="333" height="303"></div></td>
+                      </tr>
+                      <tr>
+                        <td valign="top"><table width="333" height="200" border="1" cellpadding="0" cellspacing="0" bordercolor="#666666">
+                            <tr>
+                              <td><span class="STYLE8"> </span>
+                                  <table width="100%" height="200" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                      <td valign="top"><table width="96%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                          <tr>
+                                            <td><p><span class="STYLE8"><span class="STYLE9"></span></span>伦敦厅使用Micro   Gaming平台（简称MG平台），MG公司早在15年前就开发了第一个真正的网络博彩平台，是目前全球最具影响力及实力的博彩平台，是世界上第一个品牌真人祭-花花公子荷官的创始公司。</p>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td><strong>游戏种类：</strong>百家乐，21点，轮盘，PlayBoy，电子游艺，手机娱乐，扑克。</td>
+                                          </tr>
+                                      </table></td>
+                                    </tr>
+                                    <tr>
+                                      <td valign="top"><table align="right" class="more_actions">
+                    	@if (!string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()) && WebFunctions.GetCurrentUserId() > 0)
+                        {
+                            <tr>
+                                <td>
+                                      <a href="@Url.Action("EnterMG", "Game", new { platform = "4", gameId = "",gameType="2" })" target="_blank" class="greyButton">进入游戏 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>
+                                    <a class="greyButton" href="@Url.Action("Register", "Member")">免费开户 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                                      </table></td>
+                                    </tr>
+                                </table></td>
+                            </tr>
+                        </table></td>
+                        <td valign="top"><table width="333" height="200" border="1" align="right" cellpadding="0" cellspacing="0" bordercolor="#666666">
+                            <tr>
+                              <td><span class="STYLE8"> </span>
+                                  <table width="100%" height="200" border="0" align="right" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                      <td height="160" valign="top"><table width="96%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                      <tr>
+                                            <td><p><span class="STYLE8"><span class="STYLE9"></span></span>广东厅使用AG实地厅平台，通过高清大视频完美再现真实赌场。AG实地平台投注页面操作简单，路纸清晰，投注项丰富，视频流畅，让你仿佛身临其境般与真实赌场内的现场玩家一起跟红顶绿，赢尽天下。<BR>
+                                              </p>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>游戏种类：百家乐，龙虎，骰宝。</td>
+                                        </tr>
+                                      </table>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td valign="middle"><table align="right" class="more_actions">
+                    	@if (!string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()) && WebFunctions.GetCurrentUserId() > 0)
+                        {
+                            <tr>
+                                <td>
+                                    <a href="@Url.Action("Enter", "Game", new { platform = "1" })" target="_blank" class="greyButton">进入游戏 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>
+                                    <a class="greyButton" href="@Url.Action("Register", "Member")">免费开户 &gt;</a>
+                                </td>
+                                <td>
+                                    <a target="_blank" class="greyButton" href="@Url.Action("TrialEnter", "Game", new { platform = "1" })">免费试玩 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                                      </table></td>
+                                    </tr>
+                                </table></td>
+                            </tr>
+                        </table></td>
+                      </tr>
+                      <tr>
+                        <td><div align="left"></div></td>
+                        <td><div align="center"></div></td>
+                      </tr>
+                    </table>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td><p>&nbsp;</p>
+                        <p>&nbsp;</p></td>
+                      </tr>
+                    </table>
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF">
+                      <tr>
+                        <td><div align="center" class="STYLE3">
+                            <div align="left"><img src="/content/Images/dealer/dealer-ag-s.jpg" width="333" height="303"></div>
+                        </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top"><table width="333" height="200" border="1" cellpadding="0" cellspacing="0" bordercolor="#666666">
+                            <tr>
+                              <td><span class="STYLE8"> </span>
+                                  <table width="100%" height="200" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                      <td valign="top"><table width="96%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                          <tr>
+                                            <td><p><span class="STYLE8"><span class="STYLE9"></span></span>澳门厅使用AG旗舰厅平台，亚洲真人娱乐新贵。最高限红高达一百万，豪客首选！真实赌场完整路珠图再现，珠盘路、大路、大眼仔、小路、曱甴路应有尽有。还有业界首创先发6张牌后下注；透明牌靴，让玩家有更真实，更公平、公正的网博感受！<BR>
+                                              </p>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>游戏种类：百家乐，龙虎，轮盘，骰宝。</td>
+                                          </tr>
+                                      </table></td>
+                                    </tr>
+                                    <tr>
+                                      <td valign="middle"><table align="right" class="more_actions">
+                    	@if (!string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()) && WebFunctions.GetCurrentUserId() > 0)
+                        {
+                            <tr>
+                                <td>
+                                    <a href="@Url.Action("Enter", "Game", new { platform = "2" })" target="_blank" class="greyButton">进入游戏 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>
+                                    <a class="greyButton" href="@Url.Action("Register", "Member")">免费开户 &gt;</a>
+                                </td>
+                                <td>
+                                    <a target="_blank" class="greyButton" href="@Url.Action("TrialEnter", "Game", new { platform = "2" })">免费试玩 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                                      </table></td>
+                                    </tr>
+                                </table></td>
+                            </tr>
+                        </table></td>
+                      <tr>
+                        <td><div align="left"></div></td>
+                        <td><div align="right"></div></td>
+                      </tr>
+                    </table><p>&nbsp;</p>
+                    <div class="lineBlock"></div>
+                    <br/>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN", new { displayCS = "false", displayPlatforms = "false" })
+                 <div class="block"><img src="/Content/Images/member/01_06.jpg" alt=""></a></div>
+                 <div class="block"><a href="/CN/Promotions#p2"><img src="/Content/Images/home/huodong02.jpg" alt=""></a></div>
+                 <div class="block"><a href="/CN/Promotions#p3"><img src="/Content/Images/home/huodong03.jpg" alt=""></a></div>
+                 <div class="block"><a href="/CN/Promotions#p4"><img src="/Content/Images/home/huodong04.jpg" alt=""></a></div>
+                 <div class="block"><a href="/CN/Promotions#p5"><img src="/Content/Images/home/huodong05.jpg" alt=""></a></div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

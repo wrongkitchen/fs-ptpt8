@@ -1,0 +1,187 @@
+#vipNav {
+  top: 278px;
+}
+#vipClubDetail .title {
+  color: #FFF;
+}
+#vipClubDetail td {
+  padding: 10px;
+  height: 27px;
+  line-height: 27px;
+}
+#vipClubDetail .star1 {
+  width: 27px;
+  height: 26px;
+  background-image: url(../Images/vip/vipstart_1.jpg);
+}
+#vipClubDetail .star2 {
+  width: 27px;
+  height: 26px;
+  background-image: url(../Images/vip/vipstart_2.jpg);
+}
+#vipClubDetail .star3 {
+  width: 27px;
+  height: 26px;
+  background-image: url(../Images/vip/vipstart_3.jpg);
+}
+#vipClubDetail .star4 {
+  width: 27px;
+  height: 26px;
+  background-image: url(../Images/vip/vipstart_4.jpg);
+}
+#vipClubDetail .star5 {
+  width: 27px;
+  height: 26px;
+  background-image: url(../Images/vip/vipstart_5.jpg);
+}
+#vipClubDetail .star6 {
+  width: 27px;
+  height: 26px;
+  background-image: url(../Images/vip/vipstart_6.jpg);
+}
+#vipClubDetail .star7 {
+  width: 27px;
+  height: 26px;
+  background-image: url(../Images/vip/vipstart_7.jpg);
+}
+.tabContent.content2 {
+  display: none;
+}
+.tabContent.content3 {
+  display: none;
+}
+.tab {
+  color: #e74346;
+}
+.leftRightContent .leftContent {
+  width: 748px;
+}
+.leftRightContent .leftContent .article {
+  padding: 43px 29px 90px 45px;
+}
+.leftRightContent .leftContent .article p {
+  margin-bottom: 20px;
+}
+.leftRightContent .leftContent .article.promotion .promotion-ads {
+  cursor: pointer;
+}
+.leftRightContent .leftContent .article.promotion .promotion-ads img.normal {
+  display: inline;
+}
+.leftRightContent .leftContent .article.promotion .promotion-ads img.hover {
+  display: none;
+}
+.leftRightContent .leftContent .article.promotion .promotion-ads img.click {
+  display: none;
+}
+.leftRightContent .leftContent .article.promotion .promotion-ads:hover img.normal {
+  display: none;
+}
+.leftRightContent .leftContent .article.promotion .promotion-ads:hover img.hover {
+  display: inline;
+}
+.leftRightContent .leftContent .article.promotion .promotion-ads:hover img.click {
+  display: none;
+}
+.leftRightContent .leftContent .article.promotion .promotion-ads.click img.normal {
+  display: none;
+}
+.leftRightContent .leftContent .article.promotion .promotion-ads.click img.hover {
+  display: none;
+}
+.leftRightContent .leftContent .article.promotion .promotion-ads.click img.click {
+  display: inline;
+}
+.leftRightContent .leftContent .article.vip #listAccordion {
+  margin: 0;
+  padding: 0;
+}
+.leftRightContent .leftContent .article.vip #listAccordion li {
+  float: none;
+}
+.leftRightContent .leftContent .article.vip-terms {
+  font-size: 14px;
+}
+.leftRightContent .leftContent .article.vip-faq {
+  font-size: 14px;
+}
+.leftRightContent .leftContent .article.vip-faq .numListPoint li {
+  padding-bottom: 30px;
+  margin-bottom: 0px;
+}
+.leftRightContent .leftContent .article.vip-privilege {
+  padding: 29px 29px 90px 32px;
+}
+.leftRightContent .leftContent .article.vip-privilege .tabBlock .tab {
+  font-size: 17px;
+ /* height: 46px;
+  line-height: 47px;*/
+}
+.leftRightContent .leftContent .article.vip-privilege .tabBlock .tabContent {
+  padding-right: 50px;
+}
+.leftRightContent .leftContent .article.vip-privilege .tabBlock .tabContent .title {
+  font-size: 14px;
+}
+.leftRightContent .leftContent .article.vip-privilege .tabBlock .tabContent td {
+  vertical-align: middle;
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+.leftRightContent .rightContent .borderTop {
+  border-top: #646361 1px solid;
+}
+.leftRightContent .rightContent .rightThreeBtn {
+  height: 208px;
+}
+.leftRightContent .rightContent .rightThreeBtn a {
+  display: block;
+}
+.leftRightContent .rightContent .btnReg {
+  width: 252px;
+  height: 104px;
+  background: url(../Images/company/brn-regist.png) left top no-repeat;
+}
+.leftRightContent .rightContent .btnReg:hover {
+  background: url(../Images/company/brn-regist-on.png) left top no-repeat;
+}
+.leftRightContent .rightContent .onlineService {
+  width: 82px;
+  height: 84px;
+  background: url(../Images/btn-online_service.jpg) left top no-repeat;
+}
+.leftRightContent .rightContent .onlineService:hover {
+  background: url(../Images/btn-online_service_on.jpg) left top no-repeat;
+}
+.leftRightContent .rightContent .freeTrial {
+  width: 252px;
+  height: 104px;
+  background: url(../Images/company/downloadclient.png) left top repeat;
+}
+/*.leftRightContent .rightContent .freeTrial:hover {
+  background: url(../Images/btn-free_trial_on.jpg) left top no-repeat;
+}*/
+.leftRightContent .rightContent .downloadClient {
+  border-top: #646361 1px solid;
+  display: block;
+  width: 252px;
+  height: 68px;
+  background: url(../Images/company/btn-contact_client.gif) left top repeat;
+}
+.leftRightContent .rightContent .downloadClient:hover {
+  background: url(../Images/company/btn-contact_client_hover.jpg) left top no-repeat;
+}
+.leftRightContent .leftContent .article .articlePageList {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.leftRightContent .leftContent .article .articlePageList li {
+  display: inline;
+  padding-left:10px;
+}
+.leftRightContent .leftContent .article .articlePageList li a {
+  color: #000000;
+  display: inline-block;
+  margin: 0 4px;
+}

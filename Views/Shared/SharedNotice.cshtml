@@ -1,0 +1,22 @@
+﻿@using Heji.Library.Models.TO
+@model Heji.Web.Models.SharedNoticeViewModel
+@{
+    Layout = null;
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+<div id="header">
+    <div class="container">
+        <div class="brown pullLeft">公告 | </div>
+        <div class="message slider pullLeft">
+            <div class="clearfix"></div>
+            <div id="sliderContainer">
+            @foreach (NoticeTO notice in Model.Notices)
+            {
+                <div><a href="@Url.Action("Notice", "CN")" target="_self">@Html.Raw(notice.Content)</a></div>
+            }
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

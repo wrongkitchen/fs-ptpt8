@@ -1,0 +1,94 @@
+.leftRightContent .leftContent {
+  width: 748px;
+}
+.leftRightContent .leftContent .article {
+  padding: 20px 20px 20px 20px;
+}
+.leftRightContent .leftContent .article.sitemap {
+  padding: 35px 20px 20px 36px;
+}
+.leftRightContent .leftContent .article.sitemap table td {
+  width: 202px;
+  padding: 0 12px;
+}
+.leftRightContent .leftContent .article.sitemap table .title {
+  color: #f84139;
+  font-size: 15px;
+}
+.leftRightContent .leftContent .article.sitemap table .title div {
+  border-bottom: #959595 1px solid;
+  padding: 6px 0;
+}
+.leftRightContent .leftContent .article.sitemap table .title a {
+  color: #f84139;
+}
+.leftRightContent .leftContent .article.sitemap table .details {
+  padding-top: 10px;
+  height: 150px;
+  color: #000000;
+  font-size: 12px;
+  vertical-align: top;
+}
+.leftRightContent .leftContent .article.sitemap table .details a {
+  color: #000000;
+}
+.leftRightContent .leftContent .article.duty {
+  padding: 36px 20px 20px 40px;
+}
+.leftRightContent .leftContent .article.duty h3.title {
+  color: #f84139;
+  font-size: 15px;
+  line-height: 19px;
+  margin: 0;
+}
+.leftRightContent .leftContent .article.duty p {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+.leftRightContent .leftContent .article.duty ul {
+  font-size: 13px;
+}
+.leftRightContent .leftContent .article.duty ul li {
+  list-style: none;
+}
+.leftRightContent .leftContent .article.duty ul a {
+  text-decoration: underline;
+}
+.leftRightContent .leftContent .article.privacy {
+  padding: 36px 36px 20px 42px;
+}
+.leftRightContent .leftContent .article.privacy h3.title {
+  color: #f84139;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0;
+}
+.leftRightContent .leftContent .article.privacy p {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+.leftRightContent .leftContent .article.deposit {
+  padding: 29px 36px 20px 53px;
+  font-size: 13px;
+}
+.leftRightContent .leftContent .article.deposit .numListPoint li {
+  padding-left: 64px;
+  margin-bottom: 0px;
+  padding-bottom: 30px;
+}
+.leftRightContent .leftContent .article.deposit p {
+  margin: 0;
+}
+.leftRightContent .leftContent .article.deposit p.title {
+  color: #f84139;
+  font-size: 15px;
+}
+.leftRightContent .rightContent .downloadClient {
+  display: block;
+  width: 251px;
+  height: 68px;
+  background: url(../Images/company/btn-contact_client.gif) left top repeat;
+}
+.leftRightContent .rightContent .downloadClient:hover {
+  background: url(../Images/company/btn-contact_client_hover.jpg) left top no-repeat;
+}

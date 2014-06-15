@@ -1,0 +1,164 @@
+.sportsList {
+  position: relative;
+  margin-bottom: 15px;
+}
+.sportsList .leftBtn {
+  position: absolute;
+  width: 35px;
+  height: 45px;
+  z-index: 5;
+  cursor: pointer;
+  top: 50%;
+  left: -16px;
+  background-image: url(../Images/arrow/grey-left-box.gif);
+}
+.sportsList .rightBtn {
+  position: absolute;
+  width: 35px;
+  height: 45px;
+  z-index: 5;
+  cursor: pointer;
+  top: 50%;
+  right: -16px;
+  background-image: url(../Images/arrow/grey-right-box.gif);
+}
+.sportsList .content {
+  position: relative;
+  overflow: hidden;
+  height: 410px;
+}
+.sportsList .content .contentContain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10000px;
+  height: 410px;
+}
+.sportsList .content .col {
+  position: relative;
+  height: 100%;
+  width: 198px;
+  color: #FFF;
+  float: left;
+  background-color: #383432;
+  border-top: 2px solid #2d2926;
+  border-right: 2px solid #2d2926;
+}
+.sportsList .content .col.highlight {
+  width: 382px;
+}
+.sportsList .content .col.end {
+  border-right: 2px solid #383431;
+}
+.sportsList .content .col .desc {
+  padding: 20px 25px 15px 25px;
+}
+.sportsList .content .col .main {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.sportsList .content .col .sub {
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+.sportsList .content .col .img {
+  overflow: hidden;
+  width: 100%;
+  height: 263px;
+}
+.sportsList .content .col .img img {
+  max-width: none;
+}
+.sportsList .content .col .details {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+}
+.sportsList .content .col .details span {
+  margin-right: 10px;
+}
+.sportsList .content .col .details span a {
+  color: #e4272a;
+}
+.leftRightContent {
+  background: transparent;
+}
+#sportsNav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 275px;
+  left: 0;
+  width: 749px;
+  z-index: 2;
+  height: 69px;
+  max-height: 69px;
+  min-height: 69px;
+  border-bottom: #2d2926 2px solid;
+}
+#sportsNav li {
+  float: left;
+  font-size: 14px;
+}
+#sportsNav li.button a {
+  height: 29px;
+  display: block;
+  color: #ffffff;
+  padding: 25px 7px;
+  position: relative;
+  z-index: 99999;
+}
+#sportsNav li.separate {
+  padding: 25px 7px;
+  font-weight: bold;
+}
+#sportsNav li.first {
+  margin-left: 32px;
+}
+.leftRightContent .rightContent .borderTop {
+  /*border-top:#646361 1px solid;*/
+
+}
+.leftRightContent .rightContent .block {
+  border-bottom: #646361 1px solid;
+}
+.leftRightContent .rightContent .rightThreeBtn {
+  height: 84px;
+}
+.leftRightContent .rightContent .rightThreeBtn a {
+  display: inline-block;
+}
+.leftRightContent .rightContent .btnReg {
+  width: 124px;
+  height: 84px;
+  background: url(../Images/btn-reg.gif) left top no-repeat;
+}
+.leftRightContent .rightContent .btnReg:hover {
+  background: url(../Images/btn-reg_on.jpg) left top no-repeat;
+}
+.leftRightContent .rightContent .onlineService {
+  width: 82px;
+  height: 84px;
+  background: url(../Images/btn-online_service.jpg) left top no-repeat;
+}
+.leftRightContent .rightContent .onlineService:hover {
+  background: url(../Images/btn-online_service_on.jpg) left top no-repeat;
+}
+.leftRightContent .rightContent .freeTrial {
+  width: 124px;
+  height: 84px;
+  background: url(../Images/btn-free_trial.jpg) left top no-repeat;
+}
+.leftRightContent .rightContent .freeTrial:hover {
+  background: url(../Images/btn-free_trial_on.jpg) left top no-repeat;
+}
+.leftRightContent .rightContent .downloadClient {
+  display: block;
+  width: 251px;
+  height: 68px;
+  background: url(../Images/company/btn-contact_client.gif) left top repeat;
+}
+.leftRightContent .rightContent .downloadClient:hover {
+  background: url(../Images/company/btn-contact_client_hover.jpg) left top no-repeat;
+}

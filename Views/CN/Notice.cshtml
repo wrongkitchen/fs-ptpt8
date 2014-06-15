@@ -1,0 +1,77 @@
+﻿@using Heji.Web.Helpers
+@using Heji.Library.Models.TO
+@model Heji.Web.Models.NoticeViewModel
+@{
+    ViewBag.Title = "最新公告|和记亚洲-在线娱乐城";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+
+
+
+@{
+    ViewBag.Title = "优惠活动 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+}
+
+
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/vip.css" />
+}
+
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent welcome-leftRightContent">
+            <div class="leftContent welcome-leftContent">
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/welcome/welcome_03a.jpg" alt="" />
+                </div>
+                <div class="article welcome">
+                    <ul class="numListPoint">
+
+                        @if (Model.Notices !=  null && Model.Notices.Count > 0)
+                                        {
+                                            int i = 1;
+                                            foreach (var item in Model.Notices)
+                                            {
+                                            <li class="num">
+                                                <div>  <a style="color:Red">发布时间：</a> @item.CreateDate.ToString()</div>
+                                                <div>  @Html.Raw(item.Content)</div>
+                                            </li>
+                                            
+                                                i++;
+                                            }
+                                        }
+                        else
+                        { 
+                                            <li>
+                                                <div>
+                                                    暂无公告
+                                                </div>
+                                            </li>
+                                        }
+                            @if (Model.Notices != null && Model.Notices.Count > 0)
+                                {
+                                    <li><div>@Html.Pager("", Model.pageNum, Model.pageSize, Model.NoticesCunot)</div></li>
+                                }
+
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+            <div class="rightContent">
+                 @Html.Action("SharedLogin", "CN")
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

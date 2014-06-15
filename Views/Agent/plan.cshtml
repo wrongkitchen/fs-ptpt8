@@ -1,0 +1,74 @@
+﻿@using Heji.Web.Helpers
+@using Heji.Library.Models.TO
+@model Heji.Web.Models.AgentPlanViewModel
+           
+@{
+    ViewBag.Title = "代理中心 - 和记娱乐官方网站";
+    Layout = "~/Views/Shared/_AgentLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/center/banner_plan.jpg" alt="" />
+                </div>
+                <div class="article plan">
+                    <div class="tabBlock">
+                        <div class="tabButton">
+                            <div class="tab active">推广素材</div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="tabContent"></div>
+                        <div class="tabContent active">
+                            <p>
+                                专用推广网址: <a href="http://5069.ptpt8.com" target="_blank">http://5069.ptpt8.com</a><br />
+                                请在可能有玩家的地方发布你的"专用推广网址", 通过此链接注册的任何会员都终身是您的下线会员。
+                            </p>
+                            <br />
+                            <div class="articleDefaultHeader">
+                                <div class="red articleHeader">推广图片</div><br />
+                            </div>
+                        @if (Model.Plans != null && Model.PlansCount > 0)
+                        {
+                            foreach (PlanTO tnx in Model.Plans)
+                            { 
+                                <table width="649">
+                                    <tr>
+                                        <td>
+                                            <ul>
+                                                <li>序号: @tnx.Id</li>
+                                                <li>|</li>
+                                                <li>图片尺寸: @tnx.size</li>
+                                                <li>|</li>
+                                                <li>图片地址:<input type="text" value="@tnx.url.Replace("http://www.heji163.com", ImageServer.ToString())" id="description_@(tnx.Id)"/></li>
+                                                <li class="floatRight"><button id="copydescription_@(tnx.Id)">复制网址</button></li>
+                                            </ul>
+                                            <div class="clearfix"></div>
+                                        </td>
+                                    </tr>
+                                    <tr><td class="image"><img src="@tnx.url.Replace("http://www.heji163.com", ImageServer.ToString())" /></td></tr>
+                                </table>
+                            }
+                        }
+                    @if (Model.Plans != null && Model.PlansCount > 0)
+                    {
+                        <div>@Html.Pager("", Model.PageNum, Model.PageSize, Model.PlansCount)</div>
+                    }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @Html.Action("SharedAgentInformation", "Agent")
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,134 @@
+﻿@using Heji.Web.Helpers
+@model Heji.Web.Models.MemberWithdrawViewModel
+@{
+    ViewBag.Title = "取款 - 会员中心 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/member.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/member.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var hasAccounts = @((Model.UserBanks != null && Model.UserBanks.Count > 0) ? "true" : "false");
+            if (!hasAccounts) {
+                jAlert("请先绑定银行卡", "提示", function () {
+                    location.href = "/Member/BankAccounts";
+                });
+            }
+        })
+          $(document).ready(function () {
+                scroll(0, 300) 
+            });
+    </script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <ul id="memberNav" class="sectionNav transparent black">
+                    <li class="first button active"><a href="@Url.Action("Finance", "Member")" target="_self">出纳柜台</a></li>
+                    <li class="separate">|</li>
+                    @if (Model.CurrentUser.TransferType < 2)
+                    {
+                    <li class="button" style="display:none"><a href="@Url.Action("Transfer", "Member")" target="_self">额度转移方式</a></li>
+                    <li class="separate" style="display:none">|</li>
+                    }
+                    <li class="button"><a href="@Url.Action("Transactions", "Member")" target="_self">历史记录</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Info", "Member")" target="_self">修改资料</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Notices", "Member")" target="_self">最新公告</a></li>
+                </ul>
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/member/01_03.jpg" alt="">
+                </div>
+                <div class="article finance">
+                    <table class="user">
+                        <tr>
+                            <td>账户: @Model.CurrentUser.UserName</td>
+                            <td class="padLeft">
+                                账户余额： <span class="member_balance">@Heji.Web.Helpers.WebFunctions.GetFormattedCurrency(Model.CurrentUser.Balance)</span> 元
+                            </td>
+                        </tr>
+                    </table>
+                 @Html.Action("gameMessage", "Member")
+                    <div class="tabBlock">
+                        <div>
+                            <a href="@Url.Action("RapidDeposit", "Member")"><div class="tab">存款</div></a>
+                            <a href="@Url.Action("Withdraw", "Member")"><div class="tab active"style=" background-color: red; color: white; ">取款</div></a>
+                            <a href="@Url.Action("BankAccounts", "Member")"><div class="tab">绑定银行卡</div></a>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="tabContent withdraw active">
+                            <p>注意事项：如有游戏厅正在例行维护，该厅的额度会暂时无法读取，从而导致您的账号余额显示不准确。</p>
+                            <div class="account">
+                                <span>账户: @Model.CurrentUser.UserName</span>
+                                <span>|</span>
+                                <span>账号余额: <span class="member_balance">@Heji.Web.Helpers.WebFunctions.GetFormattedCurrency(Model.CurrentUser.Balance)</span> 元</span>
+                            </div>
+                            <br/>
+                            <p>取款申请</p>
+                            <table>
+                                <tr>
+                                    <td>请选择银行卡：</td>
+                                    <td>
+                                        <select id="banks">
+                                            <option value="">请选择出款银行卡</option>
+                                            @if (Model.UserBanks != null && Model.UserBanks.Count > 0)
+                                            {
+                                                foreach (Heji.Library.Models.TO.UserBankTO ub in Model.UserBanks)
+                                                {
+                                                    <option value="@ub.Id">@ub.Bank</option>
+                                                }
+                                            }
+                                        </select>
+                                        <span>* 请选择提款到哪个银行卡。</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>持卡人：</td>
+                                    <td><span id="cardHolder"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>省份：</td>
+                                    <td><span id="area"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>开户行：</td>
+                                    <td><span id="bank"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>银行卡号：</td>
+                                    <td><span id="acctNum"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>提款金额：</td>
+                                    <td><input type="text" id="amount"  onkeyup="value=value.replace(/[^\d\.]/g,'')" /><span>元 * 单笔提现金额不得低于100元。</span></td>
+                                </tr>
+                            </table>
+                            <button class="redButton" id="submitWithdraw">提交 &gt;</button>
+                            <button class="greyButton">取消</button>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN")
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

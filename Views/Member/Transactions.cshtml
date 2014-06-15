@@ -1,0 +1,146 @@
+﻿@using Heji.Web.Helpers
+@using Heji.Library.Models.TO
+@model Heji.Web.Models.MemberTransactionsViewModel
+@{
+    ViewBag.Title = "存取款记录 - 会员中心 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/member.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/member.js"></script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <ul id="memberNav" class="sectionNav transparent black">
+                    <li class="first button"><a href="@Url.Action("Finance", "Member")" target="_self">出纳柜台</a></li>
+                    <li class="separate">|</li>
+                    @if (Model.CurrentUser.TransferType < 2)
+                    {
+                    <li class="button" style="display:none"><a href="@Url.Action("Transfer", "Member")" target="_self">额度转移方式</a></li>
+                    <li class="separate" style="display:none">|</li>
+                    }
+                    <li class="button active"><a href="@Url.Action("Transactions", "Member")" target="_self">历史记录</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Info", "Member")" target="_self">修改资料</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Notices", "Member")" target="_self">最新公告</a></li>
+                </ul>
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/member/member-banner-05a.jpg" alt="">
+                </div>
+                <div class="article history">
+                    <div class="tabBlock">
+                        <div class="tabButton">
+                            <a href="@Url.Action("Transactions", "Member")" target="_self"><div class="tab active">存取款记录</div></a>
+                            <a href="@Url.Action("BetRecords", "Member")" target="_self"><div class="tab">投注派彩记录</div></a>
+                            <a href="@Url.Action("Bonuses", "Member")" target="_self"><div class="tab">红利记录</div></a>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="tabContent active">
+                                <p>为了用户的信息与资金的安全，会员中心仅保留最近7天的历史记录，如需查询更多记录，请联系客服。</p>
+                                @*<!--
+                            <div class="searchFilter">
+                                <div class="searchTitle pullLeft"></div>
+                                <div class="searchForm pullRight">
+                                <form action="@Url.Action("Transactions", "Member")" method="get">
+                                    <table>
+                                        <tr>
+                                            <td>日期：
+                                                <input type="text" class="datepicker" name="startDate" id="startDate" value="@Model.StartDate" />
+                                                到
+                                                <input type="text" class="datepicker" name="endDate" id="endDate" value="@Model.EndDate" />
+                                            </td>
+                                            <td>
+                                                <label for="searchCheckbox_1"><input id="searchCheckbox_1" name="processing" type="checkbox" value="0"@(Model.Processing == "0" ? "checked" : "") />处理中</label>
+                                                <label for="searchCheckbox_2"><input id="searchCheckbox_2" name="rejected" type="checkbox" value="1"@(Model.Rejected == "1" ? "checked" : "") />拒绝</label>
+                                                <label for="searchCheckbox_3"><input id="searchCheckbox_3" name="verified" type="checkbox" value="2"@(Model.Verified == "2" ? "checked" : "") />审核</label>
+                                                <label for="searchCheckbox_4"><input id="searchCheckbox_4" name="finished" type="checkbox" value="3"@(Model.Finished == "3" ? "checked" : "") />完成</label>
+                                            </td>
+                                            <td><button class="redButton" type="submit">查询</button></td>
+                                        </tr>
+                                    </table>
+                                </form
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>>-->*@
+                            <div class="lineBlock"></div>
+                            <h1 class="articleHeader">现金记录</h1>
+                            <div class="data-display">
+                                <table>
+                                    <tr class="header">
+                                        <td class="type">现金类型</td>
+                                        <td class="amount">金额</td>
+                                        <td class="platform">出款平台</td>
+                                        <td class="status">出入款状态</td>
+                                        <td class="other">备注</td>
+                                    </tr>
+                                    @if (Model.Transactions != null && Model.Transactions.Count > 0)
+                                    {
+                                        foreach (CashTO tnx in Model.Transactions)
+                                        {
+                                            int days = (tnx.CreateTime - DateTime.Today).Days;
+                                            bool idb = true;
+                                            if (Model.UserSwitches != null && !Model.UserSwitches.FirstDepositBonus)
+                                            {
+                                                idb = false;
+                                            }
+                                            string idbStr = string.Empty;
+                                            if (days < 7 && Model.CanApplyForInitialDepositBouns && tnx.Status == 3 && tnx.isFirstCash && idb)
+                                            {
+                                                idbStr += "<a id=\"applyIDB_25_" + tnx.Id + "\" href=\"javascript: void(0);\" style=\"color: red\" title=\"申请25%红利(8倍流水)<br />说明：您可以选择申请25%首存红利，此项选择的领取条件是：有效投注额达到存款加红利的8倍。\">[申请25%红利]</a><br />";
+                                                idbStr += "<a id=\"applyIDB_50_" + tnx.Id + "\" href=\"javascript: void(0);\" style=\"color: red\" title=\"申请50%红利(12倍流水)<br />说明：您可以选择申请50%首存红利，此项选择的领取条件是：有效投注额达到存款加红利的12倍。\">[申请50%红利]</a><br />";
+                                                idbStr += "<a id=\"applyIDB_100_" + tnx.Id + "\" href=\"javascript: void(0);\" style=\"color: red\" title=\"申请100%红利(18倍流水)<br />说明：您可以选择申请100%首存红利，此项选择的领取条件是：有效投注额达到存款加红利的18倍。\">[申请100%红利]</a><br />";
+                                            }
+                                            <tr>
+                                                <td class="type">@WebFunctions.GetCashTypeName(tnx.Type)</td>
+                                                <td class="amount">@WebFunctions.GetFormattedCurrency(tnx.Amount)</td>
+                                                <td class="platform">@Html.Raw(tnx.BankCode)@Html.Raw(WebFunctions.HideBankAccountForWithdraw(tnx.Bank, tnx.Type))</td>
+                                                <td class="status">
+                                                    @Html.Raw(idbStr)
+                                                    @Html.Raw(WebFunctions.GetCashStatus(tnx.Status))
+                                                    @Html.Raw(tnx.Type == 12 && tnx.Status == 0 ? "<a id=\"cancelOrder_" + tnx.clientOrderID + "\" href=\"javascript: void(0);\" style=\"color: red\">[取消订单]</a>" : "")
+                                                    <br/>
+                                                    @tnx.CreateTime.ToString("yyyy-MM-dd HH:mm:ss")
+                                                </td>
+                                                <td class="other">@Html.Raw(tnx.Remarks)</td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td class="other" colspan="5">暂无存取款记录</td>
+                                        </tr>
+                                    }
+                                </table>
+                                @if (Model.Transactions != null && Model.Transactions.Count > 0)
+                                {
+                                    <div>@Html.Pager("", Model.PageNum, Model.PageSize, Model.TransactionsCount)</div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false" })
+                <div class="block discount"><a href="/CN/Promotions" target="_self"><img src="@ImageServer/Content/Images/member/01_12.jpg" alt=""></a></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

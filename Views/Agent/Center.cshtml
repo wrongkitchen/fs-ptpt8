@@ -1,0 +1,165 @@
+﻿@using Heji.Web.Helpers
+@using Heji.Library.Models.TO
+@model Heji.Web.Models.AgentCenterViewModel
+         
+                   
+@{
+    ViewBag.Title = "代理中心 - 和记娱乐官方网站";
+    Layout = "~/Views/Shared/_AgentLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/center/banner_center.jpg" />
+                </div>
+                <div class="article center">
+                    <p class="title">最新运营公告<a href="@Url.Action("Notice", "CN")" target="_self" class="pullRight normal">更多公告 &gt;</a></p>
+                    <br/>
+                    <table>
+                        <tr>
+                            <td>@Html.Action("SharedNotice", "Agent")</td>
+                        </tr>
+                    </table>
+                    <br/>
+                    <div class="lineBlock"></div>
+                    <br/>
+                    <p class="title">本月财务报表</p>
+                    <table class="center">
+                        <tr>
+                            <td>月份</td>
+                            <td>活跃人数</td>
+                            <td>有效投注额</td>
+                            <td>红利</td>
+                            <td>派彩</td>
+                            <td>佣金比例</td>
+                            <td>佣金</td>
+                            <td style="width:20%">备注</td>
+                        </tr>
+                    @if (Model.AgThisreports != null)
+                    {
+                        <tr>
+                            <td>@Model.AgThisreports.Agmonth</td>
+                            <td>@Model.AgThisreports.HyNum</td>
+                            <td>@Model.AgThisreports.Betting</td>
+                            <td>@Model.AgThisreports.Bonus</td>
+                            <td>@Model.AgThisreports.PcCash</td>
+                            <td>@Math.Ceiling(Model.AgThisreports.Ratio * 100) %</td>
+                            <td>@Model.AgThisreports.Brokerage</td>
+                            <td>@Model.AgThisreports.BakNote</td>
+                        </tr>
+                    }
+                    else
+                    {
+                            <tr>
+                                暂无数据！
+                            </tr>
+                    }
+                    </table>
+                    <br/><br/>
+                    <p class="title">本月活跃会员</p>
+                    <table class="center">
+                        <tr>
+                            <td>会员名称</td>
+                            <td>等级</td>
+                            <td>状态</td>
+                            <td>注册时间</td>
+                            <td>首存金额</td>
+                            <td>可转资金</td>
+                            <td>本月存款</td>
+                            <td>本月出款</td>
+                            <td>本月红利</td>
+                        </tr>
+
+                         @if (Model != null && Model.users.Count > 0)
+                        {
+
+                            foreach (var to in Model.users)
+                            {
+                                if( to.TotalIn>0 && to.TotalOut<0 ){
+                                
+                                    <tr onmouseover="style.backgroundColor='#976969'" onmouseout="style.backgroundColor=''" >
+                                        <td align="center" valign="middle">
+                                            @to.UserName
+                                        </td>
+                                        <td align="center" valign="middle">
+                                            @to.Level
+                                        </td>
+                                        <td align="center" valign="middle">
+                                            @(to.IsLocked ? "锁定" : "正常")
+                                        </td>
+                                        <td align="center" valign="middle">
+                                            @Heji.Common.Function.FormatTime(to.CreateTime, 1)
+                                        </td>
+                                        <td align="center" valign="middle">
+                                            @to.FirstCash.ToString("N")
+                                        </td>
+                                        <td align="center" valign="middle">
+                                            @to.Balance 元
+                                        </td>
+                                        <td align="center" valign="middle">
+                                            @if (to.TotalIn > 0)
+                                            {
+                                                <text>@to.TotalIn.ToString("N")</text>
+                                            }
+                                            else
+                                            {
+                                                <text>@to.TotalIn.ToString("N")</text>
+                                            }
+                                        </td>
+                                        <td align="center" valign="middle">
+                                            @if (to.TotalOut != 0)
+                                            {
+                                                <text> @to.TotalOut.ToString("N")</text>
+                                            }
+                                            else
+                                            {
+                                                <text>@to.TotalOut.ToString("N")</text>
+                                            }
+                                        </td>
+                                        <td align="center" valign="middle">
+                                            @if (to.totalBonus > 0)
+                                            {
+                                                 <text> @to.totalBonus.ToString("N")</text>
+                                            }
+                                            else
+                                            {
+                                                <text>@to.totalBonus.ToString("N")</text>
+                                            }
+                                        </td>
+                                    </tr>
+                                    }
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td align="center" valign="middle" class="hzhbtabconent4" colspan="9">
+                                    暂无记录
+                                </td>
+                            </tr>
+                        }
+
+
+                    </table>
+                    <br/>
+                    <p>推广网址： <input type="text" value="http://@(Model.CurrentUser.sitecode).heji700.com"  readonly="readonly"/>*</p>
+                    <br/>
+                    <p class="red">温情提醒：为了避免非法人士通过绑定银行卡窃取您的账户资金，请你您务必填写真实有效的信息，并且只设置一次，如修改，请联系在线客服</p>
+                </div>
+            </div>
+            @Html.Action("SharedAgentInformation", "Agent")
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

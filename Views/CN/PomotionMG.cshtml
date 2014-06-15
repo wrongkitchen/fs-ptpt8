@@ -1,0 +1,568 @@
+﻿@using Heji.Web.Helpers
+@{
+    ViewBag.Title = "和记MG平台正式上线 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/endorsement.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/main.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/div-slider-1.0.3.js"></script>
+}
+<style type="text/css">
+<!--
+body {
+	background-color: #2d2926;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+body,td,th {
+	font-family: 微软雅黑, 宋体, Arial;
+	font-size: 12px;
+}
+.STYLE1 {color: #FFFFFF}
+.STYLE2 {color: #999999}
+a:link {
+	color: #FF0000;
+}
+a:visited {
+	color: #FF0000;
+}
+a:active {
+	color: #FFCC00;
+}
+.STYLE36 {color: #FF2020; font-size: 16px; font-weight: bold; }
+.STYLE40 {color: #000000}
+.STYLE41 {
+	color: #FFFFFF;
+	font-size: 16px;
+}
+.STYLE42 {font-size: 14px; color: #000000; }
+.STYLE44 {color: #FF0000}
+.STYLE46 {font-size: 12px}
+.STYLE47 {
+	font-size: 12px;
+	color: #FF0000;
+}
+a {
+	font-size: 12px;
+}
+.STYLE49 {
+	color: #FF0000;
+	font-size: 16px;
+	font-weight: bold;
+}
+.STYLE51 {
+	color: #FF0000;
+	font-size: 14px;
+	font-weight: bold;
+}
+.STYLE53 {color: #FF0000; font-size: 18px; }
+-->
+</style>
+<script type="text/javascript">
+<!--
+    function MM_swapImgRestore() { //v3.0
+        var i, x, a = document.MM_sr; for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
+    }
+    function MM_preloadImages() { //v3.0
+        var d = document; if (d.images) {
+            if (!d.MM_p) d.MM_p = new Array();
+            var i, j = d.MM_p.length, a = MM_preloadImages.arguments; for (i = 0; i < a.length; i++)
+                if (a[i].indexOf("#") != 0) { d.MM_p[j] = new Image; d.MM_p[j++].src = a[i]; }
+        }
+    }
+
+    function MM_findObj(n, d) { //v4.01
+        var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+            d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+        }
+        if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+        for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+        if (!x && d.getElementById) x = d.getElementById(n); return x;
+    }
+
+    function MM_swapImage() { //v3.0
+        var i, j = 0, x, a = MM_swapImage.arguments; document.MM_sr = new Array; for (i = 0; i < (a.length - 2); i += 3)
+            if ((x = MM_findObj(a[i])) != null) { document.MM_sr[j++] = x; if (!x.oSrc) x.oSrc = x.src; x.src = a[i + 2]; }
+    }
+//-->
+</script>
+<div id="wrapper">
+    <div class="container">
+        <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#000000">
+            <tr>
+                <td>
+                    <table width="1000" height="400" border="0"  background="@ImageServer/Content/Images/girls_picture.jpg" align="center" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td valign="bottom">
+                                                   @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()) || WebFunctions.GetCurrentUserId() == 0)
+                                                   {
+                                <table width="200" border="0" align="right" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            <a href="@Url.Action("Register", "Member")" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image13','','@ImageServer/Content/Images/btn-reg.jpg',1)">
+                                                <img src="@ImageServer/Content/Images/btn-reg.gif" name="Image13" width="125" height="84" border="0" id="Image13" /></a>
+                                        </td>
+                                        <td>
+                                            <a href="@Url.Action("Free", "CN")" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image14','','@ImageServer/Content/Images/btn-free_trial_on.jpg',1)">
+                                                <img src="@ImageServer/Content/Images/btn-free_trial.jpg" name="Image14" width="125" height="84" border="0" id="Image14" /></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                                                   }
+                            </td>
+                        </tr>
+                    </table>
+               
+                    <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" style="background-color: #000000">
+                        <tr>
+                            <td>
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000">
+                                    <tr>
+                                        <td width="75%" rowspan="3" valign="top" bgcolor="#FFFFFF">
+                                            <table width="100%" height="19" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td bgcolor="#1F1E1C">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table width="96%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td bgcolor="#FFFFFF">
+                                                        <table width="99%" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <th scope="col">
+                                                                    &nbsp;
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <span class="STYLE36">MG平台简介：<span class="STYLE40"><br />
+                                                                    </span></span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <span class="STYLE46">Micro Gaming平台（简称MG平台），MG公司早在15年前就开发了第一个真正的网络博彩平台，是目前全球最具影响力及实力的博彩平台，是世界上第一个品牌真人祭-花花公子荷官的创始公司。</span>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td bgcolor="#FFFFFF">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td bgcolor="#FFFFFF">
+                                                        <table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#333333">
+                                                            <tr>
+                                                                <th bgcolor="#333333" height="30" scope="col">
+                                                                    <span class="STYLE41">伦敦厅（MG真人视讯）</span>
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="99%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                        <tr>
+                                                                            <td>
+                                                                                &nbsp;
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                                    <tr>
+                                                                                        <td width="43%">
+                                                                                            <div class="video-container">
+                                                                                                <table width="98%" border="1" cellpadding="0" cellspacing="0" bordercolor="#333333">
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <iframe src="http://player.youku.com/player.php/sid/XNjYwMzYxMDUy/v.swf" width="300"
+                                                                                                                height="200" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+                                                                                                            </iframe>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td width="57%" valign="top">
+                                                                                            <table width="98%" border="0" align="right" cellpadding="0" cellspacing="0">
+                                                                                                <tr>
+                                                                                                    <td>
+                                                                                                        <p align="left" class="STYLE46">
+                                                                                                            <span class="STYLE44">MG平台</span>，全球首创花花公子真人祭荷官发牌，包括百家乐，21点，轮盘，支持单人/多人下注，每款游戏不同台桌限红不同，任您选择！</p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td>
+                                                                                                        &nbsp;
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td class="STYLE46">
+                                                                                                        <span class="STYLE44">和记星级代言人-吴亚馨</span>，首次担任荷官发牌，为您赢得好手气！您还在等什么，马上进入全新平台博下运气吧！
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td class="STYLE46">
+                                                                                                        &nbsp;
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td class="STYLE46">
+                                                                                                        <div align="center">
+                                                                                                            <a href="/CN/MGIntro"><span class="STYLE51"><u>点击立即进入MG伦敦厅，百万富翁离您更进一步了！</u></span></a></div>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </table>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div align="left">
+                                                                                    ---------------------------------------------------------------------------------------------------------------------------------------------</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div align="center">
+                                                                                    <span class="STYLE47 STYLE46">MG现场：</span></div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div align="center">
+                                                                                    <span class="STYLE42">
+                                                                                        <img src="@ImageServer/Content/Images/mgxs.jpg" width="700" height="200" /></span></div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <table width="98%" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td>
+                                                                    &nbsp;
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    &nbsp;
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td bgcolor="#FFFFFF">
+                                                        <table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#333333">
+                                                            <tr>
+                                                                <th bgcolor="#333333" height="30" scope="col">
+                                                                    <span class="STYLE41">MG电子游艺</span>
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="99%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                        <tr>
+                                                                            <td>
+                                                                                &nbsp;
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                                    <tr>
+                                                                                        <th width="43%" scope="col">
+                                                                                            <div class="video-container">
+                                                                                                <table width="98%" border="1" cellpadding="0" cellspacing="0" bordercolor="#333333">
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <iframe src="http://player.youku.com/player.php/sid/XNjYwMzUwODcy/v.swf" width="300"
+                                                                                                                height="200" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+                                                                                                            </iframe>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </th>
+                                                                                        <td width="57%" scope="col">
+                                                                                            <table width="98%" border="0" align="right" cellpadding="0" cellspacing="0">
+                                                                                                <tr>
+                                                                                                    <td class="STYLE46">
+                                                                                                        <span class="STYLE44">老虎机</span>是赌场里最简单的游戏之一，这也是它为什么无论在现实赌场还是在线游戏都是万人迷的原因之一，您不需要掌握什么规则或者技术就可以尽情愉悦。同时还能以小博大，赢得高额彩金！
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td>
+                                                                                                        &nbsp;
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td class="STYLE46">
+                                                                                                        <span class="STYLE44">和记星级代言人-吴亚馨</span>，带您共同体验现实赌场老虎机的乐趣，您也希望马上体验一下吗？MG平台精选时下最热门老虎机游戏，只要有网络就可以随时游戏。多达130多种电子游艺支持中文投注，同时和记娱乐为您呈上每天高达888元救援奖金！<span
+                                                                                                            class="STYLE44">（活动详情如下）</span>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td class="STYLE46">
+                                                                                                        &nbsp;
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td class="STYLE46">
+                                                                                                        <div align="center">
+                                                                                                            <a href="@Url.Action("EGames", "CN")"><span class="STYLE51"><u>点击立即进入MG电子游艺，百万富翁离您更进一步了！</u></span></a></div>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </table>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                                <div align="center">
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                &nbsp;
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td bgcolor="#FFFFFF">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td bgcolor="#FFFFFF">
+                                                        <table width="98%" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td>
+                                                                    <span class="STYLE49">MG电子游艺救援奖金：</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <p class="STYLE46">
+                                                                        当您面临暂时的困局，和记娱乐为您提供救援奖金高达888元，助您渡过短暂难关！
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <p class="STYLE44">
+                                                                        规则与条款：</p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#999999">
+                                                            <tr>
+                                                                <td width="25%" height="32" bgcolor="#333333">
+                                                                    <div align="center">
+                                                                        <span class="STYLE1">单日负盈利金额</span></div>
+                                                                </td>
+                                                                <td width="25%" bgcolor="#333333">
+                                                                    <div align="center">
+                                                                        <span class="STYLE1">奖金比例</span></div>
+                                                                </td>
+                                                                <td width="25%" bgcolor="#333333">
+                                                                    <div align="center">
+                                                                        <span class="STYLE1">最高奖金</span></div>
+                                                                </td>
+                                                                <td width="25%" bgcolor="#333333">
+                                                                    <div align="center">
+                                                                        <span class="STYLE1">账户余额</span></div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="32">
+                                                                    <div align="center">
+                                                                        500元以上</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div align="center">
+                                                                        3%</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div align="center">
+                                                                        888</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div align="center">
+                                                                        0≤余额≤5元</div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td>
+                                                                    &nbsp;
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <p class="STYLE44">
+                                                                        活动细则：</p>
+                                                                    <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                                                                        <tr>
+                                                                            <td>
+                                                                                  1. 活动时间：北京时间<span class="STYLE44">2014年2月12日中午12:00-2014年3月31日中午12:00</span>。
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                2. 该奖金仅提供MG电子游艺当天负盈利符合以上要求的会员，每天一个账户只能申请获得一次救援奖金。
+
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                               &nbsp;&nbsp;&nbsp;&nbsp;a.负盈利指当日MG电子游艺总派彩为负值
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                              &nbsp;&nbsp;&nbsp;&nbsp;b.每天指北京时间中午12:00至次日中午12:00
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                3. 该奖金需在北京时间每天中午12点之后申请，申请有效时间为1周，如逾期未申请将自动取消资格。
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                4. 该奖金需达到12倍有效投注可申请取款，有效投注仅计算MG电子游艺的投注。
+                                                                            </td>
+                                                                        </tr>
+                                                                            <tr>
+                                                                            <td>
+                                                                                5. 该活动不与全勤红利活动共享。
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                6. 和记娱乐保留最终解释权。
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                    <p class="STYLE40">
+                                                                        &nbsp;</p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <ol>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td width="25%" valign="top" bgcolor="#000000">
+                                            <table width="100%" height="19" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td bgcolor="#1F1E1C">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>@Html.Action("SharedLogin", "CN", new { displayPlatforms = "false", displayCS = "false" })
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        @*<a href="http://67.198.160.58/chat/chatClient/chatbox.jsp?companyID=306&configID=9&enterurl=@Request.Url.Host" target="_blank" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image15','','@ImageServer/Content/Images/company/btn-contact_client_hover.jpg',1)">*@
+                                                            <img src="@ImageServer/Content/Images/company/btn-contact_client02.gif" name="Image15" width="251" height="68" border="0" id="Image15" />
+                                                        @*</a>*@
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                            <tr>
+                                                                <td>
+                                                                    <a href="/CN/MGIntro">
+                                                                        <img src="@ImageServer/Content/Images/company/2_30.jpg" width="251" height="100" />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <a href="/CN/BBINIntro">
+                                                                        <img src="@ImageServer/Content/Images/company/2_17.jpg" width="251" height="100" /></a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <a href="/CN/AGIntro">
+                                                                        <img src="@ImageServer/Content/Images/company/2_19.jpg" width="251" height="100" /></a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <a href="/CN/GDIntro">
+                                                                        <img src="@ImageServer/Content/Images/company/2_26.jpg" width="251" height="100" /></a>
+                                                                </td>
+                                                            </tr>
+                                                        
+                                                            <tr>
+                                                                <td>
+                                                                    <a href="@Url.Action("EGames", "CN")"><img src="@ImageServer/Content/Images/company/2_28.jpg" alt=""></a>
+                                                                </td>
+                                                            </tr>
+                                                          @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()) || WebFunctions.GetCurrentUserId() == 0)
+                                                          {
+                                                            <tr>
+                                                                <td>
+                                                                   <a href="@Url.Action("Sports", "CN")"><img src="@ImageServer/Content/Images/company/2_28a.jpg" alt=""></a>
+                                                                </td>
+                                                            </tr>
+                                                          }
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" bgcolor="#000000">
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="clearfix">
+    </div>
+</div>

@@ -1,0 +1,82 @@
+﻿@model Heji.Web.Models.MemberInfoViewModel
+@{
+    ViewBag.Title = "修改资料 - 会员中心 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/member.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/member.js"></script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <ul id="memberNav" class="sectionNav transparent black">
+                    <li class="first button"><a href="@Url.Action("Finance", "Member")" target="_self">出纳柜台</a></li>
+                    <li class="separate">|</li>
+                    @if (Model.CurrentUser.TransferType < 2)
+                    {
+                    <li class="button" style="display:none"><a href="@Url.Action("Transfer", "Member")" target="_self">额度转移方式</a></li>
+                    <li class="separate" style="display:none">|</li>
+                    }
+                    <li class="button"><a href="@Url.Action("Transactions", "Member")" target="_self">历史记录</a></li>
+                    <li class="separate">|</li>
+                    <li class="button active"><a href="@Url.Action("Info", "Member")" target="_self">修改资料</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Notices", "Member")" target="_self">最新公告</a></li>
+                </ul>
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/member/member-banner-05.jpg" alt="">
+                </div>
+                <div class="article info">
+                    <p class="title">修改资料须知：</p>
+                    <p>1、设置个人安全资料（用于绑定银行卡和申请提款）<br/>
+2、温情提醒：为了避免非法人士通过绑定银行卡窃取您的账户资金，设置的取款人姓名必须与绑定的银行卡开户人姓名一致，并且只设置一次，如需修改，必须联系客服。</p>
+                    <br/>
+                    <div class="tabBlock">
+                        <div class="tabButton">
+                            <a href="@Url.Action("Info", "Member")" target="_self"><div class="tab active">修改资料</div></a>
+                            <a href="@Url.Action("Infopassword", "Member")" target="_self"><div class="tab">修改密码</div></a>
+                            <a href="@Url.Action("Infosecurity", "Member")" target="_self"><div class="tab">密保问题</div></a>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="tabContent active modifyData">
+                            <p>取款人姓名：  @Model.CurrentUser.TrueName *姓名无法自行修改，如需修改请联系客服。</p>
+                            <table>
+                                <tr>
+                                    <td>安全邮箱：</td>
+                                    <td><input name="email" type="text" class="input2" id="email" value="@Model.CurrentUser.Email" size="10" maxlength="30" /></td>
+                                    <td>* 用于找回密码以及在特殊情况下，<br/>作为与用户联系的唯一方式。</td>
+                                </tr>
+                                <tr>
+                                    <td>QQ号码：</td>
+                                    <td><input name="qq" type="text" class="input2" id="qq" value="@Model.CurrentUser.QQ" size="10" maxlength="12" /></td>
+                                    <td>* 请填写QQ号码方便联系。</td>
+                                </tr>
+                            </table>
+                            <p>手机号码：    @Model.CurrentUser.Tel  * 如需修改手机号码，请联系客服。</p>
+                            <button class="redButton" id="Infosubmit">提交 &gt;</button>
+                            <button class="greyButton">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false" })
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

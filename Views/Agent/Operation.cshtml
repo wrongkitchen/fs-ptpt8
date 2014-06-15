@@ -1,0 +1,60 @@
+﻿@using Heji.Web.Helpers
+@using Heji.Library.Models.TO
+@model Heji.Web.Models.AgentOperationViewModel
+           
+@{
+    ViewBag.Title = "代理中心 - 和记娱乐官方网站";
+    Layout = "~/Views/Shared/_AgentLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/agent.js"></script>
+}
+
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/center/banner_operation.jpg" alt="" />
+                </div>                
+                <div class="article announcement">
+                    <p class="articleHeader">代理公告</p>
+                    <table>
+                        <tr class="header">
+                            <td>标题</td>
+                            <td>内容</td>
+                            <td>时间</td>
+                        </tr>
+                    @if (Model.Notices != null && Model.NoticesCount > 0)
+                    {
+                        foreach (NoticeTO tnx in Model.Notices)
+                        { 
+                        <tr>
+                            <td>@Html.Raw(tnx.Title)</td>
+                            <td>@Html.Raw(tnx.Content)</td>
+                            <td>@tnx.CreateDate</td>
+                        </tr>
+                        }
+                    }
+                    </table>
+                    @if (Model.Notices != null && Model.NoticesCount > 0)
+                    {
+                        <div>@Html.Pager("", Model.PageNum, Model.PageSize, Model.NoticesCount)</div>
+                    }
+                </div>
+            </div>
+            @Html.Action("SharedAgentInformation", "Agent")
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>
+

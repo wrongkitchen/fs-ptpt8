@@ -1,0 +1,68 @@
+body, p, ol, ul, li, dt, dl, dd, td, TD, h1, h2, h3, 
+img, em, a, b, blockquote
+  {
+	font-family : Verdana, Arial, Helvetica, sans-serif;
+	font-size : 12px;
+	line-height:22px;
+	font-weight: normal;
+	color : #333333;
+	letter-spacing: 1px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	scrollbar-face-color:#DCDCDE;
+	scrollbar-highlight-color:#FFFFFF;
+	scrollbar-3dlight-color:#C2C2C2;
+	scrollbar-darkshadow-color:#808080;
+	scrollbar-shadow-color:#E7E7E9;
+	scrollbar-arrow-color:#FFFFFF;
+}A:link    {
+	color: #0000CC;
+	text-decoration: none;
+	font-weight: normal;
+	font-family: "????", Verdana;
+}
+A:visited {
+	color: #666666;
+	text-decoration: none;
+	font-weight: normal;
+	font-family: "????", Verdana;
+}
+A:active  {
+	color: #999999;
+	text-decoration: none;
+	font-weight: normal;
+	font-family: "????", Verdana;
+}
+A:hover   {
+	color: #B55A00;
+	text-decoration: none;
+	font-weight: normal;
+	font-family: "????", Verdana;
+}
+
+
+body { background: url(../Images/Introduction/bg_update.jpg) #d2d2c6   no-repeat top; margin:0 auto; padding:0; width:1024px; height:800px; }
+.title_new { text-shadow:#000; background: url(../Images/Introduction/bg_txt1.png) no-repeat; width:851px; height:38px; text-align:left; color:#FFF; line-height:3em; text-transform: uppercase;  padding-left:40px;}
+
+.box_inner { border: #e2e2e2 solid 1px; width:850px; padding:20px; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d2d2c6', endColorstr='#fdfdfd'); background: -webkit-gradient(linear, left top, left bottom, from(#d2d2c6), to(#fdfdfd));  background: -moz-linear-gradient(top,  #d2d2c6,  #fdfdfd);}
+.box_table { border: #e2e2e2 solid 1px; width:850px; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d2d2c6', endColorstr='#fdfdfd'); background: -webkit-gradient(linear, left top, left bottom, from(#d2d2c6), to(#fdfdfd));  background: -moz-linear-gradient(top,  #d2d2c6,  #fdfdfd);}
+.box_table2 { border: #e2e2e2 solid 1px; width:850px; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d2d2c6', endColorstr='#d2d2c6'); background: -webkit-gradient(linear, left top, left bottom, from(#d2d2c6), to(#fdfdfd));  background: -moz-linear-gradient(top,  #d2d2c6,  #fdfdfd);}
+.bg_tablers { background: #CCC; border:1px double #FFF  ; color:#900}
+.bg_tablers2 { background: #999; border:1px solid #999; text-align:left; color:#FFF;}
+.ribbon_bolder {  width: 123px; height:60px; position:relative; }
+.ribbon_inner { width:242px; height:177px; background:url(../Images/Introduction/baccarat.png) no-repeat; position:absolute; top:38px; right:29px;}
+.ribbon_inner2 {width:242px;  height:177px; background: url(../Images/Introduction/dragon-tiger.png) no-repeat; position:absolute; top:38px; right:29px;}
+.ribbon_inner3 { width:242px;  height:177px; background: url(../Images/Introduction/sicbo.png) no-repeat; position:absolute;top:38px; right:29px;}
+.ribbon_inner4 { width:242px;  height:177px; background: url(../Images/Introduction/roulette.png) no-repeat; position:absolute;top:38px; right:29px;}
+.ribbon_inner5 { width:242px;  height:177px; background: url(../Images/Introduction/roulette.png) no-repeat; position:absolute;top:38px; right:29px;}
+.ribbon_inner6 { width:242px;  height:177px; background: url(../Images/Introduction/roulette.png) no-repeat; position:absolute;top:38px; right:29px;}
+.ribbon_inner7 { width:242px;  height:177px; background: url(../Images/Introduction/roulette.png) no-repeat; position:absolute;top:38px; right:29px;}
+.ribbon_inner8 { width:242px;  height:177px; background: url(../Images/Introduction/roulette.png) no-repeat; position:absolute;top:38px; right:29px;}
+
+img, div { behavior: url(iepngfix.htc) }
+
+.tableClass{ border:solid 1px #999;}
+.tableClass td{ padding-left:5px;border:solid 1px #999; padding-top:3px; padding-bottom:3px;}
+.tableClass td img{ padding:0 3px;}

@@ -1,0 +1,120 @@
+
+.leftRightContent .leftContent .article {
+  padding: 30px;
+  font-size: 14px;
+  color: #000;
+}
+.leftRightContent .leftContent .article p.title,
+.leftRightContent .leftContent .article div.title {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+.leftRightContent .leftContent .article.register button {
+  width: 141px;
+  height: 50px;
+}
+.leftRightContent .rightContent .rightThreeBtn {
+  height: 208px;
+}
+.leftRightContent .rightContent .rightThreeBtn a {
+  display: block;
+}
+.leftRightContent .rightContent .btnReg {
+  width: 252px;
+  height: 104px;
+  background: url(../Images/company/brn-regist.png) left top no-repeat;
+}
+.leftRightContent .rightContent .btnReg:hover {
+  background: url(../Images/company/brn-regist-on.png) left top no-repeat;
+}
+.leftRightContent .rightContent .onlineService {
+  width: 82px;
+  height: 84px;
+  background: url(../Images/btn-online_service.jpg) left top no-repeat;
+}
+.leftRightContent .rightContent .onlineService:hover {
+  background: url(../Images/btn-online_service_on.jpg) left top no-repeat;
+}
+.leftRightContent .rightContent .freeTrial {
+  width: 252px;
+  height: 104px;
+  background: url(../Images/company/downloadclient.png) left top repeat;
+}
+/*.leftRightContent .rightContent .freeTrial:hover {
+  background: url(../Images/btn-free_trial_on.jpg) left top no-repeat;
+}*/
+.leftRightContent .rightContent .accountRegister {
+  display: block;
+  width: 252px;
+  height: 69px;
+  background: url(../Images/agent/rightButton_05.jpg) left top repeat;
+}
+.leftRightContent .rightContent .accountRegister:hover {
+  background: url(../Images/agent/rightButton_05_on.jpg) left top no-repeat;
+}
+.formula {
+  margin: 28px auto 10px auto;
+}
+.formula .red {
+  font-size: 15px;
+  padding-right: 20px;
+}
+.formula .desc {
+  font-size: 18px;
+  padding: 18px 50px;
+  border: 1px solid #9b9b9b;
+}
+.exampleList .title {
+  font-size: 13px;
+  vertical-align: middle;
+  padding-right: 20px;
+  padding-top: 20px;
+  width: 60px;
+}
+.exampleList .title .number {
+  font-size: 30px;
+}
+.exampleList .desc {
+  padding-top: 20px;
+}
+.agreementNode {
+  margin-top: 10px;
+}
+.registerForm td {
+  vertical-align: middle;
+}
+.registerForm .titleText {
+  padding: 0 12px 0 0;
+  vertical-align: top;
+}
+.registerForm .message {
+  padding: 0 0 0 12px;
+}
+.registerForm input[type=text] {
+  width: 193px;
+  height: 15px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.registerForm input[type=text].short {
+  width: 100px;
+}
+.registerForm input[type="radio"],
+.registerForm input[type="checkbox"] {
+  margin: 0;
+}
+.registerForm textarea {
+  width: 250px;
+}
+.registerForm label {
+  margin: 0;
+  padding: 0;
+}
+.registerForm .tncCheck {
+  margin-top: 20px;
+}
+.loginWrap.loginWrapAgent {
+  background-image: url(../Images/bg-login_panel_agent.jpg); background-position: left center;
+}
+.borderFormula{ border:2px solid #747474; text-align: center; padding:10px; }

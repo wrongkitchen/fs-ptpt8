@@ -1,0 +1,65 @@
+#jalert_container {
+	font-family: 微软雅黑, Arial, sans-serif;
+	font-size: 12px;
+	min-width: 300px; /* Dialog will be no smaller than this */
+	max-width: 600px; /* Dialog will wrap after this width */
+	background: #ddd;
+	padding: 5px !important;
+	color: #fff;
+}
+
+#jalert_title {
+	font-size: 18px;
+	line-height: 21px;
+	font-weight: normal;
+	color: #fff;
+	background: #e4272b;
+	cursor: default;
+	padding: 10px;
+	margin: 0em;
+}
+
+#jalert_content {
+	padding: 10px; 
+	margin: 0em;
+	background: #383431;
+	/*border: 1px solid #ccc;*/
+	border-top: 0;
+}
+
+#jalert_message {
+    text-align: center;
+	margin: 20px 0;
+}
+
+#jalert_panel {
+	text-align: center;
+	margin: 20px 0 10px 0;
+}
+
+#jalert_panel input { min-width: 100px; text-align: center; }
+
+#jalert_prompt {
+	margin: 5px 0;
+	padding: 7px 5px;
+	border: 1px solid #ccc;
+	background: #f7f7f7;
+	color: #666;
+}
+#jalert_prompt:focus { background: #fff; }
+
+#jalert_overlay { background: #000 !important; opacity: 0.5 !important; }
+
+#jalert_ok, #jalert_cancel { padding: 5px 15px; font-size: 12px; display: inline-block; }
+#jalert_ok, #jalert_cancel { 
+	font-family: 'RobotoCondensed', Arial, Helvetica, sans-serif; text-transform: uppercase; 
+}
+#jalert_ok:hover, #jalert_ok:active, #jalert_cancel:hover, #jalert_cancel:active { background-position: 0 -39px; }
+
+#jalert_ok { border: 1px solid #000; background: #000; font-weight: bold; color: #fff; }
+#jalert_ok:hover { background: #e4272b; }
+
+#jalert_cancel { border: 1px solid #ccc; background: #eee; color: #333; }
+#jalert_cancel:hover { background-color: #ddd; border: 1px solid #bbb; }
+
+#jalert_prompt { width: 270px !important; }

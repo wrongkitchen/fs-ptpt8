@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "电子游艺介绍 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/egames.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/member.js"></script>
+
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <ul id="egamesNav" class="sectionNav transparent black">
+                    <li class="first button"><a href="@Url.Action("EGames", "CN")" target="_self">游戏大厅</a></li>
+                    <li class="separate">|</li>
+                    <li class="button active"><a href="@Url.Action("EGamesIntro", "CN")" target="_self">电子游艺介紹</a></li>
+                </ul>
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/egames/egames_03.jpg" alt="" />
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false", displayCS = "false" })
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="leftRightContent introduction">
+            <div class="leftContent">
+                <div class="article">
+                    <h4 class="red">电子游艺</h4>
+                    <br/>
+                    <p class="red subTitle">什么是电子游艺？</p>
+                    <p>电子游艺，由电子游戏衍生而成。不但是一种娱乐项目，更已经成为了一种文化现象。电子游艺在电子游戏基本上，赋予更多文化、艺术、趣味元素进去的一种新兴娱乐方式。</p>
+                    <br/>
+                    <p class="red subTitle">电子游艺的可玩性</p>
+                    <p>由Micro Gaming(MG平台）提供的电子游艺，有多达130多种趣味十足的游戏，有传统的老虎机游戏、新颖的主题游戏等，让你足不出户轻松享受到电子游戏的乐趣。</p>
+                    <p><img src="@ImageServer/Content/Images/egames/Images/lhjJsImg.jpg" alt="" /></p>
+
+                    <br/>
+                    <p class="red subTitle">电子游艺的玩法说明</p>
+
+                    <p>电子游艺共分为老虎机、特色老虎机、经典老虎机、桌上游戏。老虎机游戏是根据转动轴的运行，随着玩家所选的游戏路径，依所投注的额度，来创作出多连线的赢取机率游戏。
+
+老虎机游戏根据游戏不同可以选择的投注路径也不同，投注路径是指玩家在游戏中为了增加游戏赢率进行的多项投注，在游戏中多以选择数字来表示投注路径。
+
+在老虎机中每线取最高赔率为玩家得分，玩家得分由每条压注线的左边开始计算，每局总得分为玩家每线押注乘每线赔率。</p>
+                    <br/>
+                    <p class="red subTitle">电子游艺的奖金</p>
+
+                    <p>和记娱乐城和Micro Gaming(MG平台）强强联合隆重打造了最高可达180万倍的奖金赔率。自推出至今，已经成就了多位百万富翁。您还等什么？马上开始百万富翁之旅吧。</p>
+                    <br/>
+                    <p class="red subTitle">热门游戏推荐</p>
+                    <table>
+                        <tr>
+
+                            <td><img src="@ImageServer/Content/Images/egames/slot/FinerReelsofLife.jpg" alt="" /></td>
+                            <td><img src="@ImageServer/Content/Images/egames/feaslot/SovereignoftheSevenSeas.jpg" alt="" /></td>
+                            <td><img src="@ImageServer/Content/Images/egames/claslot/RomanRiches.jpg" alt="" /></td>
+                            <td><img src="@ImageServer/Content/Images/egames/tablegame/AmericanRoulette.jpg" alt="" /></td>
+                        </tr>
+                        <tr>
+
+                            <td>老虎机</td>
+                            <td>特色老虎机</td>
+                            <td>经典老虎机</td>
+                            <td>桌上游戏</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="rightContent">
+                 <div class="block"><img src="/Content/Images/member/01_06.jpg" alt=""></a></div>
+                 <div class="block"><a href="/CN/Promotions#p2"><img src="/Content/Images/home/huodong02.jpg" alt=""></a></div>
+                 <div class="block"><a href="/CN/Promotions#p3"><img src="/Content/Images/home/huodong03.jpg" alt=""></a></div>
+                 <div class="block"><a href="/CN/Promotions#p4"><img src="/Content/Images/home/huodong04.jpg" alt=""></a></div>
+                 <div class="block"><a href="/CN/Promotions#p5"><img src="/Content/Images/home/huodong05.jpg" alt=""></a></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <ul class="zoneBtn horizontalList clearfix">
+        <li class="tw_bbin borderRight"></li>
+        <li class="macau_ag "></li>
+        <li class="china_ag "></li>
+        <li class="electronic borderLeft"></li>
+    </ul>
+    </div>
+</div>

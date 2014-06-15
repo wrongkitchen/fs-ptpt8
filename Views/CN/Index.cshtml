@@ -1,0 +1,339 @@
+﻿@using Heji.Web.Helpers
+@model Heji.Web.Models.HomeIndexViewModel
+@{
+    ViewBag.Title = "大奖娱乐官方网站";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/home.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@(ViewContext.ViewData["ImageServer"])/Scripts/Custom/main.js"></script>
+    <script type="text/javascript" src="@(ViewContext.ViewData["ImageServer"])/Scripts/Custom/div-slider-1.0.3.js"></script>
+    <script type="text/javascript" src="@(ViewContext.ViewData["ImageServer"])/Scripts/Plugins/swfobjectv2_1.js"></script>
+    <script type="text/javascript">
+
+
+        var flashvars = { path: "@(ViewContext.ViewData["ImageServer"])/Scripts/Plugins/CasinoGame.swf" };
+        //	flashvars.embedParams = "false";
+        var params = { bgcolor: "#000000", allowfullscreen: 'true', allowscriptaccess: 'always' };
+        params.scale = "noscale";
+        params.wmode = "transparent";
+        params.bgcolor = "#000000";
+
+        var attributes = {};
+
+        swfobject.embedSWF("@(ViewContext.ViewData["ImageServer"])/Scripts/Plugins/CasinoGame.swf?nocache=1001", "flash_content", "1000", "185", "9.0.246", "js/expressInstall.swf", flashvars, params, attributes);
+
+    </script>
+
+}
+<!-- Endorsement Start -->
+<div id="enlargeBanner">
+    <div class="container">
+        <a id="enlargeBannerLink" href="@Url.Action("Endorsement", "CN")" target="_self">
+        </a>
+        <div id="enlargeBannerClose" class="closeBtn">
+        </div>
+        <div class="banner">
+            <img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/enlarge-banner/02.jpg" alt="">
+        </div>
+    </div>
+</div>
+<!-- Endorsement End -->
+<div id="popup_ads">
+</div>  
+@{
+    String bbinegamelink = String.Empty;
+    String bbinlink = String.Empty;
+    String aglink1 = String.Empty;
+    String aglink = String.Empty;
+    String bbintylink = String.Empty;
+    String AgNetlink = String.Empty;
+    MvcHtmlString bbinegamelink2 = MvcHtmlString.Empty;
+    String mglink = String.Empty;
+    MvcHtmlString bbinyulink2 = MvcHtmlString.Empty;
+    MvcHtmlString bbinlink2 = MvcHtmlString.Empty;
+    MvcHtmlString aglink2 = MvcHtmlString.Empty;
+    MvcHtmlString mglink2 = MvcHtmlString.Empty;
+    MvcHtmlString agNetLink2 = MvcHtmlString.Empty;
+    if (Model.CurrentUser != null)
+    {
+        //<a href="#" target="_self"><span class="redArrow pull-left">免费试玩</span></a>
+        bbinlink = Url.Action("Enter", "Game", new { platform = "0" });
+        aglink1 = Url.Action("Enter", "Game", new { platform = "1" });
+        aglink = Url.Action("Enter", "Game", new { platform = "2" });
+        mglink = Url.Action("EnterMG", "Game", new { platform = "4", gameId = "", gameType = "2" });
+        bbintylink = Url.Action("Enter", "Game", new { platform = "0", g = "3" });
+        AgNetlink = Url.Action("Enter", "Game", new { platform = "3" });
+        bbinegamelink = Url.Action("EGames", "CN");
+        bbinegamelink2 = MvcHtmlString.Create("进入游戏");
+        bbinlink2 = MvcHtmlString.Create("进入游戏");
+        aglink2 = MvcHtmlString.Create("进入游戏");
+        bbinyulink2 = MvcHtmlString.Create("进入游戏");
+        mglink2 = MvcHtmlString.Create("进入游戏");
+        agNetLink2 = MvcHtmlString.Create("进入游戏");
+    }
+    else
+    {
+        bbinlink = Url.Action("TrialEnter", "Game", new { platform = "0" });
+        aglink1 = Url.Action("TrialEnter", "Game", new { platform = "1" });
+        aglink = Url.Action("TrialEnter", "Game", new { platform = "2" });
+        bbintylink = Url.Action("TrialEnter", "Game", new { platform = "0", g = "3" });
+        bbinegamelink = Url.Action("Register", "Member");
+        AgNetlink = Url.Action("TrialEnter", "Game", new { platform = "3" });
+        mglink = Url.Action("Register", "Member");
+        bbinegamelink2 = MvcHtmlString.Create("马上注册");
+        bbinyulink2 = MvcHtmlString.Create("免费试玩");
+        bbinlink2 = MvcHtmlString.Create("免费试玩");
+        aglink2 = MvcHtmlString.Create("免费试玩");
+        mglink2 = MvcHtmlString.Create("马上注册");
+        agNetLink2 = MvcHtmlString.Create("免费试玩");
+    }
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <div class="slideshowWrap">
+                    <div id="sliderLeftArrow">
+                    </div>
+                    <div id="sliderRightArrow">
+                    </div>
+                    <div id="slideshow">
+                        <div class="slides"> 
+                           <div class="slide"> 
+                              <a href="/CN/AGNetIntro"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/slideshow-20.jpg" alt=""></a></div>
+                           <div class="slide"> 
+                              <a href="/CN/PomotionMG#p7"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/slideshow-12.jpg" alt=""></a></div>
+                           <div class="slide"> 
+                              <a href="/CN/EndorsementVideo"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/slideshow-0.jpg" alt=""></a></div>
+                           <div class="slide"> 
+                              <a href="/CN/Promotions#p2"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/slideshow-02.jpg" alt=""></a></div>
+                           <div class="slide"> 
+                              <a href="/CN/Promotions#p4"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/slideshow-04.jpg" alt=""></a></div>
+                           <div class="slide"> 
+                              <a href="/CN/Promotions#p3"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/slideshow-03.jpg" alt=""></a></div>
+                           <div class="slide"> 
+                              <a href="/CN/Promotions#p5"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/slideshow-05.jpg" alt=""></a></div>
+                       </div>
+                        <div class="clearfix">
+                        </div>
+                    </div>
+                    <div class="slideDesc transparent black">
+                        <div class="slideDescLeft pull-left">
+                            <ul class="slideDescList clearfix">
+                                <li>港澳集团管理</li>
+                                <li>政府牌照监管</li>
+                                <li>专业赔率认证</li>
+                                <li>兼营澳门多家赌场贵宾厅</li>
+                            </ul>
+                        </div>
+                        <div class="slideDescRight pull-right">
+                            <div id="slideshowNav" class="dots"></div>
+                            <div class="clearfix">
+                            </div>
+                            <!--<div class="redArrow pull-right"><a style="color: #e4272a;" href="@Url.Action("AboutUs", "CN")">点击查看详情</a></div>-->
+                        </div>
+                        <div class="clearfix">
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedIndexLogin", "CN")
+                @*<a target="_blank" href="http://67.198.160.58/chat/chatClient/chatbox.jsp?companyID=306&configID=9&enterurl=@Request.Url.Host" class="client-popup">*@
+                    <div class="block downloadClient">
+                        <span>$9,999,999.99</span>
+                    </div>
+                </a>
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="china_gd">
+                <a href="@Url.Action("MGGames", "CN")"></a>
+                <!-- <div class="hoverContent">
+                    <img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/hover-5.jpg" alt="" />
+                    <div class="btnGroup transparent black">
+                        <a href="@aglink1" target="_blank"><span class="redArrow pull-left">@aglink2</span></a>|
+                        <a href="@Url.Action("GDIntro", "CN")" target="_self"><span class="redArrow pull-right">详细介绍</span></a>
+                        <div class="clearfix"></div>
+                    </div>
+                </div> -->
+            </li>
+            <li class="china_ag">
+                <a href="@Url.Action("BBINIntro", "CN")"></a>
+                <!-- <div class="hoverContent">
+                    <img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/hover-3.jpg" alt="" />
+                    <div class="btnGroup transparent black">
+                        <a href="@aglink" target="_blank"><span class="redArrow pull-left">@aglink2</span></a>|
+                        <a href="@Url.Action("AGIntro", "CN")" target="_self"><span class="redArrow pull-right">详细介绍</span></a>
+                        <div class="clearfix"></div>
+                    </div>
+                </div> -->
+            </li>
+            <li class="tw_bbin">
+                <a href="@Url.Action("EGames", "CN")"></a>
+                <!-- <div class="hoverContent">
+                    <img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/hover-1.jpg" alt="" />
+                    <div class="btnGroup transparent black">
+                        <a href="@mglink" target="_blank"><span class="redArrow pull-left">@mglink2</span></a>|
+                        <a href="@Url.Action("MGIntro", "CN")" target="_self"><span class="redArrow pull-right">
+                            详细介绍</span></a>
+                        <div class="clearfix">
+                        </div>
+                    </div>
+                </div> -->
+            </li>
+            <li class="macau_ag borderLeft">
+                <a href="@Url.Action("Sports", "CN")"></a>
+                 <!-- <div class="hoverContent">
+                    <img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/hover-2.jpg" alt="" />
+                    <div class="btnGroup transparent black">
+                        <a href="@bbinlink" target="_blank"><span class="redArrow pull-left">@bbinlink2</span></a>|
+                        <a href="@Url.Action("BBINIntro", "CN")" target="_self"><span class="redArrow pull-right">详细介绍</span></a>
+                        <div class="clearfix"></div>
+                    </div>
+                </div> -->
+            </li>
+        </ul>
+
+        <div class="homeFourButton">
+            <div class="gameIntro pull-left">
+                <a href="@Url.Action("FAQ", "CN")#intro" target="_self"></a>
+            </div>
+            <div class="saveMoney pull-left">
+                <a href="@Url.Action("FAQ", "CN")#deposit" target="_self"></a>
+            </div>
+            <div class="getMoney pull-left">
+                <a href="@Url.Action("FAQ", "CN")#withdraw" target="_self"></a>
+            </div>
+            <div class="faq pull-left">
+                <a href="@Url.Action("FAQ", "CN")#faq" target="_self"></a>
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
+
+        <div class="entertainment">
+            <!-- <div class="leftBtn"></div> -->
+            <!-- <div class="rightBtn"></div> -->
+            <div class="title">
+                <a href="@Url.Action("BBINIntro", "CN")" target="_self"></a>
+            </div>
+            
+            <div class="content">
+                <div class="contentContain">
+                    <div class="col highlight">
+                        <div class="img">
+                            <a href="@Url.Action("EGames", "CN")">
+                                <img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/entertainment-7.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="desc">
+                            <div class="main">
+                                欧洲PT老虎机</div>
+                            <div class="sub">
+                                千万元奖池 老虎机第一品牌</div>
+                            <div class="details">
+                                <span class="redArrow"><a href="@Url.Action("Register", "Member")" target="_blank">免费开户</a></span>
+                                <!-- <span class="redArrow"><a href="@AgNetlink" target="_blank">@agNetLink2</a></span> -->
+                                <span class="redArrow"><a href="http://heji18.cc/和记娱乐客户端.zip" target="_self">下载客户端</a></span>
+                                <div class="clearfix">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="img">
+                            <a href="@Url.Action("MGGames", "CN")">
+                                <img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/entertainment-1.jpg" alt=""></a></div>
+                        <div class="desc">
+                            <div class="main">
+                                美洲MG老虎机</div>
+                            <div class="sub">
+                                花花公子合作伙伴<br />美国最受欢迎</div>
+                            <div class="details">
+                                <span class="redArrow"><a href="@Url.Action("Register", "Member")" target="_blank">免费开户</a></span>
+                                <!-- <span class="redArrow"><a href="@mglink" target="_blank">@mglink2</a></span>
+                                <span class="redArrow"><a href="@Url.Action("MGIntro", "CN")" target="_self">详细介绍</a></span> -->
+                                <div class="clearfix">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="img">
+                            <a href="@Url.Action("BBINIntro", "CN")"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/entertainment-5.jpg" alt=""></a></div>
+                        <div class="desc">
+                            <div class="main">
+                                宝盈真人娱乐(BBIN)</div>
+                            <div class="sub">
+                                百万限红 百家乐必玩平台</div>
+                            <div class="details">
+                                <span class="redArrow"><a href="@Url.Action("Register", "Member")" target="_blank">免费开户</a></span>
+                                <!-- <span class="redArrow"><a href="@bbintylink" target="_self">@bbinyulink2</a></span>
+                                <span class="redArrow"><a href="@Url.Action("Sports", "CN")" target="_self">详细介绍</a></span> -->
+                                <div class="clearfix">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-187 end">
+                        <div class="img">
+                            <a href="@Url.Action("VIPClub", "CN")"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/entertainment-4.jpg" alt=""></a></div>
+                        <div class="desc">
+                            <div class="main">贵宾会</div>
+                            <div class="sub">星级越高优惠越多 特权越多</div>
+                            <div class="details">
+                                <span class="redArrow"><a href="@Url.Action("Register", "Member")" target="_blank">免费开户</a></span>
+                                <!-- <span class="redArrow"><a href="@bbinegamelink" target="_self">@bbinegamelink2</a></span>
+                                <span class="redArrow"><a href="@Url.Action("EGames", "CN")" target="_self">详细介绍</a></span> -->
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="img">
+                            <a href="@Url.Action("AGIntro", "CN")"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/entertainment-3.jpg" alt=""></a></div>
+                        <div class="desc">
+                            <div class="main">
+                                澳门厅 - AG旗舰厅</div>
+                            <div class="sub">
+                                百万限红迎天下豪客</div>
+                            <div class="details">
+                                <span class="redArrow"><a href="@AgNetlink" target="_blank">免费开户</a></span>
+                                <!-- <span class="redArrow"><a href="@aglink" target="_blank">@aglink2</a></span>
+                                <span class="redArrow"><a href="@Url.Action("AGIntro", "CN")" target="_self">详细介绍</a></span> -->
+                                <div class="clearfix">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="img">
+                            <a href="@Url.Action("GDIntro", "CN")"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/entertainment-6.jpg" alt=""></a></div>
+                        <div class="desc">
+                            <div class="main">
+                                广东厅 - AG实地厅</div>
+                            <div class="sub">
+                                真实再现陆地赌场实景</div>
+                            <div class="details">
+                                <span class="redArrow"><a href="@AgNetlink" target="_blank">免费开户</a></span>
+                                <!-- <span class="redArrow"><a href="@aglink1" target="_blank">@aglink2</a></span>
+                                <span class="redArrow"><a href="@Url.Action("GDIntro", "CN")" target="_self">详细介绍</a></span> -->
+                                <div class="clearfix">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

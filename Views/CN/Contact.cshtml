@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = "联系我们 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/aboutus.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/about.js"></script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <div class="banner"><img src="@ImageServer/Content/Images/company/about-contact_03.jpg" alt=""></div>
+                <ul id="aboutNav" class="sectionNav transparent black">
+                    <li class="first button"><a href="@Url.Action("AboutUs", "CN")" target="_self">专业资质</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Safe", "CN")" target="_self">资金安全</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("FAQ", "CN")" target="_self">客户帮助</a></li>
+                    <li class="separate">|</li>
+                    <li class="button active"><a href="@Url.Action("Contact", "CN")" target="_self">联系我们</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Notice", "CN")" target="_self">最新公告</a></li>
+                    <!-- <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("License", "CN")" target="_self">博彩牌照</a></li> -->
+                    <!-- <li class="button"><a href="@Url.Action("Advantages", "CN")" target="_self">网博优势</a></li> -->
+                    <!-- <li class="separate">|</li> -->
+                    <!-- <li class="button"><a href="@Url.Action("FAQ", "CN")" target="_self">常见问题</a></li> -->
+                </ul>
+                <div class="article about-contact">
+                    <table>
+                        <tr>
+                            <td valign="top" width="440">
+                                <p class="subTitle red">联系我们</p>
+                                <p>大奖娱乐持有菲律宾政府颁发的赌牌，7X24小时客服中心位于马尼拉。</p>
+                                <table class="contactInfo">
+                                    <tr>
+                                        <td class="red">&gt; 客服咨询</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>400免费电话：</td>
+                                        <td>TBA<br /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>客服QQ：</td>
+                                        <td>TBA</td>
+                                    </tr>
+                                    <tr>
+                                        <td>客服邮箱：</td>
+                                        <td>CS@ptpt8.com</td>
+                                    </tr>
+                                   
+                                    <tr>
+                                        <td clospan="2">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="red">&gt; 代理咨询</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>代理QQ：</td>
+                                        <td>TBA</td>
+                                    </tr>
+                                    <tr>
+                                        <td>代理邮箱：</td>
+                                        <td>aff@ptpt8.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>代理电话：</td>
+                                        <td>TBA</td>
+                                    </tr>
+                                    <tr>
+                                        <td clospan="2">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td clospan="2">
+                                            <div class="red">&gt; 公司地址</div>
+                                            RCBC Plaza<br /> 
+                                            6819 Ayala Avenue<br /> 
+                                            Makati city, Philippines
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td valign="top" class="padLeft">
+                                <img src="@ImageServer/Content/Images/company/about-contact_07.jpg" alt="">
+                                <img src="@ImageServer/Content/Images/company/about-contact_10.jpg" alt="">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN")
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

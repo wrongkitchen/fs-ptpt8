@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "资金安全 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/aboutus.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/about.js"></script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <div class="banner"><img src="@ImageServer/Content/Images/company/about-safe_03.jpg" alt=""></div>
+                <ul id="aboutNav" class="sectionNav transparent black">
+                    <li class="first button"><a href="@Url.Action("AboutUs", "CN")" target="_self">专业资质</a></li>
+                    <li class="separate">|</li>
+                    <li class="button active"><a href="@Url.Action("Safe", "CN")" target="_self">资金安全</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("FAQ", "CN")" target="_self">客户帮助</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Contact", "CN")" target="_self">联系我们</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("Notice", "CN")" target="_self">最新公告</a></li>
+                    <!-- <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("License", "CN")" target="_self">博彩牌照</a></li> -->
+                    <!-- <li class="button"><a href="@Url.Action("Advantages", "CN")" target="_self">网博优势</a></li> -->
+                    <!-- <li class="separate">|</li> -->
+                    <!-- <li class="button"><a href="@Url.Action("FAQ", "CN")" target="_self">常见问题</a></li> -->
+                </ul>
+                <div class="article about-safe">
+                    <p class="subTitle red">资金安全</p>
+                <p>客户资金安全和信息保密是大奖娱乐的核心价值。</p>
+				
+                <ul class="numListPoint">
+                    <li class="num1"><div class="red">现金流保护</div>
+                       为保护客户资金安全, 我们实行大客户专卡专用,离岸与在岸金融混配, 支付信息多重加密, 现金流专业管理,并通过自动系统技术把手工操作可能产生的错误降到最低。保证客户资金5分钟内安全到账, 客户收付信息无迹可寻。</li>
+                    
+                    <li class="num2"><div class="red">多重加密</div>
+                        我们采用了大型投资银行级别的加密科技（1024位RSA密钥交换和 448位blowfish），提供比一般商业级别SSL加密更高的保护。与最先进的防火墙系统配合, 有效防御外部攻击和堵塞传统数据管理漏洞。客户在本平台的所有操作均严格保密，我们不会向任何第三方透露客户资料。所有银行交易由国际金融机构在高标准的安全和机密的网络中进行，确保会员账户安全。进入客户会员中心必须使用玩家唯一的登录
+和密码。</li>
+                    
+                    <li class="num3"><div class="red">法律责任</div>
+                        大奖娱乐的服务器设在美国硅谷和圣安娜机房, 数据安全受当地法律保护, 在法律和技术上保证不向任何第三方透露客户资料。任何试图非法获取客户资料的违法行为将被多重防火墙和RSA加密拒之门外, 并将受到大奖娱乐法务部按照国际法和引渡条例追究法律责任。</li>
+                     
+                  
+				    <img src="@ImageServer/Content/Images/company/about-machine.jpg" />
+				  		<br/>公司所在美国机房数据受当地法律保护
+				  
+				  
+                </ul>
+                     <br/>
+                    <table class="more_actions">
+                    	@if (string.IsNullOrEmpty(Heji.Web.Helpers.WebFunctions.GetCurrentUsername()))
+                        {
+                            <tr>
+                                <td>
+                                    <a class="greyButton" href="@Url.Action("Register", "Member")">免费开户 &gt;</a>
+                                </td>
+                                <td>
+                                    <a target="_blank" class="greyButton" href="@Url.Action("TrialEnter", "Game", new { platform = "2" })">免费试玩 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+               </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN")
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

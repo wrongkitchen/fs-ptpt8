@@ -1,0 +1,19 @@
+﻿@{
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+      <title>@ViewBag.Title</title>
+        @RenderSection("AdditionalStyles", false)
+        
+    @RenderSection("AdditionalScripts", false)
+</head>
+<body>
+    <div>
+            @RenderBody()
+    </div>
+</body>
+</html>

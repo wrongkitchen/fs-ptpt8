@@ -1,0 +1,156 @@
+﻿
+@using Heji.Web.Helpers
+
+@{
+    ViewBag.Title = "【sangong】游戏说明";
+     Layout = "~/Views/Shared/_GameIntroLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+}
+
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/Introduction.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Content/Styles/iepngfix_tilebg.js"></script>
+}
+
+
+
+<a name="top" id="top"></a>
+<table width="1000" align="center" border="0" cellpadding="0" cellspacing="0" height="120">
+	<tbody>
+		<tr>
+			<td  height="80" width="385"></td>
+			<td height="80" width="469"></td>
+			<td width="146"><div class="ribbon_bolder ">
+					
+				</div></td>
+		</tr>
+	</tbody>
+</table>
+<table width="1000" align="center" border="0" cellpadding="0" cellspacing="0"  style="padding: 60px 0 0 0;">
+<tbody>
+	<tr>
+		<td colspan="3" scope="col"><table width="890" align="center" border="0" cellpadding="0" cellspacing="0">
+				<tbody>
+					<tr>
+						<td scope="col"><div class="title_new"> 1. 三公简介 </div></td>
+					</tr>
+					<tr>
+						<td><div class="box_inner">
+								<p>三公(3 Face / 3 Picture)是百家乐玩法的一种变形。会员与庄家赌点数、赌公牌数，还可以赌特殊牌型。下注简单、节奏明快，在新兴的游戏中受到欢迎。</p>
+							</div></td>
+					</tr>
+					<tr> </tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td scope="col"><div class="title_new"> 2. 游戏玩法 </div></td>
+					</tr>
+					<tr>
+						<td><div class="box_inner">
+								<p>1. 游戏中共设计1门庄家及3门闲家，会员可任意进行投注。<br />
+									2. 使用1副扑克牌，下注结束后开始发牌，发牌时先开头牌决定发牌顺序，再以逆时钟方向进行，每门连续发3张牌。<br />
+									3. 游戏主旨为闲家与庄家比较牌的 点数高低来决定胜负。<br />
+									4. 会员可以有以下的下注选择 ：<br />
+									&nbsp;&nbsp;&nbsp;&nbsp;闲 1 ： 赢、输、和、三公、对牌以上 <br />
+									&nbsp;&nbsp;&nbsp;&nbsp;闲 2 ： 赢、输、和、三公、对牌以上 <br />
+									&nbsp;&nbsp;&nbsp;&nbsp;闲 3 ： 赢、输、和、三公、对牌以上 <br />
+									&nbsp;&nbsp;&nbsp;&nbsp;庄家 ： 对牌以上<br />
+									&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red;">注 ：各下注以及对牌以上赔率请见派彩说明。</span><br />
+									5. 头牌 ：荷官每局开始会先开「头牌」，依据头牌点数(从庄家方位逆时针方向算起)决定开牌位置。<br />
+									6. 开牌顺序 ： 以逆时针方向开牌 (如下)<br />
+								<table class="tableClass" width="400" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td><p >头牌为A、5、9、K</p></td>
+										<td><p >发牌顺序为庄，闲1，闲2，闲3</p></td>
+									</tr>
+									<tr>
+										<td><p >头牌为2、6、10&nbsp;</p></td>
+										<td><p >发牌顺序为闲1，闲2，闲3，庄</p></td>
+									</tr>
+									<tr>
+										<td><p >头牌为3、7、J&nbsp;</p></td>
+										<td><p >发牌顺序为闲2，闲3，庄，闲1</p></td>
+									</tr>
+									<tr>
+										<td><p >头牌为4、8、Q</p></td>
+										<td><p >发牌顺序为闲3，庄，闲1，闲2</p></td>
+									</tr>
+									<tr>
+										<td bgcolor="#333;" colspan="2"><p style="color:#FFF;">按上方表列顺序&#160;，每家发&nbsp;3&nbsp;张&#160;再轮到下一家</p></td>
+									</tr>
+								</table>
+								
+								</p>
+							</div></td>
+					</tr>
+					<tr> </tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td scope="col"><div class="title_new"> 3. 投注赔率 </div></td>
+					</tr>
+					<tr>
+						<td><div class="box_inner">
+								<p> 1. 基本赔率设定如下 ：<br />
+									<table class="tableClass" width="400" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="199" bgcolor="#333;"><p style="color:#FFF;">开牌结果</p></td>
+										<td width="199" bgcolor="#333;"><p style="color:#FFF;">赔率</p></td>
+									</tr>
+									<tr>
+										<td><p >(闲)赢</p></td>
+										<td><p >1 : 1</p></td>
+									</tr>
+									<tr>
+										<td><p >(闲)输</p></td>
+										<td><p >1 : 1</p></td>
+									</tr>
+									<tr>
+										<td><p >和</p></td>
+										<td><p >1 : 8</p></td>
+									</tr>
+								</table>
+								无抽水的设计，但下列两种状况有特殊赔率 ：<br />
+								&nbsp;&nbsp;&nbsp;&nbsp;投注「赢」，闲家以6点的任意牌型组合胜出，则获1赔0.5。<br />
+								&nbsp;&nbsp;&nbsp;&nbsp;投注「输」，庄家以6点的任意牌型组合胜出，则获1赔0.5。<br /><br />
+								2. 对牌以上的赔率设定如下： <br />
+								<table class="tableClass" width="400" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="199" bgcolor="#333;"><p style="color:#FFF;">牌型</p></td>
+										<td width="199" bgcolor="#333;"><p style="color:#FFF;">赔率</p></td>
+									</tr>
+									<tr>
+										<td><p >同花顺</p></td>
+										<td><p >1 : 40</p></td>
+									</tr>
+									<tr>
+										<td><p >三条</p></td>
+										<td><p >1 : 30</p></td>
+									</tr>
+									<tr>
+										<td><p >顺子</p></td>
+										<td><p >1 : 6</p></td>
+									</tr>
+									<tr>
+										<td><p >同花</p></td>
+										<td><p >1 : 3</p></td>
+									</tr>
+									<tr>
+										<td><p >一对</p></td>
+										<td><p >1 : 1</p></td>
+									</tr>
+								</table>
+								</p>
+							</div></td>
+					</tr>
+					<tr> </tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					
+				</tbody>
+			</table>

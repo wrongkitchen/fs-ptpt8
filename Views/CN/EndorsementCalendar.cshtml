@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "明星代言月历 - 明星代言 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/endorsement.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/main.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/div-slider-1.0.3.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/endorsement-calendar.js"></script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div  class="leftRightContent calendarLRContent">
+            <div class="topContent">
+                <div class="floatLeft calendarHead">
+                    <img src="@ImageServer/Content/Images/endorsement/calendar_title.jpg" /><a href="@Url.Action("Endorsement", "CN")" target="_self"><img src="@ImageServer/Content/Images/endorsement/calendar_back.jpg" /></a>
+                </div>
+                <div class="floatLeft calendarYear">
+                    <div class="title">2014年月历</div>
+                    <table>
+                        <tr>
+                            <td@(Html.Raw(DateTime.Now.Month == 1 ? " class=\"current\"" : "")) style="cursor: pointer;  font-size: 12px;  line-height: 12px;border-right: #151515 1px solid;width: 28px;  height: 43px;  text-align: center; vertical-align: middle;">一<br/>月</td>
+                            <th@(Html.Raw(DateTime.Now.Month == 2 ? " class=\"current\"" : "")) style="cursor: pointer;  font-size: 12px;  line-height: 12px;border-right: #151515 1px solid;width: 28px;  height: 43px;  text-align: center; vertical-align: middle;">二<br/>月</th>
+                            <th@(Html.Raw(DateTime.Now.Month == 3 ? " class=\"current\"" : "")) style="cursor: pointer;  font-size: 12px;  line-height: 12px;border-right: #151515 1px solid;width: 28px;  height: 43px;  text-align: center; vertical-align: middle;">三<br/>月</th>
+                            <th@(Html.Raw(DateTime.Now.Month == 4 ? " class=\"current\"" : "")) style="cursor: pointer;  font-size: 12px;  line-height: 12px;border-right: #151515 1px solid;width: 28px;  height: 43px;  text-align: center; vertical-align: middle;">四<br/>月</th>
+                            <th@(Html.Raw(DateTime.Now.Month == 5 ? " class=\"current\"" : "")) style="cursor: pointer;  font-size: 12px;  line-height: 12px;border-right: #151515 1px solid;width: 28px;  height: 43px;  text-align: center; vertical-align: middle;">五<br/>月</th>
+                            <th@(Html.Raw(DateTime.Now.Month == 6 ? " class=\"current\"" : "")) style="cursor: pointer;  font-size: 12px;  line-height: 12px;border-right: #151515 1px solid;width: 28px;  height: 43px;  text-align: center; vertical-align: middle;">六<br/>月</th>
+                            <th@(Html.Raw(DateTime.Now.Month == 7 ? " class=\"current\"" : "")) style="cursor: pointer;  font-size: 12px;  line-height: 12px;border-right: #151515 1px solid;width: 28px;  height: 43px;  text-align: center; vertical-align: middle;">七<br/>月</th>
+                            <th@(Html.Raw(DateTime.Now.Month == 8 ? " class=\"current\"" : "")) style="cursor: pointer;  font-size: 12px;  line-height: 12px;border-right: #151515 1px solid;width: 28px;  height: 43px;  text-align: center; vertical-align: middle;">八<br/>月</th>
+                            <th@(Html.Raw(DateTime.Now.Month == 9 ? " class=\"current\"" : "")) style="cursor: pointer;  font-size: 12px;  line-height: 12px;border-right: #151515 1px solid;width: 28px;  height: 43px;  text-align: center; vertical-align: middle;">九<br/>月</th>
+                            <td@(Html.Raw(DateTime.Now.Month == 10 ? " class=\"current\"" : ""))>十<br/>月</td>
+                            <td@(Html.Raw(DateTime.Now.Month == 11 ? " class=\"current\"" : ""))>十<br/>一<br/>月</td>
+                            <td@(Html.Raw(DateTime.Now.Month == 12 ? " class=\"current\"" : ""))>十<br/>二<br/>月</td>
+                        </tr>
+
+
+                    </table>
+                </div>
+                <div class="floatLeft calendarSize">
+                    <table>
+                        <tr>
+                            <td><a href="@ImageServer/Content/Images/endorsement/calendar_10-800x600.jpg" target="_blank"><span>800x600<br/>下载</span></a></td>
+                            <td><a href="@ImageServer/Content/Images/endorsement/calendar_10-1024x768.jpg" target="_blank"><span>1024x768<br/>下载</span></a></td>
+                            <td><a href="@ImageServer/Content/Images/endorsement/calendar_10-1366x768.jpg" target="_blank"><span>1366x768<br/>下载</span></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="@ImageServer/Content/Images/endorsement/calendar_10-1440x900.jpg" target="_blank"><span>1440x900<br/>下载</span></a></td>
+                            <td><a href="@ImageServer/Content/Images/endorsement/calendar_10-1600x900.jpg" target="_blank"><span>1600x900<br/>下载</span></a></td>
+                            <td><a href="@ImageServer/Content/Images/endorsement/calendar_10-1680x1050.jpg" target="_blank"><span>1680x1050<br/>下载</span></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="@ImageServer/Content/Images/endorsement/calendar_10-1920x1080.jpg" target="_blank"><span>1920x1080<br/>下载</span></a></td>
+                            <td><a href="@ImageServer/Content/Images/endorsement/calendar_10-1920x1200.jpg" target="_blank"><span>1920x1200<br/>下载</span></a></td>
+                            <td><a href="@ImageServer/Content/Images/endorsement/calendar_10-1920x1280.jpg" target="_blank"><span>1920x1280<br/>下载</span></a></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="mainContent">
+                <img src="@ImageServer/Content/Images/endorsement/calendar_1.jpg" class="month_calendar@(DateTime.Now.Month == 1 ? " display" : "")" />
+                <img src="@ImageServer/Content/Images/endorsement/calendar_2.jpg" class="month_calendar@(DateTime.Now.Month == 2 ? " display" : "")" />
+                <img src="@ImageServer/Content/Images/endorsement/calendar_3.jpg" class="month_calendar@(DateTime.Now.Month == 3 ? " display" : "")" />
+                <img src="@ImageServer/Content/Images/endorsement/calendar_4.jpg" class="month_calendar@(DateTime.Now.Month == 4 ? " display" : "")" />
+                <img src="@ImageServer/Content/Images/endorsement/calendar_5.jpg" class="month_calendar@(DateTime.Now.Month == 5 ? " display" : "")" />
+                <img src="@ImageServer/Content/Images/endorsement/calendar_6.jpg" class="month_calendar@(DateTime.Now.Month == 6 ? " display" : "")" />
+                <img src="@ImageServer/Content/Images/endorsement/calendar_7.jpg" class="month_calendar@(DateTime.Now.Month == 7 ? " display" : "")" />
+                <img src="@ImageServer/Content/Images/endorsement/calendar_8.jpg" class="month_calendar@(DateTime.Now.Month == 8 ? " display" : "")" />
+                <img src="@ImageServer/Content/Images/endorsement/calendar_9.jpg" class="month_calendar@(DateTime.Now.Month == 9 ? " display" : "")" />
+                <img src="@ImageServer/Content/Images/endorsement/calendar_10.jpg" class="month_calendar@(DateTime.Now.Month == 10 ? " display" : "")" />
+                <img src="@ImageServer/Content/Images/endorsement/calendar_11.jpg" class="month_calendar@(DateTime.Now.Month == 11 ? " display" : "")" />
+                <img src="@ImageServer/Content/Images/endorsement/calendar_12.jpg" class="month_calendar@(DateTime.Now.Month == 12 ? " display" : "")" />
+            </div>
+            <div></div>
+        </div>
+    </div>
+</div>

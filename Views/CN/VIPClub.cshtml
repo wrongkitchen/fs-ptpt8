@@ -1,0 +1,192 @@
+﻿@using Heji.Web.Helpers
+
+@{
+    ViewBag.Title = "VIP俱乐部 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/vip.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery.zaccordion.min.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/vip-club.js"></script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <ul id="vipNav" class="sectionNav transparent black">
+                    <li class="first button active"><a href="@Url.Action("VIPClub", "CN")" target="_self">星级首页</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("VIPPrivilege", "CN")" target="_self">VIP特权</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("VIPFAQ", "CN")" target="_self">常见问题</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("VIPTerms", "CN")" target="_self">规则条款</a></li>
+                </ul>
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/vip/club_03.jpg" alt="" />
+                </div>
+                <div class="article vip">
+　                  <h4 class="red">成为和记娱乐星级会员</h4>
+                    <p>享受高额双边洗码优惠、晋级礼金、周年礼金、豪游赌城，星级越高优惠越多，特权越多！</p>
+                    <p><a href="@Url.Action("VIPPrivilege", "CN")"><img src="@ImageServer/Content/Images/vip/club_07.jpg" alt=""></a></p>
+                    <p>和记娱乐星级会员等级从1星级到7星级，共7个星级，每个星级都有著专属的等级特权。</p>
+                    <div>
+                        <div id="listAccordion">
+                            <img src="@ImageServer/Content/Images/vip/1.jpg" width="311" height="239" />
+                            <img src="@ImageServer/Content/Images/vip/2.jpg" width="315" height="239" />
+                            <img src="@ImageServer/Content/Images/vip/3.jpg" width="317" height="239" />
+                            <img src="@ImageServer/Content/Images/vip/4.jpg" width="320" height="239" />
+                            <img src="@ImageServer/Content/Images/vip/5.jpg" width="321" height="239" />
+                            <img src="@ImageServer/Content/Images/vip/6.jpg" width="323" height="239" />
+                            <img src="@ImageServer/Content/Images/vip/7.jpg" width="331" height="239" />
+                        </div>
+                    </div>
+                    <br />
+                    <h4 class="red">和记娱乐星级会员晋升</h4>
+                    <table class="blackGreyTable" id="vipClubDetail">
+                        <tr>
+                            <td class="title">会员级别</td>
+                            <td class="title">投注额要求/周</td>
+                            <td class="title">真人视讯<br />保底返水比例</td>
+                            <td class="title">AG国际厅<br />MG电子游艺<br />保底返水比例</td>
+                            <td class="title">升级奖金</td>
+                            <td class="title">周年礼金</td>
+                            <td class="title">赌场贵宾厅</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="star1 pull-left"></span>
+                                <span class="starword pull-left">1星级会员</span>
+                            </td>
+                            <td><10万</td>
+                            <td>0.4%</td>
+                            <td>0.5%</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td class="red">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="star2 pull-left"></span>
+                                <span class="starword pull-left">2星级会员</span>
+                                <div class="clearfix"></div>
+                            </td>
+                            <td>≥10万</td>
+                            <td>0.5%</td>
+                            <td>0.6%</td>
+                            <td>200元</td>
+                            <td>&nbsp;</td>
+                            <td class="red">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="star3 pull-left"></span>
+                                <span class="starword pull-left">3星级会员</span>
+                                <div class="clearfix"></div>
+                            </td>
+                            <td>≥50万</td>
+                            <td>0.6%</td>
+                            <td>0.7%</td>
+                            <td>600元</td>
+                            <td>88元</td>
+                            <td class="red">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="star4 pull-left"></span>
+                                <span class="starword pull-left">4星级会员</span>
+                                <div class="clearfix"></div>
+                            </td>
+                            <td>≥100万</td>
+                            <td>0.7%</td>
+                            <td>0.8%</td>
+                            <td>1,000元</td>
+                            <td>188元</td>
+                            <td class="red">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="star5 pull-left"></span>
+                                <span class="starword pull-left">5星级会员</span>
+                                <div class="clearfix"></div>
+                            </td>
+                            <td>≥300万</td>
+                            <td>0.8%</td>
+                            <td>0.9%</td>
+                            <td>3,600元</td>
+                            <td>288元</td>
+                            <td class="red">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="star6 pull-left"></span>
+                                <span class="starword pull-left">6星级会员</span>
+                                <div class="clearfix"></div>
+                            </td>
+                            <td>≥500万</td>
+                            <td>0.8%</td>
+                            <td>1.0%</td>
+                            <td>5,000元</td>
+                            <td>588元</td>
+                            <td class="red">每年1次豪华海外游</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="star7 pull-left"></span>
+                                <span class="starword pull-left">7星级会员</span>
+                                <div class="clearfix"></div>
+                            </td>
+                            <td>≥1,000万</td>
+                            <td>0.8%</td>
+                            <td>1.1%</td>
+                            <td>6,000元</td>
+                            <td>888元</td>
+                            <td class="red">每半年1次豪华海外游</td>
+                        </tr>
+                    </table>
+                    <p>
+                        <div><span class="red">晋升投注额：</span>北京时间每周一中午12:00至下周一中午12:00的有效投注额。</div>
+                        <div><span class="red">周年礼金：</span>是指会员在和记成功注册满一周年的礼金。 （从2012年12月3日开始满一整周年的客户即可享受。)</div>
+                        <div><span class="red">豪华海外游：</span>星级会员周投注额达到500万可申请一次和记娱乐专属贵宾厅尊贵之旅3天。</div>
+                        <div><span class="red">提现要求：</span>升级奖金、周年礼金只需达到一倍流水（有效投注额）即可提现。<a href="@Url.Action("VIPPrivilege", "CN")" title="点击看祥情"  ><span style="color:red">（详情点击这里）</span></a></div>
+                    </p>
+                    <div class="lineBlock"></div>
+                    <br/>
+                    <table class="more_actions">
+                    	@if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                        {
+                            <tr>
+                                <td>
+                                    <a class="greyButton" href="@Url.Action("Register", "Member")">免费开户 &gt;</a>
+                                </td>
+                                <td>
+                                    <a target="_blank" class="greyButton" href="@Url.Action("TrialEnter", "Game", new { platform = "2" })">免费试玩 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN", new { displayCS = "false", displayPlatforms = "false" })
+                 <div class="block"><img src="/Content/Images/member/01_06.jpg" alt=""></a></div>
+                 <div class="block"><a href="/CN/Promotions#p2"><img src="/Content/Images/home/huodong02.jpg" alt=""></a></div>
+                 <div class="block"><a href="/CN/Promotions#p3"><img src="/Content/Images/home/huodong03.jpg" alt=""></a></div>
+                 <div class="block"><a href="/CN/Promotions#p4"><img src="/Content/Images/home/huodong04.jpg" alt=""></a></div>
+                 <div class="block"><a href="/CN/Promotions#p5"><img src="/Content/Images/home/huodong05.jpg" alt=""></a></div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

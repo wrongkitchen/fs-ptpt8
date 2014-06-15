@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "规则条款 - VIP俱乐部 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/vip.css" />
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <ul id="vipNav" class="sectionNav transparent black">
+                    <li class="first button"><a href="@Url.Action("VIPClub", "CN")" target="_self">星级首页</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("VIPPrivilege", "CN")" target="_self">VIP特权</a></li>
+                    <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("VIPFAQ", "CN")" target="_self">常见问题</a></li>
+                    <li class="separate">|</li>
+                    <li class="button active"><a href="@Url.Action("VIPTerms", "CN")" target="_self">规则条款</a></li>
+                </ul>
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/vip/terms_03.jpg" alt="" />
+                </div>
+                <div class="article vip-terms">
+                    <h4 class="red">规则条款</h4><br />
+                    <p>每一位尊贵的星级会员都是我们竭诚服务的对象。星级会员在享受我们提供的优质服务同时，也必须遵守游戏相关规则和条款，其中包括：</p>
+                    <br />
+                    <p>1.奖金由系统自动发送。</p>
+                    <p>2.除了升级和周年礼金是5倍流水，其他的优惠红利只要全额投注即可进行取款。</p>
+                    <p>3.星级会员也需严格遵守"一个账号， 一台计算机， 一个地址和IP地址"原则，若发现VIP有相同IP段的视作无效会员，和记娱乐有权不予放发VIP奖金，并冻结账号。</p>
+                    <p>4.任何团体或个人，以不诚实方式套取红利的行为，账号及账户馀额将被冻结。</p>
+                    <p>5.我们在任何时候皆保留修改、修订和记娱乐条款、协议及规则的权利，请在联繫方式里填写您真实的信息，以便可以及时通知到您。</p>
+                    <p>6.为避免文字理解差异，如有疑问可谘询24小时在线客服。</p>
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN", new { displayCS = "false", displayPlatforms = "false" })
+                 <div class="block"><img src="/Content/Images/member/01_06.jpg" alt=""></a></div>
+                 <div class="block"><a href="/CN/Promotions#p2"><img src="/Content/Images/home/huodong02.jpg" alt=""></a></div>
+                 <div class="block"><a href="/CN/Promotions#p3"><img src="/Content/Images/home/huodong03.jpg" alt=""></a></div>
+                 <div class="block"><a href="/CN/Promotions#p4"><img src="/Content/Images/home/huodong04.jpg" alt=""></a></div>
+                 <div class="block"><a href="/CN/Promotions#p5"><img src="/Content/Images/home/huodong05.jpg" alt=""></a></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>

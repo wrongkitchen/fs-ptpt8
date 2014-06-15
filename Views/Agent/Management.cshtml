@@ -1,0 +1,122 @@
+﻿@using Heji.Web.Helpers
+@using Heji.Library.Models.TO
+@model Heji.Web.Models.AgentManagementViewModel
+           
+@{
+    ViewBag.Title = "代理中心 - 和记娱乐官方网站";
+    Layout = "~/Views/Shared/_AgentLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/agent.js"></script>
+}
+
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent">
+            <div class="leftContent">
+                <div class="banner">
+                    <img src="@ImageServer/Content/Images/center/banner_management.jpg" alt="" />
+                </div>
+                <div class="article management">
+                    <form action="@Url.Action("Management", "Agent")" method="get">
+                        <table class="searchTable">
+                            <tr>
+                                <td class="searchContent">按时间段查询：
+                                   <input type="text" class="datepicker" name="startDate" id="startDate" value="@Model.StartDate" />
+                                  到<input type="text" class="datepicker" name="endDate" id="endDate" value="@Model.EndDate" />&nbsp;<button type="submit" class="searchButton">查询</button></td>
+                            </tr>
+                        </table>
+                    </form>
+                    <div class="lineBlock"></div>
+                    <p class="articleHeader">&ngsp;</p>
+                    <table >
+                        <tr class="header">
+                            <td>会员名称</td>
+                            <td>会员帐号</td>
+                            <td>可转资金</td>
+                            <td>开通日期</td>
+                            <td>开户额度</td>
+                            <td>总入款</td>
+                            <td>总出款</td>
+                            <td>总红利</td>
+                            <td>等级</td>
+                            <td>状态</td>
+                        </tr>
+                        @if (Model.Agreports != null && Model.AgreportsCount > 0)
+                        {
+                            decimal TotalIns = 0;
+                            decimal TotalOuts = 0;
+                            decimal TotalBonus = 0;
+                            foreach (UserTO tnx in Model.Agreports)
+                            {
+                                TotalIns += tnx.TotalIn;
+                                TotalOuts += tnx.TotalOut;
+                                TotalBonus += tnx.totalBonus;
+                                <tr>
+                                    <td>@tnx.TrueName</td>
+                                    <td>@tnx.UserName</td>
+                                    <td>@(tnx.Balance)元</td>
+                                    <td>@tnx.CreateTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                                    <td>@tnx.FirstCash</td>
+                                    <td>@tnx.TotalIn</td>
+                                    <td>@tnx.TotalOut</td>
+                                    <td>@tnx.totalBonus</td>
+                                    <td>@tnx.Level</td>
+                                    <td>@(tnx.IsLocked ? "锁定" : "正常") </td>
+                                </tr>
+                            } 
+                            <tr class="footer">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>小计：</td>
+                                <td class="red">@TotalIns</td>
+                                <td class="red">@TotalOuts</td>
+                                <td class="red">@TotalBonus</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="footer">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>总计：</td>
+                                <td class="red">0.00</td>
+                                <td class="red">0.00</td>
+                                <td class="red">0.00</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                            暂无数据！
+                            </tr> 
+                        }
+
+                    </table>
+                    @if (Model.Agreports != null && Model.AgreportsCount > 0)
+                    {
+                        <div>@Html.Pager("", Model.PageNum, Model.PageSize, Model.AgreportsCount)</div>
+                    }
+                    <br/>
+                </div>
+            </div>
+            @Html.Action("SharedAgentInformation", "Agent")
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>
+
