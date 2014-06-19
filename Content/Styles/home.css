@@ -325,7 +325,7 @@
 }
 .downloadClient span{
   position: absolute;
-  right: 65px;
+  right: 55px;
   top: 16px;
   font-size: 23px;
   color: #1e1e1e;
@@ -378,7 +378,7 @@
   background-image: url(../Images/home/login-bg.jpg);
   background-color: #383431;
   background-position: center center;
-  height: 139px;
+  height: 170px;
   position: relative;
 }
 .loginWrap .loginPanel {
@@ -411,7 +411,7 @@
 #registrationButton {
   display: block;
   width: 314px;
-  height: 84px;
+  height: 105px;
   background: url(../Images/home/right-01.jpg) left center no-repeat;
 }
 #registrationButton:hover {
@@ -420,7 +420,7 @@
 #freeTrialButton {
   display: block;
   width: 314px;
-  height: 85px;
+  height: 105px;
   background: url(../Images/home/right-02.jpg) left center no-repeat;
 }
 #freeTrialButton:hover {
@@ -461,3 +461,10 @@
 }
 .footerLogo a{ cursor:default; }
 .userDetail{ padding:21px 20px; }
+
+.cboxIframe {
+  width: 500px !important;
+  height: 292px !important;
+  display: block;
+  border: 0;
+}

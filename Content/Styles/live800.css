@@ -1,0 +1,81 @@
+﻿@CHARSET "UTF-8";
+/*
+窗口DIV
+*/
+#InviteWindow {
+	position:absolute;
+	z-index:8889;
+	WIDTH: 439px;
+	height:159px;
+	background:url(http://174.139.10.67/content/images/live800/call_centre_banner_2.gif) no-repeat;;
+}
+
+
+/*
+标题 一般被隐藏
+*/
+#invite_title {
+	display:none;
+}
+/*
+中间文本的<div>样式
+*/
+#invite_text {
+	margin-top: 20px;
+	margin-left: 10px;
+	line-height: 14px;
+	padding: 33px 15px 0 131px;
+	height: 70px;
+	overflow: hidden;
+	color: #FFF;
+}
+/*中间文本的文本*/
+#invite_text p {
+	padding:10px 0 0 0;
+	margin:0;
+	text-indent:24px;
+
+}
+/*
+
+*/
+#invite_btn {
+}
+#invite_btn span {
+	color:#FFF;
+	display:none;
+}
+/*
+	接受按钮的css样式
+*/
+#invite_btn .accept {
+	width: 66px;
+	height: 22px;
+	line-height:22px;
+	font-size:12px;
+	font-weight:bold;
+	text-align:center;
+	BACKGROUND: url(http://174.139.10.67/content/images/live800/call_centre_banner_btn01.gif) no-repeat 0px 0px;
+	cursor:pointer;
+	position:absolute;
+	right: 103px;
+	bottom: 13px;
+	border: 0px;
+}
+/*
+关闭X的样式
+*/
+#invite_btn .cancel {
+	border:0px;
+	width: 66px;
+	height: 22px;
+	line-height:22px;
+	font-size:12px;
+	font-weight:bold;
+	right: 16px;
+bottom: 13px;
+	BACKGROUND: url(http://174.139.10.67/content/images/live800/call_centre_banner_btn02.gif) no-repeat 0px 0px;
+	cursor:pointer;
+	position:absolute;
+}
+

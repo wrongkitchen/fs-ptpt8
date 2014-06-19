@@ -321,6 +321,7 @@
 .gamePanel ul .redArrow{ color: #B6A256; margin-right:5px; }
 .gamePanel ul li{ list-style: none; }
 .banner{ position:relative; float:left; z-index:3; width:551px; height:346px; }
+.banner.bigger{ width:748px; height:348px; }
 .banner img {
   width:100%; height:100%;
 }
@@ -359,4 +360,6 @@ ul.subList, ul.thirdList{
 ul.subList li:hover .thirdList{ display:block; }
 
 .prizeNumberTable{ color:#e4272b; margin-right:20px; margin-top:-15px; }
-.prizeNumberTable .biggerText{ font-size:24px; font-family:"Arial Black", Gadget, sans-serif; }
+.prizeNumberTable .biggerText{ 
+  font-size:24px; font-family: 'Playball', cursive, "Arial Black", Gadget, sans-serif; 
+}

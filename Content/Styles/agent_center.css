@@ -547,7 +547,6 @@
   z-index: 3;
   display: none;
 }
-#subNav-center .navigation .button.end{ height:0; width:0; }
 #subNav-center .navigation .button {
   background-position: center center;
   background-repeat: no-repeat;
@@ -676,7 +675,7 @@
 }
 #subNav-center .navigation .center {
   background-image: url(../Images/center/nav/center_snb_01.jpg);
-  width: 134px; margin-left:80px;
+  width: 134px; margin-left:80px; _margin-left:40px;
 }
 #subNav-center .navigation .management {
   background-image: url(../Images/center/nav/center_snb_02.jpg);

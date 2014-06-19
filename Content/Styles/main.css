@@ -75,6 +75,7 @@ body {
   padding: 10px 15px;
   color: #FFF;
   cursor: pointer;
+  margin-right:5px;
 }
 .greyButton {
   border: none;
@@ -83,7 +84,7 @@ body {
   color: #FFF;
   cursor: pointer;
 }
-.greyButton.bigger{ padding:20px; }
+.greyButton.bigger{ padding:20px; _line-height:53px; *line-height:53px; }
 .greyButton:hover {
   background-color: #e4272b;
 }
@@ -257,7 +258,7 @@ body {
 }
 .lineBlock {
   width: 100%;
-  height: 1px;
+  height: 1px; margin:0; padding:0; line-height:0;
   border-bottom: 1px solid #666;
 }
 .redArrow {
@@ -283,7 +284,7 @@ body {
   list-style: none;
 }
 .horizontalList li {
-  float: left; line-height: 11px;
+  float: left; line-height: 0;
 }
 .loginWrap {
   background-image: url(../Images/home/login-bg.jpg);
@@ -419,7 +420,7 @@ body {
   height: 50px;
 }
 #subNav .container {
-  background-color: #bda54a; width:999px;
+  background-color: #bda54a;
 }
 #subNav .navigation {
   margin: 0;
@@ -621,8 +622,8 @@ body {
 #subNav .navigation .button.end {
   width:0; height:0; clear:both; float:none;
 }
-#subNav .navigation:hover .button {
-  position: relative;
+#subNav .navigation .button {
+  position: relative; z-index:10;
 }
 #subNav .navigation:hover .button.home > a.buttonLink {
   background: none !important;
@@ -895,19 +896,19 @@ body {
   background-image: url(../Images/member/grade-0.png);
 }
 .userDetail .grading.grade1 {
-  background-image: url(../Images/member/grade-1.gif);
+  background-image: url(../Images/member/grade-1.png);
 }
 .userDetail .grading.grade2 {
-  background-image: url(../Images/member/grade-2.gif);
+  background-image: url(../Images/member/grade-2.png);
 }
 .userDetail .grading.grade3 {
-  background-image: url(../Images/member/grade-3.gif);
+  background-image: url(../Images/member/grade-3.png);
 }
 .userDetail .grading.grade4 {
-  background-image: url(../Images/member/grade-4.gif);
+  background-image: url(../Images/member/grade-4.png);
 }
 .userDetail .grading.grade5 {
-  background-image: url(../Images/member/grade-5.gif);
+  background-image: url(../Images/member/grade-5.png);
 }
 .userDetail .grading.grade6 {
   background-image: url(../Images/member/grade-6.gif);
@@ -931,7 +932,7 @@ body {
   margin-bottom: 9px;
 }
 .userDetail .money .redButton {
-  width: 89px;
+  width: 104px;
   background: #e4272b url(../Images/member/userdetail-red.gif) right center no-repeat;
   padding-left: 0px;
   padding-top: 13px;
@@ -955,8 +956,8 @@ body {
   margin: 0;
 }
 .welcome-leftRightContent .member-center, .member-center {
-  display: block;
-  margin-top: 3px;
+  display: block; margin-top: 3px; text-align: center; 
+  background-color:#e4272b;
 }
 ul.footerLogoWrap{ width:875px; margin:0 auto; } 
 #shared_login_link{ color:#B6A256; }
