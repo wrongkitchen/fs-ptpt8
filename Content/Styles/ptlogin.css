@@ -1,0 +1,40 @@
+html, body{ padding:0; margin:0; }
+.cboxIframe {
+  width: 500px !important;
+  height: 292px !important;
+  display: block;
+  border: 0;
+}
+#wrapper {
+  margin: 0 auto;
+}
+#content table {
+  width: 100%;
+  margin-top: 20px;
+}
+#content table td.cellTitle {
+  color: #ffffff;
+  text-align: right;
+  width: 40%;
+}
+#content table td.cellContent {
+  color: #ffffff;
+  text-align: left;
+}
+#content table td a {
+  color: #ffffff;
+  margin-right: 10px;
+}
+#content table td.cellLeft {
+  text-align: left;
+}
+#content table td.cellCenter {
+  text-align: center;
+}
+#content table td.cellRight {
+  text-align: right;
+}
+#content table button {
+  font-size: 12px;
+}
+#header .container{ margin:0 auto; }

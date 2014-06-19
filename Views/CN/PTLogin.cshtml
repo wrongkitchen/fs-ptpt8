@@ -17,20 +17,22 @@
 <meta name="viewport" content="width=device-width" />
 @*<link rel="stylesheet" href="@ImageServer/Content/Styles/bootstrap.min.css" />*@
 <link rel="stylesheet" href="@ImageServer/Content/Styles/main.css" />
-<link rel="stylesheet" href="@ImageServer/Content/Styles/password.css" />
+<link rel="stylesheet" href="@ImageServer/Content/Styles/ptlogin.css" />
 <link rel="stylesheet" href="@ImageServer/Content/Styles/jquery.alerts.css" />
 
 <script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery-1.8.3.min.js"></script>
-@*<script type="text/javascript" src="@ImageServer/Scripts/Custom/ForgetPassword.js"></script>*@
-@*<script type="text/javascript" src="@ImageServer/Scripts/Custom/common.js"></script>*@
-<script type="text/javascript" src="@ImageServer/Scripts/Custom/ptlogin.js"></script>
 <script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery.alerts.js"></script>
+<script type="text/javascript" src="@ImageServer/Scripts/Custom/common.js"></script>
+<script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery.colorbox-min.js"></script>
+@*<script type="text/javascript" src="@ImageServer/Scripts/Custom/ForgetPassword.js"></script>*@
+<script type="text/javascript" src="@ImageServer/Scripts/Custom/ptlogin.js"></script>
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 <style>
     .loginPopupWrap .loginPopupPanel h3{ font-size:20px; color:#FFF; padding: 20px 20px 10px 20px; margin: 0; color:#B6A256; }
 </style>
 </head>
 <body style="background-image:url(@ImageServer/Content/Images/login_bg.jpg); background-repeat:no-repeat; background-position:top center;">
+@Html.Action("SharedNotice", "CN")
 <div id="wrapper" style="width:284px;">
     <div class="loginPopupWrap" style="margin-top:180px">
         <div class="pull-left loginPopupPanel">
@@ -50,7 +52,7 @@
                     <tr>
                         <td>&nbsp;</td>
                         <td>
-                            <table style="margin-top:10px;">
+                            <table style="margin-top:0;">
                                 <tr>
                                     <td class="cellContent">
                                         <button class="redButton" id="Infosecurity">转入额度</button>
@@ -63,7 +65,7 @@
                                     </td>
                                 </tr>
                             </table>
-                            <table style="color:#FFF; width:auto; margin:0; padding:0;display: none">
+                            <table style="color:#FFF; width:auto; margin:0; padding:0;">
                                 <tr>
                                     <td width="10"><input type="checkbox" id="checkbox" /></td>
                                     <td>记住密码</td>
@@ -77,7 +79,13 @@
         <div style="color:white">
             如需要帮助，请随时联系大奖娱乐<a style="color:#0085ff;" href="http://kf1.learnsaas.com/chat/chatClient/chatbox.jsp?companyID=17819&jid=&enterurl=@Request.Url.Host" target="_blank" >在线客服</a>
         </div>
-        
+        <table style="margin:20px auto;">
+            <tr>
+                <td valign="middle" class="greyButton"><a style="color:#FFF; text-decoration:none;" href="#">进入官网</a></td>
+                <td width="10">&nbsp;</td>
+                <td valign="middle" class="greyButton"><a style="color:#FFF; text-decoration:none;" href="#">最新优惠</a></td>
+            </tr>
+        </table>
         <div class="clearfix"></div>
     </div>
 </div>
