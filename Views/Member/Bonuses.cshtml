@@ -29,8 +29,8 @@
                     <li class="separate">|</li>
                     <li class="button"><a href="@Url.Action("Info", "Member")" target="_self">修改资料</a></li>
                     <li class="separate">|</li>
-                    <li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
-                    <li class="separate">|</li>
+                    @*<li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
+                    <li class="separate">|</li>*@
                     <li class="button"><a href="@Url.Action("Notices", "Member")" target="_self">最新公告</a></li>
                 </ul>
                 <div class="banner">
@@ -45,7 +45,7 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="tabContent active">
-                                 <p>为了用户的信息与资金的安全，会员中心仅保留最近7天的历史记录，如需查询更多记录，请联系客服。</p>
+                                 <p>为了会员的信息与资金的安全，存取款与投注派彩仅保留最近7天的记录，如需查询更多，请联系客服。</p>
                      @* <!--
                             <div class="searchFilter">
                                 <div class="searchTitle pullLeft"><img src="@ImageServer/Content/Images/member/member-history-search.jpg" /></div>
@@ -116,7 +116,6 @@
             </div>
             <div class="rightContent">
                 @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false" })
-                <div class="block discount"><a href="/CN/Promotions" target="_self"><img src="@ImageServer/Content/Images/member/01_12.jpg" alt=""></a></div>
             </div>
             <div class="clearfix"></div>
         </div>

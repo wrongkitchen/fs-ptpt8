@@ -1,7 +1,7 @@
-@using Heji.Web.Helpers
+ï»¿@using Heji.Web.Helpers
 @model Heji.Web.Models.MemberDepositViewModel
 @{
-    ViewBag.Title = "´æ¿î - »áÔ±ÖĞĞÄ - ºÍ¼ÇÓéÀÖ¹Ù·½ÍøÕ¾";
+    ViewBag.Title = "å‡ºçº³æŸœå° - ä¼šå‘˜ä¸­å¿ƒ - å¤§å¥–å¨±ä¹å®˜æ–¹ç½‘ç«™";
     Layout = "~/Views/Shared/_CNLayout.cshtml";
     string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
 }
@@ -21,13 +21,6 @@
         scroll(0, 300)
     });
 
-    function click_banktype() {
-        var aa = $('input[name=bank_account_type]:checked').val();
-        if (aa != "onlinebanking") {
-            $("#cardno").val("1234");
-        } else {
-            $("#cardno").val("Çë×¼È·ÌîĞ´ÒøĞĞ¿¨ºÅºóËÄÎ»");
-        }
 }
 
 </script>
@@ -38,40 +31,30 @@
         <div class="leftRightContent">
             <div class="leftContent">
                 <ul id="memberNav" class="sectionNav transparent black">
-                    <li class="first button active"><a href="@Url.Action("Finance", "Member")" target="_self">²ÆÎñÖĞĞÄ</a></li>
+                    <li class="first button active"><a href="@Url.Action("Finance", "Member")" target="_self">å‡ºçº³æŸœå°</a></li>
                     <li class="separate">|</li>
                     @if (Model.CurrentUser.TransferType < 2)
                     {
-                    <li class="button" style="display:none"><a href="@Url.Action("Transfer", "Member")" target="_self">¶î¶È×ªÒÆ·½Ê½</a></li>
+                    <li class="button" style="display:none"><a href="@Url.Action("Transfer", "Member")" target="_self">é¢åº¦è½¬ç§»æ–¹å¼</a></li>
                     <li class="separate" style="display:none">|</li>
                     }
-                    <li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">ºÃÓÑÍÆ¼ö</a></li>
+                    <li class="button"><a href="@Url.Action("Transactions", "Member")" target="_self">å†å²è®°å½•</a></li>
                     <li class="separate">|</li>
-                    <li class="button"><a href="@Url.Action("Info", "Member")" target="_self">ĞŞ¸Ä×ÊÁÏ</a></li>
+                    <li class="button"><a href="@Url.Action("Info", "Member")" target="_self">ä¿®æ”¹èµ„æ–™</a></li>
                     <li class="separate">|</li>
-                    <li class="button"><a href="@Url.Action("Transactions", "Member")" target="_self">ÀúÊ·¼ÇÂ¼</a></li>
-                    <li class="separate">|</li>
-                    <li class="button"><a href="@Url.Action("Notices", "Member")" target="_self">×îĞÂ¹«¸æ</a></li>
+                    @*<li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">æ¨èå¥½å‹</a></li>
+                    <li class="separate">|</li>*@
+                    <li class="button"><a href="@Url.Action("Notices", "Member")" target="_self">æœ€æ–°å…¬å‘Š</a></li>
                 </ul>
                 <div class="banner">
                     <img src="@Url.Content("~/Content/Images/member/01_03.jpg")" alt="">
                 </div>
                 <div class="article finance">
-                    <table class="user">
-                        <tr>
-                            <td>ÕË»§: @Model.CurrentUser.UserName</td>
-                            <td class="padLeft">
-                                ÕË»§Óà¶î£º <span class="member_balance">@Heji.Web.Helpers.WebFunctions.GetFormattedCurrency(Model.CurrentUser.Balance)</span> Ôª
-                            </td>
-                        </tr>
-                    </table>
-                 @Html.Action("gameMessage", "Member")
-                 
                     <div class="tabBlock">
-                        <div>
-                            <a href="@Url.Action("DepositSwitch", "Member")"><div class="tab active"style=" background-color: red; color: white; ">´æ¿î</div></a>
-                            <a href="@Url.Action("Withdraw", "Member")"><div class="tab">È¡¿î</div></a>
-                            <a href="@Url.Action("BankAccounts", "Member")"><div class="tab">°ó¶¨ÒøĞĞ¿¨</div></a>
+                        <div class="clearfix">
+                            <a href="@Url.Action("DepositSwitch", "Member")"><div class="tab active"style=" background-color: red; color: white; ">å­˜æ¬¾</div></a>
+                            <a href="@Url.Action("Withdraw", "Member")"><div class="tab">å–æ¬¾</div></a>
+                            <a href="@Url.Action("BankAccounts", "Member")"><div class="tab">ç»‘å®šé“¶è¡Œå¡</div></a>
                             <div class="clearfix"></div>
                         </div>
                         <div class="tabContent deposit active">
@@ -81,13 +64,13 @@
                             <div class="clearfix"></div>
                             @*<iframe marginwidth="0" marginheight="0" src="http://pay.beijinghongtu.com:8092/yeepay/index?username=@Model.CurrentUser.UserName&key=@(ViewBag.Key)&domain=@Heji.Common.Function.GetServerName()" frameborder="0" width="100%" height="350" scrolling="no" allowtransparency="true"></iframe>*@
                             @*<iframe marginwidth="0" marginheight="0" src="http://pay.beijinghongtu.com/yeepay/index?username=@Model.CurrentUser.UserName&key=@(ViewBag.Key)&domain=@Heji.Common.Function.GetServerName()" frameborder="0" width="100%" height="350" scrolling="no" allowtransparency="true"></iframe>*@
-                            <iframe marginwidth="0" marginheight="0" src="http://174.139.117.68/yeepay/index?username=@Model.CurrentUser.UserName&key=@(ViewBag.Key)&domain=@Heji.Common.Function.GetServerName()" frameborder="0" width="100%" height="350" scrolling="no" allowtransparency="true"></iframe>
+                            <iframe marginwidth="0" marginheight="0" src="http://pay.hnlinai.com/yeepay/index?username=@Model.CurrentUser.UserName&key=@(ViewBag.Key)&domain=@Heji.Common.Function.GetServerName()" frameborder="0" width="100%" height="350" scrolling="no" allowtransparency="true"></iframe>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="rightContent">
-                @Html.Action("SharedLogin", "CN")
+                @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false" })
             </div>
             <div class="clearfix"></div>
         </div>

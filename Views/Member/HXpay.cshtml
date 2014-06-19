@@ -50,23 +50,23 @@
                     <li class="separate">|</li>
                     <li class="button"><a href="@Url.Action("Info", "Member")" target="_self">修改资料</a></li>
                     <li class="separate">|</li>
-                    <li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
-                    <li class="separate">|</li>
+                    @*<li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
+                    <li class="separate">|</li>*@
                     <li class="button"><a href="@Url.Action("Notices", "Member")" target="_self">最新公告</a></li>
                 </ul>
                 <div class="banner">
                     <img src="@Url.Content("~/Content/Images/member/01_03.jpg")" alt="">
                 </div>
                 <div class="article finance">
-                    <table class="user">
+@*                    <table class="user">
                         <tr>
                             <td>账户: @Model.CurrentUser.UserName</td>
                             <td class="padLeft">
                                 账户余额： <span class="member_balance">@Heji.Web.Helpers.WebFunctions.GetFormattedCurrency(Model.CurrentUser.Balance)</span> 元
                             </td>
                         </tr>
-                    </table>
-                 @Html.Action("gameMessage", "Member")
+                    </table>*@
+                 @*@Html.Action("gameMessage", "Member")*@
                  
                     <div class="tabBlock">
                         <div>
@@ -80,14 +80,14 @@
                              @Html.Action("SharedDepositMenu", "CN")                             
                         </div>
                         <div class="clearfix"></div>                
-                            @*<iframe marginwidth="0" marginheight="0" src="http://@(Model.IPSConfig.Website)/Pay/index_new?username=@(Model.CurrentUser.Username)&maxcash=@(Model.IPSConfig.MaxAmount)&params=@(Model.payKey)" frameborder="0" width="100%" height="300" scrolling="no" allowtransparency="true"></iframe>*@      
-                            <iframe marginwidth="0" marginheight="0" src="http://174.139.117.67/Pay/index_new?username=@(Model.CurrentUser.UserName)&maxcash=@(Model.IPSConfig.MaxAmount)&params=@(Model.payKey)" frameborder="0" width="100%" height="300" scrolling="no" allowtransparency="true"></iframe>         
+                            <iframe marginwidth="0" marginheight="0" src="http://@(Model.IPSConfig.Website)/Pay/index_new?username=@(Model.CurrentUser.UserName)&maxcash=@(Model.IPSConfig.MaxAmount)&params=@(Model.payKey)" frameborder="0" width="100%" height="350" scrolling="no" allowtransparency="true"></iframe>      
+                            @*<iframe marginwidth="0" marginheight="0" src="http://174.139.117.67/Pay/index_new?username=@(Model.CurrentUser.UserName)&maxcash=@(Model.IPSConfig.MaxAmount)&params=@(Model.payKey)" frameborder="0" width="100%" height="300" scrolling="no" allowtransparency="true"></iframe>*@
                         </div>
                     </div>
                 </div>
             </div>
             <div class="rightContent">
-                @Html.Action("SharedLogin", "CN")
+                @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false" })
             </div>
             <div class="clearfix"></div>
         </div>

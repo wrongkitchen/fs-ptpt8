@@ -16,25 +16,27 @@
                     <img src="@ImageServer/Content/Images/welcome/welcome_03.jpg" alt="" />
                 </div>
                 <div class="article welcome">
-                    <h3 class="title red">恭喜！您的和记娱乐账户已建立！</h3>
-                    <p class="red">只差一步就可以游戏了哦，马上去完成最后一步存款吧！！</p>
-                    <p class="desc">和记娱乐所提供的所有产品和服务，是由菲律宾政府卡格扬河经济特区所授权和监管。 <br />选择我们，您将拥有可靠的资金保障和优质的服务。</p>
-                    <p>
+                    <h3 class="title red">恭喜！您的大奖娱乐账户已建立！</h3>
+                    <p class="red">只差一步就可以游戏了哦，马上去完成最后一步
+                        <a class="blueHref" href="@Url.Action("Index", "Member")">存款</a>吧！！
+                    </p>
+                    <div class="lineBlock"></div>
+                    <br />
+                    <p class="desc">大奖娱乐所提供的所有产品和服务，是由菲律宾政府卡格扬河经济特区所授权和监管。 <br />选择我们，您将拥有可靠的资金保障和优质的服务。</p>
+                    <!-- <p>
                         <a href="@Url.Action("Finance", "Member")" target="_self"><img src="@ImageServer/Content/Images/welcome/welcome_deposit.jpg" class="floatLeft" /></a>
                         <a href="@Url.Action("Promotions", "CN")" target="_self"><img src="@ImageServer/Content/Images/welcome/welcome_discount.jpg" class="floatRight" /></a>
                         <div class="clearfix"></div>
                     </p>
-                    <br/>
-                    <p class="title red pagination-centered">亚洲成长最快的博彩公司</p>
-                    <p><img src="@ImageServer/Content/Images/welcome/welcome_details.jpg" alt=""></p>
-                    <br/>
-                    <p class="red">和记发展历程：</p>
-                    <br/>
-                    <p><img src="@ImageServer/Content/Images/welcome/welcome_stat.jpg" alt=""></p>
+                    <br/> -->
+                    <div class="welcomeImageWrap">
+                        <img src="@ImageServer/Content/Images/welcome/welcome_details.jpg" alt="" />
+                        <a href="@Url.Action("YBpay", "Member")"><div class="ybpayCaller"></div></a>
+                    </div>
                 </div>
             </div>
             <div class="rightContent">
-                @Html.Action("SharedLogin", "CN")
+                @Html.Action("SharedLogin", "CN", new { displayCS = "false" })
             </div>
             <div class="clearfix"></div>
         </div>

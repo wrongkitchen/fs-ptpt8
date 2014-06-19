@@ -27,8 +27,8 @@
                     <li class="separate">|</li>
                     <li class="button"><a href="@Url.Action("Info", "Member")" target="_self">修改资料</a></li>
                     <li class="separate">|</li>
-                    <li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
-                    <li class="separate">|</li>
+                    @*<li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
+                    <li class="separate">|</li>*@
                     <li class="button"><a href="@Url.Action("Notices", "Member")" target="_self">最新公告</a></li>
                 </ul>
                 <div class="banner">
@@ -49,7 +49,7 @@
                 </div>
             </div>
             <div class="rightContent">
-                @Html.Action("SharedLogin", "CN")
+                @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false" })
             <div class="clearfix"></div>
         </div>
         <ul class="zoneBtn horizontalList clearfix">

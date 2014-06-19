@@ -40,15 +40,15 @@
                     <li class="separate">|</li>
                     <li class="button"><a href="@Url.Action("Info", "Member")" target="_self">修改资料</a></li>
                     <li class="separate">|</li>
-                    <li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
-                    <li class="separate">|</li>
+                    @*<li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
+                    <li class="separate">|</li>*@
                     <li class="button"><a href="@Url.Action("Notices", "Member")" target="_self">最新公告</a></li>
                 </ul>
                 <div class="banner">
                     <img src="@ImageServer/Content/Images/member/01_03.jpg" alt="">
                 </div>
                 <div class="article finance">
-                    <table class="user">
+@*                    <table class="user">
                         <tr>
                             <td>账户: @Model.CurrentUser.UserName</td>
                             <td class="padLeft">
@@ -56,9 +56,10 @@
                             </td>
                         </tr>
                     </table>
-                 @Html.Action("gameMessage", "Member")
+                 @Html.Action("gameMessage", "Member")*@
+
                     <div class="tabBlock">
-                        <div>
+                        <div class="clearfix">
                             <a href="@Url.Action("DepositSwitch", "Member")"><div class="tab active"style=" background-color: red; color: white; ">存款</div></a>
                             <a href="@Url.Action("Withdraw", "Member")"><div class="tab">取款</div></a>
                             <a href="@Url.Action("BankAccounts", "Member")"><div class="tab">绑定银行卡</div></a>
@@ -81,7 +82,7 @@
                 </div>
             </div>
             <div class="rightContent">
-                @Html.Action("SharedLogin", "CN")
+                @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false" })
             </div>
             <div class="clearfix"></div>
         </div>

@@ -1,10 +1,11 @@
 ﻿@using Heji.Web.Helpers
+@using Heji.Common;
 @model Heji.Web.Models.MemberDepositViewModel
 @{
     ViewBag.Title = "存款 - 会员中心 - 大奖娱乐官方网站";
     Layout = "~/Views/Shared/_CNLayout.cshtml";
     string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
-
+    string verification = Function.GetRadom(4);
 }
 @section AdditionalStyles {
     <link rel="stylesheet" href="@ImageServer/Content/Styles/member.css" />
@@ -12,6 +13,7 @@
 }
 @section AdditionalScripts {
     <script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery.uploadify.min.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/ZeroClipboard.js"></script>
     <script type="text/javascript" src="@ImageServer/Scripts/Custom/member.js"></script>
     <script type="text/javascript" src="@ImageServer/Scripts/Custom/deposit.js"></script>
 }
@@ -22,17 +24,34 @@
         scroll(0, 300)
     });
 
-    function click_banktype() {
+    function click_banktype() 
+    {
         var aa = $('input[name=bank_account_type]:checked').val();
-        if (aa != "onlinebanking") {
+        if (aa != "onlinebanking") 
+        {
             $("#cardno").val("1234");
-        } else {
+        } else 
+        {
             $("#cardno").val("请准确填写银行卡号后四位");
         }
-}
-var test = 'test';
-</script>
+    }
 
+//    function copyValue(v) {
+//        if (v == undefined) v = "";
+//        var clip = new ZeroClipboard.Client();
+//        clip.setHandCursor(true);
+//        clip.setText(v);
+//        clip.addEventListener('complete', function (client, text) {
+//            //$("#spnmsg").fadeOut(400, function () { $("#spnmsg").css("color", "red").css("font-weight", "bold").css("font-size", "14px;"); $("#spnmsg").html("已将验证码 " + text + " 复制到剪贴板"); });
+//            //$("#spnmsg").fadeIn(2500, function () { $("#spnmsg").css("color", "").css("font-weight", "").css("font-size", ""); $("#spnmsg").html("如果是网银转账,请在“备注”或“留言”里面填写该验证码。"); });
+//        });
+//        clip.glue("btnCopyName");
+//    } 
+</script>
+<style>
+  .bankBuy{ position: absolute; right: 0; top: 20px; }
+
+</style>
 
 <div id="wrapper">
     <div class="container">
@@ -50,15 +69,15 @@ var test = 'test';
                     <li class="separate">|</li>
                     <li class="button"><a href="@Url.Action("Info", "Member")" target="_self">修改资料</a></li>
                     <li class="separate">|</li>
-                    <li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
-                    <li class="separate">|</li>
+                    @*<li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
+                    <li class="separate">|</li>*@
                     <li class="button"><a href="@Url.Action("Notices", "Member")" target="_self">最新公告</a></li>
                 </ul>
                 <div class="banner">
                     <img src="@ImageServer/Content/Images/member/01_03.jpg" alt="">
                 </div>
                 <div class="article finance">
-                    <table class="user">
+@*                    <table class="user">
                         <tr>
                             <td>账户: @Model.CurrentUser.UserName</td>
                             <td class="padLeft">
@@ -66,7 +85,7 @@ var test = 'test';
                             </td>
                         </tr>
                     </table>
-                 @Html.Action("gameMessage", "Member")
+                  @Html.Action("gameMessage", "Member")*@
                  
                     <div class="tabBlock">
                         <div>
@@ -94,11 +113,27 @@ var test = 'test';
                                        }
                                        else
                                        {
-                                           <div style="margin-right:10px; margin-top:4px;" class="pull-left">*收款银行:</div>
-                                           <div class="bank bank2"><input id="GS" name="bank_list" type="radio" value="bank2" @(Model.BankCode == "GS" ? "checked='checked'" : "") onclick="window.location.href = '?bankCode=GS'" /></div>
-                                           <div class="bank bank3"><input id="JS" name="bank_list" type="radio" value="bank3" @(Model.BankCode == "JS" ? "checked='checked'" : "") onclick="window.location.href = '?bankCode=JS'" /></div>
-                                           <div class="bank bank5"><input id="NY" name="bank_list" type="radio" value="bank5" @(Model.BankCode == "NY" ? "checked='checked'" : "") onclick="window.location.href = '?bankCode=NY'" /></div>
-                                           <div class="bank bank1"><input id="ZS" name="bank_list" type="radio" value="bank1" @(Model.BankCode == "ZS" ? "checked='checked'" : "") onclick="window.location.href = '?bankCode=ZS'" /></div>
+                                           <table>
+                                               <tr>
+                                                   <td width="25%" align="left" valign="middle">*收款银行:</td> 
+                                                   <td width="25%">
+                                                       <div class="bank bank2"><input id="GS" name="bank_list" type="radio" value="bank2" @(Model.BankCode == "GS" ? "checked='checked'" : "") onclick="window.location.href = '?bankCode=GS'" /></div>
+                                                       <br/>
+                                                       <div class="bank bank3"><input id="JS" name="bank_list" type="radio" value="bank3" @(Model.BankCode == "JS" ? "checked='checked'" : "") onclick="window.location.href = '?bankCode=JS'" /></div>
+                                                   </td>
+                                                   <td width="25%">  
+                                                       <div class="bank bank5"><input id="NY" name="bank_list" type="radio" value="bank5" @(Model.BankCode == "NY" ? "checked='checked'" : "") onclick="window.location.href = '?bankCode=NY'" /></div>
+                                                       <br/>
+                                                       <div class="bank bank1"><input id="ZS" name="bank_list" type="radio" value="bank1" @(Model.BankCode == "ZS" ? "checked='checked'" : "") onclick="window.location.href = '?bankCode=ZS'" /></div>
+                                                   </td>
+                                                   @*<td width="25%" valign="top">
+                                                    <div class="bank bank4"><input id="MS" name="bank_list" type="radio" value="bank4" @(Model.BankCode == "MS" ? "checked='checked'" : "") onclick="window.location.href = '?bankCode=MS'" /></div>
+                                                   </td>*@                                     
+                                               </tr>
+                                           </table>
+                                           
+                                           
+                                           
                                            
                                             <!--<div class="bank bank4"><input id="JT" name="bank_list" type="radio" value="bank4" @(Model.BankCode == "JT" ? "checked='checked'" : "") onclick="window.location.href = '?bankCode=JT'" /></div>-->
                                            <div class="clearfix"></div>
@@ -106,94 +141,107 @@ var test = 'test';
                                        }
                                        </li> 
                                        <li>
-                                       @if (string.IsNullOrEmpty(Model.BankCode))
-                                       {
-                                          <table width="100%">
-                                            <tr>
-                                              <td width="50%">
-                                                <table width="100%">
-                                                  <tr>
-                                                    <td>*收款人姓名: </td>
-                                                    <td><button class="copyButton darkGreyButton">复制</button></td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>*银行卡号: </td>
-                                                    <td><button class="copyButton darkGreyButton">复制</button></td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>*开户网点:</td>
-                                                    <td><button class="copyButton darkGreyButton">复制</button></td>
-                                                  </tr>
-                                                </table>
-                                              </td>
-                                              <td width="50%">
-                                                <div>登录网银:</div>
-                                                <div class="bank bank2"></div>
-                                              </td>
-                                            </tr>
-                                          </table>
-                                          <br />
-                                          <div class="lineBlock"></div>
-
-                                            <!-- <p>* 收款银行信息：</p> -->
-                                            <!-- <span>请选择收款银行</span> -->
-                                       }
-                                       else
+                                       @if (!string.IsNullOrEmpty(Model.BankCode))
                                        {
                                            if (Model.GeneralBanks != null && Model.GeneralBanks.Count > 0)
                                            {
                                                 
                                                <p>* 收款银行信息：</p>
-                                               <table>
-                                                  <tr><td class="key middle">收款人姓名：</td><td>@Model.GeneralBanks.First().name</td>
-                                                  </tr>
-                                                  <tr><td class="key middle">银行卡号：</td><td>@Model.GeneralBanks.First().cardNo</td></tr>
-                                                  <tr><td class="key middle">开户网点：</td><td>@Model.GeneralBanks.First().subbank</td></tr>
-                                               </table>
-                                               <div class="hint">温馨提示： 以上界面功能可用于客户索要汇款帐户，只要本界面显示的汇款卡号，皆为平台的官方收款帐号。汇款成功后，请填写如下信息，进行存款信息提交。
+                                               <div style="position:relative;">
+                                                    <div class="bankBuy">
+                                                        <a href="http://www.duba.com/yinhang.html" target="_blank"><img src="@ImageServer/Content/Images/bank.jpg" alt="" /></a>
+                                                    </div>
                                                </div>
-                                               <div class="clearfix"></div>
+                                               <table>
+                                                  <tr>
+                                                    <td class="key middle" height="22">*收款人姓名：</td>
+                                                    <td width="200"><span id="name">@Model.GeneralBanks.First().name</span></td>
+                                                    <td><input class="copyButton darkGreyButton" type="button" id="btnCopyName" value="复制" />@*<input type="hidden" id="name" value="@Model.GeneralBanks.First().name" />*@</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="key middle" height="22">*银行卡号：</td>
+                                                    <td width="200"><span id="cardNo">@Model.GeneralBanks.First().cardNo</span></td>
+                                                    <td><input class="copyButton darkGreyButton" type="button" id="btnCopyCardNo" value="复制" />@*<input type="hidden" id="cardNo" value="@Model.GeneralBanks.First().cardNo" />*@</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="key middle" height="22">*开户网点：</td>
+                                                    <td width="200"><span id="subBank">@Model.GeneralBanks.First().subbank</span></td>
+                                                    <td><input class="copyButton darkGreyButton" type="button" id="btnCopySubBank" value="复制" />@*<input type="hidden" id="subBank" value="@Model.GeneralBanks.First().subbank" />*@</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td valign="bottom" height="30" class="key middle">*验证码：</td>
+                                                    <td width="200"><span style="color: red; font-weight: bold; font-size: 18px;">@verification</span></td>
+                                                    <td><input class="copyButton darkGreyButton" type="button" id="btnCopy" value="复制" /></td>
+                                                  </tr>
+                                               </table>
+                                               <br />
+                                               <div style="color:red;"><span id="spnmsg">如果是网银转帐，请在银行"备注栏"填写验证码</span></div>
+                                               <!--<div class="hint">温馨提示： 以上界面功能可用于客户索要汇款帐户，只要本界面显示的汇款卡号，皆为平台的官方收款帐号。汇款成功后，请填写如下信息，进行存款信息提交。
+                                               </div>-->
                                            }
                                            else
                                            {
                                                <p>* 收款银行信息：</p>
+                                               <div style="position:relative">
+                                                    <div style="top:-10px;" class="bankBuy">
+                                                        <a href="http://www.duba.com/yinhang.html" target="_blank"><img src="@ImageServer/Content/Images/bank.jpg" alt="" /></a>
+                                                    </div>
+                                               </div>
+
                                                <table style="margin-top:10px">
+                                                  <tr>
+                                                    <td class="key middle" height="22">*验证码：</td>
+                                                    <td width="220"><span style="color: red; font-weight: bold; font-size: 18px;">@verification</span></td>
+                                                    <td><input class="copyButton darkGreyButton" type="button" id="btnCopy2" value="复制" /></td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td height="25" style="color:red;" colspan="3"><span id="spnmsg2">如果是网银转帐，请在银行"备注栏"填写验证码</span></td>
+                                                  </tr>
+
+                                                  <tr>
+                                                    <td style="color:red;" colspan="3" height="20">&nbsp;</td>
+                                                  </tr>
+
                                                     <tr>
                                                         <td class="key middle">收款人姓名：</td>
                                                         <td><input type="text" id="receiver"  onkeyup="value=value.replace(/[\d]/g,'')" /></td>
+                                                        <td>&nbsp;</td>
                                                     </tr>
                                                 </table>
-                                                <div class="hint" style="color:Red">温馨提示：请您联系@*<a href="http://67.198.160.58/chat/chatClient/chatbox.jsp?companyID=306&configID=9&enterurl=@Request.Url.Host">*@在线客服@*</a>*@索取收款银行卡，并在提交存款单时填写收款人姓名。</div>
+                                                <div class="hint" style="color:Red">温馨提示：请您联系<a style="color:blue;" href="http://kf1.learnsaas.com/chat/chatClient/chatbox.jsp?companyID=17819&jid=&enterurl=@Request.Url.Host" class="support" target="_blank">在线客服</a>索取收款银行卡，并在提交存款单时填写收款人姓名。</div>
                                                
                                            }
 
+                                          <br/>
+                                           <div class="lineBlock"></div>
                                        }
+                                       <input type="hidden" id="code" value="@verification" />
                                        </li>
                                       <!-- <li class="num3">-->
                                        <li>
-                                            <p> * 汇款人信息：</p>
+                                            <!-- <p> * 汇款人信息：</p> -->
                                             <input type="hidden" id="shortName" value="@(Model.GeneralBanks != null && Model.GeneralBanks.Count > 0 ? Model.GeneralBanks.First().shortName : Model.BankCode)" />
                                             <input type="hidden" id="cardmemo" value="@(Model.GeneralBanks != null && Model.GeneralBanks.Count > 0 ? Model.GeneralBanks.First().shortName + "，" + Heji.Common.Function.RightString(Model.GeneralBanks.First().cardNo, 4) : "")" />
-                                            <input type="hidden" id="receiver" value="@( Model.GeneralBanks != null && Model.GeneralBanks.Count > 0 ? Model.GeneralBanks.First().name : "")" />
+                                            <input type="hidden" id="receiver" value="@(Model.GeneralBanks != null && Model.GeneralBanks.Count > 0 ? Model.GeneralBanks.First().name : "")" />
                                             <table>
                                                 <tr>
                                                     <td class="key middle">*存款金额:</td>
-                                                    <td><input type="text" id="amount" value="金额不少于100元" onfocus="if(value =='金额不少于100元'){value =''}" onblur="if (value ==''){value='金额不少于100元'}" onkeyup="value=value.replace(/[^\d\.]/g,'')"/></td>
+                                                    <td><input type="text" style="width:300px" id="amount" value="最低20元,金额不为整数，如100.01，快速上款" onfocus="if(value =='最低20元,金额不为整数，如100.01，快速上款'){value =''}" onblur="if (value ==''){value='最低20元,金额不为整数，如100.01，快速上款'}" onkeyup="value=value.replace(/[^\d\.]/g,'')"/></td>
                                                 </tr>
                                                 <tr>
                                                     <td class="key middle">*存款姓名:</td>
-                                                    <td><input type="text" id="sender" /></td>
+                                                    <td><input style="width:300px" type="text" id="sender" /></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="key middle">*卡号最後四位:</td>
-                                                    <td><input type="text" id="cardno"  value="请准确填写银行卡号后四位" onfocus="if(value =='请准确填写银行卡号后四位'){value =''}" onblur="if (value ==''){value='请准确填写银行卡号后四位'}" onkeyup="value=value.replace(/[^\d]/g,'')"  maxlength=4 /></td>
+                                                    <td class="key middle">*卡号最后四位:</td>
+                                                    <td><input style="width:300px" type="text" id="cardno"  value="请准确填写银行卡号最后四位，提高上款速度" onfocus="if(value =='请准确填写银行卡号最后四位，提高上款速度'){value =''}" onblur="if (value ==''){value='请准确填写银行卡号最后四位，提高上款速度'}" onkeyup="value=value.replace(/[^\d]/g,'')"  maxlength=4 /></td>
                                                 </tr>
 
                                                 <tr>
                                                   <td></td>
-                                                  <td>
-                                                    <span style="color:red">*     &nbsp;</span>
-                                                    *如果使用ATM机或者柜台现金存款,请填8888
+                                                  <td style="font-size:12px;">
+                                                    <span style="color:red">*</span>
+                                                    如果使用无卡存款﹝如ATM现金，手机等﹞，请填存款时间，如18:05，则填1805
                                                   </td>
                                                   <br/> 
                                                 </tr>
@@ -202,12 +250,21 @@ var test = 'test';
                                                 <tr>
                                                     <td class="key middle">存款类型：</td>
                                                     <td>
-                                                        <label class="pull-left"><input name="bank_account_type"  type="radio" value="onlinebanking" /><span>网银转账</span></label>
-                                                        <label class="pull-left"><input name="bank_account_type"  type="radio" value="atm" /><span>ATM转账</span></label>
-                                                        <label class="pull-left"><input name="bank_account_type"  type="radio" value="counter" /><span>手机转款</span></label>
+                                                        <table>
+                                                          <tr>
+                                                            <td width="100"><label class="pull-left"><input name="bank_account_type"  type="radio" value="onlinebanking" /><span>网银转账</span></label></td>
+                                                            <td width="100"><label class="pull-left"><input name="bank_account_type"  type="radio" value="atm" /><span>ATM存款</span></label></td>
+                                                            <td width="100"><label class="pull-left"><input name="bank_account_type"  type="radio" value="counter" /><span>柜台存款</span></label></td>
+                                                            <td width="100"><label class="pull-left"><input name="bank_account_type"  type="radio" value="counter" /><span>手机转款</span></label></td>
+                                                          </tr>
+                                                        </table>
+
+                                                        
+                                                        
+                                                        
                                                         <div class="clearfix"></div>
                                                         <!-- 跨行存款： -->
-                                                        <label><input type="checkbox" id="interbank" value="" /><span>如果是跨行转账请点击选中。</span></label>
+                                                        <label><input type="checkbox" id="interbank" value="" /><span>跨行转账请点击选中</span></label>
                                                     </td>
                                                 </tr>
                                                 <tr><td colspan="3" height='10'></td></tr>
@@ -216,11 +273,11 @@ var test = 'test';
                                                     <td>
                                                       <table width="100%">
                                                         <tr>
-                                                          <td align="left" valign="top" width="50%">
+                                                          <td align="left" valign="top" width="30%">
                                                             <input id="uploadify" name="uploadify" type="file" />
                                                             <div id="preview"></div>
                                                           </td>
-                                                          <td align="left" valign="top" width="50%">
+                                                          <td style="font-size:12px;" align="left" valign="top" width="50%">
                                                             <input id="snapshot" name="snapshot" type="hidden" value="" />
                                                             上传存款证，可帮助工作人员更快给您上款<br />
                                                             支持文件格式: JPG, GIF, BMP, PNG, 文件最大不超过2MB<br />
@@ -259,7 +316,7 @@ var test = 'test';
                 </div>
             </div>
             <div class="rightContent">
-                @Html.Action("SharedLogin", "CN")
+                @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false" })
             </div>
             <div class="clearfix"></div>
         </div>

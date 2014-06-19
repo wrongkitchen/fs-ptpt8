@@ -33,15 +33,15 @@
                     <li class="separate">|</li>
                     <li class="button"><a href="@Url.Action("Transactions", "Member")" target="_self">历史记录</a></li>
                     <li class="separate">|</li>
-                    <li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
-                    <li class="separate">|</li>
+                    @*<li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
+                    <li class="separate">|</li>*@
                     <li class="button"><a href="@Url.Action("Notices", "Member")" target="_self">最新公告</a></li>
                 </ul>
                 <div class="banner">
                     <img src="@ImageServer/Content/Images/member/01_03.jpg" alt="">
                 </div>
                 <div class="article finance">
-                    <table class="user">
+@*                   <table class="user">
                         <tr>
                             <td>账户: @Model.CurrentUser.UserName</td>
                             <td class="padLeft">
@@ -49,10 +49,10 @@
                             </td>
                         </tr>
                     </table>
-                 @Html.Action("gameMessage", "Member")
+                 @Html.Action("gameMessage", "Member")*@
                     <div class="tabBlock">
                         <div class="tabButton">
-                            <a href="@Url.Action("RapidDeposit", "Member")"><div class="tab">存款</div></a>
+                            <a href="@Url.Action("DepositSwitch", "Member")"><div class="tab">存款</div></a>
                             <a href="@Url.Action("Withdraw", "Member")"><div class="tab">取款</div></a>
                             <a href="@Url.Action("BankAccounts", "Member")"><div class="tab active"style=" background-color: red; color: white; ">绑定银行卡</div></a>
                             <div class="clearfix"></div>
@@ -60,13 +60,12 @@
                         <div class="tabContent cardBinding active">
                             <p class="title">已绑定银行卡</p>
                             <table class="cardBindingTable">
-                                <tr class="header"><td>序号</td><td>开户银行名称</td><td>银行卡号码</td><td>持卡人姓名</td><td>持卡人身份证</td></tr>
+                                <tr class="header"><td>开户银行名称</td><td>银行卡号码</td><td>持卡人姓名</td><td>持卡人身份证</td></tr>
                                 @if (Model.UserBanks != null && Model.UserBanks.Count > 0)
                                 {
                                     foreach (Heji.Library.Models.TO.UserBankTO uBank in Model.UserBanks)
                                     {
                                         <tr class="data">
-                                            <td>@uBank.Id</td>
                                             <td>@uBank.Bank</td>
                                             <td>@Heji.Common.Function.HideCardNo(uBank.AccountNumber, 4)</td>
                                             <td>@uBank.TrueName</td>
@@ -154,7 +153,7 @@
                 </div>
             </div>
             <div class="rightContent">
-                @Html.Action("SharedLogin", "CN")
+                @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false" })
             </div>
             <div class="clearfix"></div>
         </div>

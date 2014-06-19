@@ -1,4 +1,5 @@
 ﻿@using Heji.Web.Helpers
+@using Heji.Library.Models.BO
 @using Heji.Library.Models.TO
 @model Heji.Web.Models.MemberTransactionsViewModel
 @{
@@ -29,12 +30,12 @@
                     <li class="separate">|</li>
                     <li class="button"><a href="@Url.Action("Info", "Member")" target="_self">修改资料</a></li>
                     <li class="separate">|</li>
-                    <li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
-                    <li class="separate">|</li>
+                    @*<li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
+                    <li class="separate">|</li>*@
                     <li class="button"><a href="@Url.Action("Notices", "Member")" target="_self">最新公告</a></li>
                 </ul>
                 <div class="banner">
-                    <img src="@ImageServer/Content/Images/member/member-banner-05a.jpg" alt="">
+                    <img src="@Url.Content("~/Content/Images/member/01_03.jpg")" alt="">
                 </div>
                 <div class="article history">
                     <div class="tabBlock">
@@ -45,7 +46,7 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="tabContent active">
-                                <p>为了用户的信息与资金的安全，会员中心仅保留最近7天的历史记录，如需查询更多记录，请联系客服。</p>
+                                <p>为了会员的信息与资金的安全，存取款与投注派彩仅保留最近7天的记录，如需查询更多，请联系客服。</p>
                                 @*<!--
                             <div class="searchFilter">
                                 <div class="searchTitle pullLeft"></div>
@@ -86,18 +87,27 @@
                                     {
                                         foreach (CashTO tnx in Model.Transactions)
                                         {
-                                            int days = (tnx.CreateTime - DateTime.Today).Days;
+                                            int days = 0;
+                                            if(tnx.OperationTime != null)
+                                            {
+                                                days = (DateTime.Today - (DateTime)tnx.OperationTime).Days;
+                                            }
+                                            //int days = (DateTime.Today - tnx.CreateTime).Days;
                                             bool idb = true;
                                             if (Model.UserSwitches != null && !Model.UserSwitches.FirstDepositBonus)
                                             {
                                                 idb = false;
                                             }
                                             string idbStr = string.Empty;
-                                            if (days < 7 && Model.CanApplyForInitialDepositBouns && tnx.Status == 3 && tnx.isFirstCash && idb)
+                                            if (days < 7 && Model.CanApplyForFirstDepositBonus && tnx.Status == 3 && tnx.isFirstCash && idb)
                                             {
-                                                idbStr += "<a id=\"applyIDB_25_" + tnx.Id + "\" href=\"javascript: void(0);\" style=\"color: red\" title=\"申请25%红利(8倍流水)<br />说明：您可以选择申请25%首存红利，此项选择的领取条件是：有效投注额达到存款加红利的8倍。\">[申请25%红利]</a><br />";
-                                                idbStr += "<a id=\"applyIDB_50_" + tnx.Id + "\" href=\"javascript: void(0);\" style=\"color: red\" title=\"申请50%红利(12倍流水)<br />说明：您可以选择申请50%首存红利，此项选择的领取条件是：有效投注额达到存款加红利的12倍。\">[申请50%红利]</a><br />";
-                                                idbStr += "<a id=\"applyIDB_100_" + tnx.Id + "\" href=\"javascript: void(0);\" style=\"color: red\" title=\"申请100%红利(18倍流水)<br />说明：您可以选择申请100%首存红利，此项选择的领取条件是：有效投注额达到存款加红利的18倍。\">[申请100%红利]</a><br />";
+                                                idbStr += "<a id=\"applyIDB_25_" + tnx.Id + "\" href=\"javascript: void(0);\" style=\"color: red\" title=\"申请25%老虎机首存红利(8倍流水)<br />说明：您可以选择申请25%老虎机首存红利，此项选择的领取条件是：有效投注额达到存款加红利的8倍。\">[申请25%老虎机红利]</a><br />";
+                                                idbStr += "<a id=\"applyIDB_50_" + tnx.Id + "\" href=\"javascript: void(0);\" style=\"color: red\" title=\"申请50%老虎机首存红利(12倍流水)<br />说明：您可以选择申请50%老虎机首存红利，此项选择的领取条件是：有效投注额达到存款加红利的12倍。\">[申请50%老虎机红利]</a><br />";
+                                                idbStr += "<a id=\"applyIDB_100_" + tnx.Id + "\" href=\"javascript: void(0);\" style=\"color: red\" title=\"申请100%老虎机首存红利(18倍流水)<br />说明：您可以选择申请100%老虎机首存红利，此项选择的领取条件是：有效投注额达到存款加红利的18倍。\">[申请100%老虎机红利]</a><br />";
+                                            }
+                                            if (days < 7 && new CashBO().CanApplyForAgainDepositBonus(tnx.Username,tnx.Id.ToString()) && (tnx.Type == 0 || tnx.Type == 1 || tnx.Type == 12) && tnx.Amount >= 100 && tnx.Status == 3 && !tnx.isFirstCash)
+                                            {
+                                                idbStr += "<a id=\"applyIDB_30_" + tnx.Id + "\" href=\"javascript: void(0);\" style=\"color: red\" title=\"申请30%老虎机再存红利(25倍流水)<br />说明：您可以选择申请30%老虎机再存红利，此项选择的领取条件是：有效投注额达到存款加红利的25倍。\">[申请30%老虎机红利]</a><br />";
                                             }
                                             <tr>
                                                 <td class="type">@WebFunctions.GetCashTypeName(tnx.Type)</td>
@@ -132,7 +142,6 @@
             </div>
             <div class="rightContent">
                 @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false" })
-                <div class="block discount"><a href="/CN/Promotions" target="_self"><img src="@ImageServer/Content/Images/member/01_12.jpg" alt=""></a></div>
             </div>
             <div class="clearfix"></div>
         </div>

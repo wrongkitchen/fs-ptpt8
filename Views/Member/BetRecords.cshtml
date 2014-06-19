@@ -29,8 +29,8 @@
                     <li class="separate">|</li>
                     <li class="button"><a href="@Url.Action("Info", "Member")" target="_self">修改资料</a></li>
                     <li class="separate">|</li>
-                    <li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
-                    <li class="separate">|</li>
+                    @*<li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
+                    <li class="separate">|</li>*@
                     <li class="button"><a href="@Url.Action("Notices", "Member")" target="_self">最新公告</a></li>
                 </ul>
                 <div class="banner">
@@ -45,7 +45,7 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="tabContent active">
-                                <p>为了用户的信息与资金的安全，会员中心仅保留最近7天的历史记录，如需查询更多记录，请联系客服。</p>
+                                <p>为了会员的信息与资金的安全，存取款与投注派彩仅保留最近7天的记录，如需查询更多，请联系客服。</p>
                        @* <!-- <div class="searchFilter">
                                 <div class="searchTitle pullLeft"><img src="@ImageServer/Content/Images/member/member-history-search.jpg" /></div>
                                 <div class="searchForm pullRight">
@@ -70,82 +70,68 @@
                                 <table>
                                     <tr  >
                                     <td style="background-color: #000000" rowspan="2">时间</td>
-                                    <td style="background-color: #000000" colspan="6">投注记录</td>
-                                    <td style="background-color: #000000" colspan="6">派彩记录</td>
+                                    <td style="background-color: #000000" colspan="5">投注记录</td>
+                                    <td style="background-color: #000000" colspan="5">派彩记录</td>
                                     </tr>
                                     <tr class="header">
-                                        <td>台湾厅</td>
-                                        <td>广东厅</td>
-                                        <td>澳门厅</td>
-                                        <td>国际厅</td>
-                                        <td>伦敦厅</td>
-                                        <td>MG电子游艺</td>
-                                        <td>台湾厅</td>
-                                        <td>广东厅</td>
-                                        <td>澳门厅</td>
-                                        <td>国际厅</td>
-                                        <td>伦敦厅</td>
-                                        <td>MG电子游艺</td>
+                                        <td>BBin真人</td>
+                                        <td>PT真人</td>
+                                        <td>PT老虎机</td>
+                                        <td>MG真人</td>
+                                        <td>MG老虎机</td>
+                                        <td>BBin真人</td>
+                                        <td>PT真人</td>
+                                        <td>PT老虎机</td>
+                                        <td>MG真人</td>
+                                        <td>MG老虎机</td>
                                     </tr>
                                     @if (Model.Betting != null && Model.Betting.Count() > 0)
                                     {
-                                        decimal pt = 0;
-                                        decimal bbin = 0;
-                                        decimal DYJuser = 0;
-                                        decimal ptPayout = 0;
-                                        decimal bbinPayout = 0;
-                                        decimal DYJpc = 0;
-                                        decimal Mguser=0;
-                                        decimal MgPc=0;
-                                        decimal MgFlash=0;
-                                        decimal MgFlashpc=0;
-                                        decimal AgNet = 0;
-                                        decimal AgNetpc = 0;
+                                        decimal bbinLiveBets = 0;
+                                        decimal ptLiveBets = 0;
+                                        decimal ptFlashBets = 0;
+                                        decimal bbinLivePayouts = 0;
+                                        decimal ptLivePayouts = 0;
+                                        decimal ptFlashPayouts = 0;
+                                        decimal mgLiveBets = 0;
+                                        decimal mgFlashBets = 0;
+                                        decimal mgLivePayouts = 0;
+                                        decimal mgFlashPayouts = 0;
                                         foreach (BettingTO bet in Model.Betting)
                                         {
-                                            pt += bet.PT;
-                                            ptPayout += bet.PTPayout;
-                                            bbin += bet.BBin;
-                                            bbinPayout += bet.BBinPayout;
-                                            DYJuser += bet.DYJuser;
-                                            DYJpc += bet.DYJpc;
-                                            Mguser += bet.MGuser;
-                                            MgPc += bet.MGpc;
-                                            MgFlash += bet.MGFlash;
-                                            MgFlashpc += bet.MGFlashpc;
-                                            AgNet += bet.AgNetUser;
-                                            AgNetpc += bet.AgNetUserpc;
-                                                <tr>
-                                                    <td>@bet.tdate.ToString("yyyy-MM-dd")</td>
-                                                    <td>@bet.BBin</td>
-                                                    <td>@bet.PT</td>
-                                                    <td>@bet.DYJuser</td>
-                                                     <td>@bet.AgNetUser</td>
-                                                    <td>@bet.MGuser</td>
-                                                    <td>@bet.MGFlash</td>
-                                                    <td>@bet.BBinPayout</td>
-                                                    <td>@bet.PTPayout</td>              
-                                                    <td>@bet.DYJpc</td>
-                                                     <td>@bet.AgNetUserpc</td>
-                                                    <td>@bet.MGpc</td>
-                                                    <td>@bet.MGFlashpc</td>
-                                                </tr>
+                                            bbinLiveBets += bet.BBinLiveBets;
+                                            ptLiveBets += bet.PTLiveBets;
+                                            ptFlashBets += bet.PTFlashBets;
+                                            bbinLivePayouts += bet.BBinLivePayouts;
+                                            ptLivePayouts += bet.PTLivePayouts;
+                                            ptFlashPayouts += bet.PTFlashPayouts;
+                                            <tr>
+                                                <td>@bet.Date.ToString("yyyy-MM-dd")</td>
+                                                <td>@bet.BBinLiveBets</td>
+                                                <td>@bet.PTLiveBets</td>
+                                                <td>@bet.PTFlashBets</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>@bet.BBinLivePayouts</td>
+                                                <td>@bet.PTLivePayouts</td>
+                                                <td>@bet.PTFlashPayouts</td>
+                                                <td>0</td>
+                                                <td>0</td>           
+                                            </tr>
                                         }
-                                                <tr>
-                                                    <td>小计：</td>
-                                                    <td>@bbin</td>
-                                                    <td>@pt</td>
-                                                    <td>@DYJuser</td>
-                                                      <td>@AgNet</td>
-                                                    <td>@Mguser</td>
-                                                    <td>@MgFlash</td>
-                                                    <td>@bbinPayout</td>
-                                                    <td>@ptPayout</td>
-                                                    <td>@DYJpc</td>
-                                                      <td>@AgNetpc</td>
-                                                    <td>@MgPc</td>
-                                                    <td>@MgFlashpc</td>
-                                                </tr>
+                                            <tr>
+                                                <td>小计：</td>
+                                                <td>@bbinLiveBets</td>
+                                                <td>@ptLiveBets</td>
+                                                <td>@ptFlashBets</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>@bbinLivePayouts</td>
+                                                <td>@ptLivePayouts</td>
+                                                <td>@ptFlashPayouts</td>
+                                                <td>0</td>
+                                                <td>0</td> 
+                                            </tr>
                                     }
                                     else
                                     {
@@ -165,7 +151,6 @@
             </div>
             <div class="rightContent">
                 @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false" })
-                <div class="block discount"><a href="/CN/Promotions" target="_self"><img src="@ImageServer/Content/Images/member/01_12.jpg" alt=""></a></div>
             </div>
             <div class="clearfix"></div>
         </div>

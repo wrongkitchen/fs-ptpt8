@@ -29,8 +29,8 @@
                     <li class="separate">|</li>
                     <li class="button active"><a href="@Url.Action("Info", "Member")" target="_self">修改资料</a></li>
                     <li class="separate">|</li>
-                    <li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
-                    <li class="separate">|</li>
+                    @*<li class="button"><a href="@Url.Action("Friends", "Member")" target="_self">推荐好友</a></li>
+                    <li class="separate">|</li>*@
                     <li class="button"><a href="@Url.Action("Notices", "Member")" target="_self">最新公告</a></li>
                 </ul>
                 <div class="banner">
@@ -61,7 +61,7 @@
                                     {
                                         foreach (UserSecurityDefaultQuestionTO usdq in Model.DefaultQuestion)
                                         {
-                                            <option value="@usdq.question">@usdq.question</option>
+                                            <option value="@usdq.Question">@usdq.Question</option>
                                         }
                                     }
                                     </select>
@@ -76,7 +76,7 @@
                                     {
                                         foreach (UserSecurityDefaultQuestionTO usdq in Model.DefaultQuestion)
                                         {
-                                            <option value="@usdq.question">@usdq.question</option>
+                                            <option value="@usdq.Question">@usdq.Question</option>
                                         }
                                     }
                                     </select>
