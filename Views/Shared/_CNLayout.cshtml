@@ -22,11 +22,12 @@
     <link rel="apple-touch-icon" sizes="114x114" href="@ImageServer/Content/Images/favicon/apple-touch-icon-114x114-precomposed.png" />
     <link rel="apple-touch-icon" sizes="144x144" href="@ImageServer/Content/Images/favicon/apple-touch-icon-144x144-precomposed.png" />
     <link rel="apple-touch-icon-precomposed" href="@ImageServer/Content/Images/favicon/apple-touch-icon-precomposed.png" />
+    <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="@ImageServer/Content/bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" href="@ImageServer/Content/Styles/main.css" />
     <link rel="stylesheet" href="@ImageServer/Content/Styles/colorbox.css" />
     <link rel="stylesheet" href="@ImageServer/Content/Styles/jquery.alerts.css" />
     <link rel="stylesheet" href="@ImageServer/Content/Styles/tipTip.css" />
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/main.css" />
     @RenderSection("AdditionalStyles", false)
     <script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="@ImageServer/Scripts/Plugins/div-slider-1.0.3.js"></script>
@@ -35,12 +36,11 @@
     <script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery.tipTip.js"></script>
     <script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery.cities.js"></script>
     <script type="text/javascript" src="@ImageServer/Scripts/Custom/common.js"></script>
- 
     @RenderSection("AdditionalScripts", false)
 </head>
 <body>
     <div class="container">
-        <!-- <a href="#"><img id="topButton" src="@ImageServer/Content/Images/arrow/BackToTopArrow.png" /></a> -->
+        <a href="#"><img id="topButton" src="@ImageServer/Content/Images/arrow/BackToTopArrow.png" /></a>
     </div>
     <div id="newsButton">
         <img src="@ImageServer/Content/Images/news.jpg" /><div>
@@ -57,7 +57,7 @@
                     <li class="separate">&nbsp;</li>
                     <li><a href="@Url.Action("FAQ", "CN")" target="_self">如何开始游戏</a></li>
                     <li class="separate">&nbsp;</li>
-                    <li><a href="@Url.Action("HowToDeposit", "CN")" target="_self">如何存取款</a></li>
+                    <li><a href="/CN/FAQ#deposit" target="_self">如何存取款</a></li>
                 </ul>
                 <div class="clearfix">
                 </div>
@@ -68,16 +68,16 @@
             </a>
             <div class="rightNav pull-right">
                 <ul class="quickLink pull-right">
-                    <li><a href="javascript:addtoFavor()" target="_self">免费电话： 400 666 8521</a></li>
+                    <li>免费电话： 400 019 0877</li>
                     <li class="separate">&nbsp;</li>
-                    <li><a href="javascript:setHome()" target="_self">QQ:1345678</a></li>
+                    <li>QQ:2974657670</li>
                 </ul>
                 <div class="clearfix">
                 </div>
                 <div id="btn_top_download">
                 <table>
                 <tr>
-                <td > </a></Td><Td id="download"> <a href="http://heji18.cc/和记娱乐客户端.zip" target="_blank"></a></td>
+                <td ></td><td id="download"><a href="http://kf1.learnsaas.com/chat/chatClient/chatbox.jsp?companyID=17819&jid=&enterurl=@Request.Url.Host" target="_blank"></a></td>
                 </tr>
                 </table>
                    
@@ -89,7 +89,7 @@
     </div>
     <div id="subNav">
         <div class="container">
-            <ul class="navigation">
+            <ul class="navigation clearfix">
                 <li class="button home@(ViewBag.ActiveMenu == "Home" ? " active" : "")"><a href="@Url.Action("Index", "CN")" target="_self" class="buttonLink">
                 </a></li>
                 <li class="button about@(ViewBag.ActiveMenu == "AboutUs" ? " active" : "")">
@@ -104,52 +104,52 @@
                         </ul>
                     </div>
                 </li>
-                <li class="button dealer@(ViewBag.ActiveMenu == "EGames" ? " active" : "")">
-                    <a href="@Url.Action("EGames", "CN")" target="_self" class="buttonLink"></a>
+                <li class="button dealer@(ViewBag.ActiveMenu == "PTGames" ? " active" : "")">
+                    <a href="@Url.Action("PTGames", "CN")" target="_self" class="buttonLink"></a>
                     <div class="listContainer">
                         <ul class="list">
-                            <li class="listItem"><a href="@Url.Action("EGames", "CN")" target="_self">经典老虎机</a></li>
-                            <li class="listItem"><a href="@Url.Action("EGames", "CN")" target="_self">电动角子老虎机</a></li>
-                            <li class="listItem"><a href="@Url.Action("EGames", "CN")" target="_self">街机游戏</a></li>
-                            <li class="listItem"><a href="@Url.Action("EGames", "CN")" target="_self">刮刮奖</a></li>
-                            <li class="listItem"><a href="@Url.Action("EGames", "CN")" target="_self">牌桌和牌游戏</a></li>
-                            <li class="listItem"><a href="@Url.Action("EGames", "CN")" target="_self">视频扑克</a></li>
-                            <li class="listItem"><a href="@Url.Action("EGames", "CN")" target="_self">现场真人</a></li>
-                            <li class="listItem"><a href="@Url.Action("EGames", "CN")" target="_self">累积游戏</a></li>
+                            <li class="listItem"><a href="@Url.Action("PTGames", "CN")" target="_self">经典老虎机</a></li>
+                            <li class="listItem"><a href="@Url.Action("PTGames", "CN")" target="_self">电动角子老虎机</a></li>
+                            <li class="listItem"><a href="@Url.Action("PTGames", "CN")" target="_self">牌桌和牌游戏</a></li>
+                            <li class="listItem"><a href="@Url.Action("PTGames", "CN")" target="_self">现场真人</a></li>
+                            <li class="listItem"><a href="@Url.Action("PTGames", "CN")" target="_self">视频扑克</a></li>
+                            <li class="listItem"><a href="@Url.Action("PTGames", "CN")" target="_self">街机游戏</a></li>
+                            <li class="listItem"><a href="@Url.Action("PTGames", "CN")" target="_self">刮刮奖</a></li>
+                            <li class="listItem"><a href="@Url.Action("PTGames", "CN")" target="_self">累积游戏</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="button egame@(ViewBag.ActiveMenu == "Dealer" ? " active" : "")">
+                <li class="button egame@(ViewBag.ActiveMenu == "MGGames" ? " active" : "")">
                     <a href="@Url.Action("MGGames", "CN")" target="_self" class="buttonLink"></a>
                     <div class="listContainer">
                         <ul class="list">
-                            <li class="listItem"><a href="@Url.Action("MGGames", "CN")" target="_self">老虎机</a></li>
-                            <li class="listItem"><a href="@Url.Action("MGGames", "CN")" target="_self">特色老虎机</a></li>
-                            <li class="listItem"><a href="@Url.Action("MGGames", "CN")" target="_self">经典老虎机</a></li>
-                            <li class="listItem"><a href="@Url.Action("MGGames", "CN")" target="_self">桌上游戏</a></li>
+                            <li class="listItem"><a href="/CN/MGGames#slogGames" target="_self">老虎机</a></li>
+                            <li class="listItem"><a href="/CN/MGGames#games" target="_self">特色老虎机</a></li>
+                            <li class="listItem"><a href="/CN/MGGames#tableGames" target="_self">经典老虎机</a></li>
+                            <li class="listItem"><a href="/CN/MGGames#classicSlot" target="_self">桌上游戏</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="button sports@(ViewBag.ActiveMenu == "BBINIntro" ? " active" : "")">
+                <li class="button sports@(ViewBag.ActiveMenu == "Live" ? " active" : "")">
                     <a href="@Url.Action("BBINIntro", "CN")" target="_self" class="buttonLink"></a>
                     <div class="listContainer">
                         <ul class="list">
-                            <li class="listItem"><a href="@Url.Action("BBINIntro", "CN")" target="_self">BBIN宝盈平台</a></li>
+                            <li class="listItem"><a href="@Url.Action("BBinIntro", "CN")" target="_self">BBIN宝盈平台</a></li>
                             <li class="listItem"><a href="@Url.Action("MGIntro", "CN")" target="_self">MG真人现场</a></li>
-                            <li class="listItem"><a href="@Url.Action("AGIntro", "CN")" target="_self">PT真人现场</a></li>
+                            <li class="listItem"><a href="@Url.Action("PTIntro", "CN")" target="_self">PT真人现场</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="button vipclub no-sublist@(ViewBag.ActiveMenu == "VIPClub" ? " active" : "")">
+                <li class="button vipclub @(ViewBag.ActiveMenu == "VIPClub" ? " active" : "")">
                     <a href="@Url.Action("VIPClub", "CN")" target="_self" class="buttonLink"></a>
-                    <!-- <div class="listContainer">
+                     <div class="listContainer">
                         <ul class="list">
-                            <li class="listItem"><a href="@Url.Action("VIPClub", "CN")" target="_self">星级首页 VIP Homepage</a></li>
-                            <li class="listItem"><a href="@Url.Action("VIPPrivilege", "CN")" target="_self">VIP特权 Special Privileges</a></li>
-                            <li class="listItem"><a href="@Url.Action("VIPFAQ", "CN")" target="_self">常见问题 FAQs</a></li>
-                            <li class="listItem"><a href="@Url.Action("VIPTerms", "CN")" target="_self">规则条款 Rules and Clauses</a></li>
+                            <li class="listItem"><a href="@Url.Action("VIPClub", "CN")" target="_self">贵宾福利</a></li>
+                            <li class="listItem"><a href="@Url.Action("VIPPrivilege", "CN")" target="_self">贵宾特权</a></li>
+                            <li class="listItem"><a href="@Url.Action("VIPFAQ", "CN")" target="_self">常见问题</a></li>
+                            <li class="listItem"><a href="@Url.Action("VIPTerms", "CN")" target="_self">规则条款</a></li>
                         </ul>
-                    </div>-->
+                    </div>
                 </li>
                 <li class="button promotions no-sublist@(ViewBag.ActiveMenu == "Promotions" ? " active" : "")">
                     <a href="@Url.Action("Promotions", "CN")" target="_self" class="buttonLink"></a>
@@ -163,13 +163,13 @@
                 </li>
                 <li class="button affiliate@(ViewBag.ActiveMenu == "Affiliate" ? " active" : "")">
                     <a href="@Url.Action("Affiliate", "CN")" target="_self" class="buttonLink"></a>
-                    <div class="listContainer end">
+                    <div class="listContainer" style="left:-7px;">
                         <ul class="list">
-                            <li class="listItem"><a href="@Url.Action("Affiliate", "CN")" target="_self">加盟优势 Advantages</a></li>
-                            <li class="listItem"><a href="@Url.Action("AffiliateCommission", "CN")" target="_self">佣金方案 Commission</a></li>
+                            <li class="listItem"><a href="@Url.Action("Affiliate", "CN")" target="_self">大奖优势</a></li>
+                            <li class="listItem"><a href="@Url.Action("AffiliateCommission", "CN")" target="_self">佣金方案</a></li>
                             <!-- <li class="listItem"><a href="@Url.Action("AffiliateGift", "CN")" target="_self">回馈礼金 Cash Gift</a></li> -->
-                            <li class="listItem"><a href="@Url.Action("AffiliateAgreement", "CN")" target="_self">合作协议 Agreement</a></li>
-                            <li class="listItem"><a href="@Url.Action("AffiliateFAQ", "CN")" target="_self">常见问题 FAQs</a></li>
+                            <li class="listItem"><a href="@Url.Action("AffiliateAgreement", "CN")" target="_self">合作协议</a></li>
+                            <li class="listItem"><a href="@Url.Action("AffiliateFAQ", "CN")" target="_self">常见问题</a></li>
                         </ul>
                     </div>
                 </li>
@@ -185,9 +185,9 @@
             <ul class="browser quickLink clearfix">
                 <li>官方推荐浏览器</li>
                 <li><a href="http://windows.microsoft.com/zh-HK/internet-explorer/download-ie" target="_blank"><img src="@ImageServer/Content/Images/footer/browser_social/bs_10.png" alt=""><span class="desc">V.9</span></a></li>
-                <li><a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank"><img src="@ImageServer/Content/Images/footer/browser_social/bs_01.png" alt=""><span class="desc">V.15</span></a></li>
-                <li class="separate"><a href="https://www.google.com/intl/zh-TW/chrome/browser/" target="_blank"><img src="@ImageServer/Content/Images/footer/browser_social/bs_02.png" alt=""><span class="desc">V.12</span></a></li>
-                <li class="separate"><a href="http://get2.adobe.com/flashplayer/" target="_self"><img src="@ImageServer/Content/Images/footer/browser_social/bs_03.png" alt=""><span class="desc">V.10</span></a></li>
+                <li><a href="http://mozilla.com.tw/firefox/new/" target="_blank"><img src="@ImageServer/Content/Images/footer/browser_social/bs_01.png" alt=""><span class="desc">V.15</span></a></li>
+                <li class="separate"><a href="http://browser.qq.com/index_m.html" target="_blank"><img src="@ImageServer/Content/Images/footer/browser_social/bs_12.png" alt=""><span class="desc">V.7</span></a></li>
+                <li class="separate"><a href="http://get2.adobe.com/flashplayer/" target="_blank"><img src="@ImageServer/Content/Images/footer/browser_social/bs_03.png" alt=""><span class="desc">V.10</span></a></li>
                 <li class="separate"><img src="@ImageServer/Content/Images/footer/browser_social/bs_04.png" alt=""><span class="desc">1024x768</span></li>
                 <li class="lessMargin"><a href="#" target="_self"><img src="@ImageServer/Content/Images/footer/browser_social/bs_05.png" alt=""></a></li>
                 <li class="lessMargin"><a href="#" target="_self"><img src="@ImageServer/Content/Images/footer/browser_social/bs_11.png" alt=""></a></li>
@@ -198,7 +198,7 @@
                     <!-- <div class="lineBlock"></div> -->
                     <ul class="footerLogo horizontalList">
                         <li>
-                            <a href="http://www.firstcagayan.com/html/home.php" target="_blank">
+                            <a href="javascript:void(0)">
                                 <img class="normal" src="@ImageServer/Content/Images/footer/logo/logo_1.png"  alt="" />
                                 <img class="hover" src="@ImageServer/Content/Images/footer/logo/logo_1_hover.png" alt="" />
                             </a>
@@ -244,71 +244,63 @@
                     </ul>
                 </li>
             </ul>
-            <ul class="footerMenu quickLink clearfix">
+            <ul class="footerMenu quickLink">
                 <li><a href="@Url.Action("AboutUs", "CN")" target="_self">关于我们</a></li>
                 <li class="separate">|</li>
-                <li><a href="aboutus/faq.html" target="_self">常见问题</a></li>
+                <li><a href="/CN/FAQ#faq" target="_self">常见问题</a></li>
                 <li class="separate">|</li>
-                <li><a href="#" target="_self">加盟合作</a></li>
+                <li><a href="@Url.Action("Affiliate", "CN")" target="_self">加盟合作</a></li>
                 <li class="separate">|</li>
-                <li><a href="#" target="_self">服务条款</a></li>
+                <li><a href="/CN/Contact" target="_self">联系我们</a></li>
                 <li class="separate">|</li>
-                <li><a href="quicklink/duty.html" target="_self">隱私保护</a></li>
+                <li><a href="@Url.Action("Duty", "CN")" target="_self">隱私保护</a></li>
                 <!-- <li class="separate">|</li> -->
                 <!-- <li><a href="quicklink/sitemap.html" target="_self">网站地图</a></li> -->
             </ul>
             <div class="allRightReserved">
                 大奖娱乐官方网站 Copyright © 2010-2015 ptpt8 Online Game. All rights reserved.
             </div>
-            <div class="blank" style="padding-bottom: 2px;">		
-                <!-- GoStats Simple HTML Based Code -->
-                <a target="_blank" title="网站流量统计器" href="http://gostats.cn"><img id="gsimg" alt="网站流量统计器" src="http://c4.gostats.cn/bin/count/a_385038/t_1/i_65/counter.png" style="border-width:0" /></a>
-                <!-- End GoStats Simple HTML Based Code -->
-           </div>
         </div>
     </div>
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date(); a = s.createElement(o),
-  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-45954655-1', 'heji18.com');
-    ga('send', 'pageview');
-
-</script>
-    <!-- Footer End -->
-     @{
-    string officeIp = "|112.199.89.|112.199.88.|180.178.39.|180.178.34.|182.16.5.16|180.178.49.|169.254.207|127.0.0.1|192.168.10.205|192.168.100.109|";
-    string myIP = Heji.Common.Function.IPAddress();
-    string _myid= myIP.Length >10 ?myIP.Substring(0,11):myIP;
-    if (!officeIp.Contains(_myid))
-    {
-            string username = "";
-            string trackHost = "http://192.168.10.16:8000/";
-            if(!myIP.Contains("192.168."))
-            {
-                trackHost = "http://192.168.10.16:8000/";
-            }
-            int trackBrand = 2;//1-欢乐谷 2-和记 3-金狮
-            username = Heji.Web.Helpers.WebFunctions.GetCurrentUsername();
-        <text>
-        <script src="@Html.Raw(trackHost)i.js"></script>
-        <script type="text/javascript" src="@ImageServer/Scripts/jquery.tools.min.js"></script>
-        <div style="width:0px;height:0px;" id="_info_swf"></div>
-        <script>helpUser('@username','@Html.Raw(trackHost)',@trackBrand);</script>
-        </text>
-        }
-    }
-   
+    <script id="loginPopup" type="text/template">
+        <div class="loginPopupWrap">
+            <div class="pull-left loginPopupPanel">
+                <h3>请登入您的账户</h3>
+                @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false", displayCS = "false" })
+            </div>
+            <a href="@Url.Action("Register", "Member")"><div class="pull-left loginPopupButton"></div></a>
+            <div class="clearfix"></div>
+        </div>
+    </script>
+        <!--[if lt IE 7]>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('ul.navigation .button').hover(function () {
+                    $(this).children('.listContainer').show();
+                }, function () {
+                    $(this).children('.listContainer').hide();
+                });
+            });
+        </script>
+        <![endif]-->
     <!-- Live800默认跟踪代码: 开始--> 
+    <script language="javascript" src="http://kf1.learnsaas.com/chat/chatClient/floatButton.js?companyID=17819&configID=50660&codeType=custom"></script>
+    <script language="javascript" src="http://kf1.learnsaas.com/chat/chatClient/monitor.js?companyID=17819&configID=50657&codeType=custom"></script>
     @*<script type="text/javascript" src="http://kf.vipvip2.com/chat/chatClient/monitor.js?companyID=306&configID=9&codeType=custom"></script>*@ 
     <!-- Live800默认跟踪代码: 结束-->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
+        ga('create', 'UA-51461778-1', 'ptpt8.com');
+        ga('send', 'pageview');
+
+    </script>
 </body>
 
 </html>
-<script type="text/javascript">var gsimg= document.getElementById("gsimg");gsimg.style.display = "none"; </script>
-@*<script type="text/javascript">document.write("<" + "script charset='GB2312' language='javascript' src='http://www.w3wp.com/ClientService.asp?website=" + escape(document.location) + "&source=" + escape(document.referrer) + "'></script" + ">");</script>*@

@@ -13,13 +13,14 @@
     ////{
     ////    twidth = 8;
     ////}
-    <div class="block userDetail" style="z-index: 8090; padding: 8px  @(twidth)px;">
+    <div class="block userDetail" style="z-index: 8090;">
 
         <div class="userContainer" style="z-index: 8080;">
 		    <div style="z-index: 8070;">
 			    尊敬的
 			    <span class="bold" style="z-index: 8060;">@Model.CurrentUser.UserName</span>
-			    下午好！
+			    <span class="pull-right">下午好！</span>
+                <div class="clearfix"></div>
 		    </div>
 		    <div style="z-index: 8050;">上次登录：
 			    <span id="date" style="z-index: 8040;">@Model.CurrentUser.LastLoginDate.ToString("yyyy-MM-dd")</span>
@@ -33,8 +34,7 @@
 			    <div class="amount" style="z-index: 7970;">
                 <span class="bold member_balance">@Heji.Web.Helpers.WebFunctions.GetFormattedCurrency(Model.CurrentUser.Balance)</span> 元
                 </div>
-			    <button id="@(Model.CurrentUser.Level == 0 || Model.CurrentUser.Level == 1 ? "shared_deposit" : "shared_logout_deposit")" class="redButton" style="z-index: 9950;height: 40px;padding-top: 7px;"><img src="@ImageServer/Content/Images/member/member_center_deposit.jpg" /></button>
-			    <button id="shared_logout_withdraw" class="redButton" style="z-index: 7940;height: 40px;padding-top: 7px;"><img src="@ImageServer/Content/Images/member/member_center_withdrawing.jpg" /></button>
+			    <button id="@(Model.CurrentUser.Level == 0 || Model.CurrentUser.Level == 1 ? "shared_deposit" : "shared_logout_deposit")" class="redButton" style="z-index: 9950; height: 40px; padding: 0px; margin-right:4px; width:110px;"><img src="@ImageServer/Content/Images/member/member_center_deposit.jpg" /></button><button id="shared_logout_withdraw" class="redButton" style="z-index: 7940; height: 40px; padding: 0; margin:0; width:110px;"><img src="@ImageServer/Content/Images/member/member_center_withdrawing.jpg" /></button>
                 <a class="member-center" href="@Url.Action("Index", "Member")" target="_self"><img src="@ImageServer/Content/Images/member/member_center.jpg" /></a>
 			    <button id="shared_logout" class="darkGreyButton" style="z-index: 7930;">安全退出</button>
 		    </div>
@@ -42,8 +42,12 @@
     </div>
     @* Xmas Event : 判斷客服圖檔顯示。北京时间2013年12月23日12:00 - 2013年12月30日12:00。時間過了可移除 *@
     //if (!Request.Url.AbsoluteUri.ToLower().Contains("/events/xmas"))
-    //{  
-        <div class="block service"><a><img src="@ImageServer/Content/Images/home/home_online_services_btn_2.jpg" alt=""></a></div>                                                                                                   
+    //{ 
+
+        <div class="block">
+            <a id="freeTrialButton" href="@ImageServer/download/大奖娱乐.exe" target="_self"></a>
+        </div>
+
     //}
 }
 else
@@ -52,7 +56,7 @@ else
         <a id="registrationButton" href="@Url.Action("Register", "Member")" target="_self"></a>
     </div>
     <div class="block">
-        <a id="freeTrialButton" href="@Url.Action("free", "CN")" target="_self"></a>
+        <a id="freeTrialButton" href="@ImageServer/download/大奖娱乐.exe" target="_self"></a>
     </div>
     <div class="block loginWrap">
         <ul class="loginPanel">

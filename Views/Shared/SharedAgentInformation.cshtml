@@ -7,14 +7,20 @@
 }
 <div class="rightContent">
     <div class="block userDetail">
-        <p>尊敬的 @Model.Agent.Username 下午好！<br/>上次登录：@Model.Agent.lastLogindate.ToString("yyyy-MM-dd HH:mm:ss")</p>
+        <p>尊敬的 @Model.Agent.Username <span class="pull-right">下午好！</span><div class="clearfix"></div><br/>上次登录：@Model.Agent.lastLogindate.ToString("yyyy-MM-dd HH:mm:ss")</p>
         <div class="lineBlock"></div>
-        <p><span class="grey">推广网址：</span>http://@(Model.Agent.sitecode).heji700.com</p>
-        <p><span class="grey">上次登录IP：</span>@Model.Agent.lastloginIp</p>
-        <p><span class="grey">本月活跃人数：</span>@(Model.HYnum.num)人</p>
+        <p><span class="grey">推广网址：</span>http://@(Model.Agent.sitecode).ddj118.com</p>
+        <!-- <p><span class="grey">上次登录IP：</span>@Model.Agent.lastloginIp</p> -->
         <p><span class="grey">代理玩家总人数：</span>@(Model.allNum.allNum)人</p>
+        <p><span class="grey">本月活跃人数：</span>@(Model.activeNumber.num)人</p>
+        @*<p><span class="grey">佣金余额：</span>1888.88元</p>*@
         <a href="#" target="_self" id="btn_agent_center"></a>
         <a href="@Url.Action("Logout", "Agent")" target="_self"><img src="@ImageServer/Content/Images/center/center_logout.jpg" /></a>
     </div>
-    <div class="block service"><a href="" target="_self"><img src="@ImageServer/Content/Images/member/01_06.jpg" alt=""></a></div>
+    <div class="lineBlock"></div>
+    <img src="@ImageServer/Content/Images/quicklink/client-hotliine.jpg" alt="">
+    <div class="lineBlock"></div>
+    <img src="@ImageServer/Content/Images/quicklink/manager-interview.jpg" alt="">
+    <div class="lineBlock"></div>
+    @*<div class="block service"><a href="" target="_self"><img src="@ImageServer/Content/Images/member/01_06.jpg" alt=""></a></div>*@
 </div>

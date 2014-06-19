@@ -7,7 +7,7 @@
 {
     <div class="block userDetail">
         <div>
-            尊敬的 <span class="bold">@Model.CurrentUser.UserName</span> 下午好！
+            尊敬的 <span class="bold">@Model.CurrentUser.UserName</span> <span class="pull-right">下午好！</span><div class="clearfix"></div>
         </div>
         <div>
             上次登录： <span id="date">@Model.CurrentUser.LastLoginDate.ToString("yyyy-MM-dd")</span> <span id="time">@Model.CurrentUser.LastLoginDate.ToString("HH:mm:ss")</span>
@@ -24,9 +24,7 @@
                 <span class="bold member_balance">@Heji.Web.Helpers.WebFunctions.GetFormattedCurrency(Model.CurrentUser.Balance)</span> 元</div>
 
 
-           <button id="@(Model.CurrentUser.Level == 0 || Model.CurrentUser.Level == 1 ? "shared_deposit" : "shared_logout_deposit")" class="redButton" style="z-index: 9950;height: 40px;padding-top: 7px;"><img src="@ImageServer/Content/Images/member/member_center_deposit.jpg" /></button>
-           
-           <button id="shared_logout_withdraw" class="redButton" style="z-index: 7940;height: 40px;padding-top: 7px;"><img src="@ImageServer/Content/Images/member/member_center_withdrawing.jpg" /></button>
+           <button id="@(Model.CurrentUser.Level == 0 || Model.CurrentUser.Level == 1 ? "shared_deposit" : "shared_logout_deposit")" class="redButton" style="z-index: 9950; height: 40px; padding:0; margin-right:4px;"><img src="@ImageServer/Content/Images/member/member_center_deposit.jpg" /></button><button id="shared_logout_withdraw" class="redButton" style="z-index: 7940;height: 40px; padding:0; margin:0;"><img src="@ImageServer/Content/Images/member/member_center_withdrawing.jpg" /></button>
 
             
 
@@ -38,28 +36,32 @@
         </div>
     </div>
     
-    @*<a href="http://67.198.160.58/chat/chatClient/chatbox.jsp?companyID=306&configID=9&enterurl=@Request.Url.Host" target="_blank" class="client-popup">*@<div class="block downloadClient"></div>@*</a>*@
+    <a href="http://kf1.learnsaas.com/chat/chatClient/chatbox.jsp?companyID=17819&jid=&enterurl=@Request.Url.Host" target="_blank" class="client-popup"><div class="block downloadClient"></div></a>
     
-if (Model.DisplayCS)
+    if (Model.DisplayCS)
     {
-    <div class="block service"><a><img src="@ImageServer/Content/Images/member/01_06.jpg" alt=""></a></div>
-    }   
+        <div class="block"><a href="@Url.Action("PTGames", "CN")"><img src="@ImageServer/Content/Images/company/2_15.jpg" alt=""></a></div>
+        <div class="block"><a href="@Url.Action("MGGames", "CN")"><img src="@ImageServer/Content/Images/company/2_17.jpg" alt=""></a></div>
+        <div class="block"><a href="@Url.Action("BBinIntro", "CN")"><img src="@ImageServer/Content/Images/company/2_18.jpg" alt=""></a></div>
+    }
     if (Model.DisplayPlatforms)
     {
-    <div class="block"><a href="@Url.Action("Enter", "Game", new { platform = "3" })" target="_blank"><img src="@ImageServer/Content/Images/company/2_15.jpg" alt=""></a></div>
-    <div class="block"><a href="@Url.Action("Enter", "Game", new { platform = "0" })" target="_blank"><img src="@ImageServer/Content/Images/company/2_17.jpg" alt=""></a></div>
-    <div class="block"><a href="@Url.Action("Enter", "Game", new { platform = "2" })" target="_blank"><img src="@ImageServer/Content/Images/company/2_19.jpg" alt=""></a></div>
-    <div class="block"><a href="@Url.Action("Enter", "Game", new { platform = "1" })" target="_blank"><img src="@ImageServer/Content/Images/company/2_26.jpg" alt=""></a></div>
-    <div class="block"><a href="@Url.Action("EnterMG", "Game", new { platform = "4", gameId = "", gameType = "2" })" target="_blank"><img src="@ImageServer/Content/Images/company/2_18.jpg" alt=""></a></div>
-    <div class="block"><a href="@Url.Action("EGames", "CN")" target="_blank"><img src="@ImageServer/Content/Images/company/2_28.jpg" alt=""></a></div>
+        @*<div class="block"><a href="/CN/Promotions#p1"><img src="@ImageServer/Content/Images/company/right_banner1.jpg" alt=""></a></div>*@
+        <div class="block"><a href="/CN/Promotions#p2"><img src="@ImageServer/Content/Images/company/right_banner2.jpg" alt=""></a></div>
+        <div class="block"><a href="/CN/Promotions#p3"><img src="@ImageServer/Content/Images/company/right_banner3.jpg" alt=""></a></div>
+        <div class="block"><a href="/CN/Promotions#p4"><img src="@ImageServer/Content/Images/company/right_banner6.jpg" alt=""></a></div>
+        <div class="block"><a href="/CN/Promotions#p5"><img src="@ImageServer/Content/Images/company/right_banner4.jpg" alt=""></a></div>
+        <div class="block"><a href="/CN/Promotions#p6"><img src="@ImageServer/Content/Images/company/right_banner5.jpg" alt=""></a></div>
+        <div class="block"><a href="/CN/Promotions#p7"><img src="@ImageServer/Content/Images/company/right_banner7.jpg" alt=""></a></div>
+        @*<div class="block"><a href="/CN/Promotions#p8"><img src="@ImageServer/Content/Images/company/right_banner8.jpg" alt=""></a></div>*@
     }
 }
 else
 {
     <ul class="horizontalList clearfix rightThreeBtn">
-        <li class="borderRight"><a href="@Url.Action("Register", "Member")" class="btnReg"></a></li>
+        <li><a href="@Url.Action("Register", "Member")" class="btnReg"></a></li>
         <!--<li class="borderRight"><a href="#" target="_self" class="onlineService"></a></li>-->
-        <li><a href="@Url.Action("free", "CN")" target="_self" class="freeTrial"></a></li>
+        <li><a href="@ImageServer/download/大奖娱乐.exe" target="_self" class="freeTrial"></a></li>
     </ul>
     <div class="block loginWrap">
         <ul class="loginPanel">
@@ -69,7 +71,7 @@ else
 
             <li><input type="password"  placeholder="密码"  name="password" id="password" /></li>
             <li>
-                <div id="shared_login" class="redArrow pull-left"><a style="color: #e4272a;" id="shared_login_link" href="javascript: void(0);">登录</a></div>
+                <div id="shared_login" class="redArrow pull-left"><a id="shared_login_link" href="javascript: void(0);">登录</a></div>
                 <div id="shared_login_loader" class="pull-left" style="color: Red; display: none;">
                     <img src="@ImageServer/Content/Images/ajax-loader.gif" style="vertical-align: baseline;" alt="" />
                 </div>
@@ -81,17 +83,20 @@ else
     <!--@*<a href="http://67.198.160.58/chat/chatClient/chatbox.jsp?companyID=306&configID=9&enterurl=@Request.Url.Host" target="_blank" class="client-popup">*@<div class="block downloadClient"></div>@*</a>*@-->
     if (Model.DisplayCS)
     {
-    <!-- <div class="block service"><a><img src="@ImageServer/Content/Images/member/01_06.jpg" alt=""></a></div> -->
+        <div class="block"><a href="@Url.Action("PTGames", "CN")"><img src="@ImageServer/Content/Images/company/2_15.jpg" alt=""></a></div>
+        <div class="block"><a href="@Url.Action("MGGames", "CN")"><img src="@ImageServer/Content/Images/company/2_17.jpg" alt=""></a></div>
+        <div class="block"><a href="@Url.Action("BBinIntro", "CN")"><img src="@ImageServer/Content/Images/company/2_18.jpg" alt=""></a></div>
     }
     if (Model.DisplayPlatforms)
     {
-    <div class="block"><a href="@Url.Action("Promotions", "CN")"><img src="@ImageServer/Content/Images/company/right_banner1.jpg" alt=""></a></div>
-    <div class="block"><a href="@Url.Action("Promotions", "CN")"><img src="@ImageServer/Content/Images/company/right_banner2.jpg" alt=""></a></div>
-    <div class="block"><a href="@Url.Action("Promotions", "CN")"><img src="@ImageServer/Content/Images/company/right_banner3.jpg" alt=""></a></div>
-    <div class="block"><a href="@Url.Action("Promotions", "CN")"><img src="@ImageServer/Content/Images/company/right_banner4.jpg" alt=""></a></div>
-    <!-- <div class="block"><a href="@Url.Action("MGIntro", "CN")"><img src="@ImageServer/Content/Images/company/2_18.jpg" alt=""></a></div>
-    <div class="block"><a href="@Url.Action("EGames", "CN")"><img src="@ImageServer/Content/Images/company/2_28.jpg" alt=""></a></div>
-    <div class="block"><a href="@Url.Action("Sports", "CN")"><img src="@ImageServer/Content/Images/company/2_28a.jpg" alt=""></a></div> -->
+        @*<div class="block"><a href="/CN/Promotions#p1"><img src="@ImageServer/Content/Images/company/right_banner1.jpg" alt=""></a></div>*@
+        <div class="block"><a href="/CN/Promotions#p2"><img src="@ImageServer/Content/Images/company/right_banner2.jpg" alt=""></a></div>
+        <div class="block"><a href="/CN/Promotions#p3"><img src="@ImageServer/Content/Images/company/right_banner3.jpg" alt=""></a></div>
+        <div class="block"><a href="/CN/Promotions#p4"><img src="@ImageServer/Content/Images/company/right_banner6.jpg" alt=""></a></div>
+        <div class="block"><a href="/CN/Promotions#p5"><img src="@ImageServer/Content/Images/company/right_banner4.jpg" alt=""></a></div>
+        <div class="block"><a href="/CN/Promotions#p6"><img src="@ImageServer/Content/Images/company/right_banner5.jpg" alt=""></a></div>
+        <div class="block"><a href="/CN/Promotions#p7"><img src="@ImageServer/Content/Images/company/right_banner7.jpg" alt=""></a></div>
+        @*<div class="block"><a href="/CN/Promotions#p8"><img src="@ImageServer/Content/Images/company/right_banner8.jpg" alt=""></a></div>*@
     }
 }
 

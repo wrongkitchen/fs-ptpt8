@@ -22,34 +22,34 @@
     }
 
 }
-  <table class="gameMessage">
-                        <tr>
-                            <td colspan="8" width="100%">
-                                <div class="title">
-                                    <div class="pull-left heading">游戏信息</div>
-                                    <div class="pull-right detail"></div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="columnTitle">
-                            <td>上一次游戏</td>
-                            <td>保底洗码比例</td>
-                            <td>上周有效投注额</td>
-                            <td>本周有效投注额</td>
-                            <td>晋级所需</td>
-                            <td>总红利 </td>
-                            <td>最近一次存款</td>
-                            <td>最近一次取款</td>
-                        </tr>
-                        <tr class="columnData">
-                            <td><a @str>@(string.IsNullOrEmpty(Model.LastStay) ? "尚未进行游戏" : Model.LastStay)</a></td>
-                            <td>@Model.bonusRate.BBinLiveRate%</td>
-                            <td>@ViewBag.lastWeekBet</td>
-                            <td>@ViewBag.thisWeekBet</td>
-                            <td>@ViewBag.intJjsxje</td>
-                            <td>@(Model.Hl != null ? Heji.Web.Helpers.WebFunctions.GetFormattedCurrency(Math.Abs(Model.Hl.Amount)) : "0")</td>
-                            <td>@(Model.LatestDeposit != null ? Heji.Web.Helpers.WebFunctions.GetFormattedCurrency(Math.Abs(Model.LatestDeposit.Amount)) : "未存款")</td>
-                            <td>@(Model.LatestWithdraw != null ? Heji.Web.Helpers.WebFunctions.GetFormattedCurrency(Math.Abs(Model.LatestWithdraw.Amount)) : "未取款")</td>
-                        </tr>
-                    </table>
+<table class="gameMessage">
+    <tr>
+        <td colspan="8" width="100%">
+            <div class="title">
+                <div class="pull-left heading">游戏信息</div>
+                <div class="pull-right detail"></div>
+                <div class="clearfix"></div>
+            </div>
+        </td>
+    </tr>
+    <tr class="columnTitle">
+        <td>上一次游戏</td>
+        <td>保底洗码比例</td>
+        <td>上周有效投注额</td>
+        <td>本周有效投注额</td>
+        <td>晋级所需</td>
+        <td>总红利 </td>
+        <td>最近一次存款</td>
+        <td>最近一次取款</td>
+    </tr>
+    <tr class="columnData">
+        <td><a @str>@(string.IsNullOrEmpty(Model.LastStay) ? "尚未进行游戏" : Model.LastStay)</a></td>
+        <td>@Model.bonusRate.BBinLiveRate%</td>
+        <td>@ViewBag.lastWeekBet</td>
+        <td>@ViewBag.thisWeekBet</td>
+        <td>@ViewBag.intJjsxje</td>
+        <td>@(Model.Hl != null ? Heji.Web.Helpers.WebFunctions.GetFormattedCurrency(Math.Abs(Model.Hl.Amount)) : "0")</td>
+        <td>@(Model.LatestDeposit != null ? Heji.Web.Helpers.WebFunctions.GetFormattedCurrency(Math.Abs(Model.LatestDeposit.Amount)) : "未存款")</td>
+        <td>@(Model.LatestWithdraw != null ? Heji.Web.Helpers.WebFunctions.GetFormattedCurrency(Math.Abs(Model.LatestWithdraw.Amount)) : "未取款")</td>
+    </tr>
+</table>
