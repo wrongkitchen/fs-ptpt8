@@ -1,0 +1,121 @@
+﻿@{
+    Layout = null;
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+}
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>进入游戏 - 大奖娱乐官方网站</title>
+<style>
+body 
+{
+    background-color: Gray;
+}
+
+.imageContainer{
+        position: absolute;
+        width: 210px; /*the image width*/
+        height: 117px; /*the image height*/
+        left: 50%;
+        top: 50%;
+        margin-left: -105px; /*half the image width*/
+        margin-top: -60px; /*half the image height*/
+    }
+</style>
+<link rel="stylesheet" href="@ImageServer/Content/Styles/jquery.alerts.css" />
+<script type="text/javascript" src="http://cache.download.banner.turtledragon88.com/integrationjs.php"></script>
+<script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery.alerts.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            type: "post",
+            url: "/Game/Enter",
+            data: {
+                platform: "@ViewBag.Platform",
+                gameId: "@ViewBag.gameId"
+            },
+            beforeSend: function () {
+            },
+            complete: function () {
+            },
+            success: function (data) {
+                if (data.IsLoggedIn == false) {
+                    jAlert("登录超时，请重新登录", "登录超时", function () {
+                        location.reload();
+                    });
+                } else {
+                    if (data.Result == true) {
+                        document.getElementById("url").value = data.LoginUrl;
+                        //jAlert(document.getElementById("url").value, "网站维护，请使用客户端进行游戏");
+                        document.getElementById("username").value = data.User.PTUser;
+                        document.getElementById("password").value = data.User.GamePassword;
+                        document.getElementById("login").click();
+                        //location.href = data.LoginUrl;
+                    } else {
+                        jAlert(data.ResultMsg, "进入游戏", function () {
+                            window.close();
+                        });
+                    }
+                }
+            },
+            error: function () {
+            }
+        });
+    });
+    
+    iapiSetCallout('Login', calloutLogin);
+    iapiSetCallout('Logout', calloutLogout);
+
+//    function showclick() {
+//        document.getElementById("login").click();
+//    }
+
+    function login(realMode) {
+        //if (confirm("确定进入游戏？" + document.getElementById("loginform").username.value.toUpperCase() + document.getElementById("loginform").password.value))
+        iapiLogin(document.getElementById("loginform").username.value.toUpperCase(), document.getElementById("loginform").password.value, realMode, "en");
+    }
+
+    function logout(allSessions, realMode) {
+        iapiLogout(allSessions, realMode);
+    }
+
+    function calloutLogin(response) {
+        if (response.errorCode) {
+            alert("Login failed, " + response.errorText);
+        }
+        else {
+            //window.open(this.href, 'mywin', 'width=800,height=600,toolbar=0,resizable=0,location=no')
+            //window.location = "http://cache.download.banner.turtledragon88.com/casinoclient.html?game=bal&language=ZH-CN&nolobby=1";
+            //if (confirm("确定进入游戏？" + document.getElementById("url").value))
+                location.href = document.getElementById("url").value;
+            //window.location = document.getElementById("url").value;
+        }
+    }
+
+    function calloutLogout(response) {
+        if (response.errorCode) {
+            alert("Logout failed, " + response.errorCode);
+        }
+        else {
+            delete_cookie();
+        }
+    }
+</script>
+</head>
+<body>
+
+<form id="loginform">
+    <input type="text" id= "username" name="username" style="display: none">
+    <input type="text" id= "password" name="password" style="display: none">
+    <input type="text" id= "url" name="url" style="display: none">
+</form>
+<input id="login" type="submit" value="Login" onclick="login(1)" style="display: none">
+<button onclick="logout(1,1)" style="display: none">Logout</button>
+    <div class="imageContainer">
+        <img src="@ImageServer/Content/Images/loading_platform.gif")" alt="" width="210" height="117" />
+    </div>
+</body>
+</html>
