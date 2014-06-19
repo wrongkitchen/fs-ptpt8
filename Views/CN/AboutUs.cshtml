@@ -1,6 +1,6 @@
 ﻿@using Heji.Web.Helpers
 @{
-    ViewBag.Title = "关于我们 - 和记娱乐官方网站";
+    ViewBag.Title = "关于我们 - 大奖娱乐官方网站";
     Layout = "~/Views/Shared/_CNLayout.cshtml";
     string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
 
@@ -86,22 +86,26 @@
                    <br/>
                    
                     <table class="more_actions">
-                    	@if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
-                        {
                             <tr>
                                 <td>
+                                @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                                {
                                     <a class="greyButton" href="@Url.Action("Register", "Member")">免费开户 &gt;</a>
+                                }
+                                else
+                                {
+                                    <a class="greyButton" href="@Url.Action("Register", "Member")">立即存款 &gt;</a> 
+                                }
                                 </td>
                                 <td>
-                                    <a target="_blank" class="greyButton" href="@Url.Action("TrialEnter", "Game", new { platform = "2" })">免费试玩 &gt;</a>
+                                    <a class="greyButton" href="@ImageServer/download/大奖娱乐.exe">下载客户端 &gt;</a>
                                 </td>
                             </tr>
-                        }
                     </table>
                 </div>
             </div>
             <div class="rightContent">
-                @Html.Action("SharedLogin", "CN")
+                @Html.Action("SharedLogin", "CN",new { displayCS = "false" })
             </div>
             <div class="clearfix"></div>
         </div>

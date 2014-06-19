@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Heji.Web.Helpers
+@{
     ViewBag.Title = "常见问题 - VIP俱乐部 - 大奖娱乐官方网站";
     Layout = "~/Views/Shared/_CNLayout.cshtml";
     string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
@@ -12,56 +13,65 @@
         <div class="leftRightContent">
             <div class="leftContent">
                 <ul id="vipNav" class="sectionNav transparent black">
-                    <li class="first button"><a href="@Url.Action("VIPClub", "CN")" target="_self">星级首页</a></li>
+                    <li class="first button"><a href="@Url.Action("VIPClub", "CN")" target="_self">贵宾福利</a></li>
                     <li class="separate">|</li>
-                    <li class="button"><a href="@Url.Action("VIPPrivilege", "CN")" target="_self">VIP特权</a></li>
+                    <li class="button"><a href="@Url.Action("VIPPrivilege", "CN")" target="_self">贵宾特权</a></li>
                     <li class="separate">|</li>
                     <li class="button active"><a href="@Url.Action("VIPFAQ", "CN")" target="_self">常见问题</a></li>
                     <li class="separate">|</li>
                     <li class="button"><a href="@Url.Action("VIPTerms", "CN")" target="_self">规则条款</a></li>
                 </ul>
                 <div class="banner">
-                    <img src="@ImageServer/Content/Images/vip/faq_03.jpg" alt="" />
+                    <img src="@ImageServer/Content/Images/vip/club_03.jpg" alt="" />
                 </div>
                 <div class="article vip-faq">
                     <h4 class="red">星级俱乐部常见问题</h4><br />
                     <ul class="numListPoint">
                         <li class="num1">
-                            <div class="red">如何加入和记娱乐星级俱乐部？</div>
-                            成为和记娱乐星级会员非常之简单，只要在和记娱乐的遊戏中进行过投注即可。
+                            <div class="red">如何提高大奖娱乐贵宾会员等级？</div>
+                            大奖娱乐对会员等级的晋升有一定的要求，每一个级别所需的要求各不相同，一周内（北京时间每周一中午12:00至下周一中午12:00）只需完成相应级别所需有效投注额要求即可完成晋升。
                         </li>
                         <li class="num2">
-                            <div class="red">星级会员是否需要收取费用？</div>
-                            和记娱乐星级会员不收取任何费用。
+                            <div class="red">如何查询自己的贵宾会员等级？</div>
+                            登录大奖娱乐会员账号，进入会员中心即可自助查看贵宾会员级别，也可联系客服进行查询。
                         </li>
                         <li class="num3">
-                            <div class="red">加入和记娱乐星级俱乐部可以享受什麽样的待遇？</div>
-                            (1)遊戏上：享受相应星级的保底洗码比例，更可获得星级升级礼金，最高可达6,000元。<br />
-                            (2)服务上：绿色存取款高速通道、一对一专属客服服务，7x24小时无间歇、预约专人客户经理回访等。<br />
-                            (3)生活上：达到相应条件后可申请澳门/菲律宾豪华游，让您实地感受澳门、菲律宾的实体贵宾厅娱乐。
+                            <div class="red">大奖娱乐贵宾有哪些特权？</div>
+                            高额洗码、晋级礼金、周年礼金、奢华旅游、7x24小时优质客户服务应有尽有，具体请查看贵宾会页面或联系客服进行咨询。
                         </li>
                         <li class="num4">
-                            <div class="red">如何提高星级级别？</div>
-                            一周内（北京时间每周一中午12:00至下週一中午12:00）有效投注额达到晋升级别，即可晋升更高的星级，享受更多专属优惠和奖励。
+                            <div class="red">是否可以终身享受大奖娱乐贵宾会员所提供的特权？</div>
+                            一旦成为大奖娱乐贵宾会员，即可终生享有所有特权服务，一次加入终身受益。
                         </li>
                         <li class="num5">
-                            <div class="red">如何查询星级级别？</div>
-                            您只需要登录和记娱乐“会员中心”即可查看到您的星级级别。
-                        </li>
-                        <li class="num6">
-                            <div class="red">星级身份是否终身享受？</div>
-                            和记娱乐星级会员身份是永久性的。
+                            <div class="red">还会有更多贵宾特权开放吗？</div>
+                            大奖娱乐会定期针对网站整体运营情况及不断收集会员的意见建议对特权及服务做出调整，使大奖娱乐贵宾会员不断拥有更多特权及更好的服务。
                         </li>
                     </ul>
+
+                    <br /><br />
+                <table class="more_actions">
+                    <tr>
+                        <td>
+                        @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                        {
+                            <a class="greyButton" href="@Url.Action("Register", "Member")">免费开户 &gt;</a>
+                        }
+                        else 
+                        {
+                            <a class="greyButton" href="@Url.Action("Index", "Member")">立即存款 &gt;</a>
+                        }
+                        </td>
+                        <td>
+                            <a class="greyButton" href="@ImageServer/download/大奖娱乐.exe">下载客户端 &gt;</a>
+                        </td>
+                    </tr>
+                </table>
                 </div>
+
             </div>
             <div class="rightContent">
-                @Html.Action("SharedLogin", "CN", new { displayCS = "false", displayPlatforms = "false" })
-                 <div class="block"><img src="/Content/Images/member/01_06.jpg" alt=""></a></div>
-                 <div class="block"><a href="/CN/Promotions#p2"><img src="/Content/Images/home/huodong02.jpg" alt=""></a></div>
-                 <div class="block"><a href="/CN/Promotions#p3"><img src="/Content/Images/home/huodong03.jpg" alt=""></a></div>
-                 <div class="block"><a href="/CN/Promotions#p4"><img src="/Content/Images/home/huodong04.jpg" alt=""></a></div>
-                 <div class="block"><a href="/CN/Promotions#p5"><img src="/Content/Images/home/huodong05.jpg" alt=""></a></div>
+                @Html.Action("SharedLogin", "CN", new { displayCS = "false" })
             </div>
             <div class="clearfix"></div>
         </div>

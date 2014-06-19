@@ -24,14 +24,21 @@
     
     </script>
 }
+@if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername())){
+
+} else {
+    <style>
+        .leftRightContent.gamesList .leftContent{ margin-top:-35px !important; }
+    </style>
+}
 <div id="wrapper">
     <div class="container">
-        <div class="leftRightContent">
+        <div class="leftRightContent" style="position:static">
             <div class="leftContent">
                 <div class="gamePanel">
-                    <ul>
-                        <li>
-                            经典老虎机
+                    <ul class="firstList">
+                        <li class="redArrow">
+                            <a href="#">经典老虎机</a>
                             <ul class="subList">
                                 <li><a href="#">古怪猴子</a></li>
                                 <li><a href="#">疯狂之七</a></li>
@@ -47,10 +54,10 @@
                                 <li><a href="#">丛林摇摆</a></li>
                             </ul>
                         </li>
-                        <li>
-                            电动角子老虎机
+                        <li class="redArrow">
+                            <a href="#">电动角子老虎机</a>
                             <ul class="subList">
-                                <li>
+                                <li class="redArrow">
                                     奇迹大奖
                                     <ul class="thirdList">
                                         <li><a href="#">钢铁侠3</a></li>
@@ -66,7 +73,7 @@
                                         <li><a href="#">幽灵骑士</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="redArrow">
                                     5-10条线
                                     <ul class="thirdList">
                                         <li><a href="#">高速公路之王</a></li>
@@ -82,7 +89,7 @@
                                         <li><a href="#">玩转华尔街</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="redArrow">
                                     15-20条线
                                     <ul class="thirdList">
                                         <li><a href="#">圣诞惊喜</a></li>
@@ -106,7 +113,7 @@
                                         <li><a href="#">刀锋战士</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="redArrow">
                                     25+线
                                     <ul class="thirdList">
                                         <li><a href="#">深海之蓝</a></li>
@@ -129,7 +136,7 @@
                                         <li><a href="#">罗马角斗士</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="redArrow">
                                     多旋转
                                     <ul class="thirdList">
                                         <li><a href="#">海洋公主</a></li>
@@ -139,7 +146,7 @@
                                         <li><a href="#">地妖之穴</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="redArrow">
                                     累积
                                     <ul class="thirdList">
                                         <li><a href="#">高速公路之王</a></li>
@@ -167,10 +174,10 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            牌桌和牌游戏
+                        <li class="redArrow">
+                            <a href="#">牌桌和牌游戏</a>
                             <ul class="subList">
-                                <li>
+                                <li class="redArrow">
                                     21点
                                     <ul class="thirdList">
                                         <li><a href="#">决斗21点</a></li>
@@ -182,7 +189,7 @@
                                         <li><a href="#">英式21点</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="redArrow">
                                     其他
                                     <ul class="thirdList">
                                         <li><a href="#">加勒比海扑克</a></li>
@@ -196,9 +203,9 @@
                                         <li><a href="#">龙舌兰扑克</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="redArrow">
                                     轮盘赌
-                                    <ul class="thirdList">
+                                    <ul class="thirdList" style="top:auto; bottom:-100px;">
                                         <li><a href="#">3D轮盘</a></li>
                                         <li><a href="#">美式轮盘</a></li>
                                         <li><a href="#">超级轮盘</a></li>
@@ -213,47 +220,47 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            现场真人
+                        <li class="redArrow">
+                            <a href="#">现场真人</a>
                             <ul class="subList">
-                                <li>
+                                <li class="redArrow">
                                     真人百家乐
                                     <ul class="thirdList">
                                         <li><a href="#">7 SEAT BACCARAT LIVE</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="redArrow">
                                     真人21点
                                     <ul class="thirdList">
                                         <li><a href="#">现场21点</a></li>
                                         <li><a href="#">多人21点</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="redArrow">
                                     实况法式轮盘赌
                                     <ul class="thirdList">
                                         <li><a href="#">多手法式轮盘</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="redArrow">
                                     迷你百家乐
                                     <ul class="thirdList">
                                         <li><a href="#">迷你百家乐</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="redArrow">
                                     真人轮盘
                                     <ul class="thirdList">
                                         <li><a href="#">现场法式轮盘</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="redArrow">
                                     真人骰子
                                     <ul class="thirdList">
                                         <li><a href="#">现场骰宝</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="redArrow">
                                     VIP百家乐
                                     <ul class="thirdList">
                                         <li><a href="#">VIP百家乐</a></li>
@@ -261,8 +268,8 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            视频扑克
+                        <li class="redArrow">
+                            <a href="#">视频扑克</a>
                             <ul class="subList">
                                 <li><a href="#">4线百搭2</a></li>
                                 <li><a href="#">4线对J高手</a></li>
@@ -275,10 +282,10 @@
                                 <li><a href="#">对十高手</a></li>
                             </ul>
                         </li>
-                        <li>
-                            街机游戏
+                        <li class="redArrow">
+                            <a href="#">街机游戏</a>
                             <ul class="subList">
-                                <li>
+                                <li class="redArrow">
                                     基诺&数字
                                     <ul class="thirdList">
                                         <li><a href="#">环游世界</a></li>
@@ -291,19 +298,19 @@
                                         <li><a href="#">猜扑克牌游戏奖池</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="redArrow">
                                     老虎机&牌
                                     <ul class="thirdList">
                                         <li><a href="#">硬币投掷游戏</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="redArrow">
                                     牌桌&牌
                                     <ul class="thirdList">
                                         <li><a href="#">迷你轮盘</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="redArrow">
                                     运动&虚拟
                                     <ul class="thirdList">
                                         <li><a href="#">点球大战</a></li>
@@ -314,9 +321,9 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            刮刮奖
-                            <ul class="subList">
+                        <li class="redArrow">
+                            <a href="#">刮刮奖</a>
+                            <ul class="subList" style="top:auto; bottom:-100px;">
                                 <li><a href="#">3个小丑</a></li>
                                 <li><a href="#">甲壳虫宾果</a></li>
                                 <li><a href="#">21点刮刮卡</a></li>
@@ -331,12 +338,12 @@
                                 <li><a href="#">顶级王牌</a></li>
                             </ul>
                         </li>
-                        <li>
-                            累计游戏
+                        <li class="redArrow">
+                            <a href="#">累积游戏</a>
                             <ul class="subList">
-                                <li>
+                                <li class="redArrow">
                                     吃角子老虎机游戏
-                                    <ul class="thirdList">
+                                    <ul class="thirdList" style="top:auto; bottom:-100px;">
                                         <li><a href="#">狂欢夜</a></li>
                                         <li><a href="#">粉红豹</a></li>
                                         <li><a href="#">疯狂乐透</a></li>
@@ -355,9 +362,9 @@
                                         <li><a href="#">罗马角斗士</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="redArrow">
                                     奇迹大奖
-                                    <ul class="thirdList">
+                                    <ul class="thirdList" style="top:auto; bottom:0;">
                                         <li><a href="#">刀锋战士</a></li>
                                         <li><a href="#">X战警</a></li>
                                         <li><a href="#">复仇者联盟</a></li>
@@ -371,9 +378,9 @@
                                         <li><a href="#">超胆侠</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="redArrow">
                                     其他
-                                    <ul class="thirdList">
+                                    <ul class="thirdList" style="top:auto; bottom:0;">
                                         <li><a href="#">百万幸运球</a></li>
                                         <li><a href="#">STRAVAGANZA</a></li>
                                         <li><a href="#">现场百家乐</a></li>
@@ -387,13 +394,15 @@
                     </ul>
                 </div>
                 <div class="banner">
-                    <img src="@ImageServer/Content/Images/egames/egames_03.jpg" alt="" />
-                    <ul id="egamesNav" class="sectionNav transparent black">
+                    <div class="imgWrapper">
+                        <img src="@ImageServer/Content/Images/egames/egames_03.jpg" alt="" />
+                    </div>
+                    <!-- <ul id="egamesNav" class="sectionNav transparent black">
                         <li class="first button active"><a href="@Url.Action("EGames", "CN")" target="_self">
                             游戏大厅</a></li>
                         <li class="separate">|</li>
                         <li class="button"><a href="@Url.Action("EGamesIntro", "CN")" target="_self">电子游艺介紹</a></li>
-                    </ul>
+                    </ul> -->
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -406,18 +415,40 @@
         <div class="leftRightContent gamesList">
             <div class="leftContent">
                 
-                <div class="gameListMainTitle">热门游戏 － 下方列出最多5个热门游戏</div>
+                <div class="gameListMainTitle pull-left">热门游戏</div>
 
-                <table width="100%" valign='top'>
+                <div class="prizeNumberTable pull-right">
+                    <table>
+                        <tr>
+						
+						
+					
+                            <td class="biggerText">	 <img src="@ImageServer/Content/Images/egames/diamond.gif" alt="" />累积大奖</td>
+                            <td width="10">&nbsp;</td>
+                            <td class="biggerText" align="right">¥9,999,999.46</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <table width="710" style="margin: 0 auto;" valign='top'>
                     <tr>
                         <td class="gameListObj" width="341" valign='top'>
                             <div class="gameListTitle">美国队长</div>
-                            <img src="@ImageServer/Content/Images/egames/game1.jpg" alt="" />
+                            <div class="imgWrapper">
+                                <img src="@ImageServer/Content/Images/egames/game1.jpg" alt="" />
+                                <div class="jetport"><span>¥99,999,999</span></div>
+                            </div>
                             <table class="more_actions">
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <a class="greyButton" href="#">马上开始 ></a>
+                                            @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername())){
+                                                <a class="greyButton" href="javascript:void(0)" onclick="showLoginPopup()">马上开始 ></a>
+                                            } else {
+                                                <a class="greyButton" href="#">马上开始 ></a>
+                                            }
                                         </td>
                                     </tr>
                                 </tbody>
@@ -428,13 +459,20 @@
                             <table width="100%">
                                 <tr>
                                     <td class="gameListObj" width="165" valign='top'>
-                                        <div class="gameListTitle">钢铁侠</div>
-                                        <img src="@ImageServer/Content/Images/egames/game2.jpg" alt="" />
+                                        <div class="gameListTitle">钢铁侠3</div>
+                                        <div class="imgWrapper">
+                                            <img src="@ImageServer/Content/Images/egames/game2.jpg" alt="" />
+                                            <div class="jetport"><span>¥99,999,999</span></div>
+                                        </div>
                                         <table class="more_actions">
                                             <tbody>
                                                 <tr>
                                                     <td>
+                                                    @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername())){
+                                                        <a class="greyButton" href="javascript:void(0)" onclick="showLoginPopup()">马上开始 ></a>
+                                                    } else {
                                                         <a class="greyButton" href="#">马上开始 ></a>
+                                                    }
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -442,13 +480,20 @@
                                         <div class="clearfix"></div>
                                     </td>
                                     <td class="gameListObj" width="165" valign='top'>
-                                        <div class="gameListTitle">绿巨人</div>
-                                        <img src="@ImageServer/Content/Images/egames/game3.jpg" alt="" />
+                                        <div class="gameListTitle">X战警</div>
+                                        <div class="imgWrapper">
+                                            <img src="@ImageServer/Content/Images/egames/game3.jpg" alt="" />
+                                            <div class="jetport"><span>¥99,999,999</span></div>
+                                        </div>
                                         <table class="more_actions">
                                             <tbody>
                                                 <tr>
                                                     <td>
+                                                    @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername())){
+                                                        <a class="greyButton" href="javascript:void(0)" onclick="showLoginPopup()">马上开始 ></a>
+                                                    } else {
                                                         <a class="greyButton" href="#">马上开始 ></a>
+                                                    }
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -459,12 +504,18 @@
                                 <tr>
                                     <td class="gameListObj" width="165" valign='top'>
                                         <div class="gameListTitle">神奇四侠</div>
-                                        <img src="@ImageServer/Content/Images/egames/game4.jpg" alt="" />
+                                        <div class="imgWrapper">
+                                            <img src="@ImageServer/Content/Images/egames/game4.jpg" alt="" />
+                                        </div>
                                         <table class="more_actions">
                                             <tbody>
                                                 <tr>
                                                     <td>
+                                                    @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername())){
+                                                        <a class="greyButton" href="javascript:void(0)" onclick="showLoginPopup()">马上开始 ></a>
+                                                    } else {
                                                         <a class="greyButton" href="#">马上开始 ></a>
+                                                    }
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -472,13 +523,19 @@
                                         <div class="clearfix"></div>
                                     </td>
                                     <td class="gameListObj" width="165" valign='top'>
-                                        <div class="gameListTitle">木乃伊迷城</div>
-                                        <img src="@ImageServer/Content/Images/egames/game5.jpg" alt="" />
+                                        <div class="gameListTitle">盜墓迷城</div>
+                                        <div class="imgWrapper">
+                                            <img src="@ImageServer/Content/Images/egames/game5.jpg" alt="" />
+                                        </div>
                                         <table class="more_actions">
                                             <tbody>
                                                 <tr>
                                                     <td>
+                                                    @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername())){
+                                                        <a class="greyButton" href="javascript:void(0)" onclick="showLoginPopup()">马上开始 ></a>
+                                                    } else {
                                                         <a class="greyButton" href="#">马上开始 ></a>
+                                                    }
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -511,20 +568,39 @@
                         bbinegamelink2 = MvcHtmlString.Create("进入游戏");
                     }
                 }
+                <br /><br />
+                <table class="more_actions" style="float: left; margin-left: 20px;">
+                        @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                        {
+                            <tr>
+                                <td>
+                                    <a class="greyButton" href="@Url.Action("Register", "Member")">免费开户 &gt;</a>
+                                </td>
+                                <td>
+                                    <a class="greyButton" href="http://d.o77gd8.com/chi3/turtledragon88/ipm/IM_V1MLA.exe">下载客户端 &gt;</a>
+                                </td>
+                            </tr>
+                        } else {
+                            <tr>
+                                <td>
+                                    <a class="greyButton" href="@Url.Action("Register", "Member")">立即存款 &gt;</a>
+                                </td>
+                                <td>
+                                    <a class="greyButton" href="http://d.o77gd8.com/chi3/turtledragon88/ipm/IM_V1MLA.exe">下载客户端 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                    </table>
             </div>
             <div class="rightContent">
-                <div class="block">
-                    <a href="/CN/Promotions#p2">
-                        <img src="/Content/Images/home/huodong02.jpg" alt="" /></a></div>
-                <div class="block">
-                    <a href="/CN/Promotions#p3">
-                        <img src="/Content/Images/home/huodong03.jpg" alt="" /></a></div>
-                <div class="block">
-                    <a href="/CN/Promotions#p4">
-                        <img src="/Content/Images/home/huodong04.jpg" alt="" /></a></div>
-                <div class="block">
-                    <a href="/CN/Promotions#p5">
-                        <img src="/Content/Images/home/huodong05.jpg" alt="" /></a></div>
+                <div class="block"><a href="/CN/Promotions#p1"><img src="@ImageServer/Content/Images/company/right_banner1.jpg" alt=""></a></div>
+                <div class="block"><a href="/CN/Promotions#p2"><img src="@ImageServer/Content/Images/company/right_banner2.jpg" alt=""></a></div>
+                <div class="block"><a href="/CN/Promotions#p3"><img src="@ImageServer/Content/Images/company/right_banner3.jpg" alt=""></a></div>
+                <div class="block"><a href="/CN/Promotions#p4" target="_blank"><img src="@ImageServer/Content/Images/company/right_banner6.jpg" alt=""></a></div>
+                <div class="block"><a href="/CN/Promotions#p5"><img src="@ImageServer/Content/Images/company/right_banner4.jpg" alt=""></a></div>
+                <div class="block"><a href="/CN/Promotions#p6" target="_blank"><img src="@ImageServer/Content/Images/company/right_banner5.jpg" alt=""></a></div>
+                <div class="block"><a href="/CN/Promotions#p7" target="_blank"><img src="@ImageServer/Content/Images/company/right_banner7.jpg" alt=""></a></div>
+                <div class="block"><a href="/CN/Promotions#p8" target="_blank"><img src="@ImageServer/Content/Images/company/right_banner8.jpg" alt=""></a></div>
             </div>
             <div class="clearfix">
             </div>

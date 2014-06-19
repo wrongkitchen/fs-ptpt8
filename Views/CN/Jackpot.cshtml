@@ -1,0 +1,60 @@
+﻿@using Heji.Library.Game;
+@{
+    ViewBag.Title = "Jackpot";
+    Layout = null;
+}
+<script type="text/javascript" language="javascript">
+//       $(document).ready(function () {
+//           setTimeout("self.location.reload();", 5000);
+//                //$("#frmyeepay").submit();
+//                //top.location.href = url;
+
+//        });
+//    function abc() {
+//        window.location.href = "window.location.href";
+//        setTimeout("abc()", 5000);
+//    }
+    
+</script>
+@{
+    @*首页--积累奖池总金额*@
+    if ((Jackpot)ViewBag.Jackpot == Jackpot.Home)
+    {
+        <span> ¥@ViewBag.Amount</span>
+    }
+    @*欧洲PT老虎机--积累奖池总金额*@
+    if ((Jackpot)ViewBag.Jackpot == Jackpot.PT)
+    {  
+        <span>¥@ViewBag.Amount</span>
+    }
+    @*欧洲PT老虎机--美国队长积累奖池金额*@
+    if ((Jackpot)ViewBag.Jackpot == Jackpot.CA)
+    {  
+        <span>¥@ViewBag.Amount</span>
+    }
+    @*欧洲PT老虎机--钢铁侠3积累奖池金额*@
+    if ((Jackpot)ViewBag.Jackpot == Jackpot.Iron3)
+    {  
+        <span>¥@ViewBag.Amount</span>
+    }
+    @*欧洲PT老虎机--X战警积累奖池金额*@
+    if ((Jackpot)ViewBag.Jackpot == Jackpot.XMan)
+    {  
+        <span>¥@ViewBag.Amount</span>
+    }
+    @*欧洲PT老虎机--神奇四侠积累奖池金额*@
+    if ((Jackpot)ViewBag.Jackpot == Jackpot.F4)
+    {  
+        <span>¥@ViewBag.Amount</span>
+    }
+    @*欧洲PT老虎机--盗墓迷城积累奖池金额*@
+    if ((Jackpot)ViewBag.Jackpot == Jackpot.Mummy)
+    {  
+        <span>¥@ViewBag.Amount</span>
+    }
+}
+
+
+
+
+

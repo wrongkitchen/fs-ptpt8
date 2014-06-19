@@ -2,7 +2,7 @@
 @using Heji.Library.Models.TO
 @model Heji.Web.Models.NoticeViewModel
 @{
-    ViewBag.Title = "最新公告|和记亚洲-在线娱乐城";
+    ViewBag.Title = "公告 - 大奖娱乐官方网站";
     string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
 
 }
@@ -10,7 +10,7 @@
 
 
 @{
-    ViewBag.Title = "优惠活动 - 大奖娱乐官方网站";
+    ViewBag.Title = "公告 - 大奖娱乐官方网站";
     Layout = "~/Views/Shared/_CNLayout.cshtml";
 }
 
@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div class="rightContent">
-                 @Html.Action("SharedLogin", "CN")
+                 @Html.Action("SharedLogin", "CN", new { displayCS = "false" })
             </div>
             <div class="clearfix"></div>
         </div>

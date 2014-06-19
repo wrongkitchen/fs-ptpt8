@@ -14,7 +14,7 @@
     <div class="container">
         <div class="leftRightContent">
             <div class="leftContent">
-                <div class="banner"><img src="@ImageServer/Content/Images/company/about-contact_03.jpg" alt=""></div>
+                <div class="banner"><img src="@ImageServer/Content/Images/company/banner-aboutus.jpg" alt=""></div>
                 <ul id="aboutNav" class="sectionNav transparent black">
                     <li class="first button"><a href="@Url.Action("AboutUs", "CN")" target="_self">专业资质</a></li>
                     <li class="separate">|</li>
@@ -36,25 +36,24 @@
                         <tr>
                             <td valign="top" width="440">
                                 <p class="subTitle red">联系我们</p>
-                                <p>大奖娱乐持有菲律宾政府颁发的赌牌，7X24小时客服中心位于马尼拉。</p>
+                                <p>大奖娱乐主管线上游戏业务,2008年10月上线,其游戏牌照由政府银颁发监管。24小时客服中心设在菲律宾首都马尼拉甲级写字楼RCBC Palaza,提供7天24小时专业客户服务。</p>
                                 <table class="contactInfo">
                                     <tr>
-                                        <td class="red">&gt; 客服咨询</td>
+                                        <td class="red">> 客服咨询</td>
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td>400免费电话：</td>
-                                        <td>TBA<br /></td>
+                                        <td>免费电话：</td>
+                                        <td>400 019 0877</td>
                                     </tr>
                                     <tr>
                                         <td>客服QQ：</td>
-                                        <td>TBA</td>
+                                        <td>2974657670</td>
                                     </tr>
                                     <tr>
                                         <td>客服邮箱：</td>
                                         <td>CS@ptpt8.com</td>
                                     </tr>
-                                   
                                     <tr>
                                         <td clospan="2">&nbsp;</td>
                                     </tr>
@@ -64,15 +63,11 @@
                                     </tr>
                                     <tr>
                                         <td>代理QQ：</td>
-                                        <td>TBA</td>
+                                        <td>2529660353</td>
                                     </tr>
                                     <tr>
                                         <td>代理邮箱：</td>
                                         <td>aff@ptpt8.com</td>
-                                    </tr>
-                                    <tr>
-                                        <td>代理电话：</td>
-                                        <td>TBA</td>
                                     </tr>
                                     <tr>
                                         <td clospan="2">&nbsp;</td>
@@ -80,8 +75,8 @@
                                     <tr>
                                         <td clospan="2">
                                             <div class="red">&gt; 公司地址</div>
-                                            RCBC Plaza<br /> 
-                                            6819 Ayala Avenue<br /> 
+                                            RCBC Plaza<br />
+                                            6819 Ayala Avenue<br />
                                             Makati city, Philippines
                                         </td>
                                     </tr>
@@ -96,7 +91,7 @@
                 </div>
             </div>
             <div class="rightContent">
-                @Html.Action("SharedLogin", "CN")
+                @Html.Action("SharedLogin", "CN", new { displayCS = "false" })
             </div>
             <div class="clearfix"></div>
         </div>

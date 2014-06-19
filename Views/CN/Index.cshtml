@@ -104,30 +104,31 @@
                     <div id="slideshow">
                         <div class="slides"> 
                            <div class="slide"> 
-                              <a href="/CN/AGNetIntro"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/slideshow-20.jpg" alt=""></a></div>
+                              <a href="/CN/AboutUs"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/slideshow-07.jpg" alt=""></a></div>
                            <div class="slide"> 
-                              <a href="/CN/PomotionMG#p7"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/slideshow-12.jpg" alt=""></a></div>
+                              <a href="/CN/Promotions#p2"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/slideshow-08.jpg" alt=""></a></div>
                            <div class="slide"> 
-                              <a href="/CN/EndorsementVideo"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/slideshow-0.jpg" alt=""></a></div>
+                              <a href="/CN/Promotions#p3"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/slideshow-01.jpg" alt=""></a></div>
                            <div class="slide"> 
-                              <a href="/CN/Promotions#p2"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/slideshow-02.jpg" alt=""></a></div>
+                              <a href="/CN/Promotions#p4"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/slideshow-02.jpg" alt=""></a></div>
                            <div class="slide"> 
-                              <a href="/CN/Promotions#p4"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/slideshow-04.jpg" alt=""></a></div>
-                           <div class="slide"> 
+                              <a href="/CN/Promotions#p5"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/slideshow-04.jpg" alt=""></a></div>
+                           <!-- <div class="slide"> 
                               <a href="/CN/Promotions#p3"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/slideshow-03.jpg" alt=""></a></div>
                            <div class="slide"> 
-                              <a href="/CN/Promotions#p5"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/slideshow-05.jpg" alt=""></a></div>
+                              <a href="/CN/Promotions#p5"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/slideshow-05.jpg" alt=""></a></div> -->
                        </div>
                         <div class="clearfix">
                         </div>
                     </div>
                     <div class="slideDesc transparent black">
                         <div class="slideDescLeft pull-left">
-                            <ul class="slideDescList clearfix">
+                            <ul class="slideDescList">
                                 <li>港澳集团管理</li>
                                 <li>政府牌照监管</li>
                                 <li>专业赔率认证</li>
-                                <li>兼营澳门多家赌场贵宾厅</li>
+                                <li>在岸离岸现金流保护</li>
+                                <li class="clearfix"></li>
                             </ul>
                         </div>
                         <div class="slideDescRight pull-right">
@@ -143,61 +144,79 @@
             </div>
             <div class="rightContent">
                 @Html.Action("SharedIndexLogin", "CN")
+                @*<a target="_blank" href="http://kf1.learnsaas.com/chat/chatClient/chatbox.jsp?companyID=17819&jid=&enterurl=@Request.Url.Host">*@
                 @*<a target="_blank" href="http://67.198.160.58/chat/chatClient/chatbox.jsp?companyID=306&configID=9&enterurl=@Request.Url.Host" class="client-popup">*@
-                    <div class="block downloadClient">
-                        <span>$9,999,999.99</span>
-                    </div>
-                </a>
+                    <a href="@Url.Action("PTGames", "CN")">
+                        @*<div class="block downloadClient">
+                            @Html.Action("Jackpot", "CN", new { jackpot = "0" })
+                        </div>*@
+                    </a>
+                @*</a>*@
             </div>
             <div class="clearfix">
             </div>
         </div>
         <ul class="zoneBtn horizontalList clearfix">
-            <li class="china_gd">
-                <a href="@Url.Action("MGGames", "CN")"></a>
-                <!-- <div class="hoverContent">
-                    <img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/hover-5.jpg" alt="" />
-                    <div class="btnGroup transparent black">
-                        <a href="@aglink1" target="_blank"><span class="redArrow pull-left">@aglink2</span></a>|
-                        <a href="@Url.Action("GDIntro", "CN")" target="_self"><span class="redArrow pull-right">详细介绍</span></a>
-                        <div class="clearfix"></div>
-                    </div>
-                </div> -->
-            </li>
-            <li class="china_ag">
-                <a href="@Url.Action("BBINIntro", "CN")"></a>
-                <!-- <div class="hoverContent">
-                    <img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/hover-3.jpg" alt="" />
-                    <div class="btnGroup transparent black">
-                        <a href="@aglink" target="_blank"><span class="redArrow pull-left">@aglink2</span></a>|
-                        <a href="@Url.Action("AGIntro", "CN")" target="_self"><span class="redArrow pull-right">详细介绍</span></a>
-                        <div class="clearfix"></div>
-                    </div>
-                </div> -->
-            </li>
+            <div class="transparent black overlay"></div>
             <li class="tw_bbin">
-                <a href="@Url.Action("EGames", "CN")"></a>
-                <!-- <div class="hoverContent">
+                <a href="@Url.Action("PTGames", "CN")"></a>
+                <div class="hoverContent">
                     <img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/hover-1.jpg" alt="" />
                     <div class="btnGroup transparent black">
-                        <a href="@mglink" target="_blank"><span class="redArrow pull-left">@mglink2</span></a>|
-                        <a href="@Url.Action("MGIntro", "CN")" target="_self"><span class="redArrow pull-right">
-                            详细介绍</span></a>
+                        @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                        {
+                            <a style="width:auto; float:left;" href="@Url.Action("Register", "Member")"><span class="redArrow pull-left">免费开户</span></a>
+                        } else {
+                            <a style="width:auto; float:left;" href="@Url.Action("Register", "Member")"><span class="redArrow pull-left">立即存款</span></a>
+                        }
+                        <a style="width:auto; display:inline-block;" href="@ImageServer/download/大奖娱乐.exe" target="_self"><span class="redArrow pull-left">
+                            下载客户端</span></a>
                         <div class="clearfix">
                         </div>
                     </div>
-                </div> -->
+                </div>
             </li>
-            <li class="macau_ag borderLeft">
-                <a href="@Url.Action("Sports", "CN")"></a>
-                 <!-- <div class="hoverContent">
-                    <img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/hover-2.jpg" alt="" />
+            <li class="china_gd">
+                <a href="@Url.Action("MGGames", "CN")"></a>
+                <div class="hoverContent">
+                    <img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/hover-5.jpg" alt="" />
                     <div class="btnGroup transparent black">
-                        <a href="@bbinlink" target="_blank"><span class="redArrow pull-left">@bbinlink2</span></a>|
-                        <a href="@Url.Action("BBINIntro", "CN")" target="_self"><span class="redArrow pull-right">详细介绍</span></a>
+                        @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                        {
+                            <a href="@Url.Action("Register", "Member")"><span class="redArrow pull-left">免费开户</span></a>
+                        } else {
+                            <a href="@Url.Action("Register", "Member")"><span class="redArrow pull-left">立即存款</span></a>
+                        }
+                        <a href="@Url.Action("GDIntro", "CN")" target="_self"><span class="redArrow pull-right">详细介绍</span></a>
                         <div class="clearfix"></div>
                     </div>
-                </div> -->
+                </div>
+            </li>
+            <li class="china_ag">
+                <a href="@Url.Action("BBinIntro", "CN")"></a>
+                <div class="hoverContent">
+                    <img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/hover-3.jpg" alt="" />
+                    <div class="btnGroup transparent black">
+                        @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                        {
+                            <a href="@Url.Action("Register", "Member")"><span class="redArrow pull-left">免费开户</span></a>
+                        } else {
+                            <a href="@Url.Action("Register", "Member")"><span class="redArrow pull-left">立即存款</span></a>
+                        }
+                        <a href="@Url.Action("AGIntro", "CN")" target="_self"><span class="redArrow pull-right">详细介绍</span></a>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="macau_ag borderLeft">
+                <a href="#"></a>
+                 <div class="hoverContent">
+                    <img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/hover-6.jpg" alt="" />
+                    <div class="btnGroup transparent black">
+                        <a href="javascript:void(0)"><span class="redArrow pull-left">即将推出</span></a>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
             </li>
         </ul>
 
@@ -214,24 +233,26 @@
             <div class="faq pull-left">
                 <a href="@Url.Action("FAQ", "CN")#faq" target="_self"></a>
             </div>
-            <div class="clearfix">
-            </div>
+            <div class="clearfix"></div>
         </div>
+        
+        <div class="clearfix"></div>
 
         <div class="entertainment">
             <!-- <div class="leftBtn"></div> -->
             <!-- <div class="rightBtn"></div> -->
             <div class="title">
-                <a href="@Url.Action("BBINIntro", "CN")" target="_self"></a>
+                <a href="javascript:void(0)" style="cursor:default"></a>
             </div>
             
             <div class="content">
                 <div class="contentContain">
                     <div class="col highlight">
                         <div class="img">
-                            <a href="@Url.Action("EGames", "CN")">
+                            <a href="@Url.Action("PTGames", "CN")">
                                 <img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/entertainment-7.jpg" alt="">
                             </a>
+                            <a href="@ImageServer/download/大奖娱乐.exe"><div class="downloadClientButton"></div></a>
                         </div>
                         <div class="desc">
                             <div class="main">
@@ -239,9 +260,13 @@
                             <div class="sub">
                                 千万元奖池 老虎机第一品牌</div>
                             <div class="details">
-                                <span class="redArrow"><a href="@Url.Action("Register", "Member")" target="_blank">免费开户</a></span>
-                                <!-- <span class="redArrow"><a href="@AgNetlink" target="_blank">@agNetLink2</a></span> -->
-                                <span class="redArrow"><a href="http://heji18.cc/和记娱乐客户端.zip" target="_self">下载客户端</a></span>
+                                @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                                {
+                                    <span class="redArrow"><a href="@Url.Action("Register", "Member")" target="_blank">免费开户</a></span>
+                                } else {
+                                    <span class="redArrow"><a href="@Url.Action("Register", "Member")" target="_blank">立即存款</a></span>
+                                }
+                                <span class="redArrow"><a href="@ImageServer/download/大奖娱乐.exe">下载客户端</a></span>
                                 <div class="clearfix">
                                 </div>
                             </div>
@@ -252,14 +277,16 @@
                             <a href="@Url.Action("MGGames", "CN")">
                                 <img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/entertainment-1.jpg" alt=""></a></div>
                         <div class="desc">
-                            <div class="main">
-                                美洲MG老虎机</div>
+                            <div class="main">美洲MG老虎机</div>
                             <div class="sub">
                                 花花公子合作伙伴<br />美国最受欢迎</div>
                             <div class="details">
-                                <span class="redArrow"><a href="@Url.Action("Register", "Member")" target="_blank">免费开户</a></span>
-                                <!-- <span class="redArrow"><a href="@mglink" target="_blank">@mglink2</a></span>
-                                <span class="redArrow"><a href="@Url.Action("MGIntro", "CN")" target="_self">详细介绍</a></span> -->
+                                @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                                {
+                                    <span class="redArrow"><a href="@Url.Action("Register", "Member")" target="_blank">免费开户</a></span>
+                                } else {
+                                    <span class="redArrow"><a href="@Url.Action("Register", "Member")" target="_blank">立即存款</a></span>
+                                }
                                 <div class="clearfix">
                                 </div>
                             </div>
@@ -267,16 +294,17 @@
                     </div>
                     <div class="col">
                         <div class="img">
-                            <a href="@Url.Action("BBINIntro", "CN")"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/entertainment-5.jpg" alt=""></a></div>
+                            <a href="@Url.Action("BBinIntro", "CN")"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/entertainment-5.jpg" alt=""></a></div>
                         <div class="desc">
-                            <div class="main">
-                                宝盈真人娱乐(BBIN)</div>
-                            <div class="sub">
-                                百万限红 百家乐必玩平台</div>
+                            <div class="main">宝盈真人娱乐(BBIN)</div>
+                            <div class="sub">百万限红<br />百家乐必玩平台</div>
                             <div class="details">
+                            @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                            {
                                 <span class="redArrow"><a href="@Url.Action("Register", "Member")" target="_blank">免费开户</a></span>
-                                <!-- <span class="redArrow"><a href="@bbintylink" target="_self">@bbinyulink2</a></span>
-                                <span class="redArrow"><a href="@Url.Action("Sports", "CN")" target="_self">详细介绍</a></span> -->
+                            } else {
+                                <span class="redArrow"><a href="@Url.Action("Register", "Member")" target="_blank">立即存款</a></span>
+                            }
                                 <div class="clearfix">
                                 </div>
                             </div>
@@ -284,14 +312,12 @@
                     </div>
                     <div class="col col-187 end">
                         <div class="img">
-                            <a href="@Url.Action("VIPClub", "CN")"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/entertainment-4.jpg" alt=""></a></div>
+                            <a href="#"><img src="@(ViewContext.ViewData["ImageServer"])/Content/Images/home/entertainment-4.jpg" alt=""></a></div>
                         <div class="desc">
-                            <div class="main">贵宾会</div>
-                            <div class="sub">星级越高优惠越多 特权越多</div>
+                            <div class="main">体育投注</div>
+                            <div class="sub">赛事丰富<br />场次多, 水位高</div>
                             <div class="details">
-                                <span class="redArrow"><a href="@Url.Action("Register", "Member")" target="_blank">免费开户</a></span>
-                                <!-- <span class="redArrow"><a href="@bbinegamelink" target="_self">@bbinegamelink2</a></span>
-                                <span class="redArrow"><a href="@Url.Action("EGames", "CN")" target="_self">详细介绍</a></span> -->
+                                <span class="redArrow"><a href="javascript:void(0)" >即将推出</a></span>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
@@ -305,9 +331,12 @@
                             <div class="sub">
                                 百万限红迎天下豪客</div>
                             <div class="details">
-                                <span class="redArrow"><a href="@AgNetlink" target="_blank">免费开户</a></span>
-                                <!-- <span class="redArrow"><a href="@aglink" target="_blank">@aglink2</a></span>
-                                <span class="redArrow"><a href="@Url.Action("AGIntro", "CN")" target="_self">详细介绍</a></span> -->
+                                @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                                {
+                                    <span class="redArrow"><a href="@Url.Action("Register", "Member")" target="_blank">免费开户</a></span>
+                                } else {
+                                    <span class="redArrow"><a href="@Url.Action("Register", "Member")" target="_blank">立即存款</a></span>
+                                }
                                 <div class="clearfix">
                                 </div>
                             </div>
@@ -322,9 +351,12 @@
                             <div class="sub">
                                 真实再现陆地赌场实景</div>
                             <div class="details">
-                                <span class="redArrow"><a href="@AgNetlink" target="_blank">免费开户</a></span>
-                                <!-- <span class="redArrow"><a href="@aglink1" target="_blank">@aglink2</a></span>
-                                <span class="redArrow"><a href="@Url.Action("GDIntro", "CN")" target="_self">详细介绍</a></span> -->
+                                @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                                {
+                                    <span class="redArrow"><a href="@Url.Action("Register", "Member")" target="_blank">免费开户</a></span>
+                                } else {
+                                    <span class="redArrow"><a href="@Url.Action("Register", "Member")" target="_blank">立即存款</a></span>
+                                }
                                 <div class="clearfix">
                                 </div>
                             </div>

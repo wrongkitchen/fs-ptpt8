@@ -1,0 +1,1226 @@
+﻿@using Heji.Web.Helpers
+@model Heji.Web.Models.HomeIndexViewModel
+@{
+    ViewBag.Title = "欧洲PT老虎机 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    //string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+    //string ImageServer = "";//felix ,上线删除
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/egames.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/hash.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/egames.js"></script>
+    <script type="text/javascript">
+        function getUrl(alink) {
+            var content = $(alink).closest("li").find("input[type=hidden]").val();
+            content = $.trim(content);
+            var gameurl = "/Game/EnterPT?platform=1&gameId=" + content + "&gameType=1"
+            $(alink).attr('href', gameurl);
+        }
+    
+    </script>
+}
+@if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername())){
+
+} else {
+    <style>
+        .leftRightContent.gamesList .leftContent{ margin-top:-35px !important; }
+    </style>
+}
+               
+@{
+    String bbinegamelink = String.Empty;
+    MvcHtmlString onclick = MvcHtmlString.Empty;
+    MvcHtmlString bbinegamelink2 = MvcHtmlString.Empty;
+
+    if (Model.CurrentUser != null)
+    {
+        bbinegamelink = "#";
+        onclick = MvcHtmlString.Create(" onclick=\"getUrl(this)\"");
+        //bbinegamelink2 = MvcHtmlString.Create("进入游戏");
+    }
+    else
+    {
+        //bbinegamelink = Url.Action("Enter", "Game", new { platform = "0", g = "3" });
+        onclick = MvcHtmlString.Create(" onclick=\"javascript:alert('请先登录！') \"");
+        //bbinegamelink2 = MvcHtmlString.Create("进入游戏");
+    }
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent" style="position:static">
+            <div class="leftContent">
+                <div class="gamePanel">
+                    <ul class="firstList">
+                        <li class="redArrow">
+                            <a href="#">经典老虎机</a>
+                            <ul class="subList">
+                                <li>
+                                    <input type="hidden" value="fm" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">古怪猴子</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="c7" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">疯狂之七</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="bt" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">百慕大三角</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="pl" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">舞线</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="sf" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">苏丹的财富</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="nk" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">海王星王国</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="foy" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">青春之泉</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="8bs" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">8球吃角老虎机</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="hh" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">鬼屋</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="rnr" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">摇摆舞</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="ta" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">三个朋友</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="jb" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">丛林摇摆</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="redArrow">
+                            <a href="#">电动角子老虎机</a>
+                            <ul class="subList">
+                                <li class="redArrow">
+                                    奇迹大奖
+                                    <ul class="thirdList">
+                                        <li>
+                                            <input type="hidden" value="irmn3" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">钢铁侠3</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="irm50" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">钢铁侠2-50线</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="trm" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">雷神</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="hlk50" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">绿巨人50线</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="xmn" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">X战警</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="avng" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">复仇者联盟</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="elr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">幻影杀手</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="drd" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">超胆侠</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="bld" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">刀锋战士</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="fnf" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">神奇四侠</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="ghr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">幽灵骑士</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="redArrow">
+                                    5-10条线
+                                    <ul class="thirdList">
+                                        <li>
+                                            <input type="hidden" value="hk" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">高速公路之王</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="gos" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">黄金之旅</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="ct" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">船长的宝藏</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="er" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">开心假期</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="sib" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">银弹</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="gs" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">钻石谷</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="qop" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">金字塔女王</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="fmn" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">水果狂</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="cm" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">中国厨房</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="cifr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">全景电影</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="wsffr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">玩转华尔街</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="redArrow">
+                                    15-20条线
+                                    <ul class="thirdList" style="top:-350px;">
+                                        <li>
+                                            <input type="hidden" value="ssp" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">圣诞惊喜</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="mcb" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">返利先生</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="ttc" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">超级巨星刮刮乐</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="ghr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">幽灵骑士</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="eas" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">复活节惊喜</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="hlf" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">万圣节财富</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="hb" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">狂欢夜</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="drd" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">超胆侠</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="avng" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">复仇者联盟</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="kkg" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">香港世界第八大奇迹</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="lm" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">疯狂乐透</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="wis" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">狂野精灵</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="dlm" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">宝贝甜心</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="dt" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">沙漠宝藏</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="fnf" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">神奇四侠</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="elr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">幻影杀手</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="ttl" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">足球传奇</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="iceh" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">冰上对决</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="bld" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">刀锋战士</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="redArrow">
+                                    25+线
+                                    <ul class="thirdList" style="top:-350px">
+                                        <li>
+                                            <input type="hidden" value="bib" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">深海之蓝</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="irmn3" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">钢铁侠3</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="glr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">罗马角斗士</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="glg" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">黄金财富</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="xmn" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">X战警</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="fow" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">惊异之林</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="irm50" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">钢铁侠2-50线</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="dnr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">海豚</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="gts50" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">热门宝石</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="fdt" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">魔幻7</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="ts" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">时空过客</a>
+                                        </li>
+                                        <li>    
+                                            <input type="hidden" value="mmy" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">木乃伊</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="tst" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">网球明星</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="fbr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">终极足球</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="pnp" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">粉红豹</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="hlk50" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">绿巨人50线</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="trm" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">雷神</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="glr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">罗马角斗士</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="redArrow">
+                                    多旋转
+                                    <ul class="thirdList">
+                                        <li>
+                                            <input type="hidden" value="op" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">海洋公主</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="tp" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">三倍利润</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="ub" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">UGGA GUGGA</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="tr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">热带滚筒</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="gc" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">地妖之穴</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="redArrow">
+                                    累积
+                                    <ul class="thirdList" style="top:-450px">
+                                        <li>
+                                            <input type="hidden" value="hk" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">高速公路之王</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="irmn3" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">钢铁侠3</a>
+                                        </li>
+                                        <li>    
+                                            <input type="hidden" value="sib" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">银弹</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="hb" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">狂欢夜</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="ct" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">船长的宝藏</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="hlk50" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">绿巨人50线</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="trm" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">雷神</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="dt" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">沙漠宝藏</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="dlm" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">宝贝甜心</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="glr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">罗马角斗士</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="ts" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">时空过客</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="avng" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">复仇者联盟</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="cifr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">全景电影</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="gs" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">钻石谷</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="qop" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">金字塔女王</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="lm" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">疯狂乐透</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="ghr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">幽灵骑士</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="fmn" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">水果狂</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="fbr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">终极足球</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="irm50" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">钢铁侠2-50线</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="fow" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">惊异之林</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="redArrow">
+                            <a href="#">牌桌和牌游戏</a>
+                            <ul class="subList">
+                                <li class="redArrow">
+                                    21点
+                                    <ul class="thirdList">
+                                        <li>
+                                            <input type="hidden" value="bj21d_mh" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">决斗21点</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="pbj" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">累积21点</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="pfbj_mh5" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">完美21点</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="bj_mh5" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">21点</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="p6dbj_mh5" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">21点PEEK</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="bjs" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">换牌21点</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="bjuk_mh5" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">英式21点</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="redArrow">
+                                    其他
+                                    <ul class="thirdList">
+                                        <li>
+                                            <input type="hidden" value="car" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">加勒比海扑克</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="cheaa" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">现场扑克</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="cr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">旋转骰子</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="pg" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">牌九扑克</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="rd" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">红狗扑克</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="ba" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">百家乐</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="sb" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">骰宝</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="str" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">STRAVAGANZA</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="tqp" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">龙舌兰扑克</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="redArrow">
+                                    轮盘赌
+                                    <ul class="thirdList" style="top:auto; bottom:-100px;">
+                                        <li>
+                                            <input type="hidden" value="ro3d" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">3D轮盘</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="rodz" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">美式轮盘</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="rop" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">超级轮盘</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="frr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">法式轮盘</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="ro" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">欧式轮盘</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="romw" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">MULTI WHEEL ROULETTE</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="rodz_g" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">美式奖金轮盘</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="ro_g" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">欧洲奖金轮盘</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="frr_g" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">法国奖金轮盘</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="rop_g" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">奖金轮盘赌</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="redArrow">
+                            <a href="#">现场真人</a>
+                            <ul class="subList">
+                                <li class="redArrow">
+                                    真人百家乐
+                                    <ul class="thirdList">
+                                        <li>
+                                            <input type="hidden" value="7bal" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">7 SEAT BACCARAT LIVE</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="redArrow">
+                                    真人21点
+                                    <ul class="thirdList">
+                                        <li>
+                                            <input type="hidden" value="bjl" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">现场21点</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="mpbj" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">多人21点</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="redArrow">
+                                    实况法式轮盘赌
+                                    <ul class="thirdList">
+                                        <li>
+                                            <input type="hidden" value="rofl" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">多手法式轮盘</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="redArrow">
+                                    迷你百家乐
+                                    <ul class="thirdList">
+                                        <li>
+                                            <input type="hidden" value="bal" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">迷你百家乐</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="redArrow">
+                                    真人轮盘
+                                    <ul class="thirdList">
+                                        <li>
+                                            <input type="hidden" value="rofl" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">现场法式轮盘</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="redArrow">
+                                    真人骰子
+                                    <ul class="thirdList">
+                                        <li>
+                                            <input type="hidden" value="sbl" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">现场骰宝</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="redArrow">
+                                    VIP百家乐
+                                    <ul class="thirdList">
+                                        <li>
+                                            <input type="hidden" value="vbal" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">VIP百家乐</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="redArrow">
+                            <a href="#">视频扑克</a>
+                            <ul class="subList">
+                                <li>
+                                    <input type="hidden" value="dw4" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">4线百搭2</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="jb_mh4" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">4线对J高手</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="jb_mh50" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">50线对J高手</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="af" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">A面视频扑克</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="amvp" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">ALL AMERICAN</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="dw" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">2点百搭牌</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="po" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">对J高手</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="jp" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">王牌扑克</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="tob" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">对十高手</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="redArrow">
+                            <a href="#">街机游戏</a>
+                            <ul class="subList">
+                                <li class="redArrow">
+                                    基诺&数字
+                                    <ul class="thirdList">
+                                        <li>
+                                            <input type="hidden" value="atw" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">环游世界</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="kn" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">基诺</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="bls" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">百万幸运球</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="pop" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">宾果</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="dctw" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">旋转骰子</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="rcd" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">掷骰子赌博游戏</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="ghl" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">猜扑克牌游戏</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="ghlj" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">猜扑克牌游戏奖池</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="redArrow">
+                                    老虎机&牌
+                                    <ul class="thirdList">
+                                        <li>
+                                            <input type="hidden" value="head" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">硬币投掷游戏</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="redArrow">
+                                    牌桌&牌
+                                    <ul class="thirdList">
+                                        <li>
+                                            <input type="hidden" value="lwh" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">迷你轮盘</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="redArrow">
+                                    运动&虚拟
+                                    <ul class="thirdList">
+                                        <li>
+                                            <input type="hidden" value="pso" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">点球大战</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="fsc" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">决赛比分</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="qbd" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">飞镖</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="bowl" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">保龄球大战</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="redArrow">
+                            <a href="#">刮刮奖</a>
+                            <ul class="subList" style="top:auto; bottom:-100px;">
+                                <li>
+                                    <input type="hidden" value="tclsc" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">3个小丑</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="bbn" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">甲壳虫宾果</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="sbj" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">21点刮刮卡</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="essc" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">EASTER SURPRISE</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="fbm" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">足球狂热</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="irmn3" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">钢铁侠3</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="kkgsc" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">金刚</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="lom" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">爱情配对</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="pks" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">法老王国</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="sro" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">轮盘赌</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="ssa" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">圣诞刮刮卡</a>
+                                </li>
+                                <li>
+                                    <input type="hidden" value="ttcsc" />
+                                    <a href="@bbinegamelink" @onclick target="_blank">顶级王牌</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="redArrow">
+                            <a href="#">累积游戏</a>
+                            <ul class="subList">
+                                <li class="redArrow">
+                                    吃角子老虎机游戏
+                                    <ul class="thirdList" style="top:auto; bottom:-100px;">
+                                        <li>
+                                            <input type="hidden" value="hb" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">狂欢夜</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="pnp" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">粉红豹</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="lm" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">疯狂乐透</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="dt" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">沙漠宝藏</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="dlm" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">宝贝甜心</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="sib" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">银弹</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="ct" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">船长的宝藏</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="ts" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">时空过客</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="qop" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">金字塔女王</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="fbr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">终极足球</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="fow" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">惊异之林</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="fmn" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">水果狂</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="gs" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">钻石谷</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="hk" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">高速公路之王</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="cifr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">全景电影</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="glr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">罗马角斗士</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="redArrow">
+                                    奇迹大奖
+                                    <ul class="thirdList" style="top:auto; bottom:0;">
+                                        <li>
+                                            <input type="hidden" value="bld" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">刀锋战士</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="xmn" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">X战警</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="avng" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">复仇者联盟</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="hlk50" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">绿巨人50线</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="trm" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">雷神之战</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="irmn3" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">钢铁侠3</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="irm50" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">钢铁侠2-50线</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="fnf" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">神奇四侠</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="ghr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">幽灵骑士</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="elr" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">幻影杀手</a>
+                                        </li>
+                                        <li>   
+                                            <input type="hidden" value="drd" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">超胆侠</a></li>
+                                    </ul>
+                                </li>
+                                <li class="redArrow">
+                                    其他
+                                    <ul class="thirdList" style="top:auto; bottom:0;">
+                                        <li>
+                                            <input type="hidden" value="bls" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">百万幸运球</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="str" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">STRAVAGANZA</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="pba" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">现场百家乐</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="pbj" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">累积21点</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="car" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">加勒比扑克</a>
+                                        </li>
+                                        <li>
+                                            <input type="hidden" value="ghlj" />
+                                            <a href="@bbinegamelink" @onclick target="_blank">Genie's Hi-Lo Jackpot</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="banner">
+                    <div class="imgWrapper">
+                        <img src="@ImageServer/Content/Images/egames/egames_03.jpg" alt="" />
+                    </div>
+                    <!-- <ul id="egamesNav" class="sectionNav transparent black">
+                        <li class="first button active"><a href="@Url.Action("EGames", "CN")" target="_self">
+                            游戏大厅</a></li>
+                        <li class="separate">|</li>
+                        <li class="button"><a href="@Url.Action("EGamesIntro", "CN")" target="_self">电子游艺介紹</a></li>
+                    </ul> -->
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false", displayCS = "false" })
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
+        <div class="leftRightContent gamesList">
+            <div class="leftContent">
+                
+                <div class="gameListMainTitle pull-left">热门游戏</div>
+
+                <div class="prizeNumberTable pull-right">
+                    <table>
+                        <tr>
+                            <td class="biggerText">	 <img src="@ImageServer/Content/Images/egames/diamond.gif" alt="" />累积大奖</td>
+                            <td width="10">&nbsp;</td>
+                            <td class="biggerText" align="right">
+                                @Html.Action("Jackpot", "CN", new { jackpot = "1" })
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <table width="710" style="margin: 0 auto;" valign='top'>
+                    <tr>
+                        <td class="gameListObj" width="341" valign='top'>
+                            <div class="gameListTitle">美国队长</div>
+                            <div class="imgWrapper" style="height:340px; overflow:hidden;">
+                                <img src="@ImageServer/Content/Images/egames/game1.jpg" alt="" />
+                                @*<div class="jetport">@Html.Action("Jackpot", "CN", new { jackpot = "2" })</div>*@
+                            </div>
+                            <table class="more_actions" style="margin-top:13px;">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                                            {
+                                                <a class="greyButton" href="#" onclick="javascript:alert('请先登录！')">马上开始 ></a>
+                                            }
+                                            else
+                                            {
+                                                <a class="greyButton" href="@Url.Action("EnterPT", "Game", new { platform = "1", gameId = "cam" })" target="_blank" >马上开始 ></a>
+                                            }
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="clearfix"></div>
+                        </td>
+                        <td width="50%" valign='top'>
+                            <table width="100%">
+                                <tr>
+                                    <td class="gameListObj" width="165" valign='top'>
+                                        <div class="gameListTitle">钢铁侠3</div>
+                                        <div class="imgWrapper">
+                                            <img src="@ImageServer/Content/Images/egames/game2.jpg" alt="" />
+                                            @*<div class="jetport">@Html.Action("Jackpot", "CN", new { jackpot = "3" })</div>*@
+                                        </div>
+                                        <table class="more_actions">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                    @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                                                    {
+                                                        <a class="greyButton" href="#" onclick="javascript:alert('请先登录！')">马上开始 ></a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a class="greyButton" href="@Url.Action("EnterPT", "Game", new { platform = "1", gameId = "irmn3" })" target="_blank" >马上开始 ></a>
+                                                    }
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="clearfix"></div>
+                                    </td>
+                                    <td class="gameListObj" width="165" valign='top'>
+                                        <div class="gameListTitle">X战警</div>
+                                        <div class="imgWrapper">
+                                            <img src="@ImageServer/Content/Images/egames/game3.jpg" alt="" />
+                                            @*<div class="jetport">@Html.Action("Jackpot", "CN", new { jackpot = "4" })</div>*@
+                                        </div>
+                                        <table class="more_actions">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                    @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                                                    {
+                                                        <a class="greyButton" href="#" onclick="javascript:alert('请先登录！')">马上开始 ></a>
+                                                    } 
+                                                    else 
+                                                    {
+                                                        <a class="greyButton" href="@Url.Action("EnterPT", "Game", new { platform = "1", gameId = "xmn50" })" target="_blank" >马上开始 ></a>
+                                                    }
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="clearfix"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="gameListObj" width="165" valign='top'>
+                                        <div class="gameListTitle">神奇四侠</div>
+                                        <div class="imgWrapper">
+                                            <img src="@ImageServer/Content/Images/egames/game4.jpg" alt="" />
+                                        </div>
+                                        <table class="more_actions">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                    @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                                                    {
+                                                        <a class="greyButton" href="#" onclick="javascript:alert('请先登录！')">马上开始 ></a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a class="greyButton" href="@Url.Action("EnterPT", "Game", new { platform = "1", gameId = "fnf" })" target="_blank" >马上开始 ></a>
+                                                    }
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="clearfix"></div>
+                                    </td>
+                                    <td class="gameListObj" width="165" valign='top'>
+                                        <div class="gameListTitle">盜墓迷城</div>
+                                        <div class="imgWrapper">
+                                            <img src="@ImageServer/Content/Images/egames/game5.jpg" alt="" />
+                                        </div>
+                                        <table class="more_actions">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                    @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                                                    {
+                                                        <a class="greyButton" href="#" onclick="javascript:alert('请先登录！')">马上开始 ></a>
+                                                    } 
+                                                    else 
+                                                    {
+                                                        <a class="greyButton" href="@Url.Action("EnterPT", "Game", new { platform = "1", gameId = "mmy" })" target="_blank" >马上开始 ></a>
+                                                    }
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="clearfix"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="clearfix"></div>
+ 
+                <br /><br />
+                <table class="more_actions" style="float: left; margin-left: 20px;">
+                        @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                        {
+                            <tr>
+                                <td>
+                                    <a class="greyButton" href="@Url.Action("Register", "Member")">免费开户 &gt;</a>
+                                </td>
+                                <td>
+                                    <a class="greyButton" href="@ImageServer/download/大奖娱乐.exe">下载客户端 &gt;</a>
+                                </td>
+                            </tr>
+                        } else {
+                            <tr>
+                                <td>
+                                    <a class="greyButton" href="@Url.Action("Register", "Member")">立即存款 &gt;</a>
+                                </td>
+                                <td>
+                                    <a class="greyButton" href="@ImageServer/download/大奖娱乐.exe">下载客户端 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+            </div>
+            <div class="rightContent">
+                @*<div class="block"><a href="/CN/Promotions#p1"><img src="@ImageServer/Content/Images/company/right_banner1.jpg" alt=""></a></div>*@
+                <div class="block"><a href="/CN/Promotions#p2"><img src="@ImageServer/Content/Images/company/right_banner2.jpg" alt=""></a></div>
+                <div class="block"><a href="/CN/Promotions#p3"><img src="@ImageServer/Content/Images/company/right_banner3.jpg" alt=""></a></div>
+                <div class="block"><a href="/CN/Promotions#p4"><img src="@ImageServer/Content/Images/company/right_banner6.jpg" alt=""></a></div>
+                <div class="block"><a href="/CN/Promotions#p5"><img src="@ImageServer/Content/Images/company/right_banner4.jpg" alt=""></a></div>
+                <div class="block"><a href="/CN/Promotions#p6"><img src="@ImageServer/Content/Images/company/right_banner5.jpg" alt=""></a></div>
+                <div class="block"><a href="/CN/Promotions#p7"><img src="@ImageServer/Content/Images/company/right_banner7.jpg" alt=""></a></div>
+                @*<div class="block"><a href="/CN/Promotions#p8"><img src="@ImageServer/Content/Images/company/right_banner8.jpg" alt=""></a></div>*@
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
+    </div>
+    <ul class="zoneBtn horizontalList clearfix">
+        <li class="tw_bbin borderRight"></li>
+        <li class="macau_ag "></li>
+        <li class="china_ag "></li>
+        <li class="electronic borderLeft"></li>
+    </ul>
+</div>

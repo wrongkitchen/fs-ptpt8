@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Heji.Web.Helpers
+@{
     ViewBag.Title = "VIP特权 - VIP俱乐部 - 大奖娱乐官方网站";
     Layout = "~/Views/Shared/_CNLayout.cshtml";
     string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
@@ -16,16 +17,16 @@
         <div class="leftRightContent">
             <div class="leftContent">
                 <ul id="vipNav" class="sectionNav transparent black">
-                    <li class="first button"><a href="@Url.Action("VIPClub", "CN")" target="_self">星级首页</a></li>
+                    <li class="first button"><a href="@Url.Action("VIPClub", "CN")" target="_self">贵宾福利</a></li>
                     <li class="separate">|</li>
-                    <li class="button active"><a href="@Url.Action("VIPPrivilege", "CN")" target="_self">VIP特权</a></li>
+                    <li class="button active"><a href="@Url.Action("VIPPrivilege", "CN")" target="_self">贵宾特权</a></li>
                     <li class="separate">|</li>
                     <li class="button"><a href="@Url.Action("VIPFAQ", "CN")" target="_self">常见问题</a></li>
                     <li class="separate">|</li>
                     <li class="button"><a href="@Url.Action("VIPTerms", "CN")" target="_self">规则条款</a></li>
                 </ul>
                 <div class="banner">
-                    <img src="@ImageServer/Content/Images/vip/privilege_03.jpg" alt="" />
+                    <img src="@ImageServer/Content/Images/vip/club_03.jpg" alt="" />
                 </div>
                 <div class="article vip-privilege">
                     <div class="tabBlock">
@@ -42,18 +43,27 @@
                                     <td width="208"><img src="@ImageServer/Content/Images/vip/privilege_3_07.jpg" alt=""></td>
                                     <td width="20">&nbsp;</td>
                                     <td valign="top">
-                                        <div class="red">免费豪华海外游</div>
-                                        1、6星级的会员每年可申请一次澳门/菲律宾海外游，7星级的会员每半年可申请一次澳门/菲律宾海外游。不但可实地感受和记娱乐在澳门、菲律宾的实体贵宾厅，更可到AG/BBIN现场观光。 <br>
-                                        2、提供3000元的机票报销、五星级酒店住宿（2晚）、豪车接送、专业VIP秘书陪同。详情请谘询在线客服。
-
+                                        <div class="red">尊享奢华旅游</div>
+                                        
+                                        <ol>
+                                            <li>黄金VIP每年可享有一次奢华旅游；</li>
+                                            <li>钻石VIP每半年可享一次奢华旅游和时尚派对；</li>
+                                            <li>VIP本人可携1名亲友共享奢华旅游；</li>
+                                            <li>具体行程以申请当时大奖娱乐活动为准；</li>
+                                            <li>需提前至少一周联系客服咨询申请。</li>
+                                        </ol>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td width="208"><img src="@ImageServer/Content/Images/vip/privilege_3_10.jpg" alt=""></td>
                                     <td width="20">&nbsp;</td>
                                     <td valign="top">
-                                        <div class="red">周年礼金年年有</div>
-                                        周年礼金：是指会员在和记成功註册满一周年的礼金。该礼金无需用户手动申请，专业客服会在当月通知满足条件的用户。并在通知后的24小时内发放。
+                                        <div class="red">每年一次周年礼金</div>
+                                        <ol>
+                                            <li>所有大奖娱乐贵宾会员不论等级，每年可享一次周年礼金；</li>
+                                            <li>礼金由系统自动发放；</li>
+                                            <li>礼金只需完成一倍流水即可出款。</li>
+                                        </ol>
                                     </td>
                                 </tr>
                             </table>
@@ -65,19 +75,24 @@
                                     <td width="208"><img src="@ImageServer/Content/Images/vip/privilege_1_10.jpg" alt=""></td>
                                     <td width="20">&nbsp;</td>
                                     <td valign="top">
-                                        <div class="red title">周周返，不封顶</div>
-                                        1.周周有洗码，4-7星级的会员只要有效投注额≥10万，即可享受“随时洗码”的专属服务。<br />
-                                        2.星级会员享受高比例保底洗码优惠，洗码不封顶，用实力保证每位VIP会员的最大利益。<br />
-                                        3.所有游戏均可享受洗码优惠，包括真人视讯、金臂下注、电子游艺、体育投注。
+                                        <div class="red title">高额洗码天天返、不封顶</div>
+                                        <ol>
+                                            <li>市场最高洗码，老虎机高达1.2%，真人娱乐高达1.0%，洗码永不封顶。</li>
+                                            <li>天天结算，自动发放，贵宾更享有随时洗码特权。</li>
+                                            <li>电子游艺与真人娱乐产品独立计算洗码，更符合你的游戏习惯和利益。</li>
+                                        </ol>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td width="208"><img src="@ImageServer/Content/Images/vip/privilege_1_07.jpg" alt=""></td>
                                     <td width="20">&nbsp;</td>
                                     <td valign="top">
-                                        <div class="red title">升级礼金人人有 最高16,400元</div>
-                                        1.会员达到相应晋级要求后，其升级礼金将自动一次性发放。最高可达16,400元。<br />
-                                        2.所有升级礼金红利在取现前，需要达到五倍流水（有效投注额）
+                                        <div class="red title">晋级礼金最高14,252元</div>
+                                        <ol>
+                                            <li>大奖娱乐2星会员开始都将获得丰厚晋级礼金，累计高达14,252元;</li>
+                                            <li>礼金无需申请, 系统自动发放;</li>
+                                            <li>礼金完成一倍流水即可出款。</li>
+                                        </ol>
                                     </td>
                                 </tr>
                             </table>
@@ -86,37 +101,62 @@
                             <br />
                             <table>
                                 <tr>
-                                    <td width="208"><img src="@ImageServer/Content/Images/vip/privilege_2_07.jpg" alt=""></td>
+                                    <td width="208" valign="top"><img src="@ImageServer/Content/Images/vip/privilege_2_07.jpg" alt=""></td>
                                     <td width="20">&nbsp;</td>
                                     <td valign="top">
-                                        <div class="red">7x24小时高级客服热情体贴为您服务</div>
-                                        1、秉承服务品质高于一切的原则，和记娱乐为您提供7x24小时的无间歇高级客服服务。<br />
-                                        2、4星级及以上的会员更可享受专属一对一的客服服务。为用户提供更贴心、更优质的服务。<br />
-                                        3、随时可预约专属客户经理进行回访，给您带来一站式的全新服务体验。
+                                        <div class="red">7x24小时专属客户服务</div>
+                                        <ol>
+                                            <li>大奖娱乐为所有贵宾会员提供7x24优质服务，不论在线或是热线电话，风雨无阻为您解决一切会员问题；</li>
+                                            <li>每个大奖娱乐贵宾会员都享有我们提供的主动式服务，绝不错过任何最新优惠及活动。服务时间早10点至晚10点，绝不影响会员正常休息；</li>
+                                            <li>大奖娱乐贵宾会员可根据会员个人情况，订制私人服务方式，电话、短信、QQ、邮件等（默认电话），最贴心的服务保证0骚扰信息。</li>
+                                        </ol>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="208"><img src="@ImageServer/Content/Images/vip/privilege_2_10.jpg" alt=""></td>
+                                    <td width="208" valign="top"><img src="@ImageServer/Content/Images/vip/privilege_2_10.jpg" alt=""></td>
                                     <td width="20">&nbsp;</td>
                                     <td valign="top">
-                                        <div class="red">绿色存取款高速通道</div>
-                                        1、开辟星级专属的存取款通道，优先安排高星级的存取款请求，力求保证所有星级用户能顺畅无阻地享受游戏。<br />
-                                        2、保证”5分钟上分，30分钟到账“的存取款速度，还将继续致力於开发最新的收支业务和人员培训保证高效的存取款。
+                                        <div class="red">绿色存取款通道，兼具高效安全</div>
+                                        <ol>
+                                            <li>支持数十家银行及网上支付平台；</li>
+                                            <li>存款5分钟完成上分，取款30分钟到账；</li>
+                                            <li>所有贵宾会员受银行级别安全机制保护，保证账户资金安全；</li>
+                                            <li>贵宾会员专卡专用，现金流专业管理，存款出款无迹可寻；</li>
+                                            <li>根据会员需要可要求做网站账户资金冻结或开启，没有您的命令无人可动用您分毫资金。</li>
+                                        </ol>
                                     </td>
                                 </tr>
                             </table>
                         </div>
                         
                     </div>
+
+                    <br />
+                    <br />
+                    <br />
+
+                    <table class="more_actions">
+                        <tr>
+                            <td>
+                            @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                            {
+                                <a class="greyButton" href="@Url.Action("Register", "Member")">免费开户 &gt;</a>
+                            }
+                            else 
+                            {
+                                <a class="greyButton" href="@Url.Action("Index", "Member")">立即存款 &gt;</a>
+                            }
+                            </td>
+                            <td>
+                                <a class="greyButton" href="@ImageServer/download/大奖娱乐.exe">下载客户端 &gt;</a>
+                            </td>
+                        </tr>
+                    </table>
+
                 </div>
             </div>
             <div class="rightContent">
-                @Html.Action("SharedLogin", "CN", new { displayCS = "false", displayPlatforms = "false" })
-                 <div class="block"><img src="/Content/Images/member/01_06.jpg" alt=""></a></div>
-                 <div class="block"><a href="/CN/Promotions#p2"><img src="/Content/Images/home/huodong02.jpg" alt=""></a></div>
-                 <div class="block"><a href="/CN/Promotions#p3"><img src="/Content/Images/home/huodong03.jpg" alt=""></a></div>
-                 <div class="block"><a href="/CN/Promotions#p4"><img src="/Content/Images/home/huodong04.jpg" alt=""></a></div>
-                 <div class="block"><a href="/CN/Promotions#p5"><img src="/Content/Images/home/huodong05.jpg" alt=""></a></div>
+                @Html.Action("SharedLogin", "CN", new { displayCS = "false" })
             </div>
             <div class="clearfix"></div>
         </div>

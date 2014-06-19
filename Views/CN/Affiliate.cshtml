@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "优势概览 - 加盟合作 - 和记娱乐官方网站";
+    ViewBag.Title = "大奖概览 - 加盟合作 - 大奖娱乐官方网站";
     Layout = "~/Views/Shared/_CNLayout.cshtml";
     string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
 
@@ -12,7 +12,7 @@
         <div class="leftRightContent">
             <div class="leftContent">
                 <ul id="agentNav" class="sectionNav transparent black">
-                    <li class="first button active"><a href="@Url.Action("Affiliate", "CN")" target="_self">加盟优势</a></li>
+                    <li class="first button active"><a href="@Url.Action("Affiliate", "CN")" target="_self">大奖优势</a></li>
                     <li class="separate">|</li>
                     <li class="button"><a href="@Url.Action("AffiliateCommission", "CN")" target="_self">佣金方案</a></li>
                     <!-- <li class="separate">|</li>
@@ -23,7 +23,7 @@
                     <li class="button"><a href="@Url.Action("AffiliateFAQ", "CN")" target="_self">常见问题</a></li>
                 </ul>
                 <div class="banner">
-                    <img src="@ImageServer/Content/Images/agent/overview_03.jpg" alt="">
+                    <img src="@ImageServer/Content/Images/agent/agreement_03.jpg" alt="">
                 </div>
                 <div class="article">
 　                   <!-- <p>如果时光倒流，你是一个亿万富翁！但时光无法倒流！<br />同样如果你能够跨越时空，去若干年以后的互联网看看，你也会很清楚，做什么能使你发财！<br />但谁也没有这样的特异功能！<br /><br />我们虽无法做到以上两点，但是我们可以加盟——和记娱乐<br /><br />无论您是否有相关的合营经验、无论您是行业内的新手还是资历丰富的合营专家，只要您专注和记娱乐合营计划的事业，和记娱乐将会一视同仁、毫无保留地全面协助您，帮您发展您的合营事业，并最终帮您实现财富的终极梦想!</p><br />
@@ -54,12 +54,17 @@
             <div class="rightContent">
                 @Html.Action("SharedAgentLogin", "CN")
                 <div class="lineBlock"></div>
-                <img src="@ImageServer/Content/Images/quicklink/agent-hotline.jpg" alt="">
-                <div class="lineBlock"></div>
                 <img src="@ImageServer/Content/Images/quicklink/client-hotliine.jpg" alt="">
                 <div class="lineBlock"></div>
                 <img src="@ImageServer/Content/Images/quicklink/manager-interview.jpg" alt="">
                 <div class="lineBlock"></div>
+                <!--<img src="@ImageServer/Content/Images/quicklink/agent-hotline.jpg" alt="">
+                <div class="lineBlock"></div>-->
+                <div class="block"><a href="@Url.Action("PTGames", "CN")"><img src="@ImageServer/Content/Images/company/2_15.jpg" alt=""></a></div>
+                <div class="lineBlock"></div>
+                <div class="block"><a href="@Url.Action("MGGames", "CN")"><img src="@ImageServer/Content/Images/company/2_17.jpg" alt=""></a></div>
+                <div class="lineBlock"></div>
+                <div class="block"><a href="@Url.Action("BBINIntro", "CN")"><img src="@ImageServer/Content/Images/company/2_18.jpg" alt=""></a></div>
             </div>
             <div class="clearfix"></div>
         </div>

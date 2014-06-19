@@ -1,7 +1,7 @@
 ﻿@using Heji.Web.Helpers
 @model Heji.Web.Models.HomeIndexViewModel
 @{
-    ViewBag.Title = "电子游艺 - 大奖娱乐官方网站";
+    ViewBag.Title = "美洲MG老虎机 - 大奖娱乐官方网站";
     Layout = "~/Views/Shared/_CNLayout.cshtml";
     //string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
     string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
@@ -24,18 +24,27 @@
     
     </script>
 }
+
+@if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername())){
+
+} else {
+    <style>
+        .leftRightContent.gamesList .leftContent{ margin-top:-35px !important; }
+    </style>
+}
+
 <div id="wrapper">
     <div class="container">
         <div class="leftRightContent">
             <div class="leftContent">
-                <ul id="egamesNav" class="sectionNav transparent black">
+                <!-- <ul id="egamesNav" class="sectionNav transparent black">
                     <li class="first button active"><a href="@Url.Action("EGames", "CN")" target="_self">
                         游戏大厅</a></li>
                     <li class="separate">|</li>
                     <li class="button"><a href="@Url.Action("EGamesIntro", "CN")" target="_self">电子游艺介紹</a></li>
-                </ul>
-                <div class="banner">
-                    <img src="@ImageServer/Content/Images/egames/egames_03.jpg" alt="" />
+                </ul> -->
+                <div class="banner bigger">
+                    <img src="@ImageServer/Content/Images/egames/egames_slot2.jpg" alt="" />
                 </div>
             </div>
             <div class="rightContent">
@@ -64,15 +73,17 @@
                     MvcHtmlString bbinegamelink2 = MvcHtmlString.Empty;
 
                     if (Model.CurrentUser != null)
-                    {
-                        bbinegamelink = "#";
-                        onclick = MvcHtmlString.Create(" onclick=\"getUrl(this)\"");
+                    {    //href="@Url.Action("BBinIntro", "CN")"
+                        bbinegamelink = Url.Action("PTGames", "CN");
+                        //onclick = MvcHtmlString.Create(" onclick=\"getUrl(this)\"");
+                        onclick = MvcHtmlString.Create(" onclick=\"javascript:alert('平台升级，敬请期待。请您进入欧洲PT老虎机游戏！') \"");
                         bbinegamelink2 = MvcHtmlString.Create("进入游戏");
                     }
                     else
                     {
-                        bbinegamelink = Url.Action("Enter", "Game", new { platform = "0", g = "3" });
-                        onclick = MvcHtmlString.Create(" onclick=\"javascript:alert('请先登录！') \"");
+                        //bbinegamelink = Url.Action("Enter", "Game", new { platform = "0", g = "3" });
+                        bbinegamelink = "/CN/PTGames";
+                        onclick = MvcHtmlString.Create(" onclick=\"javascript:alert('平台升级，敬请期待。请您进入欧洲PT老虎机游戏！') \"");
                         bbinegamelink2 = MvcHtmlString.Create("进入游戏");
                     }
                 }
@@ -87,7 +98,7 @@
                                         <input type="hidden" value="5ReelDrive" />
                                         <p class="gameTitle">
                                             5 Reel Drive</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -103,7 +114,7 @@
                                         <input type="hidden" value="BigKahuna" />
                                         <p class="gameTitle">
                                             Big Kahuna</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank"  class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -119,7 +130,7 @@
                                         <input type="hidden" value="BigTop" />
                                         <p class="gameTitle">
                                             Big Top</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -135,7 +146,7 @@
                                     <input type="hidden" value="Carnaval" />
                                     <p class="gameTitle">
                                         Carnaval</p>
-                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                    <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                         &gt;</a>
                                 </div>
                             </div>
@@ -151,7 +162,7 @@
                                     <input type="hidden" value="CrazyChameleons" />
                                     <p class="gameTitle">
                                         Crazy Chameleons</p>
-                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                    <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                         &gt;</a>
                                 </div>
                             </div>
@@ -169,7 +180,7 @@
                                         <input type="hidden" value="GopherGold" />
                                         <p class="gameTitle">
                                             Gopher Gold</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -185,7 +196,7 @@
                                         <input type="hidden" value="MagicCharms" />
                                         <p class="gameTitle">
                                             Magic Charms</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -201,7 +212,7 @@
                                         <input type="hidden" value="MermaidsMillions" />
                                         <p class="gameTitle">
                                             Mermaids Millions</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -217,7 +228,7 @@
                                         <input type="hidden" value="Moonshine" />
                                         <p class="gameTitle">
                                             Moonshine</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -233,7 +244,7 @@
                                         <input type="hidden" value="ReelThunder" />
                                         <p class="gameTitle">
                                             Reel Thunder</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -252,7 +263,7 @@
                                         <input type="hidden" value="SkullDuggery" />
                                         <p class="gameTitle">
                                             Skull Duggery</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -268,7 +279,7 @@
                                         <input type="hidden" value="SunQuest" />
                                         <p class="gameTitle">
                                             Sun Quest</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -284,7 +295,7 @@
                                         <input type="hidden" value="RubyTombRaiderII" />
                                         <p class="gameTitle">
                                             Tomb Raider II</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -300,7 +311,7 @@
                                         <input type="hidden" value="TheFinerReelsOfLife" />
                                         <p class="gameTitle">
                                             The Finer Reels Of Life</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank"  class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick   class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -316,7 +327,7 @@
                                         <input type="hidden" value="RubyBreakDaBankAgain" />
                                         <p class="gameTitle">
                                             Ruby Break DaBankAgain</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -334,7 +345,7 @@
                                         <input type="hidden" value="BushTelegraph" />
                                         <p class="gameTitle">
                                             Bush Telegraph</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -350,7 +361,7 @@
                                         <input type="hidden" value="Cashanova" />
                                         <p class="gameTitle">
                                             Cashanova</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -366,7 +377,7 @@
                                         <input type="hidden" value="Cashville" />
                                         <p class="gameTitle">
                                             Cashville</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -382,7 +393,7 @@
                                         <input type="hidden" value="DinoMight" />
                                         <p class="gameTitle">
                                             Dino Might</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -398,7 +409,7 @@
                                         <input type="hidden" value="RubyHalloweenies" />
                                         <p class="gameTitle">
                                             Halloweenies</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -416,7 +427,7 @@
                                         <input type="hidden" value="RubyHitman" />
                                         <p class="gameTitle">
                                             Hitman</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -432,7 +443,7 @@
                                         <input type="hidden" value="Loaded" />
                                         <p class="gameTitle">
                                             Loaded</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -448,7 +459,7 @@
                                         <input type="hidden" value="MadHatters" />
                                         <p class="gameTitle">
                                             Mad Hatters</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -464,7 +475,7 @@
                                         <input type="hidden" value="PollenNation" />
                                         <p class="gameTitle">
                                             Pollen Nation</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -480,7 +491,7 @@
                                         <input type="hidden" value="SantasWildRide" />
                                         <p class="gameTitle">
                                             Santas Wild Ride</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -499,7 +510,7 @@
                                         <input type="hidden" value="TheTwistedCircus" />
                                         <p class="gameTitle">
                                             The Twisted Circus</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick  class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -515,7 +526,7 @@
                                         <input type="hidden" value="Thunderstruck2" />
                                         <p class="gameTitle">
                                             Thunderstruck2</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -531,7 +542,7 @@
                                         <input type="hidden" value="TombRaider" />
                                         <p class="gameTitle">
                                             Tomb Raider</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -547,7 +558,7 @@
                                         <input type="hidden" value="UntamedBengalTiger" />
                                         <p class="gameTitle">
                                             Untamed Bengal Tiger</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -563,7 +574,7 @@
                                         <input type="hidden" value="UntamedWolfPack" />
                                         <p class="gameTitle">
                                             Untamed Wolf Pack</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -582,7 +593,7 @@
                                         <input type="hidden" value="RubyWasabiSan" />
                                         <p class="gameTitle">
                                             Wasabi San</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -598,7 +609,7 @@
                                         <input type="hidden" value="WhatonEarth" />
                                         <p class="gameTitle">
                                             What on Earth</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -614,7 +625,7 @@
                                         <input type="hidden" value="RubyWheelofWealth" />
                                         <p class="gameTitle">
                                             Wheel of Wealth</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -630,7 +641,7 @@
                                         <input type="hidden" value="WheelofWealthSE" />
                                         <p class="gameTitle">
                                             Wheel Of Wealth Special Edition</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -646,7 +657,7 @@
                                         <input type="hidden" value="RubyWitchesWealth" />
                                         <p class="gameTitle">
                                             Witches Wealth</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -664,7 +675,7 @@
                                     <input type="hidden" value="RubyBurningDesire" />
                                     <p class="gameTitle">
                                         Burning Desire</p>
-                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                    <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                         &gt;</a>
                                 </div>
                             </div>
@@ -680,7 +691,7 @@
                                     <input type="hidden" value="RubyCashapillar" />
                                     <p class="gameTitle">
                                         Cashapillar</p>
-                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                    <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                         &gt;</a>
                                 </div>
                             </div>
@@ -696,7 +707,7 @@
                                     <input type="hidden" value="RubyDeckTheHalls" />
                                     <p class="gameTitle">
                                         Deck The Halls</p>
-                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                    <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                         &gt;</a>
                                 </div>
                             </div>
@@ -712,7 +723,7 @@
                                         <input type="hidden" value="GeniesGems" />
                                         <p class="gameTitle">
                                             Genies Gems</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -728,7 +739,7 @@
                                         <input type="hidden" value="GreatGriffin" />
                                         <p class="gameTitle">
                                             Great Griffin</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -747,7 +758,7 @@
                                         <input type="hidden" value="RubyHotShot" />
                                         <p class="gameTitle">
                                             Hot Shot</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -763,7 +774,7 @@
                                         <input type="hidden" value="ImmortalRomance" />
                                         <p class="gameTitle">
                                             Immortal Romance</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -779,7 +790,7 @@
                                     <input type="hidden" value="KaratePig" />
                                     <p class="gameTitle">
                                         Karate Pig</p>
-                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                    <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                         &gt;</a>
                                 </div>
                             </div>
@@ -795,7 +806,7 @@
                                     <input type="hidden" value="LadyInRed" />
                                     <p class="gameTitle">
                                         Lady In Red</p>
-                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                    <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                         &gt;</a>
                                 </div>
                             </div>
@@ -811,7 +822,7 @@
                                     <input type="hidden" value="MSBreakDaBankAgain" />
                                     <p class="gameTitle">
                                         Mega Spins Break Da Bank</p>
-                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                    <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                         &gt;</a>
                                 </div>
                             </div>
@@ -831,7 +842,7 @@
                                     <input type="hidden" value="MonsterMania" />
                                     <p class="gameTitle">
                                         MonsterMania</p>
-                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                    <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                         &gt;</a>
                                 </div>
                             </div>
@@ -847,7 +858,7 @@
                                     <input type="hidden" value="OrientalFortune" />
                                     <p class="gameTitle">
                                         Oriental Fortune</p>
-                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                    <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                         &gt;</a>
                                 </div>
                             </div>
@@ -863,7 +874,7 @@
                                         <input type="hidden" value="RROldKingCole" />
                                         <p class="gameTitle">
                                             Rhyming Reels Old King Cole</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -879,7 +890,7 @@
                                         <input type="hidden" value="RubyScrooge" />
                                         <p class="gameTitle">
                                             Scrooge</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -895,7 +906,7 @@
                                         <input type="hidden" value="RubyTheOsbournes" />
                                         <p class="gameTitle">
                                             The Osbournes</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -913,7 +924,7 @@
                                         <input type="hidden" value="RubyTotemTreasure" />
                                         <p class="gameTitle">
                                             Totem Treasure</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -941,7 +952,7 @@
                                         <input type="hidden" value="RubyAvalon" />
                                         <p class="gameTitle">
                                             Avalon</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -957,7 +968,7 @@
                                         <input type="hidden" value="JoyOfSix" />
                                         <p class="gameTitle">
                                             Joy Of Six</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -973,7 +984,7 @@
                                         <input type="hidden" value="LadiesNite" />
                                         <p class="gameTitle">
                                             Ladies Nite</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -989,7 +1000,7 @@
                                         <input type="hidden" value="MagicBoxes" />
                                         <p class="gameTitle">
                                             Magic Boxes</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1005,7 +1016,7 @@
                                         <input type="hidden" value="ReelStrike" />
                                         <p class="gameTitle">
                                             Reel Strike</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1024,7 +1035,7 @@
                                         <input type="hidden" value="SecretAdmirer" />
                                         <p class="gameTitle">
                                             Secret Admirer</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1040,7 +1051,7 @@
                                         <input type="hidden" value="SovereignoftheSevenSeas" />
                                         <p class="gameTitle">
                                             Sovereign of the Seven Seas</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1056,7 +1067,7 @@
                                         <input type="hidden" value="SpringBreak" />
                                         <p class="gameTitle">
                                             Spring Break</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1072,7 +1083,7 @@
                                         <input type="hidden" value="TallyHo" />
                                         <p class="gameTitle">
                                             Tally Ho</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1088,7 +1099,7 @@
                                         <input type="hidden" value="Thunderstruck" />
                                         <p class="gameTitle">
                                             Thunder struck</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1107,7 +1118,7 @@
                                         <input type="hidden" value="WesternFrontier" />
                                         <p class="gameTitle">
                                             Western Frontier</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1123,7 +1134,7 @@
                                         <input type="hidden" value="Hohoho" />
                                         <p class="gameTitle">
                                             Ho Ho Ho</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1139,7 +1150,7 @@
                                         <input type="hidden" value="RubyAgentJaneBlonde" />
                                         <p class="gameTitle">
                                             Agent Jane Blonde</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1155,7 +1166,7 @@
                                         <input type="hidden" value="BattlestarGalactica" />
                                         <p class="gameTitle">
                                             Battlestar Galactica</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1171,7 +1182,7 @@
                                         <input type="hidden" value="rubyelementals" />
                                         <p class="gameTitle">
                                             Elementals</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1189,7 +1200,7 @@
                                         <input type="hidden" value="RubyGoodToGo" />
                                         <p class="gameTitle">
                                             Good To Go</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1205,7 +1216,7 @@
                                         <input type="hidden" value="RubyHarveys" />
                                         <p class="gameTitle">
                                             Harveys</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1221,7 +1232,7 @@
                                         <input type="hidden" value="HotInk" />
                                         <p class="gameTitle">
                                             Hot Ink</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1237,7 +1248,7 @@
                                         <input type="hidden" value="RubyKathmandu" />
                                         <p class="gameTitle">
                                             Ruby Kathmandu</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1253,7 +1264,7 @@
                                         <input type="hidden" value="LuckyWitch" />
                                         <p class="gameTitle">
                                             Lucky Witch</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1272,7 +1283,7 @@
                                         <input type="hidden" value="GoldFactory" />
                                         <p class="gameTitle">
                                             Gold Factory</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1288,7 +1299,7 @@
                                         <input type="hidden" value="RubyAdventurePalace" />
                                         <p class="gameTitle">
                                             Ruby Adventure Palace</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1304,7 +1315,7 @@
                                         <input type="hidden" value="RubyMunchkins" />
                                         <p class="gameTitle">
                                             Ruby Munchkins</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1320,7 +1331,7 @@
                                         <input type="hidden" value="ReelGems" />
                                         <p class="gameTitle">
                                             Reel Gems</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1336,7 +1347,7 @@
                                         <input type="hidden" value="RetroReels" />
                                         <p class="gameTitle">
                                             Retro Reels</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1355,7 +1366,7 @@
                                         <input type="hidden" value="RetroReelsDiamondGlitz" />
                                         <p class="gameTitle">
                                             Retro Reels Diamond Glitz</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1371,7 +1382,7 @@
                                         <input type="hidden" value="MonteCarloRiches" />
                                         <p class="gameTitle">
                                             Monte Carlo Riches</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1387,7 +1398,7 @@
                                         <input type="hidden" value="SilverFang" />
                                         <p class="gameTitle">
                                             Silver Fang</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1403,7 +1414,7 @@
                                         <input type="hidden" value="RRQueenOfHearts" />
                                         <p class="gameTitle">
                                             RR Queen Of Hearts</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1425,7 +1436,7 @@
                                         <input type="hidden" value="RomanRiches" />
                                         <p class="gameTitle">
                                             Roman Riches</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1441,7 +1452,7 @@
                                         <input type="hidden" value="Belissimo" />
                                         <p class="gameTitle">
                                             Belissimo</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1457,7 +1468,7 @@
                                         <input type="hidden" value="BreakDaBank" />
                                         <p class="gameTitle">
                                             Break Da Bank</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1473,7 +1484,7 @@
                                         <input type="hidden" value="CashClams" />
                                         <p class="gameTitle">
                                             Cash Clams</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1489,7 +1500,7 @@
                                         <input type="hidden" value="CashCrazy" />
                                         <p class="gameTitle">
                                             Cash Crazy</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1507,7 +1518,7 @@
                                         <input type="hidden" value="CoolBuck" />
                                         <p class="gameTitle">
                                             Cool Buck</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1523,7 +1534,7 @@
                                         <input type="hidden" value="cosmicc" />
                                         <p class="gameTitle">
                                             cosmicc</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1539,7 +1550,7 @@
                                         <input type="hidden" value="CouchPotato" />
                                         <p class="gameTitle">
                                             Couch Potato</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1555,7 +1566,7 @@
                                         <input type="hidden" value="dm" />
                                         <p class="gameTitle">
                                             dm</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1571,7 +1582,7 @@
                                         <input type="hidden" value="DoubleWammy" />
                                         <p class="gameTitle">
                                             Double Wammy</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1589,7 +1600,7 @@
                                         <input type="hidden" value="fan7" />
                                         <p class="gameTitle">
                                             fan7</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1605,7 +1616,7 @@
                                         <input type="hidden" value="RubyFlyingAce" />
                                         <p class="gameTitle">
                                             Ruby Flying Ace</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1621,7 +1632,7 @@
                                         <input type="hidden" value="FortuneCookie" />
                                         <p class="gameTitle">
                                             Fortune Cookie</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1637,7 +1648,7 @@
                                         <input type="hidden" value="fruits" />
                                         <p class="gameTitle">
                                             fruits</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1653,7 +1664,7 @@
                                         <input type="hidden" value="RubyGoldCoast" />
                                         <p class="gameTitle">
                                             Ruby Gold Coast</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1671,7 +1682,7 @@
                                         <input type="hidden" value="gdragon" />
                                         <p class="gameTitle">
                                             gdragon</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1687,7 +1698,7 @@
                                         <input type="hidden" value="jexpress" />
                                         <p class="gameTitle">
                                             jexpress</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1703,7 +1714,7 @@
                                         <input type="hidden" value="RubyJingleBells" />
                                         <p class="gameTitle">
                                             Ruby Jingle Bells</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1719,7 +1730,7 @@
                                         <input type="hidden" value="JurassicJackpot" />
                                         <p class="gameTitle">
                                             Jurassic Jackpot</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1735,7 +1746,7 @@
                                         <input type="hidden" value="RubyLegacy" />
                                         <p class="gameTitle">
                                             Ruby Legacy</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1753,7 +1764,7 @@
                                         <input type="hidden" value="RubyRapidReels" />
                                         <p class="gameTitle">
                                             Ruby Rapid Reels</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1769,7 +1780,7 @@
                                         <input type="hidden" value="RocktheBoat" />
                                         <p class="gameTitle">
                                             Rock the Boat</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1785,7 +1796,7 @@
                                         <input type="hidden" value="Spectacular" />
                                         <p class="gameTitle">
                                             Spectacular</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1801,7 +1812,7 @@
                                         <input type="hidden" value="TripleMagic" />
                                         <p class="gameTitle">
                                             Triple Magic</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1817,7 +1828,7 @@
                                         <input type="hidden" value="zebra" />
                                         <p class="gameTitle">
                                             zebra</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1839,7 +1850,7 @@
                                         <input type="hidden" value="AmericanRoulette" />
                                         <p class="gameTitle">
                                             American Roulette</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1855,7 +1866,7 @@
                                         <input type="hidden" value="Baccarat" />
                                         <p class="gameTitle">
                                             Baccarat</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1871,7 +1882,7 @@
                                         <input type="hidden" value="BaccaratGold" />
                                         <p class="gameTitle">
                                             Baccarat Gold</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1887,7 +1898,7 @@
                                         <input type="hidden" value="Craps" />
                                         <p class="gameTitle">
                                             Craps</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1903,7 +1914,7 @@
                                         <input type="hidden" value="Cyberstud" />
                                         <p class="gameTitle">
                                             Cyberstud</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1921,7 +1932,7 @@
                                         <input type="hidden" value="EuroRouletteGold" />
                                         <p class="gameTitle">
                                             Euro Roulette Gold</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1937,7 +1948,7 @@
                                         <input type="hidden" value="FrenchRoulette" />
                                         <p class="gameTitle">
                                             French Roulette</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1953,7 +1964,7 @@
                                         <input type="hidden" value="HighLimitBaccarat" />
                                         <p class="gameTitle">
                                             High Limit Baccarat</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1969,7 +1980,7 @@
                                         <input type="hidden" value="HLEuropeanAdvBJ" />
                                         <p class="gameTitle">
                                             HL European Adv BJ</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -1985,7 +1996,7 @@
                                         <input type="hidden" value="MultiWheelRouletteGold" />
                                         <p class="gameTitle">
                                             Multi Wheel Roulette Gold</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2003,7 +2014,7 @@
                                         <input type="hidden" value="PokerPursuit" />
                                         <p class="gameTitle">
                                             Poker Pursuit</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2019,7 +2030,7 @@
                                         <input type="hidden" value="Spanish" />
                                         <p class="gameTitle">
                                             Spanish</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2035,7 +2046,7 @@
                                         <input type="hidden" value="SuperFun21" />
                                         <p class="gameTitle">
                                             Super Fun 21</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2051,7 +2062,7 @@
                                         <input type="hidden" value="AcesfacesPwrPoker" />
                                         <p class="gameTitle">
                                             Aces and Faces 1</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2067,7 +2078,7 @@
                                         <input type="hidden" value="DoubleJoker" />
                                         <p class="gameTitle">
                                             Double Joker</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2085,7 +2096,7 @@
                                         <input type="hidden" value="DeucesandJoker" />
                                         <p class="gameTitle">
                                             Deucesand Joker</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2101,7 +2112,7 @@
                                         <input type="hidden" value="Jackspwrpoker" />
                                         <p class="gameTitle">
                                             Jacks or Better</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2117,7 +2128,7 @@
                                         <input type="hidden" value="JokerPwrPoker" />
                                         <p class="gameTitle">
                                             Joker Poker</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2133,7 +2144,7 @@
                                         <input type="hidden" value="DeucesWildPwrPoker" />
                                         <p class="gameTitle">
                                             Deuces Wild</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2149,7 +2160,7 @@
                                         <input type="hidden" value="CrownAndAnchor" />
                                         <p class="gameTitle">
                                             Crown And Anchor</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2167,7 +2178,7 @@
                                         <input type="hidden" value="ElectroBingo" />
                                         <p class="gameTitle">
                                             Electro Bingo</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2183,7 +2194,7 @@
                                         <input type="hidden" value="EnchantedWoods" />
                                         <p class="gameTitle">
                                             Enchanted Woods</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2199,7 +2210,7 @@
                                         <input type="hidden" value="FourByFour" />
                                         <p class="gameTitle">
                                             Four By Four</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2215,7 +2226,7 @@
                                         <input type="hidden" value="Germinator" />
                                         <p class="gameTitle">
                                             Germinator</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2231,7 +2242,7 @@
                                         <input type="hidden" value="MaxDamage" />
                                         <p class="gameTitle">
                                             MaxDamage And The Alien Attack</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2249,7 +2260,7 @@
                                         <input type="hidden" value="MayanBingo" />
                                         <p class="gameTitle">
                                             Mayan Bingo</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2265,7 +2276,7 @@
                                         <input type="hidden" value="PharaohBingo" />
                                         <p class="gameTitle">
                                             Phara Oh Bingo</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2281,7 +2292,7 @@
                                         <input type="hidden" value="PickNSwitch" />
                                         <p class="gameTitle">
                                             Pick And Switch</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2297,7 +2308,7 @@
                                         <input type="hidden" value="PremierRacing" />
                                         <p class="gameTitle">
                                             Premier Racing</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2313,7 +2324,7 @@
                                         <input type="hidden" value="PremierTrotting" />
                                         <p class="gameTitle">
                                             Premier Trotting</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2331,7 +2342,7 @@
                                         <input type="hidden" value="SambaBingo" />
                                         <p class="gameTitle">
                                             Samba Bingo</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2347,7 +2358,7 @@
                                         <input type="hidden" value="DeucesandJoker" />
                                         <p class="gameTitle">
                                             Deuces Joker</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2363,7 +2374,7 @@
                                         <input type="hidden" value="deuceswi" />
                                         <p class="gameTitle">
                                             Deuces Wild 2</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2379,7 +2390,7 @@
                                         <input type="hidden" value="DoubleDoubleBonus" />
                                         <p class="gameTitle">
                                             Double Double Bonus</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2395,7 +2406,7 @@
                                         <input type="hidden" value="jacks" />
                                         <p class="gameTitle">
                                             Jacks Or Better 2</p>
-                                        <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                        <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                             &gt;</a>
                                     </div>
                                 </div>
@@ -2413,7 +2424,7 @@
                                     <input type="hidden" value="LouisianaDouble" />
                                     <p class="gameTitle">
                                         Louisiana Double</p>
-                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                    <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                         &gt;</a>
                                 </div>
                             </div>
@@ -2429,7 +2440,7 @@
                                     <input type="hidden" value="TensorBetter" />
                                     <p class="gameTitle">
                                         Tens Or Better</p>
-                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                    <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                         &gt;</a>
                                 </div>
                             </div>
@@ -2445,7 +2456,7 @@
                                     <input type="hidden" value="acesfaces" />
                                     <p class="gameTitle">
                                         Aces And Faces 2</p>
-                                    <a href="@bbinegamelink" @onclick target="_blank" class="gameReal" >@bbinegamelink2
+                                    <a href="@bbinegamelink" @onclick class="gameReal" >@bbinegamelink2
                                         &gt;</a>
                                 </div>
                             </div>
@@ -2460,20 +2471,14 @@
                 </table>
             </div>
             <div class="rightContent">
-                <div class="block">
-                    <img src="/Content/Images/member/01_06.jpg" alt="" /></a></div>
-                <div class="block">
-                    <a href="/CN/Promotions#p2">
-                        <img src="/Content/Images/home/huodong02.jpg" alt="" /></a></div>
-                <div class="block">
-                    <a href="/CN/Promotions#p3">
-                        <img src="/Content/Images/home/huodong03.jpg" alt="" /></a></div>
-                <div class="block">
-                    <a href="/CN/Promotions#p4">
-                        <img src="/Content/Images/home/huodong04.jpg" alt="" /></a></div>
-                <div class="block">
-                    <a href="/CN/Promotions#p5">
-                        <img src="/Content/Images/home/huodong05.jpg" alt="" /></a></div>
+                @*<div class="block"><a href="/CN/Promotions#p1"><img src="@ImageServer/Content/Images/company/right_banner1.jpg" alt=""></a></div>*@
+                <div class="block"><a href="/CN/Promotions#p2"><img src="@ImageServer/Content/Images/company/right_banner2.jpg" alt=""></a></div>
+                <div class="block"><a href="/CN/Promotions#p3"><img src="@ImageServer/Content/Images/company/right_banner3.jpg" alt=""></a></div>
+                <div class="block"><a href="/CN/Promotions#p4"><img src="@ImageServer/Content/Images/company/right_banner6.jpg" alt=""></a></div>
+                <div class="block"><a href="/CN/Promotions#p5"><img src="@ImageServer/Content/Images/company/right_banner4.jpg" alt=""></a></div>
+                <div class="block"><a href="/CN/Promotions#p6"><img src="@ImageServer/Content/Images/company/right_banner5.jpg" alt=""></a></div>
+                <div class="block"><a href="/CN/Promotions#p7"><img src="@ImageServer/Content/Images/company/right_banner7.jpg" alt=""></a></div>
+                @*<div class="block"><a href="/CN/Promotions#p8"><img src="@ImageServer/Content/Images/company/right_banner8.jpg" alt=""></a></div>*@
             </div>
             <div class="clearfix">
             </div>

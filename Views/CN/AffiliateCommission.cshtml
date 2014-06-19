@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "佣金方案 - 加盟合作 - 和记娱乐官方网站";
+    ViewBag.Title = "佣金方案 - 加盟合作 - 大奖娱乐官方网站";
     Layout = "~/Views/Shared/_CNLayout.cshtml";
     string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
 
@@ -12,7 +12,7 @@
         <div class="leftRightContent">
             <div class="leftContent">
                 <ul id="agentNav" class="sectionNav transparent black">
-                    <li class="first button"><a href="@Url.Action("Affiliate", "CN")" target="_self">加盟优势</a></li>
+                    <li class="first button"><a href="@Url.Action("Affiliate", "CN")" target="_self">大奖优势</a></li>
                     <li class="separate">|</li>
                     <li class="button active"><a href="@Url.Action("AffiliateCommission", "CN")" target="_self">佣金方案</a></li>
                     <!-- <li class="separate">|</li>
@@ -23,15 +23,15 @@
                     <li class="button"><a href="@Url.Action("AffiliateFAQ", "CN")" target="_self">常见问题</a></li>
                 </ul>
                 <div class="banner">
-                    <img src="@ImageServer/Content/Images/agent/commission_03.jpg" alt="" />
+                    <img src="@ImageServer/Content/Images/agent/agreement_03.jpg" alt="" />
                 </div>
                 <div class="article">
                 	<p><br/></p>
-                    <div class="red title">合作酬金</div>
-                    <div>我们为您提供市场上最优厚的佣金提成方案。佣金提成级别是按每个月为和记娱乐城带来的总纯利收入而定。</div>
+                    <div class="red title">佣金方案</div>
+                    <div>全网最高最全佣金结算方案,代理佣金比例最高可达60%,代理佣金结算方案包括纯利佣金结算方案、多层纯利佣金结算方案、线下会员洗码佣金结算方案及占成佣金结算方案等。</div>
 
 
-                    <table class="blackGreyTable">
+                    <!--  <table class="blackGreyTable">
                         <tr>
                             <td class="title">级别</td>
                             <td class="title">当月总纯利收入（人民币）</td>
@@ -68,13 +68,63 @@
                             <td>50 或以上</td>
                             <td>55%</td>
                         </tr>
-                    </table>
+                    </table> -->
                     
-                    <p>1、代理商必须拥有有效推广平台用作宣传和记娱乐城，合营部有权延迟批核直到代理商能够提供相关资料。任何被证实不诚实利用代理计划获取利润的代理商，将会被永久取消其和记娱乐城代理商身份及利润。</p>
+                    <p>
+                        <br />
+                        <table height="50">
+                            <tr>
+                                <td width="170" class="red">纯利润：</td>
+                                <td width="30">&nbsp;</td>
+                                <td class="borderFormula">会员派彩 – 会员红利</td>
+                            </tr>
+                        </table>
+                        <br />
                     
-                    <p>2、只要同时符合支付佣金达到人民币100元和每月达到最少5个活跃会员（一个月内拥有多次存取款和有效投注纪录）的条件，和记娱乐将支付佣金。如果当月有佣金，但是下线有效活跃玩家未达到最低标准，佣金将累计，当佣金和有效活跃玩家都达到要求，将按照相应的佣金比例发放佣金(之前未达到最低提佣标准的提成将按最低提佣比例计算)。</p>
+                        <br />
+                        <table height="50">
+                            <tr>
+                                <td width="170" class="red">纯利佣金结算方案<br />代理佣金：</td>
+                                <td width="30">&nbsp;</td>
+                                <td class="borderFormula">纯利润 x 当月佣金比例</td>
+                            </tr>
+                        </table>
+                        <br />
                     
-                    <br /><p class="lineBlock"></p>
+                        <br />
+                        <table height="50">
+                            <tr>
+                                <td width="170" class="red">多层纯利佣金结算方案<br />代理佣金：</td>
+                                <td width="30">&nbsp;</td>
+                                <td class="borderFormula">((线下会员 + 线下代理会员)纯利润) x 当月佣金比例
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        
+                        <br />
+                        <table height="50">
+                            <tr>
+                                <td width="170" class="red">线下会员洗码佣金结算方案<br />代理佣金：</td>
+                                <td width="30">&nbsp;</td>
+                                <td class="borderFormula">纯利润 x 当月的佣金比例 + 线下会员产生的洗码
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        
+                        <br />
+                        <table height="50">
+                            <tr>
+                                <td width="170" class="red">占成佣金结算方案<br />代理佣金：</td>
+                                <td width="30">&nbsp;</td>
+                                <td class="borderFormula">(派彩 – 红利) x 占成比例(可自选比例,盈亏共担)</td>
+                            </tr>
+                        </table>
+                        <br />
+                    </p>
+					 
+                   <!--    <br /><p class="lineBlock"></p>
 
                     <table class="formula">
                         <tr>
@@ -106,14 +156,29 @@
                         </tr>
                     </table>
                     
-                    <br /><br /><p class="lineBlock"></p><br />
+                    <br /><br /><p class="lineBlock"></p><br /> -->
 
-                    <p>注意 : 我们会根据联盟协议在每月依照佣金比例支付佣金给代理商<br />如果正式成为和记娱乐城的代理合作伙伴后，连续三个月都未能达到我们的第一级代理要求，<br />您的佣金将归零，如果连续六个月都未能达到我们的第一级代理要求，我们将取消您的代理资格。</p>
+
+
+                    <p>我们7天24小时在线，欢迎您随时和大奖“伙伴经理”联系，尽早踏上令人羡慕的成功豪富之路。</p>
+
 
                 </div>
             </div>
             <div class="rightContent">
                 @Html.Action("SharedAgentLogin", "CN")
+                <div class="lineBlock"></div>
+                <img src="@ImageServer/Content/Images/quicklink/client-hotliine.jpg" alt="">
+                <div class="lineBlock"></div>
+                <img src="@ImageServer/Content/Images/quicklink/manager-interview.jpg" alt="">
+                <div class="lineBlock"></div>
+                <!--<img src="@ImageServer/Content/Images/quicklink/agent-hotline.jpg" alt="">
+                <div class="lineBlock"></div>-->
+                <div class="block"><a href="@Url.Action("PTGames", "CN")"><img src="@ImageServer/Content/Images/company/2_15.jpg" alt=""></a></div>
+                <div class="lineBlock"></div>
+                <div class="block"><a href="@Url.Action("MGGames", "CN")"><img src="@ImageServer/Content/Images/company/2_17.jpg" alt=""></a></div>
+                <div class="lineBlock"></div>
+                <div class="block"><a href="@Url.Action("BBinIntro", "CN")"><img src="@ImageServer/Content/Images/company/2_18.jpg" alt=""></a></div>
             </div>
             <div class="clearfix"></div>
         </div>

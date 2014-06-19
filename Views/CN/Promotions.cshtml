@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="@ImageServer/Content/Styles/vip.css" />
 }
 @section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/hash.js"></script>
     <script type="text/javascript" src="@ImageServer/Scripts/Custom/promotion.js"></script>
 }
 <div id="wrapper">
@@ -20,49 +21,66 @@
                     <img src="@ImageServer/Content/Images/promotion/promotion_03.jpg" alt="" />
                 </div>
                 <div class="article promotion">
-                     <p class="promotion-ads" id="p7">
-                        <a href="@Url.Action("PomotionMG", "CN")"><img src="@ImageServer/Content/Images/promotion/new/promo_1.jpg" alt="" class="normal"/></a>
-                        <a href="@Url.Action("PomotionMG", "CN")"><img src="@ImageServer/Content/Images/promotion/new/promo_1.jpg" alt="" class="hover"/></a>
-                        <a href="@Url.Action("PomotionMG", "CN")"><img src="@ImageServer/Content/Images/promotion/new/promo_1.jpg" alt="" class="click"/></a>
-                    </p> 
+                     @*<p class="promotion-ads" id="p1">
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_1.jpg" alt="" class="normal"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_1_hover.jpg" alt="" class="hover"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_1_click.jpg" alt="" class="click"/>
+                    </p> *@
                     <p class="promotion-ads" id="p2">
                         <img src="@ImageServer/Content/Images/promotion/new/promo_2.jpg" alt="" class="normal"/>
-                        <img src="@ImageServer/Content/Images/promotion/new/promo_2.jpg" alt="" class="hover"/>
-                        <img src="@ImageServer/Content/Images/promotion/new/promo_2.jpg" alt="" class="click"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_2_hover.jpg" alt="" class="hover"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_2_click.jpg" alt="" class="click"/>
                     </p>
                     <p class="promotion-ads" id="p3">
                         <img src="@ImageServer/Content/Images/promotion/new/promo_3.jpg" alt="" class="normal"/>
-                        <img src="@ImageServer/Content/Images/promotion/new/promo_3.jpg" alt="" class="hover"/>
-                        <img src="@ImageServer/Content/Images/promotion/new/promo_3.jpg" alt="" class="click"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_3_hover.jpg" alt="" class="hover"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_3_click.jpg" alt="" class="click"/>
                     </p>
                     <p class="promotion-ads" id="p4">
-                        <img src="@ImageServer/Content/Images/promotion/new/promo_4.jpg" alt="" class="normal"/>
-                        <img src="@ImageServer/Content/Images/promotion/new/promo_4.jpg" alt="" class="hover"/>
-                        <img src="@ImageServer/Content/Images/promotion/new/promo_4.jpg" alt="" class="click"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_6.jpg" alt="" class="normal"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_6_hover.jpg" alt="" class="hover"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_6_click.jpg" alt="" class="click"/>
+
                     </p>
                     <p class="promotion-ads" id="p5">
-                        <img src="@ImageServer/Content/Images/promotion/new/promo_5.jpg" alt="" class="normal"/>
-                        <img src="@ImageServer/Content/Images/promotion/new/promo_5.jpg" alt="" class="hover"/>
-                        <img src="@ImageServer/Content/Images/promotion/new/promo_5.jpg" alt="" class="click"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_4.jpg" alt="" class="normal"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_4_hover.jpg" alt="" class="hover"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_4_click.jpg" alt="" class="click"/>
+                        
                     </p>
                     <p class="promotion-ads" id="p6">
-                        <img src="@ImageServer/Content/Images/promotion/new/promo_6.jpg" alt="" class="normal"/>
-                        <img src="@ImageServer/Content/Images/promotion/new/promo_6.jpg" alt="" class="hover"/>
-                        <img src="@ImageServer/Content/Images/promotion/new/promo_6.jpg" alt="" class="click"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_5.jpg" alt="" class="normal"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_5_hover.jpg" alt="" class="hover"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_5_click.jpg" alt="" usemap="#downloadClientButton"  class="click"/>
+                        <map name="downloadClientButton">
+                             <area alt="" title="" href="http://www.ptpt8.com/download/%E5%A4%A7%E5%A5%96%E5%A8%B1%E4%B9%90.exe" shape="rect" coords="138,376,247,403" />
+                        </map>
                     </p>                    
 
                     <p class="promotion-ads" id="p7">
                         <img src="@ImageServer/Content/Images/promotion/new/promo_7.jpg" alt="" class="normal"/>
-                        <img src="@ImageServer/Content/Images/promotion/new/promo_7.jpg" alt="" class="hover"/>
-                        <img src="@ImageServer/Content/Images/promotion/new/promo_7.jpg" alt="" class="click"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_7_hover.jpg" alt="" class="hover"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_7_click.jpg" alt="" class="click"/>
                     </p>          
 
-                    <p class="promotion-ads" id="p8">
+                    @*<p class="promotion-ads" id="p8">
                         <img src="@ImageServer/Content/Images/promotion/new/promo_8.jpg" alt="" class="normal"/>
-                        <img src="@ImageServer/Content/Images/promotion/new/promo_8.jpg" alt="" class="hover"/>
-                        <img src="@ImageServer/Content/Images/promotion/new/promo_8.jpg" alt="" class="click"/>
-                    </p>                    
-					<br/><br/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_8_hover.jpg" alt="" class="hover"/>
+                        <img src="@ImageServer/Content/Images/promotion/new/promo_8_click.jpg" alt="" class="click"/>
+                    </p> *@                   
+					<br/>
+
+                    <b>优惠通用条款：</b><br /><br />
+                    
+                    <ul>
+                        <li>优惠活动仅适用于拥有一个独立账户的独立玩家。同一住址、电子邮箱﹑电话号码﹑支付方式(相同借记卡/信用卡/银行账户号码)﹑IP地址﹑电脑将用以判别玩家的唯一性；</li>
+                        <li>会员参加任何优惠活动并得到红利后，除非大奖娱乐在活动细则中特别说明，所完成的相应任务(如投注额)，均不被计入会员参加另一个优惠活动的红利任务中；</li>
+                        <li>所有优惠活动只适用于真正参与游戏而有风险投注的会员。例如会员在百家乐游戏中同时投注庄闲、大小、红黑、单双等项目，将被视为对赌，不被计入有效投注额。如有玩家存在滥用优惠活动套取红利等非正常游戏行为，影响其他会员享受优惠的游戏环境，大奖娱乐将取消该玩家所获奖励并冻结其会员账户甚至本金。</li>
+                    </ul>
+                    
+
+
+
                     <!-- <div class="lineBlock"></div>
                        <p style="margin-top:10px"> <img src="@ImageServer/Content/Images/promotion/7_Promotion_R7_batn.jpg" alt="" class="click"></p>
                     <br/>
@@ -82,7 +100,10 @@
                 </div>
             </div>
             <div class="rightContent">
-                @Html.Action("SharedLogin", "CN")
+                @Html.Action("SharedLogin", "CN", new { displayPlatforms = "false", displayCS = "false" })
+                <div class="block"><a href="@Url.Action("PTGames", "CN")"><img src="@ImageServer/Content/Images/company/2_15.jpg" alt=""></a></div>
+                <div class="block"><a href="@Url.Action("MGGames", "CN")"><img src="@ImageServer/Content/Images/company/2_17.jpg" alt=""></a></div>
+                <div class="block"><a href="@Url.Action("BBinIntro", "CN")"><img src="@ImageServer/Content/Images/company/2_18.jpg" alt=""></a></div>
             </div>
             <div class="clearfix"></div>
         </div>

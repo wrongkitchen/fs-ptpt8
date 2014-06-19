@@ -1,0 +1,127 @@
+﻿@using Heji.Web.Helpers
+@{
+    ViewBag.Title = "PT 真人娱乐 - 大奖娱乐官方网站";
+    Layout = "~/Views/Shared/_CNLayout.cshtml";
+    string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
+
+}
+@section AdditionalStyles {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/dealer.css" />
+}
+@section AdditionalScripts {
+    <script type="text/javascript" src="@ImageServer/Scripts/Plugins/jquery.zaccordion.min.js"></script>
+    <script type="text/javascript" src="@ImageServer/Scripts/Custom/dealer.js"></script>
+}
+<div id="wrapper">
+    <div class="container">
+        <div class="leftRightContent dealer-leftRightContent">
+            <div class="leftContent dealer-leftContent">
+                <div class="banner">
+                    <div id="dealer-banner">
+                        <table width="100%">
+                            <tr>
+                                <td width="134"><a href="@Url.Action("BBinIntro", "CN")"><img src="@ImageServer/Content/Images/dealer/banner1_small.jpg" alt=""></a></td>
+                                <td width="134"><a href="@Url.Action("MGIntro", "CN")"><img src="@ImageServer/Content/Images/dealer/banner2.jpg" alt=""></a></td>
+                                <td width="478"><a href="@Url.Action("PTIntro", "CN")"><img src="@ImageServer/Content/Images/dealer/banner3_hover.jpg" alt=""></a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="article ag">
+                <table>
+                        <tr>
+                            <td>
+                                <p><img src="@ImageServer/Content/Images/dealer/dealer_ag.jpg" alt=""></p>
+                            </td>
+                            <td valign="middle">
+                                @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                                {
+                                }
+                                else
+                                {
+                                    <a class="greyButton bigger" href="@Url.Action("EnterPT", "Game", new { platform = "1", gameId = "7bal" })" target="_blank">进入游戏 &gt;</a>
+                                }
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <h4 class="red">PT真人现场介绍</h4>
+                    <p>Playtech（简称PT）在伦敦证券交易所上市, 是世界最大的游戏开发和供应商, 推崇技术导向和开放平台, 成立于1999年, 在全球各地有3000多名研发人员。
+                    <br />
+					<br />
+					PT游戏在亚洲发展多年, 理解本地区以中国为首的各国客户需求, 深受玩家钟爱。
+                    </p><br />
+                    <h4 class="red">游戏种类</h4>
+                    <table>
+                    @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                    {
+                                                <tr>
+                            <td><img src="@ImageServer/Content/Images/dealer/dealer_hundred.jpg" alt="百家乐" /></td>
+                            <td><img src="@ImageServer/Content/Images/dealer/dealer_circle.jpg" alt="轮盘" /></td>
+							<td><img src="@ImageServer/Content/Images/dealer/dealer_21.jpg" alt="21点" /></td>
+                            <td><img src="@ImageServer/Content/Images/dealer/dealer_dice.jpg" alt="骰宝" /></td>
+                        </tr>
+                        <tr><td colspan="4" height="20"></td></tr>  
+                    }
+                    else
+                    {
+                        <tr>
+                            <td><a href="@Url.Action("EnterPT", "Game", new { platform = "1", gameId = "7bal" })" target="_blank"><img src="@ImageServer/Content/Images/dealer/dealer_hundred.jpg" alt="百家乐"  /></a></td>
+                            <td><a href="@Url.Action("EnterPT", "Game", new { platform = "1", gameId = "rofl" })" target="_blank"><img src="@ImageServer/Content/Images/dealer/dealer_circle.jpg" alt="轮盘" /></a></td>
+							<td><a href="@Url.Action("EnterPT", "Game", new { platform = "1", gameId = "bjl" })" target="_blank"><img src="@ImageServer/Content/Images/dealer/dealer_21.jpg" alt="21点" /></a></td>
+                            <td><a href="@Url.Action("EnterPT", "Game", new { platform = "1", gameId = "sbl" })" target="_blank"><img src="@ImageServer/Content/Images/dealer/dealer_dice.jpg" alt="骰宝" /></a></td>
+                        </tr>
+                        <tr><td colspan="4" height="20"></td></tr> 
+                    }
+
+                       
+                    </table>
+
+
+                    <br />
+                    <br />
+
+                    <table class="more_actions">
+                        @if (string.IsNullOrEmpty(WebFunctions.GetCurrentUsername()))
+                        {
+                            <tr>
+                                <td>
+                                    <a class="greyButton" href="@Url.Action("Register", "Member")">免费开户 &gt;</a>
+                                </td>
+                                <td>
+                                    <a class="greyButton" href="@ImageServer/download/大奖娱乐.exe">下载客户端 &gt;</a>
+                                </td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="2"><a target="_blank" class="greyButton bigger" href="@Url.Action("EnterPT", "Game", new { platform = "1", gameId = "7bal" })">进入游戏 &gt;</a><br /><br /><br /><br /></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a class="greyButton" href="@Url.Action("Register", "Member")">立即存款 &gt;</a>
+                                </td>
+                                <td>
+                                    <a class="greyButton" href="@ImageServer/download/大奖娱乐.exe">下载客户端 &gt;</a>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+
+                </div>
+            </div>
+            <div class="rightContent">
+                @Html.Action("SharedLogin", "CN", new { displayCS = "false" })
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="zoneBtn horizontalList clearfix">
+            <li class="tw_bbin borderRight"></li>
+            <li class="macau_ag "></li>
+            <li class="china_ag "></li>
+            <li class="electronic borderLeft"></li>
+        </ul>
+    </div>
+</div>
