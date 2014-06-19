@@ -982,3 +982,4 @@ ul.footerLogoWrap{ width:875px; margin:0 auto; }
   background-image:url(../Images/popup-login-rightbtn.jpg);
 }
 #cboxLoadedContent{ overflow: hidden !important; }
+#cboxClose{ bottom:auto !important; right:20px; top:0 !important; }
