@@ -40,7 +40,7 @@ $(document).ready(function () {
             if (r == true) {
                 $.ajax({
                     type: "post",
-                    url: "/Member/ApplyForInitialDepositBonus",
+                    url: "/Member/ApplyForDepositBonus",
                     data: {
                         transId: idbParams.split("_")[1],
                         idbType: idbParams.split("_")[0]
@@ -177,8 +177,9 @@ $(document).ready(function () {
     });
 
     // 首存红利浮动提示
-    $("[id^='applyIDB_10']").tipTip();
-    $("[id^='applyIDB_20']").tipTip();
+    $("[id^='applyIDB_25']").tipTip();
+    $("[id^='applyIDB_50']").tipTip();
+    $("[id^='applyIDB_100']").tipTip();
     $("[id^='applyIDB_30']").tipTip();
 
 
@@ -351,6 +352,15 @@ $(document).ready(function () {
             error: function () {
             }
         });
+    });
+
+    $("#resetWithdraw").click(function () {
+        $("#banks").val("");
+        $("#amount").val("");
+        $("#cardHolder").html("");
+        $("#area").html("");
+        $("#bank").html("");
+        $("#acctNum").html("");
     });
 
     $("#submitWithdraw").click(function () {
