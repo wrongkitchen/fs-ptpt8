@@ -13,17 +13,16 @@
     }
     string imageUrl = string.Empty;
     //-------------------------------------
-    //sean@2013-11-28:測試暫時關閉
     if (config != null)
     {
-        if (!string.IsNullOrEmpty(config.imgsever))
+        if (!string.IsNullOrEmpty(config.ImgServer))
         {
-            imageUrl = config.imgsever;
+            imageUrl = config.ImgServer;
         }
     }
     else
     {
-        imageUrl = "http://199.119.139.137";
+        imageUrl = "http://174.139.10.67";
     }
     //----------------------------------------
     ViewContext.Controller.ViewBag.ImageServer = imageUrl;
