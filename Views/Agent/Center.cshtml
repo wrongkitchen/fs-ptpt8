@@ -4,7 +4,7 @@
          
                    
 @{
-    ViewBag.Title = "代理中心 - 和记娱乐官方网站";
+    ViewBag.Title = "代理中心 - 大奖娱乐官方网站";
     Layout = "~/Views/Shared/_AgentLayout.cshtml";
     string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
 
@@ -18,7 +18,7 @@
                     <img src="@ImageServer/Content/Images/center/banner_center.jpg" />
                 </div>
                 <div class="article center">
-                    <p class="title">最新运营公告<a href="@Url.Action("Notice", "CN")" target="_self" class="pullRight normal">更多公告 &gt;</a></p>
+                    <p class="title">最新运营公告<a href="@Url.Action("Operation", "Agent")" target="_self" class="pullRight normal">更多公告 &gt;</a></p>
                     <br/>
                     <table>
                         <tr>
@@ -43,11 +43,11 @@
                     @if (Model.AgThisreports != null)
                     {
                         <tr>
-                            <td>@Model.AgThisreports.Agmonth</td>
-                            <td>@Model.AgThisreports.HyNum</td>
-                            <td>@Model.AgThisreports.Betting</td>
+                            <td>@Model.AgThisreports.Month</td>
+                            <td>@Model.AgThisreports.ActiveNumber</td>
+                            <td>@Model.AgThisreports.Bets</td>
                             <td>@Model.AgThisreports.Bonus</td>
-                            <td>@Model.AgThisreports.PcCash</td>
+                            <td>@Model.AgThisreports.Payouts</td>
                             <td>@Math.Ceiling(Model.AgThisreports.Ratio * 100) %</td>
                             <td>@Model.AgThisreports.Brokerage</td>
                             <td>@Model.AgThisreports.BakNote</td>
@@ -56,7 +56,7 @@
                     else
                     {
                             <tr>
-                                暂无数据！
+                                <td align="center" colspan="8">暂无数据！</td>
                             </tr>
                     }
                     </table>
@@ -147,9 +147,9 @@
 
                     </table>
                     <br/>
-                    <p>推广网址： <input type="text" value="http://@(Model.CurrentUser.sitecode).heji700.com"  readonly="readonly"/>*</p>
+                    <p>推广网址： <input type="text" value="http://@(Model.CurrentUser.sitecode).ddj118.com"  readonly="readonly"/>*</p>
                     <br/>
-                    <p class="red">温情提醒：为了避免非法人士通过绑定银行卡窃取您的账户资金，请你您务必填写真实有效的信息，并且只设置一次，如修改，请联系在线客服</p>
+                    <p class="red">温情提醒：为了避免非法人士通过绑定银行卡窃取您的账户资金，请您务必填写真实有效的信息，并且只设置一次，如修改，请联系在线客服</p>
                 </div>
             </div>
             @Html.Action("SharedAgentInformation", "Agent")

@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "代理中心 - 和记娱乐";
+    ViewBag.Title = "代理中心 - 大奖娱乐官方网站";
     Layout = "~/Views/Shared/_CNLayout.cshtml";
 }
 @{
@@ -7,6 +7,7 @@
     }
 
 @section AdditionalScripts {
+    <link rel="stylesheet" href="@ImageServer/Content/Styles/agent.css" />
     <script type="text/javascript" src="@ImageServer/Scripts/Custom/addagent.js"></script>
 }
 
@@ -15,18 +16,18 @@
         <div class="leftRightContent">
             <div class="leftContent">
                 <ul id="agentNav" class="sectionNav transparent black">
-                    <li class="first button"><a href="@Url.Action("Affiliate", "CN")" target="_self">优势概览</a></li>
+                    <li class="first button"><a href="@Url.Action("Affiliate", "CN")" target="_self">大奖优势</a></li>
                     <li class="separate">|</li>
                     <li class="button"><a href="@Url.Action("AffiliateCommission", "CN")" target="_self">佣金方案</a></li>
-                    <li class="separate">|</li>
-                    <li class="button"><a href="@Url.Action("AffiliateGift", "CN")" target="_self">回馈礼金</a></li>
+                    <!-- <li class="separate">|</li>
+                    <li class="button"><a href="@Url.Action("AffiliateGift", "CN")" target="_self">回馈礼金</a></li> -->
                     <li class="separate">|</li>
                     <li class="button"><a href="@Url.Action("AffiliateAgreement", "CN")" target="_self">合作协议</a></li>
                     <li class="separate">|</li>
                     <li class="button"><a href="@Url.Action("AffiliateFAQ", "CN")" target="_self">常见问题</a></li>
                 </ul>
                 <div class="banner">
-                    <img src="@ImageServer/Content/Images/agent/registration_03.jpg" alt="" />
+                    <img src="@ImageServer/Content/Images/agent/agreement_03.jpg" alt="" />
                 </div>
                 <div class="article register">
                     <h4 class="red">注册代理账号</h4><br />
@@ -83,9 +84,18 @@
             </div>
             <div class="rightContent">
                 @Html.Action("SharedAgentLogin", "CN")
-                <div class=""><img src="@ImageServer/Content/Images/agent/rightButton_08.jpg" alt=""></div>
-                <div class=""><img src="@ImageServer/Content/Images/agent/rightButton_09.jpg" alt=""></div>
-                <div class=""><img src="@ImageServer/Content/Images/agent/rightButton_10.jpg" alt=""></div>
+                <div class="lineBlock"></div>
+                <img src="@ImageServer/Content/Images/quicklink/client-hotliine.jpg" alt="">
+                <div class="lineBlock"></div>
+                <img src="@ImageServer/Content/Images/quicklink/manager-interview.jpg" alt="">
+                <div class="lineBlock"></div>
+                <!--<img src="@ImageServer/Content/Images/quicklink/agent-hotline.jpg" alt="">
+                <div class="lineBlock"></div>-->
+                <div class="block"><a href="@Url.Action("PTGames", "CN")"><img src="@ImageServer/Content/Images/company/2_15.jpg" alt=""></a></div>
+                <div class="lineBlock"></div>
+                <div class="block"><a href="@Url.Action("MGGames", "CN")"><img src="@ImageServer/Content/Images/company/2_17.jpg" alt=""></a></div>
+                <div class="lineBlock"></div>
+                <div class="block"><a href="@Url.Action("BBinIntro", "CN")"><img src="@ImageServer/Content/Images/company/2_18.jpg" alt=""></a></div>
             </div>
             <div class="clearfix"></div>
         </div>

@@ -3,7 +3,7 @@
 @model Heji.Web.Models.AgentModifyViewModel
            
 @{
-    ViewBag.Title = "代理中心 - 和记娱乐官方网站";
+    ViewBag.Title = "代理中心 - 大奖娱乐官方网站";
     Layout = "~/Views/Shared/_AgentLayout.cshtml";
     string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
 
@@ -32,12 +32,12 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td class="title">电子邮箱：</td>
+                            <td class="title">*电子邮箱：</td>
                             <td class="content"><input name="email" type="text" id="email" value="@Model.Agent.email" size="10" maxlength="50" /></td>
                             <td>用于找回密码和获取最新优惠。</td>
                         </tr>
                         <tr>
-                            <td class="title">联系电话：</td>
+                            <td class="title">*联系电话：</td>
                             <td class="content"><input name="tel" type="text" id="tel" value="@Model.Agent.tel" size="10" maxlength="20" /></td>
                             <td>如账户有异常情况, 用以确认会员资料, 保护会员资金。</td>
                         </tr>
@@ -51,14 +51,14 @@
                     <p class="red">银行卡资料</p>
                     <table>
                         <tr>
-                            <td class="title">姓名(真实姓名)：</td>
+                            <td class="title">*姓名(真实姓名)：</td>
                             <td class="content"><input name="trueName" type="text" id="trueName" value="@Model.Agent.trueName" disabled=disabled /></td>
                             <td>请填写中文姓名。</td>
                         </tr>
                         <tr>
                             <td class="title">银行名称：</td>
                             <td class="content"><input name="bankId" type="text" id="bankId" value="@Model.Agent.bankId" size="10" maxlength="15" @(string.IsNullOrEmpty(Model.Agent.bankId) ? " " : "disabled=disabled")/></td>
-                            <td>用於找回密码和获取最新优惠。</td>
+                            <td><!-- 用於找回密码和获取最新优惠。 --></td>
                         </tr>
                         <tr>
                             <td class="title">分行名称(开户银行地址)：</td>
@@ -68,7 +68,7 @@
                         <tr>
                             <td class="title">银行账号：</td>
                             <td class="content"><input name="cardno" type="text" id="cardno" value="@Model.Agent.CardNo" size="10" maxlength="30" @(string.IsNullOrEmpty(Model.Agent.CardNo) ? " " : "disabled=disabled")/></td>
-                            <td></td>
+                            <td>&nbsp;</td>
                         </tr>
                     </table>
                     <br/>
@@ -76,11 +76,11 @@
                     <table>
                         <tr>
                             <td class="title">推广网址：</td>
-                            <td class="content"><input name="textfield2222" type="text" class="input2" id="textfield2222" value="http://@(Model.Agent.sitecode).ptpt8.com" disabled="disabled" /></td>
-                            <td>*</td>
+                            <td class="content"><input name="textfield2222" type="text" class="input2" id="textfield2222" value="http://@(Model.Agent.sitecode).ddj118.com" disabled="disabled" /></td>
+                            <td>&nbsp;</td>
                         </tr>
                     </table><br />
-                    <p>温情提醒：为了避免非法人士通过绑定银行卡窃取您的账户资金，请你您务必填写真实有效的信息，并且只设置一次，如需修改，请联系在线客服</p>
+                    <p>温情提醒：为了避免非法人士通过绑定银行卡窃取您的账户资金，请你您务必填写真实有效的信息，并且只设置一次，如需修改，请联系在线客服。</p>
                     <br/>
                     <button class="redButton" id="updateAgent">提交 ></button>
                     <button class="redButton">重置 ></button>
@@ -94,17 +94,17 @@
                         <tr>
                             <td class="title">*原始密码：</td>
                             <td class="content"><input name="password1" type="password" id="password1" size="10" maxlength="15" /></td>
-                            <td>*</td>
+                            <td>&nbsp;</td>
                         </tr>
                         <tr>
                             <td class="title">*新密码：</td>
                             <td class="content"><input name="password2" type="password" id="password2" size="10" maxlength="15" /></td>
-                            <td>*</td>
+                            <td>&nbsp;</td>
                         </tr>
                         <tr>
                             <td class="title">*确认新密码：</td>
                             <td class="content"><input name="password3" type="password" id="password3" size="10" maxlength="15" /></td>
-                            <td>*</td>
+                            <td>&nbsp;</td>
                         </tr>
                     </table>
                     <br/>
@@ -113,6 +113,7 @@
                 </div>
             </div>
             @Html.Action("SharedAgentInformation", "Agent")
+            @*<img src="@ImageServer/Content/Images/member/01_06.jpg" />*@
             <div class="clearfix"></div>
         </div>
         <ul class="zoneBtn horizontalList clearfix">

@@ -3,7 +3,7 @@
 @model Heji.Web.Models.AgentFinancialStatementViewModel
            
 @{
-    ViewBag.Title = "代理中心 - 和记娱乐官方网站";
+    ViewBag.Title = "代理中心 - 大奖娱乐官方网站";
     Layout = "~/Views/Shared/_AgentLayout.cshtml";
     string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
 
@@ -25,20 +25,20 @@
                     <p class="articleHeader">现金记录</p>
                     <table>
                         <tr class="header">
-                            <td>会员</td>
-                            <td>时间</td>
-                            <td>BBIN投注</td>
-                            <td>BBIN派彩</td>
-                            <td>DSP投注</td>
-                            <td>DSP派彩</td>
-                            <td>AG投注</td>
-                            <td>AG派彩</td>
-                            <td>MG投注</td>
-                            <td>MG派彩</td>
-                            <td>AGNet投注</td>
-                            <td>AGNet派彩</td>
-                            <td>投注小计</td>
-                            <td>派彩小计</td>
+                            <td rowspan="2">会员</td>
+                            <td rowspan="2">时间</td>
+                            <td colspan="4">真人娱乐</td>
+                            <td colspan="2">电子游艺</td>
+                            <td rowspan="2">投注小计</td>
+                            <td rowspan="2">派彩小计</td>
+                        </tr>
+                        <tr class="header">
+                            <td>BBin投注</td>
+                            <td>BBin派彩</td>
+                            <td>PT投注</td>
+                            <td>PT派彩</td>
+                            <td>PT投注</td>
+                            <td>PT派彩</td>
                         </tr>
                         @if (Model.Bettings != null && Model.BettingsCount > 0)
                         {
@@ -46,19 +46,15 @@
                             {
                                 <tr>
                                     <td>@tnx.Username</td>
-                                    <td>@tnx.tdate.ToString("yyyy-MM-dd")</td>
-                                    <td>@tnx.BBin</td>
-                                    <td>@tnx.BBinPayout</td>
-                                    <td>@tnx.PT</td>
-                                    <td>@tnx.PTPayout</td>
-                                    <td>@tnx.DYJuser</td>
-                                    <td>@tnx.DYJpc</td>
-                                    <td>@tnx.MGuser</td>
-                                    <td>@tnx.MGpc</td>
-                                    <td>@tnx.AgNetUser</td>
-                                    <td>@tnx.AgNetUserpc</td>
-                                    <td>@(tnx.BBin + tnx.DYJuser + tnx.PT + tnx.Ipmuser + tnx.MGuser + tnx.AgNetUser)</td>
-                                    <td>@(tnx.BBinPayout + tnx.PTPayout + tnx.DYJpc + tnx.Ipmpc + tnx.MGpc + tnx.AgNetUserpc)</td>
+                                    <td>@tnx.Date.ToString("yyyy-MM-dd")</td>
+                                    <td>@tnx.BBinLiveBets</td>
+                                    <td>@tnx.BBinLivePayouts</td>
+                                    <td>@tnx.PTLiveBets</td>
+                                    <td>@tnx.PTLivePayouts</td>
+                                    <td>@tnx.PTFlashBets</td>
+                                    <td>@tnx.PTFlashPayouts</td>
+                                    <td>@(tnx.BBinLiveBets + tnx.PTLiveBets + tnx.PTFlashBets)</td>
+                                    <td>@(tnx.BBinLivePayouts + tnx.PTLivePayouts + tnx.PTFlashPayouts)</td>
                                 </tr>
                             }
                         }

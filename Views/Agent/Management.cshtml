@@ -3,7 +3,7 @@
 @model Heji.Web.Models.AgentManagementViewModel
            
 @{
-    ViewBag.Title = "代理中心 - 和记娱乐官方网站";
+    ViewBag.Title = "代理中心 - 大奖娱乐官方网站";
     Layout = "~/Views/Shared/_AgentLayout.cshtml";
     string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
 
@@ -30,15 +30,15 @@
                             </tr>
                         </table>
                     </form>
-                    <div class="lineBlock"></div>
-                    <p class="articleHeader">&ngsp;</p>
+                    
+                    <p class="articleHeader">&nbsp;</p>
                     <table >
                         <tr class="header">
-                            <td>会员名称</td>
+                            <td>会员姓名</td>
                             <td>会员帐号</td>
-                            <td>可转资金</td>
+                            <td>账户余额</td>
                             <td>开通日期</td>
-                            <td>开户额度</td>
+                            <td>首次存款</td>
                             <td>总入款</td>
                             <td>总出款</td>
                             <td>总红利</td>
@@ -96,7 +96,7 @@
                         else
                         {
                             <tr>
-                            暂无数据！
+                                <td colspan="10">暂无数据！</td>
                             </tr> 
                         }
 
@@ -109,6 +109,7 @@
                 </div>
             </div>
             @Html.Action("SharedAgentInformation", "Agent")
+            @*<img src="@ImageServer/Content/Images/member/01_06.jpg" />*@
             <div class="clearfix"></div>
         </div>
         <ul class="zoneBtn horizontalList clearfix">

@@ -3,7 +3,7 @@
 @model Heji.Web.Models.AgentFinancialStatementViewModel
            
 @{
-    ViewBag.Title = "代理中心 - 和记娱乐官方网站";
+    ViewBag.Title = "代理中心 - 大奖娱乐官方网站";
     Layout = "~/Views/Shared/_AgentLayout.cshtml";
     string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
 
@@ -38,10 +38,10 @@
                         {
 
                             <tr>
-                                <td><a href="@Url.Action("FinancialStatementM", "Agent", new { Date = tnx.Agmonth })" style="color:Red">@tnx.Agmonth</a></td>
-                                <td>@tnx.HyNum</td>
-                                <td>@tnx.Betting</td>
-                                <td>@tnx.PcCash</td>
+                                <td><a href="@Url.Action("FinancialStatementM", "Agent", new { Date = tnx.Month })" style="color:Red">@tnx.Month</a></td>
+                                <td>@tnx.ActiveNumber</td>
+                                <td>@tnx.Bets</td>
+                                <td>@tnx.Payouts</td>
                                 <td>@tnx.Bonus</td>
                                 <td>@Math.Ceiling(tnx.Ratio * 100) %</td>
                                 <td>@tnx.Brokerage</td>
@@ -67,6 +67,7 @@
                 </div>
             </div>
             @Html.Action("SharedAgentInformation", "Agent")
+            @*<img src="@ImageServer/Content/Images/member/01_06.jpg" />*@
             <div class="clearfix"></div>
         </div>
         <ul class="zoneBtn horizontalList clearfix">

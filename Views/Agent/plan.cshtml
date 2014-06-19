@@ -3,7 +3,7 @@
 @model Heji.Web.Models.AgentPlanViewModel
            
 @{
-    ViewBag.Title = "代理中心 - 和记娱乐官方网站";
+    ViewBag.Title = "代理中心 - 大奖娱乐官方网站";
     Layout = "~/Views/Shared/_AgentLayout.cshtml";
     string ImageServer = ViewContext.ViewData["ImageServer"].ToString();
 
@@ -24,13 +24,14 @@
                         <div class="tabContent"></div>
                         <div class="tabContent active">
                             <p>
-                                专用推广网址: <a href="http://5069.ptpt8.com" target="_blank">http://5069.ptpt8.com</a><br />
+                                <b>专用推广网址</b>: <a class="blueHref" href="http://@(Model.CurrentUser.sitecode).ddj118.com" target="_blank">http://@(Model.CurrentUser.sitecode).ddj118.com</a><br />
                                 请在可能有玩家的地方发布你的"专用推广网址", 通过此链接注册的任何会员都终身是您的下线会员。
                             </p>
+                            <div class="lineBlock"></div>
                             <br />
-                            <div class="articleDefaultHeader">
-                                <div class="red articleHeader">推广图片</div><br />
-                            </div>
+                            
+                            <p><b>推广图片</b></p>
+                            
                         @if (Model.Plans != null && Model.PlansCount > 0)
                         {
                             foreach (PlanTO tnx in Model.Plans)
@@ -62,6 +63,7 @@
                 </div>
             </div>
             @Html.Action("SharedAgentInformation", "Agent")
+            @*<img src="@ImageServer/Content/Images/member/01_06.jpg" />*@
             <div class="clearfix"></div>
         </div>
         <ul class="zoneBtn horizontalList clearfix">
